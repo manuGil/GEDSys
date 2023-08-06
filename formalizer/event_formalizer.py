@@ -6,7 +6,7 @@ event definitions.
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from datetime import datetime
-from typing import List
+from typing import List, Dict
 
 
 class CepInterface(ABC):
@@ -25,7 +25,20 @@ class CepInterface(ABC):
     
     def get_url(self):
         return "{}:{}".format(self.host, self.port)
+
+
+@dataclass
+class CepAPP():
+    """representation of a CEP application"""
     
+    name: str
+    url: str
+    status: bool = False
+
+    def __post_init__(self):
+        self.url = "{}/{}".format(self.url, self.name)
+
+
 
 @dataclass
 class DataStreamer(object):
@@ -37,6 +50,37 @@ class DataStreamer(object):
 
     expiration_data: str
     update_frequency: int
+
+
+@dataclass
+class Gevent():
+    """
+    Class for geographic event definition
+    """
+
+    event_id: str
+    name: str
+    definition: str
+    expiration_date: datetime
+    phenomena: Dict = field(init=False)
+
+    def __post_init__(self):
+        """
+        add phenomena as attribute
+        """
+        self.phenomena = self._get_phenomena()
+
+    def _get_phenomena(self) -> Dict:
+        """
+        extracts phenomena names from the event definition
+
+        returns:
+            dict of phenomena names and their data types.
+            Example: {"temperature": "float"}
+        """
+        pass
+        
+
 
 @dataclass
 class CepHttpReceiver:
@@ -54,10 +98,17 @@ class CepHttpReceiver:
     cepe_url:str
     type:str = "http"
     map_type:str = "json"
+    receiver_url:str = field(init=False)
         
     def __post_init__(self):
         self.receiver_url = "{}/{}".format(self.cepe_url, self.name)
 
+    def get_siddhiql(self, event: Gevent) -> str:
+        """
+        returns the siddhiql for the receiver (a.k.a. source)
+        """
+        return f'@source(type = "{self.type}", receiver.url = "{self.receiver_url}", @map(type = "{self.map_type}"))\n define stream {self.name}Stream {event.get_atributes()};' 
+    
 
 @dataclass
 class EventHandler:
@@ -69,34 +120,14 @@ class EventHandler:
     status: bool = False
     receiver: List[CepHttpReceiver] = field(default_factory=list)   
 
-@dataclass
-class Gevent():
-    """
-    Class for geographic event definition
-    """
-
-    event_id: str
-    name: str
-    definition: str
-    expiration_date: datetime
-    phenomena: List[str] = field(init=False)
-
-    def __post_init__(self):
-        """
-        add phenomena as attribute
-        """
-        self.phenomena = self._get_phenomena()
-
-    def _get_phenomena(self) -> List[str]:
-        """
-        extracts phenomena names from the event definition
-        """
-        pass
 
 
 if __name__ == "__main__":
+
+    gevent = Gevent("test", "test", "test", datetime.now())
+
     url = "http://localhost:9763"
-    name = "test"
+    name = "teststream"
 
     receiver = CepHttpReceiver(name, url)
     print(receiver.receiver_url)
