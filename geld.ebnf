@@ -1,0 +1,162 @@
+/*  Using notation https://www.w3.org/Notation.html
+* railroad diagrams https://www.bottlecaps.de/rr/ui
+* how to read diagram: https://www.ibm.com/docs/en/ibm-mq/9.0?topic=commands-how-read-railroad-syntax-diagrams
+*/
+
+EBNF is a metalanguage
+EBNF grammar for the Event Detection Language (GEDL)
+
+EBNF notation:
+
+        ::=  is used to define a rule
+        | is used to define a choice
+        * is used to define a repetition
+        ? is used to define an optional element
+        + is used to define a repetition of at least one element
+        () is used to group elements
+        [] is used to group elements that are optional
+        {} is used to group elements that are repeated
+        "" is used to define a literal
+        "" is used to define a literal
+
+Other languages:
+
+- Siddhi Streaming SQL: https://siddhi.io/en/v5.1/docs/query-guide/
+
+Elements:
+Stream: a stream is a sequence of events ordered in Time
+event: an event is an object associated with a stream, including a timestamp, and identical set of attributes
+query: a query is a construct that processes events and publshes output events to a stream, table or windwow
+sink: a construct that construct events arriving at a strea, and publishes them to a external endpoints
+
+
+Focus on: event detection language, how to declare events, and notifications
+
+semantic rules,
+event names must be unique
+PhenomenaName must be unique and declared before use in notifications
+observations of PhenomenaName declared in a notification will be included in the payload of the notification
+
+PhenomenonList /* declared phenomenon names whose observations will be included in the notification payload
+
+
+GeDL ::= Event+ Notification*
+
+Event ::= "event" EventName "(" DatastreamList ")" "{" DetectionRules "}" ";"
+      | "event" EventName "(" EventList ")" "{" DetectionRules "}" ";"
+
+EventList ::= EventName ("," EventName)*
+DatastreamList ::=  Datastream ("," Datastream)*
+Datastream  ::=  "datastream" PhenomenonName  ";"
+                | "datastream" EventName"."PhenomenonName ";"
+
+EventName ::= Identifier
+PhenomenonName ::= Identifier
+
+DetectionRules ::= DetectionRule (';' DetectionRule)*
+
+DetectionRule ::= Condition 
+                | DetectionExtent 
+                | SpatialGranularity 
+                | DetectionTime 
+
+Function ::= FunctionName "(" (EventName) ")"
+         | FunctionName "(" Function ")"
+
+FunctionName ::= "sum" | "avg" | "min" | "max" | "count" | "first" | "last"
+
+Condition ::= "cond" Comparison (LogicalOperator Comparison)*
+          | Negation "(" Condition ")"
+
+Comparison ::= Expression ComparisonOperator Expression
+
+Expression ::= PhenomenonName | EventName | Function | ArithmeticExpression | Value | "(" Condition ")"
+
+ArithmeticExpression ::= Term  ( ("+" | "-") Term )* 
+Term ::= Factor ( ("*" | "/") Factor )*
+Factor ::= Number | Function | "(" ArithmeticExpression ")" 
+
+DetectionExtent ::= "extent" Identifier "=" "{" "feature" ":" FeatureList ("," "buffer" ":" Distance)? "}"
+
+SpatialGranularity ::= "granularity" "("  Distance ("," SpatialRelation)? ")"
+DetectionTime ::= "time" TimeType
+
+FeatureList ::= Feature 
+            | "[" Feature ("," Feature)* "]" 
+
+Notification ::= "notification" Identifier "(" EventName ")" "{" NotificationPayload "}" ";"
+
+NotificationPayload ::= "[" PhenomenonName ("," PhenomenonName)* "]" 
+
+TimeType ::=  TimeInstance 
+     | Duration 
+     | TimeWindow 
+     | PeriodicTime 
+     | TimePattern
+
+TimeInstance ::= '"' Time '"' | '"' DateTime '"'
+
+Duration ::=  "duration" "(" '"'Time '"' ")"
+         | "duration" "(" Number "," TimeUnit ")"
+
+TimeUnit ::= "second" | "minute" | "hour" | "day" | "week" | "month" | "year"
+TimeWindow ::=  "window" "(" TimeInstance "," TimeInstance ")"
+           | "window" "(" Duration "," TimeInstance ")"
+           | "window" "(" Duration ")"
+           | "window" "(" TimeInstance "," Duration ")"
+
+PeriodicTime ::= "periodic" "(" Repetitions? "," TimeInstance | TimeWindow | TimePattern ")"
+
+TimePattern ::=  "pattern" "(" TimeInstance* "," TimeInstance* "," TimeWindow* ")"
+
+
+Repetitions ::= Number
+
+DateTime ::=  Date "T" Time 
+Date ::=  Year "-" Month "-" Day
+Time ::=  Hour ":" Minute ":" Second ("." Fraction)? (timeZoneOffset)?
+
+Hour ::= Digit Digit
+Year ::= Digit Digit Digit Digit
+Month ::= Digit Digit
+Day ::= Digit Digit
+
+Feature ::= "POINT" "(" coordinates ")"
+        | "LINESTRING" "(" coordinates"," coordinates  ("," coordinates)* ")" 
+        | "POLYGON" "((" coordinates"," coordinates"," coordinates  ("," coordinates)* "))"
+
+coordinates ::=  x y | x y z 
+
+x ::= Number
+y ::= Number
+z ::= Number
+
+ComparisonOperator
+        ::= ">"
+        | "<"
+        | "<>"
+        | "=="
+        | "!="
+        | ">="
+        | "<="
+        | "like"
+        | "between"
+
+Negation ::= "!"
+LogicalOperator ::= "&&" | "||"
+Identifier ::= Letter (Letter | Digit | "_")*
+Value ::= Number | String | Boolean | "null"
+Distance ::=   Digit+ ("." Digit+)? 
+Number ::=  "-"? Digit+ ("." Digit+)?
+Fraction ::= Digit+
+String ::= '"' Char* '"'
+Char ::= Letter | Digit | Symbol
+Whitespace ::= Space | Newline | Comment
+Comment ::= "//" Char* Newline
+Boolean ::= "true" | "false"
+Letter ::= [a-zA-Z]
+Digit ::= [0-9]
+Symbol ::= "_" | "@" | "#" | "$" | "%" | "^" | "&" | "(" | ")" | "~"
+SpatialRelation ::= "single" | "cloud" | "specks" | "all" 
+Newline ::= "\r" | "\n" | "\r\n"
+Space ::= #x9 | #xA | #xD | #x20
