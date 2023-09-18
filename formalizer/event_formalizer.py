@@ -232,4 +232,4 @@ if __name__ == "__main__":
     app = CepAPP("testapp", [receiver], forwarder, query)
     print(app)
 
-    app.save()
+    # app.save()

@@ -10,3 +10,7 @@ cep/*
 demo/*
 .vscode/*
 venv/*
+
+# MPS
+.mps/
+languages/GeDL.sandbox/*
