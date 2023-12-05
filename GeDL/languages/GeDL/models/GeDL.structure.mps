@@ -112,11 +112,6 @@
     <property role="TrG5h" value="DetectionExtent" />
     <property role="34LRSv" value="detection extent" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyi" id="5oC_XKWYMb3" role="1TKVEl">
-      <property role="IQ2nx" value="6208379058501919427" />
-      <property role="TrG5h" value="nameId" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="5oC_XKWYMb4" role="1TKVEi">
       <property role="IQ2ns" value="6208379058501919428" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -163,11 +158,19 @@
     <node concept="PrWs8" id="5oC_XKWYMd6" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="5oC_XKWYMd7" role="1TKVEi">
-      <property role="IQ2ns" value="6208379058501919559" />
+    <node concept="1TJgyj" id="6vPhAE1ebfZ" role="1TKVEi">
+      <property role="IQ2ns" value="7490970978449142783" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="dataStreamLists" />
-      <ref role="20lvS9" node="5oC_XKWYMaG" resolve="DataStreamList" />
+      <property role="20kJfa" value="dataStreams" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
+    </node>
+    <node concept="1TJgyj" id="6vPhAE1ebfU" role="1TKVEi">
+      <property role="IQ2ns" value="7490970978449142778" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="detectionRules" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="5oC_XKWYYO5" resolve="DetectionRule" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMd8">

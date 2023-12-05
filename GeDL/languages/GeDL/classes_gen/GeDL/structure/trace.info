@@ -220,17 +220,16 @@
       <node id="6208379058501919426" at="150,154,151,34" concept="1" />
       <node id="6208379058501919426" at="151,34,152,91" concept="1" />
       <node id="6208379058501919426" at="152,91,153,17" concept="1" />
-      <node id="6208379058501919427" at="153,17,154,112" concept="1" />
-      <node id="6208379058501919428" at="154,112,155,199" concept="1" />
-      <node id="6208379058501919429" at="155,199,156,199" concept="1" />
-      <node id="6208379058501919426" at="156,199,157,32" concept="1" />
-      <node id="6208379058501919426" at="157,32,158,22" concept="6" />
-      <node id="6208379058501919426" at="149,0,160,0" concept="8" trace="createDescriptorForDetectionExtent#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6208379058501919428" at="153,17,154,199" concept="1" />
+      <node id="6208379058501919429" at="154,199,155,199" concept="1" />
+      <node id="6208379058501919426" at="155,199,156,32" concept="1" />
+      <node id="6208379058501919426" at="156,32,157,22" concept="6" />
+      <node id="6208379058501919426" at="149,0,159,0" concept="8" trace="createDescriptorForDetectionExtent#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6208379058501919426" at="68,49,69,40" />
-      <scope id="6208379058501919426" at="149,73,158,22">
+      <scope id="6208379058501919426" at="149,73,157,22">
         <var name="b" id="6208379058501919426" />
       </scope>
-      <scope id="6208379058501919426" at="149,0,160,0" />
+      <scope id="6208379058501919426" at="149,0,159,0" />
     </file>
   </root>
   <root nodeRef="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919431">
@@ -288,19 +287,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6208379058501919433" at="27,0,28,0" concept="2" trace="myConceptDistance" />
       <node id="6208379058501919433" at="74,42,75,33" concept="6" />
-      <node id="6208379058501919433" at="180,66,181,147" concept="5" />
-      <node id="6208379058501919433" at="181,147,182,34" concept="1" />
-      <node id="6208379058501919433" at="182,34,183,91" concept="1" />
-      <node id="6208379058501919433" at="183,91,184,17" concept="1" />
-      <node id="6208379058501919434" at="184,17,185,176" concept="1" />
-      <node id="6208379058501919433" at="185,176,186,24" concept="1" />
-      <node id="6208379058501919433" at="186,24,187,22" concept="6" />
-      <node id="6208379058501919433" at="180,0,189,0" concept="8" trace="createDescriptorForDistance#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6208379058501919433" at="179,66,180,147" concept="5" />
+      <node id="6208379058501919433" at="180,147,181,34" concept="1" />
+      <node id="6208379058501919433" at="181,34,182,91" concept="1" />
+      <node id="6208379058501919433" at="182,91,183,17" concept="1" />
+      <node id="6208379058501919434" at="183,17,184,176" concept="1" />
+      <node id="6208379058501919433" at="184,176,185,24" concept="1" />
+      <node id="6208379058501919433" at="185,24,186,22" concept="6" />
+      <node id="6208379058501919433" at="179,0,188,0" concept="8" trace="createDescriptorForDistance#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6208379058501919433" at="74,42,75,33" />
-      <scope id="6208379058501919433" at="180,66,187,22">
+      <scope id="6208379058501919433" at="179,66,186,22">
         <var name="b" id="6208379058501919433" />
       </scope>
-      <scope id="6208379058501919433" at="180,0,189,0" />
+      <scope id="6208379058501919433" at="179,0,188,0" />
     </file>
   </root>
   <root nodeRef="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919557">
@@ -324,20 +323,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6208379058501919557" at="28,0,29,0" concept="2" trace="myConceptEvent" />
       <node id="6208379058501919557" at="76,39,77,30" concept="6" />
-      <node id="6208379058501919557" at="189,63,190,144" concept="5" />
-      <node id="6208379058501919557" at="190,144,191,33" concept="1" />
-      <node id="6208379058501919557" at="191,33,192,71" concept="1" />
-      <node id="6208379058501919557" at="192,71,193,91" concept="1" />
-      <node id="6208379058501919557" at="193,91,194,17" concept="1" />
-      <node id="6208379058501919559" at="194,17,195,208" concept="1" />
-      <node id="6208379058501919557" at="195,208,196,21" concept="1" />
+      <node id="6208379058501919557" at="188,63,189,144" concept="5" />
+      <node id="6208379058501919557" at="189,144,190,33" concept="1" />
+      <node id="6208379058501919557" at="190,33,191,71" concept="1" />
+      <node id="6208379058501919557" at="191,71,192,91" concept="1" />
+      <node id="6208379058501919557" at="192,91,193,17" concept="1" />
+      <node id="7490970978449142783" at="193,17,194,203" concept="1" />
+      <node id="7490970978449142778" at="194,203,195,206" concept="1" />
+      <node id="6208379058501919557" at="195,206,196,21" concept="1" />
       <node id="6208379058501919557" at="196,21,197,22" concept="6" />
-      <node id="6208379058501919557" at="189,0,199,0" concept="8" trace="createDescriptorForEvent#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6208379058501919557" at="188,0,199,0" concept="8" trace="createDescriptorForEvent#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6208379058501919557" at="76,39,77,30" />
-      <scope id="6208379058501919557" at="189,63,197,22">
+      <scope id="6208379058501919557" at="188,63,197,22">
         <var name="b" id="6208379058501919557" />
       </scope>
-      <scope id="6208379058501919557" at="189,0,199,0" />
+      <scope id="6208379058501919557" at="188,0,199,0" />
     </file>
   </root>
   <root nodeRef="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919560">
@@ -627,21 +627,21 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6208379058501971205" at="25,0,26,0" concept="2" trace="myConceptDetectionRule" />
       <node id="6208379058501971205" at="70,47,71,38" concept="6" />
-      <node id="6208379058501971205" at="160,71,161,152" concept="5" />
-      <node id="6208379058501971205" at="161,152,162,34" concept="1" />
-      <node id="6208379058501971205" at="162,34,163,91" concept="1" />
-      <node id="6208379058501971205" at="163,91,164,17" concept="1" />
-      <node id="6208379058501971208" at="164,17,165,202" concept="1" />
-      <node id="6208379058501971209" at="165,202,166,199" concept="1" />
-      <node id="6208379058501971210" at="166,199,167,204" concept="1" />
-      <node id="6208379058501971205" at="167,204,168,26" concept="1" />
-      <node id="6208379058501971205" at="168,26,169,22" concept="6" />
-      <node id="6208379058501971205" at="160,0,171,0" concept="8" trace="createDescriptorForDetectionRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6208379058501971205" at="159,71,160,152" concept="5" />
+      <node id="6208379058501971205" at="160,152,161,34" concept="1" />
+      <node id="6208379058501971205" at="161,34,162,91" concept="1" />
+      <node id="6208379058501971205" at="162,91,163,17" concept="1" />
+      <node id="6208379058501971208" at="163,17,164,202" concept="1" />
+      <node id="6208379058501971209" at="164,202,165,199" concept="1" />
+      <node id="6208379058501971210" at="165,199,166,204" concept="1" />
+      <node id="6208379058501971205" at="166,204,167,26" concept="1" />
+      <node id="6208379058501971205" at="167,26,168,22" concept="6" />
+      <node id="6208379058501971205" at="159,0,170,0" concept="8" trace="createDescriptorForDetectionRule#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6208379058501971205" at="70,47,71,38" />
-      <scope id="6208379058501971205" at="160,71,169,22">
+      <scope id="6208379058501971205" at="159,71,168,22">
         <var name="b" id="6208379058501971205" />
       </scope>
-      <scope id="6208379058501971205" at="160,0,171,0" />
+      <scope id="6208379058501971205" at="159,0,170,0" />
     </file>
   </root>
   <root nodeRef="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501971212">
@@ -664,19 +664,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="6208379058501971212" at="26,0,27,0" concept="2" trace="myConceptDetectionTime" />
       <node id="6208379058501971212" at="72,47,73,38" concept="6" />
-      <node id="6208379058501971212" at="171,71,172,152" concept="5" />
-      <node id="6208379058501971212" at="172,152,173,34" concept="1" />
-      <node id="6208379058501971212" at="173,34,174,91" concept="1" />
-      <node id="6208379058501971212" at="174,91,175,17" concept="1" />
-      <node id="6208379058501971213" at="175,17,176,202" concept="1" />
-      <node id="6208379058501971212" at="176,202,177,30" concept="1" />
-      <node id="6208379058501971212" at="177,30,178,22" concept="6" />
-      <node id="6208379058501971212" at="171,0,180,0" concept="8" trace="createDescriptorForDetectionTime#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="6208379058501971212" at="170,71,171,152" concept="5" />
+      <node id="6208379058501971212" at="171,152,172,34" concept="1" />
+      <node id="6208379058501971212" at="172,34,173,91" concept="1" />
+      <node id="6208379058501971212" at="173,91,174,17" concept="1" />
+      <node id="6208379058501971213" at="174,17,175,202" concept="1" />
+      <node id="6208379058501971212" at="175,202,176,30" concept="1" />
+      <node id="6208379058501971212" at="176,30,177,22" concept="6" />
+      <node id="6208379058501971212" at="170,0,179,0" concept="8" trace="createDescriptorForDetectionTime#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6208379058501971212" at="72,47,73,38" />
-      <scope id="6208379058501971212" at="171,71,178,22">
+      <scope id="6208379058501971212" at="170,71,177,22">
         <var name="b" id="6208379058501971212" />
       </scope>
-      <scope id="6208379058501971212" at="171,0,180,0" />
+      <scope id="6208379058501971212" at="170,0,179,0" />
     </file>
   </root>
 </debug-info>
