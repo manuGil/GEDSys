@@ -10,10 +10,6 @@
       <concept id="6208379058501971205" name="GeDL.structure.DetectionRule" flags="ng" index="1EORFp">
         <child id="6208379058501971208" name="condition" index="1EORFk" />
         <child id="6208379058501971209" name="extent" index="1EORFl" />
-        <child id="6208379058501971210" name="granularity" index="1EORFm" />
-      </concept>
-      <concept id="6208379058501919566" name="GeDL.structure.SpatialGranulariy" flags="ng" index="1EOVii">
-        <property id="6208379058501919568" name="SpatialRelation" index="1EOVic" />
       </concept>
       <concept id="6208379058501919557" name="GeDL.structure.Event" flags="ng" index="1EOVip">
         <child id="7490970978449142778" name="detectionRules" index="3ANvmg" />
@@ -33,7 +29,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
@@ -44,9 +40,6 @@
       <node concept="1EOVlT" id="6vPhAE1ebW6" role="1EORFk">
         <property role="1EOVlU" value="pm2 &gt; 10" />
       </node>
-      <node concept="1EOVii" id="6vPhAE1ebWa" role="1EORFm">
-        <property role="1EOVic" value="5oC_XKWYMdt/single" />
-      </node>
       <node concept="1EOVku" id="6vPhAE1ecBV" role="1EORFl">
         <node concept="1EOVkr" id="6vPhAE1ecBX" role="1EOVko">
           <property role="1EOVkk" value="POLYGON ((30 10, 40 40, 20 40, 10 20, 30 10))" />
@@ -56,6 +49,9 @@
     <node concept="1EOVlO" id="6vPhAE1ebVY" role="3ANvml">
       <property role="1EOVlP" value="pm2" />
     </node>
+  </node>
+  <node concept="1EOVlO" id="3f51INt_BL_">
+    <property role="1EOVlP" value="speed" />
   </node>
 </model>
 

@@ -48,7 +48,7 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
@@ -73,6 +73,7 @@
     <property role="EcuMT" value="6208379058501919400" />
     <property role="TrG5h" value="DataStream" />
     <property role="R4oN_" value="data stream" />
+    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5oC_XKWYMaD" role="1TKVEl">
       <property role="IQ2nx" value="6208379058501919401" />
