@@ -12,4 +12,4 @@ demo/*
 venv/*
 
 # MPS
-.mps/*
+GeDL/languages/GeDL.sandbox/
