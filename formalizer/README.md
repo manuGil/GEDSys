@@ -3,7 +3,7 @@
 ## Event Definition
 Users define events by providing a name, an update frequency (in milliseconds), and a set of properties. Event definitions are formatted as JSON objects, with the following pattern:
 
-```javascript
+```json
 {
   "name": "hot day",
   "properties": {
