@@ -55,7 +55,7 @@ More complex rules are possible, including multiple conditions, logic operators 
 
 ## Deploying files on the CEP Server
 
-The CEP server should be configured before an geo-event can start the detection process. for this two operations are essential. First, a data entry point needs to be created in the CEP server. This is achieved by creating a 'HTTP receiver' and an 'event stream'. Second, an 'execution plan', which contains detections rules, need to be created and associated with the 'event stream'.
+The CEP server should be configured before a geo-event can start the detection process. for this two operations are essential. First, a data entry point needs to be created in the CEP server. This is achieved by creating a 'HTTP receiver' and an 'event stream'. Second, an 'execution plan', which contains detections rules, need to be created and associated with the 'event stream'.
 
 In runtime, those operations are executed by deploying  files to the hot directories of the CEP Server.
 For each geo-event, at list the following files should be deployed in the following order:
@@ -68,7 +68,7 @@ JSON file describing the data structure of a data stream.
 XML file describing the details of a receiver and the association with one and only one event stream.
 
 ### Execution Plan
-Custom CEP formal file (.siddhiql) describing the rules to be applied to an associated data stream. An execution plan needs to be associated with  existing event streams. An input event stream feed data to the execution plan in runtime, and output event stream outputs data produced by the CEP engine. In this implementation an execution plan must be associated with one *input* event stream and one *output* event stream.
+Custom CEP format file (.siddhiql) describing the rules to be applied to an associated data stream. An execution plan needs to be associated with  existing event streams. An input event stream feed data to the execution plan in runtime, and output event stream outputs data produced by the CEP engine. In this implementation an execution plan must be associated with one *input* event stream and one *output* event stream.
 
 Execution plans contain a query parameter which applies detection rules.
 Queries must be written using the <a href=https://docs.wso2.com/display/DAS310/Siddhi+Query+Language>shiddhiql</a> language.  For now this implementation only support filtering. A query containing a filter has the follow structure:
