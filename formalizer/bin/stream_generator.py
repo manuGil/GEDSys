@@ -12,21 +12,6 @@ import shapely.geos as geos
 import shapely.wkt as wkt
 from bin import interpreter as interpreter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
 
     file = '../tests/event_def_test.json'

@@ -13,12 +13,6 @@ import socket
 import os
 import paramiko
 
-
-
-
-
-
-
 if __name__ == '__main__':
     import traceback
     import socket
