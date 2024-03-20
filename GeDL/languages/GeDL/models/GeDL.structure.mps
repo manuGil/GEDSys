@@ -73,7 +73,6 @@
     <property role="EcuMT" value="6208379058501919400" />
     <property role="TrG5h" value="DataStream" />
     <property role="R4oN_" value="data stream" />
-    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5oC_XKWYMaD" role="1TKVEl">
       <property role="IQ2nx" value="6208379058501919401" />

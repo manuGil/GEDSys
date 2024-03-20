@@ -121,7 +121,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForDataStream() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "DataStream", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L);
-    b.class_(false, false, true);
+    b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919400");
     b.version(3);
     b.property("PhenomenonName", 0x562897dc3cfb22a9L).type(PrimitiveTypeId.STRING).origin("6208379058501919401").done();
