@@ -52,6 +52,9 @@
         <child id="5082088080656976323" name="newlineMarker" index="2EinRH" />
         <child id="1145195647825954802" name="words" index="356sEH" />
       </concept>
+      <concept id="1145195647825954793" name="com.dslfoundry.plaintextgen.structure.SpaceIndentedText" flags="ng" index="356sEQ">
+        <property id="5198309202558919052" name="indent" index="333NGx" />
+      </concept>
       <concept id="1145195647825954788" name="com.dslfoundry.plaintextgen.structure.TextgenText" flags="ng" index="356sEV">
         <property id="5407518469085446424" name="ext" index="3Le9LX" />
         <child id="1145195647826100986" name="content" index="356KY_" />
@@ -161,6 +164,166 @@
     </node>
     <node concept="n94m4" id="1ygjV_UxusB" role="lGtFl">
       <ref role="n9lRv" to="lyeg:5oC_XKWYMd5" resolve="Event" />
+    </node>
+  </node>
+  <node concept="356sEV" id="2iVMkjqWPpM">
+    <property role="TrG5h" value="A" />
+    <property role="3Le9LX" value="pp.siddhi" />
+    <node concept="356WMU" id="2iVMkjqWPpQ" role="356KY_">
+      <node concept="356sEK" id="2iVMkjqWPpR" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPpS" role="356sEH">
+          <property role="TrG5h" value="-- name and description of the app" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPpU" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPpV" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPpW" role="356sEH">
+          <property role="TrG5h" value="@App:name('CounterApp')" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPpY" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPpZ" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPq0" role="356sEH">
+          <property role="TrG5h" value="@App:description('Receive events via HTTP, and logs the number of events received during last 15 seconds')" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPq2" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPq3" role="383Ya9">
+        <node concept="2EixSi" id="2iVMkjqWPq6" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPq7" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPq8" role="356sEH">
+          <property role="TrG5h" value="-- data sources (receivers). This is a constant for a given service?" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqa" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqb" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqc" role="356sEH">
+          <property role="TrG5h" value="-- definition of app language concepts : https://siddhi.io/en/v5.1/docs/query-guide/" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqe" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqf" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqg" role="356sEH">
+          <property role="TrG5h" value="-- in GedSys, this plays the role of RECEIVER" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqi" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqj" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqk" role="356sEH">
+          <property role="TrG5h" value="@source(type = 'http', receiver.url = &quot;http://localhost:8006/production&quot;," />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqm" role="2EinRH" />
+      </node>
+      <node concept="356sEQ" id="2iVMkjqWPqr" role="383Ya9">
+        <property role="333NGx" value="    " />
+        <node concept="356sEK" id="2iVMkjqWPqn" role="383Ya9">
+          <node concept="356sEF" id="2iVMkjqWPqo" role="356sEH">
+            <property role="TrG5h" value="@map(type = 'json'))" />
+          </node>
+          <node concept="2EixSi" id="2iVMkjqWPqq" role="2EinRH" />
+        </node>
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqs" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqt" role="356sEH">
+          <property role="TrG5h" value="-- data streams (key-value pairs: name type) Look of all possible types: https://wso2.github.io/siddhi/documentation/siddhi-4.0/#types" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqv" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqw" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqx" role="356sEH">
+          <property role="TrG5h" value="define stream ProductionStream (name string, amount double);" />
+          <node concept="17Uvod" id="2iVMkjqWU8C" role="lGtFl">
+            <property role="2qtEX9" value="name" />
+            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+            <node concept="3zFVjK" id="2iVMkjqWU8F" role="3zH0cK">
+              <node concept="3clFbS" id="2iVMkjqWU8G" role="2VODD2">
+                <node concept="3clFbF" id="2iVMkjqWU8M" role="3cqZAp">
+                  <node concept="2OqwBi" id="2iVMkjqWU8H" role="3clFbG">
+                    <node concept="3TrcHB" id="2iVMkjqWU8K" role="2OqNvi">
+                      <ref role="3TsBF5" to="lyeg:5oC_XKWYMaD" resolve="PhenomenonName" />
+                    </node>
+                    <node concept="30H73N" id="2iVMkjqWU8L" role="2Oq$k0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEF" id="2iVMkjqWQWt" role="356sEH">
+          <property role="TrG5h" value=" " />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqz" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPq$" role="383Ya9">
+        <node concept="2EixSi" id="2iVMkjqWPqB" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqC" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqD" role="356sEH">
+          <property role="TrG5h" value="-- notification sink. This can be fixe for this specific service? set to HTTP . n" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqF" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqG" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqH" role="356sEH">
+          <property role="TrG5h" value="-- in GedSys, this plays the role of FORWARDER" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqJ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqK" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqL" role="356sEH">
+          <property role="TrG5h" value="@sink(type = 'log')" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqN" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqO" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqP" role="356sEH">
+          <property role="TrG5h" value="define stream TotalCountStream (totalCount long); -- this is same notiation as in sources." />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqR" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqS" role="383Ya9">
+        <node concept="2EixSi" id="2iVMkjqWPqV" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPqW" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPqX" role="356sEH">
+          <property role="TrG5h" value="-- Count the incoming events" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPqZ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPr0" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPr1" role="356sEH">
+          <property role="TrG5h" value="-- Detetection rules" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPr3" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPr4" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPr5" role="356sEH">
+          <property role="TrG5h" value="@info(name = 'query2') -- use the siddhi query language:" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPr7" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPr8" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPr9" role="356sEH">
+          <property role="TrG5h" value="from ProductionStream#window.time(30 sec)" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPrb" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPrc" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPrd" role="356sEH">
+          <property role="TrG5h" value="select count() as totalCount" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPrf" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2iVMkjqWPrg" role="383Ya9">
+        <node concept="356sEF" id="2iVMkjqWPrh" role="356sEH">
+          <property role="TrG5h" value="insert into TotalCountStream;" />
+        </node>
+        <node concept="2EixSi" id="2iVMkjqWPrj" role="2EinRH" />
+      </node>
+    </node>
+    <node concept="n94m4" id="2iVMkjqWPpO" role="lGtFl">
+      <ref role="n9lRv" to="lyeg:5oC_XKWYMaC" resolve="DataStream" />
     </node>
   </node>
 </model>
