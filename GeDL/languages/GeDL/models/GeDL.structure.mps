@@ -131,6 +131,11 @@
     <property role="TrG5h" value="Feature" />
     <property role="34LRSv" value="feature" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="67ABhWZAcdQ" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623858983798" />
+      <property role="TrG5h" value="srid" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyi" id="5oC_XKWYMb8" role="1TKVEl">
       <property role="IQ2nx" value="6208379058501919432" />
       <property role="TrG5h" value="wkt" />
@@ -146,6 +151,11 @@
       <property role="IQ2nx" value="6208379058501919434" />
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
+    </node>
+    <node concept="1TJgyi" id="67ABhWZAriB" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623859045543" />
+      <property role="TrG5h" value="unit" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMd5">
@@ -205,15 +215,16 @@
     <property role="TrG5h" value="SpatialGranulariy" />
     <property role="34LRSv" value="granularity" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5oC_XKWYMdf" role="1TKVEl">
-      <property role="IQ2nx" value="6208379058501919567" />
-      <property role="TrG5h" value="distance" />
-      <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
-    </node>
     <node concept="1TJgyi" id="5oC_XKWYMdg" role="1TKVEl">
       <property role="IQ2nx" value="6208379058501919568" />
       <property role="TrG5h" value="SpatialRelation" />
       <ref role="AX2Wp" node="5oC_XKWYMds" resolve="SpatialRelation" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZAu8a" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859057162" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="distance" />
+      <ref role="20lvS9" node="5oC_XKWYMb9" resolve="Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMdh">
@@ -251,11 +262,17 @@
     <property role="34LRSv" value="time type" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5oC_XKWYMdq" role="1TKVEi">
-      <property role="IQ2ns" value="6208379058501919578" />
+    <node concept="1TJgyj" id="67ABhWZAWi9" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859180681" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="timeInstance" />
       <ref role="20lvS9" node="5oC_XKWYMdj" resolve="TimeInstance" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZAWDy" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859182178" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="timeWindow" />
+      <ref role="20lvS9" node="67ABhWZA_5Y" resolve="TimeWindow" />
     </node>
   </node>
   <node concept="25R3W" id="5oC_XKWYMds">
@@ -301,6 +318,12 @@
       <property role="20kJfa" value="granularity" />
       <ref role="20lvS9" node="5oC_XKWYMde" resolve="SpatialGranulariy" />
     </node>
+    <node concept="1TJgyj" id="67ABhWZAy8L" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859073585" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="detectionTime" />
+      <ref role="20lvS9" node="5oC_XKWYYOc" resolve="DetectionTime" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYYOc">
     <property role="EcuMT" value="6208379058501971212" />
@@ -311,8 +334,28 @@
       <property role="IQ2ns" value="6208379058501971213" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="timeType" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5oC_XKWYMdp" resolve="TimeType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="67ABhWZA_5Y">
+    <property role="EcuMT" value="7054498623859085694" />
+    <property role="TrG5h" value="TimeWindow" />
+    <property role="34LRSv" value="time window" />
+    <property role="R4oN_" value="time window for tiem type" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="67ABhWZA_FO" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859088116" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="StartTime" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5oC_XKWYMdj" resolve="TimeInstance" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZA_Ww" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859089184" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="EndTime" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5oC_XKWYMdj" resolve="TimeInstance" />
     </node>
   </node>
 </model>

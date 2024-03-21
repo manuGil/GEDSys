@@ -1,7 +1,7 @@
 # Event Formalizer
 
 ## Event Definition
-Users define events by providing a name, an update frequency (in milliseconds), and a set of properties. Event definitions are formatted as JSON objects, with the following pattern:
+Users define events by providing a name, an update frequency (in milliseconds), and a set of properties. *update frequency* controls how often data is pushed to the event processing engine (in a real scenario, that is no necessary because data is pushed to the event engine as soon as it is registered in the sensor layer).  Event definitions are formatted as JSON objects, with the following pattern:
 
 ```json
 {

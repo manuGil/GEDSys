@@ -33,6 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTime = createDescriptorForTime();
   /*package*/ final ConceptDescriptor myConceptTimeInstance = createDescriptorForTimeInstance();
   /*package*/ final ConceptDescriptor myConceptTimeType = createDescriptorForTimeType();
+  /*package*/ final ConceptDescriptor myConceptTimeWindow = createDescriptorForTimeWindow();
   /*package*/ final EnumerationDescriptor myEnumerationSpatialRelation = new EnumerationDescriptor_SpatialRelation();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -48,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
   }
 
   @Override
@@ -89,6 +90,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTimeInstance;
       case LanguageConceptSwitch.TimeType:
         return myConceptTimeType;
+      case LanguageConceptSwitch.TimeWindow:
+        return myConceptTimeWindow;
       default:
         return null;
     }
@@ -164,6 +167,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("condition", 0x562897dc3cfbed08L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L).optional(true).ordered(true).multiple(false).origin("6208379058501971208").done();
     b.aggregate("extent", 0x562897dc3cfbed09L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c2L).optional(true).ordered(true).multiple(false).origin("6208379058501971209").done();
     b.aggregate("granularity", 0x562897dc3cfbed0aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb234eL).optional(true).ordered(true).multiple(false).origin("6208379058501971210").done();
+    b.aggregate("detectionTime", 0x61e69d1f3f9a2231L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed0cL).optional(true).ordered(true).multiple(false).origin("7054498623859073585").done();
     b.alias("event rule");
     return b.create();
   }
@@ -172,7 +176,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501971212");
     b.version(3);
-    b.aggregate("timeType", 0x562897dc3cfbed0dL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L).optional(false).ordered(true).multiple(false).origin("6208379058501971213").done();
+    b.aggregate("timeType", 0x562897dc3cfbed0dL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L).optional(true).ordered(true).multiple(false).origin("6208379058501971213").done();
     b.alias("detection time");
     return b.create();
   }
@@ -182,6 +186,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919433");
     b.version(3);
     b.property("value", 0x562897dc3cfb22caL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("6208379058501919434").done();
+    b.property("unit", 0x61e69d1f3f99b4a7L).type(PrimitiveTypeId.STRING).origin("7054498623859045543").done();
     b.alias("distance");
     return b.create();
   }
@@ -219,6 +224,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919431");
     b.version(3);
+    b.property("srid", 0x61e69d1f3f98c376L).type(PrimitiveTypeId.INTEGER).origin("7054498623858983798").done();
     b.property("wkt", 0x562897dc3cfb22c8L).type(PrimitiveTypeId.STRING).origin("6208379058501919432").done();
     b.alias("feature");
     return b.create();
@@ -228,8 +234,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919566");
     b.version(3);
-    b.property("distance", 0x562897dc3cfb234fL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("6208379058501919567").done();
     b.property("SpatialRelation", 0x562897dc3cfb2350L).type(MetaIdFactory.dataTypeId(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb235cL)).origin("6208379058501919568").done();
+    b.aggregate("distance", 0x61e69d1f3f99e20aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c9L).optional(true).ordered(true).multiple(false).origin("7054498623859057162").done();
     b.alias("granularity");
     return b.create();
   }
@@ -257,8 +263,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919577");
     b.version(3);
-    b.aggregate("timeInstance", 0x562897dc3cfb235aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(true).ordered(true).multiple(false).origin("6208379058501919578").done();
+    b.aggregate("timeInstance", 0x61e69d1f3f9bc489L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(true).ordered(true).multiple(false).origin("7054498623859180681").done();
+    b.aggregate("timeWindow", 0x61e69d1f3f9bca62L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL).optional(true).ordered(true).multiple(false).origin("7054498623859182178").done();
     b.alias("time type");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTimeWindow() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "TimeWindow", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL);
+    b.class_(false, false, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859085694");
+    b.version(3);
+    b.aggregate("StartTime", 0x61e69d1f3f9a5af4L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(false).ordered(true).multiple(false).origin("7054498623859088116").done();
+    b.aggregate("EndTime", 0x61e69d1f3f9a5f20L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(false).ordered(true).multiple(false).origin("7054498623859089184").done();
+    b.alias("time window");
     return b.create();
   }
 }

@@ -26,6 +26,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Time;
   private ConceptPresentation props_TimeInstance;
   private ConceptPresentation props_TimeType;
+  private ConceptPresentation props_TimeWindow;
 
   @Override
   @Nullable
@@ -152,6 +153,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TimeType = cpb.create();
         }
         return props_TimeType;
+      case LanguageConceptSwitch.TimeWindow:
+        if (props_TimeWindow == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("time window for tiem type");
+          cpb.rawPresentation("time window");
+          props_TimeWindow = cpb.create();
+        }
+        return props_TimeWindow;
     }
     return null;
   }

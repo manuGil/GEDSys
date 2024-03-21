@@ -26,6 +26,7 @@ public final class LanguageConceptSwitch {
   public static final int Time = 14;
   public static final int TimeInstance = 15;
   public static final int TimeType = 16;
+  public static final int TimeWindow = 17;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL);
@@ -46,6 +47,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfb2351L, Time);
     builder.put(0x562897dc3cfb2353L, TimeInstance);
     builder.put(0x562897dc3cfb2359L, TimeType);
+    builder.put(0x61e69d1f3f9a517eL, TimeWindow);
     myIndex = builder.seal();
   }
 
