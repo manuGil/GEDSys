@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptComparison = createDescriptorForComparison();
   /*package*/ final ConceptDescriptor myConceptCondition = createDescriptorForCondition();
+  /*package*/ final ConceptDescriptor myConceptConditionType = createDescriptorForConditionType();
   /*package*/ final ConceptDescriptor myConceptDataStream = createDescriptorForDataStream();
   /*package*/ final ConceptDescriptor myConceptDataStreamList = createDescriptorForDataStreamList();
   /*package*/ final ConceptDescriptor myConceptDateTime = createDescriptorForDateTime();
@@ -52,7 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
   }
 
   @Override
@@ -63,6 +64,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptComparison;
       case LanguageConceptSwitch.Condition:
         return myConceptCondition;
+      case LanguageConceptSwitch.ConditionType:
+        return myConceptConditionType;
       case LanguageConceptSwitch.DataStream:
         return myConceptDataStream;
       case LanguageConceptSwitch.DataStreamList:
@@ -116,8 +119,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForComparison() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Comparison", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L);
     b.class_(false, false, false);
+    // extends: GeDL.structure.ConditionType
+    b.super_(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9e4ad0L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919395");
     b.version(3);
+    b.property("ComparisonOperator", 0x61e69d1f3f9dee76L).type(PrimitiveTypeId.STRING).origin("7054498623859322486").done();
+    b.property("Value", 0x61e69d1f3f9e5839L).type(PrimitiveTypeId.STRING).origin("7054498623859349561").done();
+    b.associate("PhenomenaName", 0x61e69d1f3f9e5ebdL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(false).origin("7054498623859351229").done();
+    b.alias("comparison");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCondition() {
@@ -125,13 +134,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919397");
     b.version(3);
-    b.property("expression", 0x562897dc3cfb22a6L).type(PrimitiveTypeId.STRING).origin("6208379058501919398").done();
+    b.aggregate("comparison", 0x61e69d1f3f9db1e4L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L).optional(false).ordered(true).multiple(true).origin("7054498623859306980").done();
     b.alias("condition");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConditionType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "ConditionType", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9e4ad0L);
+    b.class_(false, true, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859346128");
+    b.version(3);
+    b.alias("condition type");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDataStream() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "DataStream", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919400");
     b.version(3);
     b.property("PhenomenonName", 0x562897dc3cfb22a9L).type(PrimitiveTypeId.STRING).origin("6208379058501919401").done();
@@ -245,6 +263,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919565");
     b.version(3);
+    b.associate("PhenomenaName", 0x61e69d1f3f9e1beaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(false).origin("7054498623859334122").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFeature() {

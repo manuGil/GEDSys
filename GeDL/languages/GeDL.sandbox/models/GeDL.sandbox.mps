@@ -51,6 +51,12 @@
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
         <property id="6208379058501919398" name="expression" index="1EOVlU" />
+        <child id="7054498623859306980" name="comparison" index="1uuMNV" />
+      </concept>
+      <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
+        <property id="7054498623859349561" name="Value" index="1uuckA" />
+        <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
+        <reference id="7054498623859351229" name="PhenomenaName" index="1uucey" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -70,32 +76,9 @@
       <property role="1EOVlP" value="co2" />
     </node>
   </node>
-  <node concept="1EOVip" id="ETw4jfDx06">
-    <property role="TrG5h" value="HighRisk" />
-    <node concept="1EORFp" id="ETw4jfDx09" role="3ANvmg">
-      <node concept="1EOVlT" id="ETw4jfDx0b" role="1EORFk">
-        <property role="1EOVlU" value="pm25 &gt; 15" />
-      </node>
-    </node>
-    <node concept="1EORFp" id="ETw4jfDxfU" role="3ANvmg">
-      <node concept="1EOVlT" id="ETw4jfDxfY" role="1EORFk">
-        <property role="1EOVlU" value="humidity &lt; 40" />
-      </node>
-      <node concept="1EORFg" id="67ABhWZATbE" role="1uvbWI" />
-    </node>
-    <node concept="1EOVlO" id="ETw4jfDx07" role="3ANvml">
-      <property role="1EOVlP" value="pm25" />
-    </node>
-    <node concept="1EOVlO" id="ETw4jfDxfR" role="3ANvml">
-      <property role="1EOVlP" value="humidity" />
-    </node>
-  </node>
   <node concept="1EOVip" id="67ABhWZ_Mfe">
     <property role="TrG5h" value="HotDay" />
     <node concept="1EORFp" id="67ABhWZ_Mfh" role="3ANvmg">
-      <node concept="1EOVlT" id="67ABhWZ_Mfj" role="1EORFk">
-        <property role="1EOVlU" value="Temperature &gt; 20.0" />
-      </node>
       <node concept="1EOVku" id="67ABhWZ_Mfl" role="1EORFl">
         <node concept="1EOVkr" id="67ABhWZ_Mfn" role="1EOVko">
           <property role="1EOVkk" value="&quot;POLYGON((30 10, 40 40, 20 40, 10 20, 30 10))&quot;" />
@@ -123,9 +106,37 @@
           </node>
         </node>
       </node>
+      <node concept="1EOVlT" id="67ABhWZBCLD" role="1EORFk">
+        <node concept="1EOVlZ" id="67ABhWZBCLE" role="1uuMNV">
+          <property role="1uuckA" value="20.0f" />
+          <property role="1uuRdD" value="&gt;" />
+          <ref role="1uucey" node="67ABhWZ_Mff" resolve="Temp" />
+        </node>
+      </node>
     </node>
     <node concept="1EOVlO" id="67ABhWZ_Mff" role="3ANvml">
       <property role="1EOVlP" value="Temperature" />
+      <property role="TrG5h" value="Temp" />
+    </node>
+  </node>
+  <node concept="1EOVip" id="ETw4jfDx06">
+    <property role="TrG5h" value="HighRisk" />
+    <node concept="1EORFp" id="ETw4jfDx09" role="3ANvmg">
+      <node concept="1EOVlT" id="ETw4jfDx0b" role="1EORFk">
+        <property role="1EOVlU" value="pm25 &gt; 15" />
+      </node>
+    </node>
+    <node concept="1EORFp" id="ETw4jfDxfU" role="3ANvmg">
+      <node concept="1EOVlT" id="ETw4jfDxfY" role="1EORFk">
+        <property role="1EOVlU" value="humidity &lt; 40" />
+      </node>
+      <node concept="1EORFg" id="67ABhWZATbE" role="1uvbWI" />
+    </node>
+    <node concept="1EOVlO" id="ETw4jfDx07" role="3ANvml">
+      <property role="1EOVlP" value="pm25" />
+    </node>
+    <node concept="1EOVlO" id="ETw4jfDxfR" role="3ANvml">
+      <property role="1EOVlP" value="humidity" />
     </node>
   </node>
 </model>

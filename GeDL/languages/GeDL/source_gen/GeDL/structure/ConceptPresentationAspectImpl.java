@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Comparison;
   private ConceptPresentation props_Condition;
+  private ConceptPresentation props_ConditionType;
   private ConceptPresentation props_DataStream;
   private ConceptPresentation props_DataStreamList;
   private ConceptPresentation props_DateTime;
@@ -38,7 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Comparison:
         if (props_Comparison == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Comparison");
+          cpb.rawPresentation("comparison");
           props_Comparison = cpb.create();
         }
         return props_Comparison;
@@ -49,11 +50,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Condition = cpb.create();
         }
         return props_Condition;
+      case LanguageConceptSwitch.ConditionType:
+        if (props_ConditionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConditionType = cpb.create();
+        }
+        return props_ConditionType;
       case LanguageConceptSwitch.DataStream:
         if (props_DataStream == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("data stream");
-          cpb.rawPresentation("DataStream");
+          cpb.presentationByName();
           props_DataStream = cpb.create();
         }
         return props_DataStream;
@@ -131,7 +138,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Expression:
         if (props_Expression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Expression");
+          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb234dL, 0x61e69d1f3f9e1beaL, "PhenomenaName", "", "");
           props_Expression = cpb.create();
         }
         return props_Expression;

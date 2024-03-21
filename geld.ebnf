@@ -123,6 +123,9 @@ Year ::= Digit Digit Digit Digit
 Month ::= Digit Digit
 Day ::= Digit Digit
 
+
+SRID ::= Digit Digit Digit Digit
+
 Feature ::= "POINT" "(" coordinates ")"
         | "LINESTRING" "(" coordinates"," coordinates  ("," coordinates)* ")" 
         | "POLYGON" "((" coordinates"," coordinates"," coordinates  ("," coordinates)* "))"

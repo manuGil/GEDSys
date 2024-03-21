@@ -56,17 +56,36 @@
   <node concept="1TIwiD" id="5oC_XKWYMaz">
     <property role="EcuMT" value="6208379058501919395" />
     <property role="TrG5h" value="Comparison" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <property role="34LRSv" value="comparison" />
+    <ref role="1TJDcQ" node="67ABhWZB$Fg" resolve="ConditionType" />
+    <node concept="1TJgyi" id="67ABhWZBuTQ" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623859322486" />
+      <property role="TrG5h" value="ComparisonOperator" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="67ABhWZB_wT" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623859349561" />
+      <property role="TrG5h" value="Value" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZB_UX" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859351229" />
+      <property role="20kJfa" value="PhenomenaName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMa_">
     <property role="EcuMT" value="6208379058501919397" />
     <property role="TrG5h" value="Condition" />
     <property role="34LRSv" value="condition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5oC_XKWYMaA" role="1TKVEl">
-      <property role="IQ2nx" value="6208379058501919398" />
-      <property role="TrG5h" value="expression" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="67ABhWZBr7$" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859306980" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="comparison" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="5oC_XKWYMaz" resolve="Comparison" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMaC">
@@ -78,6 +97,9 @@
       <property role="IQ2nx" value="6208379058501919401" />
       <property role="TrG5h" value="PhenomenonName" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="67ABhWZBCXT" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMaG">
@@ -209,6 +231,12 @@
     <property role="EcuMT" value="6208379058501919565" />
     <property role="TrG5h" value="Expression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="67ABhWZBxJE" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859334122" />
+      <property role="20kJfa" value="PhenomenaName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMde">
     <property role="EcuMT" value="6208379058501919566" />
@@ -409,6 +437,13 @@
       <property role="TrG5h" value="unit" />
       <ref role="AX2Wp" node="67ABhWZBfnL" resolve="TimeUnit" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="67ABhWZB$Fg">
+    <property role="EcuMT" value="7054498623859346128" />
+    <property role="TrG5h" value="ConditionType" />
+    <property role="34LRSv" value="condition type" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>
 
