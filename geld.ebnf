@@ -67,6 +67,7 @@ FunctionName ::= "sum" | "avg" | "min" | "max" | "count" | "first" | "last"
 
 
 TODO: pick up on event and EventDefinition
+TODO: Conditions will be easier to implement by treating the cases as types
 Condition ::= "cond" Comparison (LogicalOperator Comparison)*
           | Negation "(" Condition ")"
 
