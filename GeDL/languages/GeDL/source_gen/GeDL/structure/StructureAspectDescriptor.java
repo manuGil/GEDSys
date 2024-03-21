@@ -25,6 +25,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDetectionRule = createDescriptorForDetectionRule();
   /*package*/ final ConceptDescriptor myConceptDetectionTime = createDescriptorForDetectionTime();
   /*package*/ final ConceptDescriptor myConceptDistance = createDescriptorForDistance();
+  /*package*/ final ConceptDescriptor myConceptDuration = createDescriptorForDuration();
+  /*package*/ final ConceptDescriptor myConceptDurationWithUnits = createDescriptorForDurationWithUnits();
   /*package*/ final ConceptDescriptor myConceptEvent = createDescriptorForEvent();
   /*package*/ final ConceptDescriptor myConceptEventDefinition = createDescriptorForEventDefinition();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
@@ -34,6 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTimeInstance = createDescriptorForTimeInstance();
   /*package*/ final ConceptDescriptor myConceptTimeType = createDescriptorForTimeType();
   /*package*/ final ConceptDescriptor myConceptTimeWindow = createDescriptorForTimeWindow();
+  /*package*/ final EnumerationDescriptor myEnumerationDurationUnit = new EnumerationDescriptor_DurationUnit();
   /*package*/ final EnumerationDescriptor myEnumerationSpatialRelation = new EnumerationDescriptor_SpatialRelation();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -49,7 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
   }
 
   @Override
@@ -74,6 +77,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptDetectionTime;
       case LanguageConceptSwitch.Distance:
         return myConceptDistance;
+      case LanguageConceptSwitch.Duration:
+        return myConceptDuration;
+      case LanguageConceptSwitch.DurationWithUnits:
+        return myConceptDurationWithUnits;
       case LanguageConceptSwitch.Event:
         return myConceptEvent;
       case LanguageConceptSwitch.EventDefinition:
@@ -99,7 +106,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationSpatialRelation);
+    return Arrays.asList(myEnumerationDurationUnit, myEnumerationSpatialRelation);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -190,6 +197,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("distance");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForDuration() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Duration", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9ceee8L);
+    b.class_(false, false, false);
+    // extends: GeDL.structure.TimeType
+    b.super_(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859257064");
+    b.version(3);
+    b.aggregate("time", 0x61e69d1f3f9cf2abL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2351L).optional(true).ordered(true).multiple(false).origin("7054498623859258027").done();
+    b.aggregate("durationWithUnits", 0x61e69d1f3f9d0664L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf8d6L).optional(true).ordered(true).multiple(false).origin("7054498623859263076").done();
+    b.alias("duration");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDurationWithUnits() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "DurationWithUnits", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf8d6L);
+    b.class_(false, false, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859259606");
+    b.version(3);
+    b.property("value", 0x61e69d1f3f9cfb2dL).type(PrimitiveTypeId.INTEGER).origin("7054498623859260205").done();
+    b.property("unit", 0x61e69d1f3f9cfe73L).type(MetaIdFactory.dataTypeId(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf5f1L)).origin("7054498623859261043").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForEvent() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Event", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L);
     b.class_(false, false, true);
@@ -251,6 +279,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForTimeInstance() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "TimeInstance", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L);
     b.class_(false, false, false);
+    // extends: GeDL.structure.TimeType
+    b.super_(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919571");
     b.version(3);
     b.aggregate("time", 0x562897dc3cfb2354L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2351L).optional(true).ordered(true).multiple(false).origin("6208379058501919572").done();
@@ -263,14 +293,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919577");
     b.version(3);
-    b.aggregate("timeInstance", 0x61e69d1f3f9bc489L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(true).ordered(true).multiple(false).origin("7054498623859180681").done();
-    b.aggregate("timeWindow", 0x61e69d1f3f9bca62L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL).optional(true).ordered(true).multiple(false).origin("7054498623859182178").done();
-    b.alias("time type");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTimeWindow() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "TimeWindow", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL);
     b.class_(false, false, false);
+    // extends: GeDL.structure.TimeType
+    b.super_(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859085694");
     b.version(3);
     b.aggregate("StartTime", 0x61e69d1f3f9a5af4L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2353L).optional(false).ordered(true).multiple(false).origin("7054498623859088116").done();

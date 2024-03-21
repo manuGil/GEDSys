@@ -18,15 +18,17 @@ public final class LanguageConceptSwitch {
   public static final int DetectionRule = 6;
   public static final int DetectionTime = 7;
   public static final int Distance = 8;
-  public static final int Event = 9;
-  public static final int EventDefinition = 10;
-  public static final int Expression = 11;
-  public static final int Feature = 12;
-  public static final int SpatialGranulariy = 13;
-  public static final int Time = 14;
-  public static final int TimeInstance = 15;
-  public static final int TimeType = 16;
-  public static final int TimeWindow = 17;
+  public static final int Duration = 9;
+  public static final int DurationWithUnits = 10;
+  public static final int Event = 11;
+  public static final int EventDefinition = 12;
+  public static final int Expression = 13;
+  public static final int Feature = 14;
+  public static final int SpatialGranulariy = 15;
+  public static final int Time = 16;
+  public static final int TimeInstance = 17;
+  public static final int TimeType = 18;
+  public static final int TimeWindow = 19;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL);
@@ -39,6 +41,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfbed05L, DetectionRule);
     builder.put(0x562897dc3cfbed0cL, DetectionTime);
     builder.put(0x562897dc3cfb22c9L, Distance);
+    builder.put(0x61e69d1f3f9ceee8L, Duration);
+    builder.put(0x61e69d1f3f9cf8d6L, DurationWithUnits);
     builder.put(0x562897dc3cfb2345L, Event);
     builder.put(0x562897dc3cfb2348L, EventDefinition);
     builder.put(0x562897dc3cfb234dL, Expression);

@@ -18,6 +18,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DetectionRule;
   private ConceptPresentation props_DetectionTime;
   private ConceptPresentation props_Distance;
+  private ConceptPresentation props_Duration;
+  private ConceptPresentation props_DurationWithUnits;
   private ConceptPresentation props_Event;
   private ConceptPresentation props_EventDefinition;
   private ConceptPresentation props_Expression;
@@ -97,6 +99,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Distance = cpb.create();
         }
         return props_Distance;
+      case LanguageConceptSwitch.Duration:
+        if (props_Duration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("duration");
+          props_Duration = cpb.create();
+        }
+        return props_Duration;
+      case LanguageConceptSwitch.DurationWithUnits:
+        if (props_DurationWithUnits == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DurationWithUnits");
+          props_DurationWithUnits = cpb.create();
+        }
+        return props_DurationWithUnits;
       case LanguageConceptSwitch.Event:
         if (props_Event == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
