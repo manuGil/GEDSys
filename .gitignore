@@ -11,5 +11,7 @@ demo/*
 .vscode/*
 venv/*
 
+
 # MPS
 GeDL/languages/GeDL.sandbox/
+.DS_Store
