@@ -100,7 +100,7 @@
       <property role="IQ2ns" value="7054498623859441606" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Phenomena" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
@@ -196,7 +196,6 @@
       <property role="IQ2ns" value="7490970978449142783" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="dataStreams" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
     </node>
     <node concept="1TJgyj" id="6vPhAE1ebfU" role="1TKVEi">
@@ -205,6 +204,12 @@
       <property role="20kJfa" value="detectionRules" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5oC_XKWYYO5" resolve="DetectionRule" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZCN3F" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859667179" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="notification" />
+      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMd8">

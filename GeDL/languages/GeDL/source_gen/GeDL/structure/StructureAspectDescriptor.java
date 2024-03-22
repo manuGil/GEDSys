@@ -158,7 +158,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919400");
     b.version(3);
-    b.aggregate("Phenomena", 0x61e69d1f3f9fbfc6L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("7054498623859441606").done();
+    b.aggregate("Phenomena", 0x61e69d1f3f9fbfc6L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(false).origin("7054498623859441606").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDataStreamList() {
@@ -248,8 +248,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919557");
     b.version(3);
-    b.aggregate("dataStreams", 0x67f5466a8138b3ffL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(true).ordered(true).multiple(true).origin("7490970978449142783").done();
+    b.aggregate("dataStreams", 0x67f5466a8138b3ffL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(true).ordered(true).multiple(false).origin("7490970978449142783").done();
     b.aggregate("detectionRules", 0x67f5466a8138b3faL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L).optional(true).ordered(true).multiple(true).origin("7490970978449142778").done();
+    b.aggregate("notification", 0x61e69d1f3fa330ebL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("7054498623859667179").done();
     b.alias("event");
     return b.create();
   }

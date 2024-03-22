@@ -10,6 +10,10 @@
       <concept id="7054498623859439990" name="GeDL.structure.Phenomenon" flags="ng" index="1uuihD">
         <property id="7054498623859440563" name="name" index="1uuiqG" />
       </concept>
+      <concept id="7054498623859435217" name="GeDL.structure.Notification" flags="ng" index="1uujJe">
+        <property id="7054498623859467982" name="NotificaitonPayload" index="1uhFJh" />
+        <reference id="7054498623859437172" name="eventName" index="1uujdF" />
+      </concept>
       <concept id="7054498623859257064" name="GeDL.structure.Duration" flags="ng" index="1uuBfR" />
       <concept id="7054498623859085694" name="GeDL.structure.TimeWindow" flags="ng" index="1uvcLx">
         <child id="7054498623859089184" name="EndTime" index="1uvc8Z" />
@@ -32,6 +36,7 @@
         <child id="7054498623859057162" name="distance" index="1uvRWl" />
       </concept>
       <concept id="6208379058501919557" name="GeDL.structure.Event" flags="ng" index="1EOVip">
+        <child id="7054498623859667179" name="notifications" index="1uhqRO" />
         <child id="7490970978449142778" name="detectionRules" index="3ANvmg" />
         <child id="7490970978449142783" name="dataStreams" index="3ANvml" />
       </concept>
@@ -124,6 +129,11 @@
           <ref role="1uucey" node="67ABhWZC6MA" resolve="Temp" />
         </node>
       </node>
+    </node>
+    <node concept="1uujJe" id="67ABhWZDc5B" role="1uhqRO">
+      <property role="TrG5h" value="AlertHotDay" />
+      <property role="1uhFJh" value="temperature" />
+      <ref role="1uujdF" node="67ABhWZ_Mfe" resolve="HotDay" />
     </node>
   </node>
   <node concept="1EOVip" id="ETw4jfDx06">
