@@ -10,9 +10,11 @@
   <imports>
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -25,6 +27,9 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -203,7 +208,34 @@
       <node concept="356sEK" id="ETw4jfDeQ6" role="383Ya9">
         <node concept="2EixSi" id="ETw4jfDeQ9" role="2EinRH" />
         <node concept="356sEF" id="ETw4jfDeQa" role="356sEH">
-          <property role="TrG5h" value="    receiver.url = &quot;http://localhost:8006/production&quot;, " />
+          <property role="TrG5h" value="    receiver.url = &quot;http://localhost:8006/" />
+        </node>
+        <node concept="356sEF" id="49T52aZAxU2" role="356sEH">
+          <property role="TrG5h" value="eventSlug" />
+          <node concept="17Uvod" id="49T52aZAxVl" role="lGtFl">
+            <property role="2qtEX9" value="name" />
+            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+            <node concept="3zFVjK" id="49T52aZAxVo" role="3zH0cK">
+              <node concept="3clFbS" id="49T52aZAxVp" role="2VODD2">
+                <node concept="3clFbF" id="49T52aZAxVv" role="3cqZAp">
+                  <node concept="2OqwBi" id="49T52aZAzpy" role="3clFbG">
+                    <node concept="2OqwBi" id="49T52aZAxVq" role="2Oq$k0">
+                      <node concept="3TrcHB" id="49T52aZAxVt" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                      <node concept="30H73N" id="49T52aZAxVu" role="2Oq$k0" />
+                    </node>
+                    <node concept="liA8E" id="49T52aZA$jT" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.toLowerCase()" resolve="toLowerCase" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEF" id="49T52aZAxU3" role="356sEH">
+          <property role="TrG5h" value="&quot;, " />
         </node>
       </node>
       <node concept="356sEK" id="ETw4jfDeQc" role="383Ya9">
