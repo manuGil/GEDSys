@@ -3,6 +3,7 @@
 
 **TODO:**
 - Check how to register siddhiql apps via the api
+R:  read notes on siddhi runner repo
 
 
 
@@ -30,5 +31,10 @@ Minimal example of a Siddhi app:
 @info(name = "testquery") // detection rules
 from testreceiverStream select * insert into testforwarderStream; // 
 ```
+
+### Patterns: a case for realtime applications
+
+https://siddhi.io/en/v5.1/docs/examples/simple-pattern/
+
 
 # Try a simple app first.

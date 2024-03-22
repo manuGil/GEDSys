@@ -32,6 +32,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEventDefinition = createDescriptorForEventDefinition();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
   /*package*/ final ConceptDescriptor myConceptFeature = createDescriptorForFeature();
+  /*package*/ final ConceptDescriptor myConceptNotification = createDescriptorForNotification();
+  /*package*/ final ConceptDescriptor myConceptPhenomenon = createDescriptorForPhenomenon();
   /*package*/ final ConceptDescriptor myConceptSpatialGranulariy = createDescriptorForSpatialGranulariy();
   /*package*/ final ConceptDescriptor myConceptTime = createDescriptorForTime();
   /*package*/ final ConceptDescriptor myConceptTimeInstance = createDescriptorForTimeInstance();
@@ -53,7 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptNotification, myConceptPhenomenon, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow);
   }
 
   @Override
@@ -92,6 +94,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptExpression;
       case LanguageConceptSwitch.Feature:
         return myConceptFeature;
+      case LanguageConceptSwitch.Notification:
+        return myConceptNotification;
+      case LanguageConceptSwitch.Phenomenon:
+        return myConceptPhenomenon;
       case LanguageConceptSwitch.SpatialGranulariy:
         return myConceptSpatialGranulariy;
       case LanguageConceptSwitch.Time:
@@ -152,7 +158,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919400");
     b.version(3);
-    b.property("PhenomenonName", 0x562897dc3cfb22a9L).type(PrimitiveTypeId.STRING).origin("6208379058501919401").done();
+    b.aggregate("Phenomena", 0x61e69d1f3f9fbfc6L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("7054498623859441606").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDataStreamList() {
@@ -250,9 +256,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForEventDefinition() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "EventDefinition", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2348L);
     b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919560");
     b.version(3);
-    b.property("eventName", 0x562897dc3cfb2349L).type(PrimitiveTypeId.STRING).origin("6208379058501919561").done();
     b.associate("datastreams", 0x562897dc3cfb234aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(true).origin("6208379058501919562").done();
     b.associate("condition", 0x562897dc3cfb234bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L).optional(true).origin("6208379058501919563").done();
     b.alias("event definition");
@@ -274,6 +280,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("srid", 0x61e69d1f3f98c376L).type(PrimitiveTypeId.INTEGER).origin("7054498623858983798").done();
     b.property("wkt", 0x562897dc3cfb22c8L).type(PrimitiveTypeId.STRING).origin("6208379058501919432").done();
     b.alias("feature");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNotification() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Notification", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859435217");
+    b.version(3);
+    b.property("NotificaitonPayload", 0x61e69d1f3fa026ceL).type(PrimitiveTypeId.STRING).origin("7054498623859467982").done();
+    b.associate("eventName", 0x61e69d1f3f9fae74L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).origin("7054498623859437172").done();
+    b.alias("notification");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPhenomenon() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Phenomenon", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L);
+    b.class_(false, false, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859439990");
+    b.version(3);
+    b.property("name", 0x61e69d1f3f9fbbb3L).type(PrimitiveTypeId.STRING).origin("7054498623859440563").done();
+    b.alias("phenomenon");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpatialGranulariy() {

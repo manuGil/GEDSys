@@ -7,6 +7,9 @@
   <imports />
   <registry>
     <language id="35b540ea-51fc-45c2-8fb0-1d48ca99c3db" name="GeDL">
+      <concept id="7054498623859439990" name="GeDL.structure.Phenomenon" flags="ng" index="1uuihD">
+        <property id="7054498623859440563" name="name" index="1uuiqG" />
+      </concept>
       <concept id="7054498623859257064" name="GeDL.structure.Duration" flags="ng" index="1uuBfR" />
       <concept id="7054498623859085694" name="GeDL.structure.TimeWindow" flags="ng" index="1uvcLx">
         <child id="7054498623859089184" name="EndTime" index="1uvc8Z" />
@@ -47,10 +50,9 @@
         <property id="6208379058501919418" name="datetime" index="1EOVlA" />
       </concept>
       <concept id="6208379058501919400" name="GeDL.structure.DataStream" flags="ng" index="1EOVlO">
-        <property id="6208379058501919401" name="PhenomenonName" index="1EOVlP" />
+        <child id="7054498623859441606" name="Phenomena" index="1uuibp" />
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
-        <property id="6208379058501919398" name="expression" index="1EOVlU" />
         <child id="7054498623859306980" name="comparison" index="1uuMNV" />
       </concept>
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
@@ -67,17 +69,26 @@
   </registry>
   <node concept="1EOVip" id="1ygjV_Uy5J7">
     <property role="TrG5h" value="Pollution" />
+    <node concept="1EOVlO" id="67ABhWZC6R$" role="3ANvml">
+      <property role="TrG5h" value="pm25" />
+      <node concept="1uuihD" id="67ABhWZC6R_" role="1uuibp">
+        <property role="1uuiqG" value="pm25" />
+      </node>
+    </node>
     <node concept="1EORFp" id="1ygjV_Uy5Ja" role="3ANvmg">
       <node concept="1EORFg" id="67ABhWZBpjF" role="1uvbWI">
         <node concept="1uuBfR" id="67ABhWZBpjH" role="1EORFh" />
       </node>
     </node>
-    <node concept="1EOVlO" id="1ygjV_Uy5J8" role="3ANvml">
-      <property role="1EOVlP" value="co2" />
-    </node>
   </node>
   <node concept="1EOVip" id="67ABhWZ_Mfe">
     <property role="TrG5h" value="HotDay" />
+    <node concept="1EOVlO" id="67ABhWZC6MA" role="3ANvml">
+      <property role="TrG5h" value="Temp" />
+      <node concept="1uuihD" id="67ABhWZC6MB" role="1uuibp">
+        <property role="1uuiqG" value="Temperature" />
+      </node>
+    </node>
     <node concept="1EORFp" id="67ABhWZ_Mfh" role="3ANvmg">
       <node concept="1EOVku" id="67ABhWZ_Mfl" role="1EORFl">
         <node concept="1EOVkr" id="67ABhWZ_Mfn" role="1EOVko">
@@ -107,37 +118,16 @@
         </node>
       </node>
       <node concept="1EOVlT" id="67ABhWZBCLD" role="1EORFk">
-        <node concept="1EOVlZ" id="67ABhWZBCLE" role="1uuMNV">
-          <property role="1uuckA" value="20.0f" />
+        <node concept="1EOVlZ" id="67ABhWZC6Ry" role="1uuMNV">
           <property role="1uuRdD" value="&gt;" />
-          <ref role="1uucey" node="67ABhWZ_Mff" resolve="Temp" />
+          <property role="1uuckA" value="20.0f" />
+          <ref role="1uucey" node="67ABhWZC6MA" resolve="Temp" />
         </node>
       </node>
     </node>
-    <node concept="1EOVlO" id="67ABhWZ_Mff" role="3ANvml">
-      <property role="1EOVlP" value="Temperature" />
-      <property role="TrG5h" value="Temp" />
-    </node>
   </node>
   <node concept="1EOVip" id="ETw4jfDx06">
-    <property role="TrG5h" value="HighRisk" />
-    <node concept="1EORFp" id="ETw4jfDx09" role="3ANvmg">
-      <node concept="1EOVlT" id="ETw4jfDx0b" role="1EORFk">
-        <property role="1EOVlU" value="pm25 &gt; 15" />
-      </node>
-    </node>
-    <node concept="1EORFp" id="ETw4jfDxfU" role="3ANvmg">
-      <node concept="1EOVlT" id="ETw4jfDxfY" role="1EORFk">
-        <property role="1EOVlU" value="humidity &lt; 40" />
-      </node>
-      <node concept="1EORFg" id="67ABhWZATbE" role="1uvbWI" />
-    </node>
-    <node concept="1EOVlO" id="ETw4jfDx07" role="3ANvml">
-      <property role="1EOVlP" value="pm25" />
-    </node>
-    <node concept="1EOVlO" id="ETw4jfDxfR" role="3ANvml">
-      <property role="1EOVlP" value="humidity" />
-    </node>
+    <property role="TrG5h" value="CompositeEvent" />
   </node>
 </model>
 

@@ -25,6 +25,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_EventDefinition;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
+  private ConceptPresentation props_Notification;
+  private ConceptPresentation props_Phenomenon;
   private ConceptPresentation props_SpatialGranulariy;
   private ConceptPresentation props_Time;
   private ConceptPresentation props_TimeInstance;
@@ -131,7 +133,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EventDefinition:
         if (props_EventDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("event definition");
+          cpb.presentationByName();
           props_EventDefinition = cpb.create();
         }
         return props_EventDefinition;
@@ -149,6 +151,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Feature = cpb.create();
         }
         return props_Feature;
+      case LanguageConceptSwitch.Notification:
+        if (props_Notification == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Notification = cpb.create();
+        }
+        return props_Notification;
+      case LanguageConceptSwitch.Phenomenon:
+        if (props_Phenomenon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("phenomenon");
+          props_Phenomenon = cpb.create();
+        }
+        return props_Phenomenon;
       case LanguageConceptSwitch.SpatialGranulariy:
         if (props_SpatialGranulariy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

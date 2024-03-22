@@ -116,7 +116,7 @@
                 <node concept="3clFbF" id="3f51INt_I_5" role="3cqZAp">
                   <node concept="2OqwBi" id="3f51INt_I_0" role="3clFbG">
                     <node concept="3TrcHB" id="3f51INt_I_3" role="2OqNvi">
-                      <ref role="3TsBF5" to="lyeg:5oC_XKWYMaD" resolve="PhenomenonName" />
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                     <node concept="30H73N" id="3f51INt_I_4" role="2Oq$k0" />
                   </node>
@@ -142,7 +142,7 @@
           <node concept="3clFbF" id="3f51INt_J3R" role="3cqZAp">
             <node concept="2OqwBi" id="3f51INt_J3M" role="3clFbG">
               <node concept="3TrcHB" id="3f51INt_J3P" role="2OqNvi">
-                <ref role="3TsBF5" to="lyeg:5oC_XKWYMaD" resolve="PhenomenonName" />
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
               <node concept="30H73N" id="3f51INt_J3Q" role="2Oq$k0" />
             </node>
@@ -186,7 +186,7 @@
       <node concept="356sEK" id="ETw4jfDePK" role="383Ya9">
         <node concept="2EixSi" id="ETw4jfDePN" role="2EinRH" />
         <node concept="356sEF" id="ETw4jfDePO" role="356sEH">
-          <property role="TrG5h" value="@App:description('A description of the counter app')" />
+          <property role="TrG5h" value="@App:description('A description of the app')" />
         </node>
       </node>
       <node concept="356sEK" id="ETw4jfDePQ" role="383Ya9">
@@ -222,9 +222,6 @@
           <property role="TrG5h" value=")" />
         </node>
       </node>
-      <node concept="356sEK" id="ETw4jfDeQo" role="383Ya9">
-        <node concept="2EixSi" id="ETw4jfDeQr" role="2EinRH" />
-      </node>
       <node concept="356sEK" id="ETw4jfDeQs" role="383Ya9">
         <node concept="2EixSi" id="ETw4jfDeQv" role="2EinRH" />
         <node concept="356sEF" id="ETw4jfDeQw" role="356sEH">
@@ -239,10 +236,10 @@
               <node concept="3clFbS" id="ETw4jfDxSe" role="2VODD2">
                 <node concept="3clFbF" id="ETw4jfDxSk" role="3cqZAp">
                   <node concept="2OqwBi" id="ETw4jfDxSf" role="3clFbG">
-                    <node concept="3TrcHB" id="ETw4jfDxSi" role="2OqNvi">
-                      <ref role="3TsBF5" to="lyeg:5oC_XKWYMaD" resolve="PhenomenonName" />
-                    </node>
                     <node concept="30H73N" id="ETw4jfDxSj" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="67ABhWZBZz7" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -253,10 +250,13 @@
           <property role="TrG5h" value=" (" />
         </node>
         <node concept="356sEF" id="ETw4jfDxuE" role="356sEH">
-          <property role="TrG5h" value="name string," />
+          <property role="TrG5h" value="observationId long," />
+        </node>
+        <node concept="356sEF" id="67ABhWZBS$L" role="356sEH">
+          <property role="TrG5h" value=" phenomenaTime string," />
         </node>
         <node concept="356sEF" id="ETw4jfDxuJ" role="356sEH">
-          <property role="TrG5h" value=" amount double" />
+          <property role="TrG5h" value=" result double, xCoord double, yCoord double" />
         </node>
         <node concept="356sEF" id="ETw4jfDxuP" role="356sEH">
           <property role="TrG5h" value=");" />

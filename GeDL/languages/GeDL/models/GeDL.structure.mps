@@ -93,13 +93,15 @@
     <property role="TrG5h" value="DataStream" />
     <property role="R4oN_" value="data stream" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5oC_XKWYMaD" role="1TKVEl">
-      <property role="IQ2nx" value="6208379058501919401" />
-      <property role="TrG5h" value="PhenomenonName" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="PrWs8" id="67ABhWZBCXT" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZBVZ6" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859441606" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Phenomena" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMaG">
@@ -211,11 +213,6 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="event definition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5oC_XKWYMd9" role="1TKVEl">
-      <property role="IQ2nx" value="6208379058501919561" />
-      <property role="TrG5h" value="eventName" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="5oC_XKWYMda" role="1TKVEi">
       <property role="IQ2ns" value="6208379058501919562" />
       <property role="20kJfa" value="datastreams" />
@@ -225,6 +222,9 @@
       <property role="IQ2ns" value="6208379058501919563" />
       <property role="20kJfa" value="condition" />
       <ref role="20lvS9" node="5oC_XKWYMa_" resolve="Condition" />
+    </node>
+    <node concept="PrWs8" id="67ABhWZBICU" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMdd">
@@ -444,6 +444,37 @@
     <property role="34LRSv" value="condition type" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="67ABhWZBUrh">
+    <property role="EcuMT" value="7054498623859435217" />
+    <property role="TrG5h" value="Notification" />
+    <property role="34LRSv" value="notification" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="PrWs8" id="67ABhWZBUzq" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="67ABhWZBUTO" role="1TKVEi">
+      <property role="IQ2ns" value="7054498623859437172" />
+      <property role="20kJfa" value="eventName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
+    </node>
+    <node concept="1TJgyi" id="67ABhWZC2re" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623859467982" />
+      <property role="TrG5h" value="NotificaitonPayload" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="67ABhWZBV_Q">
+    <property role="EcuMT" value="7054498623859439990" />
+    <property role="TrG5h" value="Phenomenon" />
+    <property role="34LRSv" value="phenomenon" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="67ABhWZBVIN" role="1TKVEl">
+      <property role="IQ2nx" value="7054498623859440563" />
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
   </node>
 </model>
 
