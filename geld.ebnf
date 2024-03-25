@@ -51,7 +51,10 @@ Datastream  ::=  "datastream" PhenomenonName  ";"
                 | "datastream" EventName"."PhenomenonName ";"
 
 EventName ::= Identifier
-PhenomenonName ::= Identifier
+PhenomenonName ::= Identifier ObservationType
+
+ObservationType ::= "category" | "count" | "measurement" | "truth" 
+
 
 DetectionRules ::= DetectionRule (';' DetectionRule)*
 

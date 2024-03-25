@@ -11,10 +11,9 @@
         <property id="7054498623859440563" name="name" index="1uuiqG" />
       </concept>
       <concept id="7054498623859435217" name="GeDL.structure.Notification" flags="ng" index="1uujJe">
-        <property id="7054498623859467982" name="NotificaitonPayload" index="1uhFJh" />
+        <reference id="6242174175648559184" name="payloadPhenomenon" index="1b1Dw7" />
         <reference id="7054498623859437172" name="eventName" index="1uujdF" />
       </concept>
-      <concept id="7054498623859257064" name="GeDL.structure.Duration" flags="ng" index="1uuBfR" />
       <concept id="7054498623859085694" name="GeDL.structure.TimeWindow" flags="ng" index="1uvcLx">
         <child id="7054498623859089184" name="EndTime" index="1uvc8Z" />
         <child id="7054498623859088116" name="StartTime" index="1uvcvF" />
@@ -36,7 +35,7 @@
         <child id="7054498623859057162" name="distance" index="1uvRWl" />
       </concept>
       <concept id="6208379058501919557" name="GeDL.structure.Event" flags="ng" index="1EOVip">
-        <child id="7054498623859667179" name="notifications" index="1uhqRO" />
+        <child id="7054498623859667179" name="notification" index="1uhqRO" />
         <child id="7490970978449142778" name="detectionRules" index="3ANvmg" />
         <child id="7490970978449142783" name="dataStreams" index="3ANvml" />
       </concept>
@@ -55,15 +54,10 @@
         <property id="6208379058501919418" name="datetime" index="1EOVlA" />
       </concept>
       <concept id="6208379058501919400" name="GeDL.structure.DataStream" flags="ng" index="1EOVlO">
-        <child id="7054498623859441606" name="Phenomena" index="1uuibp" />
+        <child id="7054498623859441606" name="Phenomenon" index="1uuibp" />
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
-        <child id="7054498623859306980" name="comparison" index="1uuMNV" />
-      </concept>
-      <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
-        <property id="7054498623859349561" name="Value" index="1uuckA" />
-        <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
-        <reference id="7054498623859351229" name="PhenomenaName" index="1uucey" />
+        <property id="6242174175647978392" name="expression" index="1bfvJf" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -80,18 +74,13 @@
         <property role="1uuiqG" value="pm25" />
       </node>
     </node>
-    <node concept="1EORFp" id="1ygjV_Uy5Ja" role="3ANvmg">
-      <node concept="1EORFg" id="67ABhWZBpjF" role="1uvbWI">
-        <node concept="1uuBfR" id="67ABhWZBpjH" role="1EORFh" />
-      </node>
-    </node>
   </node>
   <node concept="1EOVip" id="67ABhWZ_Mfe">
     <property role="TrG5h" value="HotDay" />
     <node concept="1EOVlO" id="67ABhWZC6MA" role="3ANvml">
       <property role="TrG5h" value="Temp" />
-      <node concept="1uuihD" id="67ABhWZC6MB" role="1uuibp">
-        <property role="1uuiqG" value="Temperature" />
+      <node concept="1uuihD" id="5qwE5stDG38" role="1uuibp">
+        <property role="TrG5h" value="Temerature" />
       </node>
     </node>
     <node concept="1EORFp" id="67ABhWZ_Mfh" role="3ANvmg">
@@ -122,18 +111,14 @@
           </node>
         </node>
       </node>
-      <node concept="1EOVlT" id="67ABhWZBCLD" role="1EORFk">
-        <node concept="1EOVlZ" id="67ABhWZC6Ry" role="1uuMNV">
-          <property role="1uuRdD" value="&gt;" />
-          <property role="1uuckA" value="20.0f" />
-          <ref role="1uucey" node="67ABhWZC6MA" resolve="Temp" />
-        </node>
+      <node concept="1EOVlT" id="49T52aZC3Y2" role="1EORFk">
+        <property role="1bfvJf" value="&gt; 20" />
       </node>
     </node>
-    <node concept="1uujJe" id="67ABhWZDc5B" role="1uhqRO">
-      <property role="TrG5h" value="AlertHotDay" />
-      <property role="1uhFJh" value="temperature" />
+    <node concept="1uujJe" id="5qwE5stD_Si" role="1uhqRO">
+      <property role="TrG5h" value="AlertHotDAy" />
       <ref role="1uujdF" node="67ABhWZ_Mfe" resolve="HotDay" />
+      <ref role="1b1Dw7" node="5qwE5stDG38" resolve="Temerature" />
     </node>
   </node>
   <node concept="1EOVip" id="ETw4jfDx06">

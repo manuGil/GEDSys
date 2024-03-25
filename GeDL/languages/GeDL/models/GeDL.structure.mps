@@ -12,9 +12,14 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="3348158742936976480" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ng" index="25R33">
         <property id="1421157252384165432" name="memberId" index="3tVfz5" />
+        <property id="672037151186491528" name="presentation" index="1L1pqM" />
       </concept>
       <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <reference id="1075010451642646892" name="defaultMember" index="1H5jkz" />
         <child id="3348158742936976577" name="members" index="25R1y" />
+      </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
       </concept>
       <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
         <property id="7791109065626895363" name="datatypeId" index="3F6X1D" />
@@ -22,6 +27,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -48,6 +54,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -57,6 +66,7 @@
     <property role="EcuMT" value="6208379058501919395" />
     <property role="TrG5h" value="Comparison" />
     <property role="34LRSv" value="comparison" />
+    <property role="R5$K2" value="true" />
     <ref role="1TJDcQ" node="67ABhWZB$Fg" resolve="ConditionType" />
     <node concept="1TJgyi" id="67ABhWZBuTQ" role="1TKVEl">
       <property role="IQ2nx" value="7054498623859322486" />
@@ -65,12 +75,12 @@
     </node>
     <node concept="1TJgyi" id="67ABhWZB_wT" role="1TKVEl">
       <property role="IQ2nx" value="7054498623859349561" />
-      <property role="TrG5h" value="Value" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <property role="TrG5h" value="ComparisonValue" />
+      <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
     </node>
     <node concept="1TJgyj" id="67ABhWZB_UX" role="1TKVEi">
       <property role="IQ2ns" value="7054498623859351229" />
-      <property role="20kJfa" value="PhenomenaName" />
+      <property role="20kJfa" value="dataStreamName" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
     </node>
@@ -80,12 +90,10 @@
     <property role="TrG5h" value="Condition" />
     <property role="34LRSv" value="condition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="67ABhWZBr7$" role="1TKVEi">
-      <property role="IQ2ns" value="7054498623859306980" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="comparison" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="5oC_XKWYMaz" resolve="Comparison" />
+    <node concept="1TJgyi" id="5qwE5stBleo" role="1TKVEl">
+      <property role="IQ2nx" value="6242174175647978392" />
+      <property role="TrG5h" value="expression" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMaC">
@@ -99,7 +107,7 @@
     <node concept="1TJgyj" id="67ABhWZBVZ6" role="1TKVEi">
       <property role="IQ2ns" value="7054498623859441606" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Phenomena" />
+      <property role="20kJfa" value="Phenomenon" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
@@ -159,6 +167,9 @@
       <property role="IQ2nx" value="7054498623858983798" />
       <property role="TrG5h" value="srid" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+      <node concept="t5JxF" id="5qwE5stDLQn" role="lGtFl">
+        <property role="t5JxN" value="Format adopts implementation by PostGIS" />
+      </node>
     </node>
     <node concept="1TJgyi" id="5oC_XKWYMb8" role="1TKVEl">
       <property role="IQ2nx" value="6208379058501919432" />
@@ -202,7 +213,6 @@
       <property role="IQ2ns" value="7490970978449142778" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="detectionRules" />
-      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5oC_XKWYYO5" resolve="DetectionRule" />
     </node>
     <node concept="1TJgyj" id="67ABhWZCN3F" role="1TKVEi">
@@ -324,6 +334,7 @@
       <property role="IQ2ns" value="6208379058501971208" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="condition" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5oC_XKWYMa_" resolve="Condition" />
     </node>
     <node concept="1TJgyj" id="5oC_XKWYYO9" role="1TKVEi">
@@ -402,30 +413,37 @@
     <node concept="25R33" id="67ABhWZBfnN" role="25R1y">
       <property role="3tVfz5" value="7054498623859258867" />
       <property role="TrG5h" value="second" />
+      <property role="1L1pqM" value="sec" />
     </node>
     <node concept="25R33" id="67ABhWZBfnQ" role="25R1y">
       <property role="3tVfz5" value="7054498623859258870" />
       <property role="TrG5h" value="minunte" />
+      <property role="1L1pqM" value="min" />
     </node>
     <node concept="25R33" id="67ABhWZBfnM" role="25R1y">
       <property role="3tVfz5" value="7054498623859258866" />
       <property role="TrG5h" value="hour" />
+      <property role="1L1pqM" value="hr" />
     </node>
     <node concept="25R33" id="67ABhWZBfnU" role="25R1y">
       <property role="3tVfz5" value="7054498623859258874" />
       <property role="TrG5h" value="day" />
+      <property role="1L1pqM" value="day" />
     </node>
     <node concept="25R33" id="67ABhWZBfnZ" role="25R1y">
       <property role="3tVfz5" value="7054498623859258879" />
       <property role="TrG5h" value="week" />
+      <property role="1L1pqM" value="week" />
     </node>
     <node concept="25R33" id="67ABhWZBfo5" role="25R1y">
       <property role="3tVfz5" value="7054498623859258885" />
       <property role="TrG5h" value="month" />
+      <property role="1L1pqM" value="month" />
     </node>
     <node concept="25R33" id="67ABhWZBfoc" role="25R1y">
       <property role="3tVfz5" value="7054498623859258892" />
       <property role="TrG5h" value="year" />
+      <property role="1L1pqM" value="year" />
     </node>
   </node>
   <node concept="1TIwiD" id="67ABhWZBfzm">
@@ -464,10 +482,11 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
     </node>
-    <node concept="1TJgyi" id="67ABhWZC2re" role="1TKVEl">
-      <property role="IQ2nx" value="7054498623859467982" />
-      <property role="TrG5h" value="NotificaitonPayload" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="5qwE5stDz1g" role="1TKVEi">
+      <property role="IQ2ns" value="6242174175648559184" />
+      <property role="20kJfa" value="payloadPhenomenon" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
   <node concept="1TIwiD" id="67ABhWZBV_Q">
@@ -475,10 +494,38 @@
     <property role="TrG5h" value="Phenomenon" />
     <property role="34LRSv" value="phenomenon" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-    <node concept="1TJgyi" id="67ABhWZBVIN" role="1TKVEl">
-      <property role="IQ2nx" value="7054498623859440563" />
-      <property role="TrG5h" value="name" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyi" id="5qwE5stCSLo" role="1TKVEl">
+      <property role="IQ2nx" value="6242174175648386136" />
+      <property role="TrG5h" value="observationType" />
+      <ref role="AX2Wp" node="5qwE5stCSUL" resolve="PhenomenonDataType" />
+    </node>
+    <node concept="PrWs8" id="5qwE5stDD_f" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="25R3W" id="5qwE5stCSUL">
+    <property role="3F6X1D" value="6242174175648386737" />
+    <property role="TrG5h" value="ObservationType" />
+    <ref role="1H5jkz" node="5qwE5stCSUM" resolve="Measurement" />
+    <node concept="25R33" id="5qwE5stCSUM" role="25R1y">
+      <property role="3tVfz5" value="6242174175648386738" />
+      <property role="TrG5h" value="Measurement" />
+      <property role="1L1pqM" value="measurement" />
+    </node>
+    <node concept="25R33" id="5qwE5stCSUN" role="25R1y">
+      <property role="3tVfz5" value="6242174175648386739" />
+      <property role="TrG5h" value="Category" />
+      <property role="1L1pqM" value="category" />
+    </node>
+    <node concept="25R33" id="5qwE5stCSUQ" role="25R1y">
+      <property role="3tVfz5" value="6242174175648386742" />
+      <property role="TrG5h" value="Count" />
+      <property role="1L1pqM" value="count" />
+    </node>
+    <node concept="25R33" id="5qwE5stCSUU" role="25R1y">
+      <property role="3tVfz5" value="6242174175648386746" />
+      <property role="TrG5h" value="Truth" />
+      <property role="1L1pqM" value="truth" />
     </node>
   </node>
 </model>

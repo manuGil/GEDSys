@@ -161,7 +161,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Phenomenon:
         if (props_Phenomenon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("phenomenon");
+          cpb.presentationByName();
           props_Phenomenon = cpb.create();
         }
         return props_Phenomenon;
