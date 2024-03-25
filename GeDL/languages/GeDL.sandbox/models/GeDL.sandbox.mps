@@ -7,9 +7,7 @@
   <imports />
   <registry>
     <language id="35b540ea-51fc-45c2-8fb0-1d48ca99c3db" name="GeDL">
-      <concept id="7054498623859439990" name="GeDL.structure.Phenomenon" flags="ng" index="1uuihD">
-        <property id="7054498623859440563" name="name" index="1uuiqG" />
-      </concept>
+      <concept id="7054498623859439990" name="GeDL.structure.Phenomenon" flags="ng" index="1uuihD" />
       <concept id="7054498623859435217" name="GeDL.structure.Notification" flags="ng" index="1uujJe">
         <reference id="6242174175648559184" name="payloadPhenomenon" index="1b1Dw7" />
         <reference id="7054498623859437172" name="eventName" index="1uujdF" />
@@ -66,15 +64,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="1EOVip" id="1ygjV_Uy5J7">
-    <property role="TrG5h" value="Pollution" />
-    <node concept="1EOVlO" id="67ABhWZC6R$" role="3ANvml">
-      <property role="TrG5h" value="pm25" />
-      <node concept="1uuihD" id="67ABhWZC6R_" role="1uuibp">
-        <property role="1uuiqG" value="pm25" />
-      </node>
-    </node>
-  </node>
   <node concept="1EOVip" id="67ABhWZ_Mfe">
     <property role="TrG5h" value="HotDay" />
     <node concept="1EOVlO" id="67ABhWZC6MA" role="3ANvml">

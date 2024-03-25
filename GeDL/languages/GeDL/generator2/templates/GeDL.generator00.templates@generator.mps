@@ -537,5 +537,146 @@
       </node>
     </node>
   </node>
+  <node concept="356sEV" id="5qwE5stEf$K">
+    <property role="TrG5h" value="selectByExtent" />
+    <property role="3Le9LX" value=".py" />
+    <node concept="356WMU" id="5qwE5stEfFc" role="356KY_">
+      <node concept="356sEK" id="5qwE5stEfFd" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFg" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFh" role="356sEH">
+          <property role="TrG5h" value="&quot;&quot;&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFj" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFm" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFn" role="356sEH">
+          <property role="TrG5h" value="Filter to select data streams that intersect with a given extent." />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFp" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFs" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFt" role="356sEH">
+          <property role="TrG5h" value="&quot;&quot;&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFv" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFy" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFz" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFA" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFB" role="356sEH">
+          <property role="TrG5h" value="def define_select_by_extent(root_url:str, detection_extent:str) -&gt; str:" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFD" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFG" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFH" role="356sEH">
+          <property role="TrG5h" value="    &quot;&quot;&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFJ" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFM" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFN" role="356sEH">
+          <property role="TrG5h" value="    Defines the select by extent filter" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFP" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFS" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFT" role="356sEH">
+          <property role="TrG5h" value="    :param root_url: root url to the sensor api" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfFV" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfFY" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfFZ" role="356sEH">
+          <property role="TrG5h" value="    :param detection_extent: extent as WKT string" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfG1" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfG4" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfG5" role="356sEH">
+          <property role="TrG5h" value="    :return: URL for the Sensor API" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfG7" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGa" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGb" role="356sEH">
+          <property role="TrG5h" value="    &quot;&quot;&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGd" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGg" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGh" role="356sEH">
+          <property role="TrG5h" value="    # TODO: find out if sensor thing api can do coordinates transformation " />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGj" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGm" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGn" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGq" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGr" role="356sEH">
+          <property role="TrG5h" value="    select_by_extent = root_url + &quot;/Datastreams/$ref?$top=100&quot; + \" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGt" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGw" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGx" role="356sEH">
+          <property role="TrG5h" value="                &quot;&amp;$filter=geo.intersects(Things/Locations/location,geography'&quot; + \" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGz" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGA" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGB" role="356sEH">
+          <property role="TrG5h" value="                detection_extent + &quot;')&quot; " />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGD" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGG" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGH" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGK" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGL" role="356sEH">
+          <property role="TrG5h" value="    return select_by_extent" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGN" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGQ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGR" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfGU" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfGV" role="356sEH">
+          <property role="TrG5h" value="if __name__ == '__main__':" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfGX" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfH0" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfH1" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfH4" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfH5" role="356sEH">
+          <property role="TrG5h" value="    root_url = &quot;http://localhost:8080/FROST-Server/v1.0&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfH7" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfHa" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfHb" role="356sEH">
+          <property role="TrG5h" value="    detection_extent = &quot;POLYGON(())&quot;" />
+        </node>
+      </node>
+      <node concept="356sEK" id="5qwE5stEfHd" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfHg" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="5qwE5stEfHh" role="383Ya9">
+        <node concept="2EixSi" id="5qwE5stEfHk" role="2EinRH" />
+        <node concept="356sEF" id="5qwE5stEfHl" role="356sEH">
+          <property role="TrG5h" value="    print(define_select_by_extent(root_url, detection_extent))" />
+        </node>
+      </node>
+    </node>
+    <node concept="n94m4" id="5qwE5stEf$M" role="lGtFl">
+      <ref role="n9lRv" to="lyeg:5oC_XKWYMb2" resolve="DetectionExtent" />
+    </node>
+  </node>
 </model>
 
