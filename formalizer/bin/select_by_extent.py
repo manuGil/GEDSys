@@ -2,6 +2,8 @@
 Filter to select data streams that intersect with a given extent.
 """
 
+import shapely
+
 def define_select_by_extent(root_url:str, detection_extent:str, buffer:float=None) -> str:
     """
     Defines the select by extent filter
@@ -11,7 +13,10 @@ def define_select_by_extent(root_url:str, detection_extent:str, buffer:float=Non
     :return: URL for the Sensor API
     """
     # TODO: find out if sensor thing api can do coordinates transformation 
-    # TODO: include a buffer around the detection extent
+    # R. I could not find evidence that the API can do coordinate transformation.
+    # TODO: include a buffer around the detection extent. R. No apply buffer before forming
+    # request, and provide new polygon with buffer to the request.
+
 
     select_by_extent = root_url + "/Datastreams/$ref?$top=100" + \
                 "&$filter=geo.intersects(Things/Locations/location,geography'" + \
