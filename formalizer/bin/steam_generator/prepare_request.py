@@ -46,7 +46,7 @@ def create_buffered(extent:str, buffer:float) -> str:
         raise ValueError("Invalid WKT polygon extent")
 
     polygon = wkt.loads(extent)
-    buffered_poly = polygon.buffer(buffer,join_style="round")
+    buffered_poly = polygon.buffer(buffer, join_style="round")
     return buffered_poly.wkt
 
 

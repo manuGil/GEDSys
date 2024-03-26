@@ -228,8 +228,8 @@
       <node id="6208379058501919426" at="185,154,186,34" concept="1" />
       <node id="6208379058501919426" at="186,34,187,91" concept="1" />
       <node id="6208379058501919426" at="187,91,188,17" concept="1" />
-      <node id="6208379058501919428" at="188,17,189,199" concept="1" />
-      <node id="6208379058501919429" at="189,199,190,199" concept="1" />
+      <node id="6208379058501919428" at="188,17,189,200" concept="1" />
+      <node id="6208379058501919429" at="189,200,190,199" concept="1" />
       <node id="6208379058501919426" at="190,199,191,32" concept="1" />
       <node id="6208379058501919426" at="191,32,192,22" concept="6" />
       <node id="6208379058501919426" at="184,0,194,0" concept="9" trace="createDescriptorForDetectionExtent#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />

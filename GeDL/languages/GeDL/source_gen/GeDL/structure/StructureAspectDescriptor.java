@@ -186,7 +186,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919426");
     b.version(3);
-    b.aggregate("feature", 0x562897dc3cfb22c4L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c7L).optional(true).ordered(true).multiple(true).origin("6208379058501919428").done();
+    b.aggregate("feature", 0x562897dc3cfb22c4L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c7L).optional(true).ordered(true).multiple(false).origin("6208379058501919428").done();
     b.aggregate("buffer", 0x562897dc3cfb22c5L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c9L).optional(true).ordered(true).multiple(false).origin("6208379058501919429").done();
     b.alias("detection extent");
     return b.create();
