@@ -5,7 +5,7 @@ Filter to select data streams that intersect with a given extent.
 from shapely import Polygon, wkt
 
 
-def create_buffered(extent:str, buffer:float) -> str:
+def create_buffer(extent:str, buffer:float) -> str:
     """
     Creates a buffered around the extent.
 
@@ -74,7 +74,7 @@ def request_things_by_extent(root_url:str, detection_extent:str, buffer:float=No
     # request, and provide new polygon with buffer to the request.
 
     if buffer:
-        detection_extent = create_buffered(detection_extent, buffer)
+        detection_extent = create_buffer(detection_extent, buffer)
 
     select_by_extent = root_url + "/Datastreams/$ref?$top=100" + \
                 "&$filter=geo.intersects(Things/Locations/location,geography'" + \
