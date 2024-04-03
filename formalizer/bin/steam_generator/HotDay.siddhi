@@ -1,0 +1,33 @@
+@App:name('HotDay')
+@App:description('A description of the app')
+
+@source(
+    type = 'http', 
+    receiver.url = "http://localhost:8006/hotday", 
+    @map(type = 'json')
+)
+define stream Temp (
+	observedProperty string,
+	resultTime string,
+	result double,
+	location object
+);
+
+@sink(type = 'log')
+	@map(type = 'json')
+define stream AlertHotDAy (
+    observedProperty string,
+    observedValue double,
+    observationTime string,
+    detectionTime string,
+    location object
+); 
+
+@info(name = 'HotDay') 
+from Temp[result > 20] 
+select observedProperty,
+	result as observedValue,
+	resultTime as observationTime,
+	time:currentTimestamp() as detectionTime,
+	location
+insert into AlertHotDAy;
