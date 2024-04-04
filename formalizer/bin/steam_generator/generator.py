@@ -8,6 +8,7 @@ import time
 import uuid
 from typing import List, Optional
 from abc import ABC, abstractmethod
+from parse_response import parse_response_obsservedProperty_location
 
 @dataclass
 class DataStream():
@@ -15,11 +16,12 @@ class DataStream():
     Represents a data stream 
     """
 
-    id: str
-    sensor_thing_request: str
+ 
+    sensor_thing_request: str # http request as produced by the prepare_requests module
     expiration: Optional[datetime] = None
-    update_frequency: Optional[int] =  5000 # in milliseconds
+    update_frequency: Optional[int] =  5 # seconds
     status: str = 'stopped' # stopped, running, expired
+    id: str = uuid.uuid4()
 
     def update_status(self, status: str) -> None:
         """Updates the status of the data stream."""
@@ -31,7 +33,7 @@ class DataStream():
     def check_expiration(self) -> None:
         """Expires the data stream when the expiration time is reached."""
         
-        if  self.expiration > datetime.now():
+        if  self.expiration <= datetime.now():
             self.status = 'expired'
         return self.status
 
@@ -48,21 +50,29 @@ class DataStream():
         sensor_api = requests.Session()
         # start session at CEP server
         cep_engine = requests.Session()
+        # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
         while self.status == 'running':
 
             # TODO: format request to work with the Sensor API and EPE
             # retrieve latest observation with location
-            observation = sensor_api.get(self.sensor_thing_request)
-            location = sensor_api.get(self.sensor_thing_request + '/Thing/Locations?$top=1')
+            response_sensor_api = sensor_api.get(self.sensor_thing_request) 
+            # parse response
+            ## returns  = {latest_observation: url, location:url}
+            parsed_response = parse_response_obsservedProperty_location(response_sensor_api.json())
 
-            # parsing observation data
-            observation_json = observation.json()['value'][0]
-            coords = get_xy_coord(location.json())
+            observation = sensor_api.get(parsed_response['latest_observation'])
+            location = sensor_api.get(parsed_response['location'])
+
+            print("observation:", observation.json())
+            print("location:", location.json())
+
+
+            # coords = get_xy_coord(location.json())
 
             # send data to EPE server
-            cep_engine.post(self.cep_url, json=mapped_observation)
+            # cep_engine.post(self.cep_url, json=mapped_observation)
 
-            time.sleep(self.update_frequency/1000)  # time in seconds
+            time.sleep(self.update_frequency)  # time in seconds
 
             # check expiration after every cycle
             self.check_expiration()
@@ -80,8 +90,6 @@ class DataStream():
             # time.sleep(self.update_frequency/1000)
 
         
- 
-
 
 @dataclass
 class RecieverURL():
@@ -90,8 +98,24 @@ class RecieverURL():
     """
 
     root_url: str # read from .env
-    url_slug: str # read from sidhi app
+    port: int
 
+
+
+# TODO: aim to gather this from MPS generator
+@dataclass
+class Gevenet():
+    """
+    Represents a GeoEvent definition.
+    """
+
+    name: str 
+    expiration: datetime
+    streamingRules: List[str] # list of requests for the Sensor API, one for each phenomenon
+    eventId: str = uuid.uuid4()
+    update_frequency: int = 2 # seconds
+    detection_extent: str = None
+    buffer_distance: float = 0
 
 
 @dataclass
@@ -102,55 +126,24 @@ class StreamGenerator():
     """
 
     receiver: RecieverURL
-    datastreams: List[DataStream]
-
-    def prepare_streams(self):
-        """
-        Prepares the data streams for the generator.
-        """
-        
-        pass
-
-    def do_streaming(self):
+    gevent: Gevenet
+    generated_datastreams: List = [] # list of datastreams
+    
+    def generate_datastreams(self)-> None:
         """ Starts the streaming for each """
-        self.status = 'running'
-        # start session at Sensor API
-        sensor_api = requests.Session()
-        # start session at CEP server
-        cep_engine = requests.Session()
-        while self.running and (datetime.datetime.now() < self.expiration):
-            # retrieve data
-            latest_observation = sensor_api.get(self.datastream + '/Observations?$top=1&$expand=Datastream')
-            latest_observation_json = latest_observation.json()['value'][0]
-            location = sensor_api.get(self.datastream + '/Thing/Locations?$top=1')
-            coords = get_xy_coord(location.json())
-            # format data
-            mapped_observation = cep.map_datatastream(self.id, latest_observation_json, coords, self.stream_def)
+        for request in self.gevent.streamingRules:
+            stream = DataStream(request, 
+                                self.gevent.expiration,
+                                self.gevent.update_frequency)
+            stream.start_streaming()
+            self.generated_datastreams.append(stream)
 
-            # push data to cep server
-            cep_engine.post(self.cep_url, json=mapped_observation)
-            time.sleep(self.update_frequency/1000)
-
-    def stop_streaming(self):
+    def stop(self):
         """ Stops the streaming process."""
-        self.running = False
-        self.status = 'stopped'
-
-
-
-@dataclass
-class DataStreamerConfig(object):
-    """
-    Configuration for the data streamer.
-
-    """
-    init_time: datetime = datetime.now()
-    expiration_time: datetime = init_time.replace(day=init_time.day+1)
-    update_frequency: int = 5000 # in milliseconds
-    geometry: str = None
-    buffer_distance: float = 0
-
-
+        print('Stopping generated data streams')
+        for stream in self.generated_datastreams:
+            stream.update_status('stopped')
+    
 
 
 
@@ -197,3 +190,28 @@ class StreamGenerator(object):
         self.running = False
         self.status = 'stopped'
 
+
+@dataclass
+class DataStreamerConfig(object):
+    """
+    Configuration for the data streamer.
+
+    """
+    init_time: datetime = datetime.now()
+    expiration_time: datetime = init_time.replace(day=init_time.day+1)
+    update_frequency: int = 5000 # in milliseconds
+    geometry: str = None
+    buffer_distance: float = 0
+
+
+if __name__ == "__main__":
+    # create request to find things within the extent
+    sensor_thing_request = "http://localhost:8080/FROST-Server/v1.0/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations,Observations&$filter=ObservedProperty/name eq 'Temperature' and geo.intersects(Thing/Locations/location,geography'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))')"
+    expiration = datetime.now().replace(second=datetime.now().second+10)
+    update_frequency = 5
+
+    id = str(uuid.uuid4())
+    datastream = DataStream(id, sensor_thing_request, expiration, update_frequency)
+
+
+    datastream.start_streaming()
