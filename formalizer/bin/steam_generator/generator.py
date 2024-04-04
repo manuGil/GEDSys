@@ -4,12 +4,38 @@
 from dataclasses import dataclass
 import requests
 from datetime import datetime
-import time
+import time, json
 import uuid
 from typing import List, Optional
 from abc import ABC, abstractmethod
 from parse_response import parse_response_obsservedProperty_location
 from prepare_requests import prepare_request_observedProperty_location
+
+# Use to format the payloads to be sent to the CEP server
+cep_payload_template = {"event":{
+                            "observedProperty":None, 
+                            "resultTime":None, 
+                            "result": None, 
+                            "location": None
+                        }}
+
+
+def format_location(location) -> dict:
+    """
+    Prepare the location part of the payload.
+
+    Parameters
+    ----------
+    location : dict
+        location object from SensorThings API.
+
+    Returns
+    -------
+    dict
+
+    """
+    return {"x":location['location']['coordinates'][0], "y":location['location']['coordinates'][1]}
+
 
 @dataclass
 class DataStream():
@@ -17,8 +43,9 @@ class DataStream():
     Represents a data stream 
     """
 
- 
     sensor_thing_request: str # http request as produced by the prepare_requests module
+    epe_payload_template: dict
+    reciever_url: str
     expiration: Optional[datetime] = None
     update_frequency: Optional[int] =  5 # seconds
     status: str = 'stopped' # stopped, running, expired
@@ -42,7 +69,6 @@ class DataStream():
             self.status = 'expired'
         return self.status
 
-
     def start_streaming(self) -> None:
         """ Starts the streaming process."""
 
@@ -58,50 +84,48 @@ class DataStream():
         # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
         while self.status == 'running':
 
-            # TODO: format request to work with the Sensor API and EPE
-            # retrieve latest observation with location
             response_sensor_api = sensor_api.get(self.sensor_thing_request) 
             # parse response
             ## returns  = {latest_observation: url, location:url}
             parsed_response = parse_response_obsservedProperty_location(response_sensor_api.json())
 
             # Checks if any observations were found at the Sensor API and if the latest observation is different from the last one
-            if parsed_response  and parsed_response['latest_observation'] != self.latest_observation:
+            if parsed_response: #and parsed_response['latest_observation'] != self.latest_observation:
 
-                observation = sensor_api.get(parsed_response['latest_observation'])
-                location = sensor_api.get(parsed_response['location'])
+                observation = sensor_api.get(parsed_response['latest_observation']) # SensorThing API object
+                location = sensor_api.get(parsed_response['location']) # SensorThing API object
+                observation.raise_for_status()
+                location.raise_for_status()
+
+                # send data to EPE API
+                formatted_location = format_location(location.json())
+
+                result = observation.json()['result']
+                resultTime = observation.json()['phenomenonTime']
+                print("result:", result, resultTime)
+
+                # prepare payload for EPE
+                cep_payload = self.epe_payload_template.copy()
+                cep_payload['event'].update({'resultTime': observation.json()['phenomenonTime'], 
+                                             'result': float(observation.json()['result']), # ensure result is a float 
+                                             'location': formatted_location})
+         
+                print("cep_payload:", cep_payload)
+                cep_headers = {'Content-Type': 'application/json'}
+                cep_response = cep_engine.post(self.reciever_url, 
+                                data=json.dumps(cep_payload), 
+                                headers=cep_headers)
+                cep_response.raise_for_status()
+                
                 self.update_latest_observation(parsed_response['latest_observation'])
-
-                print("observation:", observation.json())
-                print("location:", location.json())
 
             else:
                 break
 
-            # coords = get_xy_coord(location.json())
-
-            # send data to EPE server
-            # cep_engine.post(self.cep_url, json=mapped_observation)
-
             time.sleep(self.update_frequency)  # time in seconds
-
-            
             # check expiration after every cycle
             self.check_expiration()
 
-            # # retrieve data
-            # latest_observation = sensor_api.get(self.datastream + '/Observations?$top=1&$expand=Datastream')
-            # latest_observation_json = latest_observation.json()['value'][0]
-            # location = sensor_api.get(self.datastream + '/Thing/Locations?$top=1')
-            # coords = get_xy_coord(location.json())
-            # # format data
-            # mapped_observation = cep.map_datatastream(self.id, latest_observation_json, coords, self.stream_def)
-
-            # # push data to cep server
-            # cep_engine.post(self.cep_url, json=mapped_observation)
-            # time.sleep(self.update_frequency/1000)
-
-        
 
 @dataclass
 class SensorAPI(ABC):
@@ -121,11 +145,11 @@ class EventProcessorAPI(ABC):
     root_url: str # read from .env
     reciever_slug: str # given by the event name
 
-    def ger_reciever_url(self):
+    def get_reciever_url(self):
         return f"{self.root_url}/{self.reciever_slug}"
     
 
-
+#################################################################
 # TODO: aim to gather these attributes from MPS generator
 @dataclass
 class Gevent():
@@ -153,7 +177,7 @@ class StreamGenerator():
     sensorApi: SensorAPI
     eventProcessorApi: EventProcessorAPI 
     generated_datastreams = [] # list of datastreams
-    
+
     def generate(self)-> None:
         """ Starts the streaming for each """
         for phenomenon in self.gevent.phenomena:
@@ -161,9 +185,18 @@ class StreamGenerator():
                                                                 phenomenon, 
                                                                 self.gevent.detection_extent, 
                                                                 self.gevent.buffer_distance)
+            
+
+            epe_template = cep_payload_template.copy()
+            epe_template['event'].update({'observedProperty': phenomenon})
+
+
             stream = DataStream(request, 
-                                self.gevent.expiration,
-                                self.gevent.update_frequency)
+                                epe_payload_template=epe_template,
+                                reciever_url=self.eventProcessorApi.get_reciever_url(),
+                                expiration=self.gevent.expiration,
+                                update_frequency=self.gevent.update_frequency,
+                                )
             stream.start_streaming()
             self.generated_datastreams.append(stream)
 
@@ -190,12 +223,10 @@ class DataStreamerConfig(object):
 if __name__ == "__main__":
     # create request to find things within the extent
 
-
-    # sensor_thing_request = "http://localhost:8080/FROST-Server/v1.0/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations,Observations&$filter=ObservedProperty/name eq 'Temperature' and geo.intersects(Thing/Locations/location,geography'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))')"
     expiration = datetime.now().replace(second=datetime.now().second+10)
     update_frequency = 5
     detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
-    event_name = 'gevent1'
+    event_name = 'hotday'
 
     gevent = Gevent(name=event_name, 
                     expiration=expiration, 
@@ -206,7 +237,8 @@ if __name__ == "__main__":
                     )
     
     sensorthing = SensorAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
-    cep = EventProcessorAPI(root_url="http://localhost:8006/", reciever_slug=event_name)
+    cep = EventProcessorAPI(root_url="http://localhost:8006", reciever_slug=event_name)
+
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
     stream_generator.generate()
