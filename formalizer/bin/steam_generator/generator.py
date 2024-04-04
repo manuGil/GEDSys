@@ -143,10 +143,9 @@ class EventProcessorAPI(ABC):
     """
 
     root_url: str # read from .env
-    reciever_slug: str # given by the event name
 
     def get_reciever_url(self):
-        return f"{self.root_url}/{self.reciever_slug}"
+        return self.root_url
     
 
 #################################################################
@@ -237,7 +236,7 @@ if __name__ == "__main__":
                     )
     
     sensorthing = SensorAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
-    cep = EventProcessorAPI(root_url="http://localhost:8006", reciever_slug=event_name)
+    cep = EventProcessorAPI(root_url="http://localhost:8006")
 
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
