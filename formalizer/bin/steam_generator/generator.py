@@ -9,6 +9,7 @@ import uuid
 from typing import List, Optional
 from abc import ABC, abstractmethod
 from parse_response import parse_response_obsservedProperty_location
+from prepare_requests import prepare_request_observedProperty_location
 
 @dataclass
 class DataStream():
@@ -22,6 +23,7 @@ class DataStream():
     update_frequency: Optional[int] =  5 # seconds
     status: str = 'stopped' # stopped, running, expired
     id: str = uuid.uuid4()
+    latest_observation: str = None # url to observation instance
 
     def update_status(self, status: str) -> None:
         """Updates the status of the data stream."""
@@ -29,6 +31,9 @@ class DataStream():
             raise ValueError(f"Invalid status {status}")
         self.status = status
 
+    def update_latest_observation(self, observation: str) -> None:
+        """Updates the latest observation retrieved from the Sensor API."""
+        self.latest_observation = observation
 
     def check_expiration(self) -> None:
         """Expires the data stream when the expiration time is reached."""
@@ -60,12 +65,18 @@ class DataStream():
             ## returns  = {latest_observation: url, location:url}
             parsed_response = parse_response_obsservedProperty_location(response_sensor_api.json())
 
-            observation = sensor_api.get(parsed_response['latest_observation'])
-            location = sensor_api.get(parsed_response['location'])
+            # Checks if any observations were found at the Sensor API and if the latest observation is different from the last one
+            if parsed_response  and parsed_response['latest_observation'] != self.latest_observation:
 
-            print("observation:", observation.json())
-            print("location:", location.json())
+                observation = sensor_api.get(parsed_response['latest_observation'])
+                location = sensor_api.get(parsed_response['location'])
+                self.update_latest_observation(parsed_response['latest_observation'])
 
+                print("observation:", observation.json())
+                print("location:", location.json())
+
+            else:
+                break
 
             # coords = get_xy_coord(location.json())
 
@@ -74,6 +85,7 @@ class DataStream():
 
             time.sleep(self.update_frequency)  # time in seconds
 
+            
             # check expiration after every cycle
             self.check_expiration()
 
@@ -92,26 +104,38 @@ class DataStream():
         
 
 @dataclass
-class RecieverURL():
+class SensorAPI(ABC):
     """
-    Represents a Siddhi stream definition.
+    Represents an endpoint for collecting observation from a SensorThing API 
     """
 
     root_url: str # read from .env
-    port: int
 
 
-
-# TODO: aim to gather this from MPS generator
 @dataclass
-class Gevenet():
+class EventProcessorAPI(ABC):
+    """
+    Represents an endpoint for fowarding observations to a Siddhi EPE.
+    """
+
+    root_url: str # read from .env
+    reciever_slug: str # given by the event name
+
+    def ger_reciever_url(self):
+        return f"{self.root_url}/{self.reciever_slug}"
+    
+
+
+# TODO: aim to gather these attributes from MPS generator
+@dataclass
+class Gevent():
     """
     Represents a GeoEvent definition.
     """
 
     name: str 
     expiration: datetime
-    streamingRules: List[str] # list of requests for the Sensor API, one for each phenomenon
+    phenomena: List[str] 
     eventId: str = uuid.uuid4()
     update_frequency: int = 2 # seconds
     detection_extent: str = None
@@ -125,13 +149,18 @@ class StreamGenerator():
     the Sensor API and sending it to the Siddhi EPE.
     """
 
-    receiver: RecieverURL
-    gevent: Gevenet
-    generated_datastreams: List = [] # list of datastreams
+    gevent: Gevent
+    sensorApi: SensorAPI
+    eventProcessorApi: EventProcessorAPI 
+    generated_datastreams = [] # list of datastreams
     
-    def generate_datastreams(self)-> None:
+    def generate(self)-> None:
         """ Starts the streaming for each """
-        for request in self.gevent.streamingRules:
+        for phenomenon in self.gevent.phenomena:
+            request = prepare_request_observedProperty_location(self.sensorApi.root_url, 
+                                                                phenomenon, 
+                                                                self.gevent.detection_extent, 
+                                                                self.gevent.buffer_distance)
             stream = DataStream(request, 
                                 self.gevent.expiration,
                                 self.gevent.update_frequency)
@@ -160,12 +189,25 @@ class DataStreamerConfig(object):
 
 if __name__ == "__main__":
     # create request to find things within the extent
-    sensor_thing_request = "http://localhost:8080/FROST-Server/v1.0/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations,Observations&$filter=ObservedProperty/name eq 'Temperature' and geo.intersects(Thing/Locations/location,geography'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))')"
+
+
+    # sensor_thing_request = "http://localhost:8080/FROST-Server/v1.0/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations,Observations&$filter=ObservedProperty/name eq 'Temperature' and geo.intersects(Thing/Locations/location,geography'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))')"
     expiration = datetime.now().replace(second=datetime.now().second+10)
     update_frequency = 5
+    detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
+    event_name = 'gevent1'
 
-    id = str(uuid.uuid4())
-    datastream = DataStream(id, sensor_thing_request, expiration, update_frequency)
+    gevent = Gevent(name=event_name, 
+                    expiration=expiration, 
+                    phenomena=['Temperature'], 
+                    update_frequency=update_frequency,
+                    detection_extent=detection_extent,
+                    buffer_distance=0.5
+                    )
+    
+    sensorthing = SensorAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
+    cep = EventProcessorAPI(root_url="http://localhost:8006/", reciever_slug=event_name)
 
+    stream_generator = StreamGenerator(gevent, sensorthing, cep)
+    stream_generator.generate()
 
-    datastream.start_streaming()
