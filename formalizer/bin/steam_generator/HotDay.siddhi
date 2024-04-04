@@ -24,7 +24,7 @@ define stream AlertHotDAy (
 ); 
 
 @info(name = 'HotDay') 
-from Temp[result > 20] 
+from Temp[result > 10] 
 select observedProperty,
 	result as observedValue,
 	resultTime as observationTime,
