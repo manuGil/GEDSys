@@ -107,8 +107,6 @@ if __name__ == '__main__':
     observed_property = "Temperature"
     buffer = 0.5
 
- 
-
     request = prepare_request_observedProperty_location(root_url, observed_property, detection_extent, buffer)
 
     print(request)
