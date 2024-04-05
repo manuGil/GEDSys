@@ -69,7 +69,7 @@
     <node concept="1EOVlO" id="67ABhWZC6MA" role="3ANvml">
       <property role="TrG5h" value="Temp" />
       <node concept="1uuihD" id="5qwE5stDG38" role="1uuibp">
-        <property role="TrG5h" value="Temerature" />
+        <property role="TrG5h" value="Temperature" />
       </node>
     </node>
     <node concept="1EORFp" id="67ABhWZ_Mfh" role="3ANvmg">
@@ -112,6 +112,31 @@
   </node>
   <node concept="1EOVip" id="ETw4jfDx06">
     <property role="TrG5h" value="CompositeEvent" />
+  </node>
+  <node concept="1EOVip" id="52LigkvX9Uu">
+    <property role="TrG5h" value="hello" />
+    <node concept="1EOVlO" id="52LigkvZTf9" role="3ANvml">
+      <node concept="1uuihD" id="52LigkvZTfa" role="1uuibp">
+        <property role="TrG5h" value="Temperature" />
+      </node>
+    </node>
+    <node concept="1EORFp" id="52LigkvZTfd" role="3ANvmg">
+      <node concept="1EOVlT" id="52LigkvZTfe" role="1EORFk">
+        <property role="1bfvJf" value="&gt; 15" />
+      </node>
+      <node concept="1EOVku" id="52LigkvZTfh" role="1EORFl">
+        <property role="TrG5h" value="city" />
+        <node concept="1EOVkr" id="52LigkvZTfj" role="1EOVko">
+          <property role="1EOVkk" value="'POLYGON()'" />
+          <property role="1uv_TD" value="4326" />
+        </node>
+      </node>
+    </node>
+    <node concept="1uujJe" id="52Ligkw0d26" role="1uhqRO">
+      <property role="TrG5h" value="HelloAlert" />
+      <ref role="1uujdF" node="52LigkvX9Uu" resolve="hello" />
+      <ref role="1b1Dw7" node="5qwE5stDG38" resolve="Temperature" />
+    </node>
   </node>
 </model>
 

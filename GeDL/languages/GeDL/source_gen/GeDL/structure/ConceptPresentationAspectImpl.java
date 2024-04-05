@@ -83,7 +83,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DetectionExtent:
         if (props_DetectionExtent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("detection extent");
+          cpb.presentationByName();
           props_DetectionExtent = cpb.create();
         }
         return props_DetectionExtent;
