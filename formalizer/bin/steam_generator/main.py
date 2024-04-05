@@ -16,7 +16,7 @@ def main():
     load_dotenv("formalizer/bin/config.env") 
     # create request to find things within the extent
 
-        # global settings
+    # global settings: registered api endpoints
     sensorthing = SensorAPI(root_url=os.getenv("SENSOR_API"))
     cep = EventProcessorAPI(root_url=os.getenv("SIDDHI_API"))
 
