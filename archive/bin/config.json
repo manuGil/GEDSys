@@ -1,0 +1,20 @@
+{
+  "geosmart.sys": {
+    "cep": {
+      "hostname": "130.89.217.201",
+      "port": 22,
+      "username": "geosmartsys",
+      "passphrase": "CeP#geo-event",
+      "private key": "C:/GeoSmart_sys/Formilizer/keys/id_rsa",
+      "home directory": "/home/wso2cep/wso2das-3.1.0",
+      "stream subdir": "/repository/deployment/server/eventstreams",
+      "receiver subdir":"/repository/deployment/server/eventreceivers",
+      "plan subdir":"/repository/deployment/server/executionplans",
+      "publisher subdir": "/repository/deployment/server/eventpublishers"
+    },
+    "handler": {
+      "local directory": "../temp",
+      "logs": "C:/GeoSmart_sys/Formilizer/logs/handler.log"
+    }
+  }
+}
