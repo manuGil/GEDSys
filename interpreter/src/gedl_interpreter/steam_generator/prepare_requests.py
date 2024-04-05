@@ -101,7 +101,6 @@ def prepare_request_observedProperty_location(root_url:str,
     return http_request
 
 
-
 if __name__ == '__main__':
     
     root_url = "http://localhost:8080/FROST-Server/v1.0"
@@ -112,13 +111,8 @@ if __name__ == '__main__':
     request = prepare_request_observedProperty_location(root_url, observed_property, detection_extent, buffer)
 
 
-
     location_api = {"@iot.selfLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)","@iot.id":1,"name":"My Living Room","description":"The living room of Fraunhoferstr. 1","encodingType":"application/vnd.geo+json","location":{"type":"Point","coordinates":[8.4259727,49.015308]},"HistoricalLocations@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/HistoricalLocations","Things@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/Things"}
 
     result_time = "2020-01-01T12:00:00Z"
     result = 25.0
     
-
-
-
-
