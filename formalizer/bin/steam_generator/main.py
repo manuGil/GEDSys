@@ -16,6 +16,10 @@ def main():
     load_dotenv("formalizer/bin/config.env") 
     # create request to find things within the extent
 
+        # global settings
+    sensorthing = SensorAPI(root_url=os.getenv("SENSOR_API"))
+    cep = EventProcessorAPI(root_url=os.getenv("SIDDHI_API"))
+
     expiration = datetime.now().replace(second=datetime.now().second+10)
     update_frequency = 5
     detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
@@ -29,10 +33,6 @@ def main():
                     buffer_distance=0.5
                     )
     
-
-    # global settings
-    sensorthing = SensorAPI(root_url=os.getenv("SENSOR_API"))
-    cep = EventProcessorAPI(root_url=os.getenv("SIDDHI_API"))
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
     stream_generator.generate()
