@@ -144,8 +144,8 @@ class EventProcessorAPI(ABC):
 
     root_url: str # read from .env
 
-    def get_reciever_url(self):
-        return self.root_url
+    def get_reciever_url(self, reciever_slug: str) -> str:
+        return f"{self.root_url}/{reciever_slug}"
     
 
 #################################################################
@@ -189,10 +189,9 @@ class StreamGenerator():
             epe_template = cep_payload_template.copy()
             epe_template['event'].update({'observedProperty': phenomenon})
 
-
             stream = DataStream(request, 
                                 epe_payload_template=epe_template,
-                                reciever_url=self.eventProcessorApi.get_reciever_url(),
+                                reciever_url=self.eventProcessorApi.get_reciever_url(self.gevent.name.lower()),
                                 expiration=self.gevent.expiration,
                                 update_frequency=self.gevent.update_frequency,
                                 )
@@ -229,12 +228,13 @@ if __name__ == "__main__":
 
     gevent = Gevent(name=event_name, 
                     expiration=expiration, 
-                    phenomena=['Temperature'], 
+                    phenomena=['Temperature', 'Relative Humidity'], 
                     update_frequency=update_frequency,
                     detection_extent=detection_extent,
                     buffer_distance=0.5
                     )
     
+    # global settings
     sensorthing = SensorAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
     cep = EventProcessorAPI(root_url="http://localhost:8006")
 
