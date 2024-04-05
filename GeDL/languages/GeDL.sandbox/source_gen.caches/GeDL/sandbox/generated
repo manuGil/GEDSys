@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-ane8nuxa4f7ro9jlo16dp1n2hqx0014">
-  <files names="CompositeEvent.siddhi:HotDay.siddhi:hello.siddhi" />
+<product version="3" modelHash="-bnttl3470tlxntr0bi479d1nlubxqrw">
+  <files names="ColdDay.siddhi:CompositeEvent.siddhi:HotDay.siddhi:hello.siddhi" />
 </product>
 

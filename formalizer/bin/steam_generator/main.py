@@ -24,14 +24,15 @@ def main():
     ##                  Event Definition                             ##
     ###################################################################
     
-    expiration = datetime.now().replace(second=datetime.now().second+10)
-    update_frequency = 5
+    expiration = datetime.now().replace(second=datetime.now().second+10) # match with detection window
+    update_frequency = 5 # seconds
     detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
     event_name = 'hotday'
 
+    # event definition
     gevent = Gevent(name=event_name, 
                     expiration=expiration, 
-                    phenomena=['Temperature', 'Relative Humidity'], 
+                    phenomena=['Temperature'], 
                     update_frequency=update_frequency,
                     detection_extent=detection_extent,
                     buffer_distance=0.5

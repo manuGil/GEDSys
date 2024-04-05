@@ -531,33 +531,5 @@
       <property role="1L1pqM" value="truth" />
     </node>
   </node>
-  <node concept="1TIwiD" id="52Ligkw0dct">
-    <property role="EcuMT" value="5814508880272610077" />
-    <property role="TrG5h" value="Event2" />
-    <property role="19KtqR" value="true" />
-    <property role="34LRSv" value="event" />
-    <property role="R4oN_" value="geographic event" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="52Ligkw0dcu" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyj" id="52Ligkw0dcw" role="1TKVEi">
-      <property role="IQ2ns" value="5814508880272610080" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="detectionRules" />
-      <ref role="20lvS9" node="5oC_XKWYYO5" resolve="DetectionRule" />
-    </node>
-    <node concept="1TJgyj" id="52Ligkw0dcx" role="1TKVEi">
-      <property role="IQ2ns" value="5814508880272610081" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="notification" />
-      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
-    </node>
-    <node concept="1TJgyj" id="52Ligkw0djt" role="1TKVEi">
-      <property role="IQ2ns" value="5814508880272610525" />
-      <property role="20kJfa" value="dataStreams" />
-      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
-    </node>
-  </node>
 </model>
 
