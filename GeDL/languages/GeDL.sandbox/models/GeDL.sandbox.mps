@@ -101,7 +101,7 @@
         </node>
       </node>
       <node concept="1EOVlT" id="49T52aZC3Y2" role="1EORFk">
-        <property role="1bfvJf" value="&gt; 20" />
+        <property role="1bfvJf" value="&gt; 15" />
       </node>
     </node>
     <node concept="1uujJe" id="5qwE5stD_Si" role="1uhqRO">
