@@ -6564,9 +6564,7 @@
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.class_(boolean,boolean,boolean)" resolve="class_" />
               <node concept="3clFbT" id="yk" role="37wK5m" />
               <node concept="3clFbT" id="yl" role="37wK5m" />
-              <node concept="3clFbT" id="ym" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
+              <node concept="3clFbT" id="ym" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -8367,7 +8365,7 @@
                         <node concept="liA8E" id="H8" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long)" resolve="aggregate" />
                           <node concept="Xl_RD" id="H9" role="37wK5m">
-                            <property role="Xl_RC" value="dataStreams" />
+                            <property role="Xl_RC" value="dataStream" />
                           </node>
                           <node concept="1adDum" id="Ha" role="37wK5m">
                             <property role="1adDun" value="0x67f5466a8138b3ffL" />

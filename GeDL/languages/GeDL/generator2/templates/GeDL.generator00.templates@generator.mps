@@ -207,15 +207,15 @@
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
             <node concept="3zFVjK" id="ETw4jfDxSd" role="3zH0cK">
               <node concept="3clFbS" id="ETw4jfDxSe" role="2VODD2">
-                <node concept="3clFbF" id="ETw4jfDxSk" role="3cqZAp">
-                  <node concept="2OqwBi" id="67ABhWZEied" role="3clFbG">
-                    <node concept="2OqwBi" id="ETw4jfDxSf" role="2Oq$k0">
-                      <node concept="30H73N" id="ETw4jfDxSj" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="67ABhWZEiaN" role="2OqNvi">
+                <node concept="3clFbF" id="52Ligkw2d_z" role="3cqZAp">
+                  <node concept="2OqwBi" id="52Ligkw2e_7" role="3clFbG">
+                    <node concept="2OqwBi" id="52Ligkw2dPs" role="2Oq$k0">
+                      <node concept="30H73N" id="52Ligkw2d_y" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="52Ligkw2e8R" role="2OqNvi">
                         <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfZ" resolve="dataStreams" />
                       </node>
                     </node>
-                    <node concept="3TrcHB" id="67ABhWZEiiI" role="2OqNvi">
+                    <node concept="3TrcHB" id="52Ligkw2xyd" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
@@ -535,129 +535,6 @@
           </node>
         </node>
       </node>
-    </node>
-  </node>
-  <node concept="356sEV" id="5qwE5stEf$K">
-    <property role="TrG5h" value="selectByExtent" />
-    <property role="3Le9LX" value=".py" />
-    <node concept="356WMU" id="2iBysJGfvV8" role="356KY_">
-      <node concept="356sEK" id="2iBysJGfvV9" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVc" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVd" role="356sEH">
-          <property role="TrG5h" value="from prepare_request import request_things_by_extent" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVf" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVi" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVj" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVm" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVn" role="356sEH">
-          <property role="TrG5h" value="def main():" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVp" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVs" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVt" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVw" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVx" role="356sEH">
-          <property role="TrG5h" value="    # create request to find things within the extent" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVz" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVA" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVB" role="356sEH">
-          <property role="TrG5h" value="    api_root = &quot;http://localhost:8080/FROST-Server/v1.0&quot;" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVD" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVG" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVH" role="356sEH">
-          <property role="TrG5h" value="    geometry = '" />
-        </node>
-        <node concept="356sEF" id="2iBysJGfwtd" role="356sEH">
-          <property role="TrG5h" value="POLYGON" />
-          <node concept="17Uvod" id="2iBysJGfwuw" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="2iBysJGfwux" role="3zH0cK">
-              <node concept="3clFbS" id="2iBysJGfwuy" role="2VODD2">
-                <node concept="3clFbF" id="2iBysJGg7Zv" role="3cqZAp">
-                  <node concept="2OqwBi" id="2iBysJGg9he" role="3clFbG">
-                    <node concept="2OqwBi" id="2iBysJGg8eA" role="2Oq$k0">
-                      <node concept="30H73N" id="2iBysJGg7Zu" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="2iBysJGg8u0" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb4" resolve="feature" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="2iBysJGg9F4" role="2OqNvi">
-                      <ref role="3TsBF5" to="lyeg:5oC_XKWYMb8" resolve="wkt" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="2iBysJGfwte" role="356sEH">
-          <property role="TrG5h" value="'" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVJ" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVM" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVN" role="356sEH">
-          <property role="TrG5h" value="    buffer_distance = " />
-        </node>
-        <node concept="356sEF" id="2iBysJGga3C" role="356sEH">
-          <property role="TrG5h" value="0.5" />
-          <node concept="17Uvod" id="2iBysJGga3F" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="2iBysJGga3G" role="3zH0cK">
-              <node concept="3clFbS" id="2iBysJGga3H" role="2VODD2">
-                <node concept="3clFbF" id="2iBysJGggKT" role="3cqZAp">
-                  <node concept="2OqwBi" id="2iBysJGghuR" role="3clFbG">
-                    <node concept="2OqwBi" id="2iBysJGgh00" role="2Oq$k0">
-                      <node concept="30H73N" id="2iBysJGggKS" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="2iBysJGghh3" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb5" resolve="buffer" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="2iBysJGghPM" role="2OqNvi">
-                      <ref role="3TsBF5" to="lyeg:5oC_XKWYMba" resolve="val" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVP" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVS" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvVT" role="356sEH">
-          <property role="TrG5h" value="    return request_things_by_extent(api_root, geometry, buffer_distance)" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVV" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvVY" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="2iBysJGfvVZ" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvW2" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvW3" role="356sEH">
-          <property role="TrG5h" value="if __name__ == &quot;__main__&quot;:" />
-        </node>
-      </node>
-      <node concept="356sEK" id="2iBysJGfvW5" role="383Ya9">
-        <node concept="2EixSi" id="2iBysJGfvW8" role="2EinRH" />
-        <node concept="356sEF" id="2iBysJGfvW9" role="356sEH">
-          <property role="TrG5h" value="    print(main())" />
-        </node>
-      </node>
-    </node>
-    <node concept="n94m4" id="5qwE5stEf$M" role="lGtFl">
-      <ref role="n9lRv" to="lyeg:5oC_XKWYMb2" resolve="DetectionExtent" />
     </node>
   </node>
 </model>

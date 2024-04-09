@@ -116,7 +116,6 @@
     <property role="EcuMT" value="6208379058501919404" />
     <property role="TrG5h" value="DataStreamList" />
     <property role="34LRSv" value="DataStream List" />
-    <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5oC_XKWYMaH" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -209,7 +208,7 @@
     <node concept="1TJgyj" id="6vPhAE1ebfZ" role="1TKVEi">
       <property role="IQ2ns" value="7490970978449142783" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="dataStreams" />
+      <property role="20kJfa" value="dataStream" />
       <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
     </node>
     <node concept="1TJgyj" id="6vPhAE1ebfU" role="1TKVEi">
@@ -452,7 +451,7 @@
   <node concept="1TIwiD" id="67ABhWZBfzm">
     <property role="EcuMT" value="7054498623859259606" />
     <property role="TrG5h" value="DurationWithUnits" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="67ABhWZBfGH" role="1TKVEl">
       <property role="IQ2nx" value="7054498623859260205" />
       <property role="TrG5h" value="value" />
@@ -461,7 +460,7 @@
     <node concept="1TJgyi" id="67ABhWZBfTN" role="1TKVEl">
       <property role="IQ2nx" value="7054498623859261043" />
       <property role="TrG5h" value="unit" />
-      <ref role="AX2Wp" node="67ABhWZBfnL" resolve="TimeUnit" />
+      <ref role="AX2Wp" node="67ABhWZBfnL" resolve="DurationUnit" />
     </node>
   </node>
   <node concept="1TIwiD" id="67ABhWZB$Fg">
@@ -469,13 +468,13 @@
     <property role="TrG5h" value="ConditionType" />
     <property role="34LRSv" value="condition type" />
     <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="67ABhWZBUrh">
     <property role="EcuMT" value="7054498623859435217" />
     <property role="TrG5h" value="Notification" />
     <property role="34LRSv" value="notification" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="67ABhWZBUzq" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -496,11 +495,11 @@
     <property role="EcuMT" value="7054498623859439990" />
     <property role="TrG5h" value="Phenomenon" />
     <property role="34LRSv" value="phenomenon" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5qwE5stCSLo" role="1TKVEl">
       <property role="IQ2nx" value="6242174175648386136" />
       <property role="TrG5h" value="observationType" />
-      <ref role="AX2Wp" node="5qwE5stCSUL" resolve="PhenomenonDataType" />
+      <ref role="AX2Wp" node="5qwE5stCSUL" resolve="ObservationType" />
     </node>
     <node concept="PrWs8" id="5qwE5stDD_f" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

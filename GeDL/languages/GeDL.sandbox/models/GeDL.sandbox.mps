@@ -64,17 +64,8 @@
       </concept>
     </language>
   </registry>
-  <node concept="1EOVip" id="ETw4jfDx06">
-    <property role="TrG5h" value="CompositeEvent" />
-  </node>
   <node concept="1EOVip" id="67ABhWZ_Mfe">
     <property role="TrG5h" value="HotDay" />
-    <node concept="1EOVlO" id="67ABhWZC6MA" role="3ANvml">
-      <property role="TrG5h" value="Temp" />
-      <node concept="1uuihD" id="5qwE5stDG38" role="1uuibp">
-        <property role="TrG5h" value="Temperature" />
-      </node>
-    </node>
     <node concept="1EORFp" id="67ABhWZ_Mfh" role="3ANvmg">
       <node concept="1EOVku" id="67ABhWZ_Mfl" role="1EORFl">
         <property role="TrG5h" value="city" />
@@ -108,10 +99,61 @@
         <property role="1bfvJf" value="&gt; 15" />
       </node>
     </node>
-    <node concept="1uujJe" id="5qwE5stD_Si" role="1uhqRO">
-      <property role="TrG5h" value="AlertHotDAy" />
+    <node concept="1uujJe" id="478cfFz2lpa" role="1uhqRO">
+      <property role="TrG5h" value="AlertHotDay" />
       <ref role="1uujdF" node="67ABhWZ_Mfe" resolve="HotDay" />
-      <ref role="1b1Dw7" node="5qwE5stDG38" resolve="Temperature" />
+      <ref role="1b1Dw7" node="478cfFz3t5F" resolve="Temperature" />
+    </node>
+    <node concept="1EOVlO" id="478cfFz3t5E" role="3ANvml">
+      <node concept="1uuihD" id="478cfFz3t5F" role="1uuibp">
+        <property role="TrG5h" value="Temperature" />
+      </node>
+    </node>
+  </node>
+  <node concept="1EOVip" id="478cfFz2t_i">
+    <property role="TrG5h" value="ColdDay" />
+    <node concept="1EORFp" id="478cfFz2t_o" role="3ANvmg">
+      <node concept="1EOVlT" id="478cfFz2t_p" role="1EORFk">
+        <property role="1bfvJf" value="&lt; 5" />
+      </node>
+      <node concept="1EOVku" id="478cfFz2Bvq" role="1EORFl">
+        <property role="TrG5h" value="city" />
+        <node concept="1EOVkr" id="478cfFz2Bvs" role="1EOVko">
+          <property role="1EOVkk" value="&quot;MyPOL()&quot;" />
+          <property role="1uv_TD" value="4326" />
+        </node>
+      </node>
+      <node concept="1EORFg" id="478cfFz2Bvu" role="1uvbWI">
+        <node concept="1uvcLx" id="478cfFz2Bvw" role="1EORFh">
+          <node concept="1EOVif" id="478cfFz2Bvx" role="1uvcvF">
+            <node concept="1EOVl_" id="478cfFz2BvA" role="1EOVia">
+              <property role="1EOVlA" value="2016-11-24T10:00:00" />
+            </node>
+          </node>
+          <node concept="1EOVif" id="478cfFz2Bvy" role="1uvc8Z">
+            <node concept="1EOVl_" id="478cfFz2BvC" role="1EOVia">
+              <property role="1EOVlA" value="2016-11-24T10:00:00" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1EOVii" id="478cfFz2BBu" role="1EORFm">
+        <property role="1EOVic" value="5oC_XKWYMdt/single" />
+        <node concept="1EOVkl" id="478cfFz2BBw" role="1uvRWl">
+          <property role="1uvMAS" value="m" />
+          <property role="1EOVkm" value="100.f" />
+        </node>
+      </node>
+    </node>
+    <node concept="1uujJe" id="478cfFz2t_s" role="1uhqRO">
+      <property role="TrG5h" value="AlertColdDay" />
+      <ref role="1uujdF" node="478cfFz2t_i" resolve="ColdDay" />
+      <ref role="1b1Dw7" node="478cfFz3t1H" resolve="Temperature" />
+    </node>
+    <node concept="1EOVlO" id="478cfFz3t1G" role="3ANvml">
+      <node concept="1uuihD" id="478cfFz3t1H" role="1uuibp">
+        <property role="TrG5h" value="Temperature" />
+      </node>
     </node>
   </node>
 </model>

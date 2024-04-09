@@ -123,12 +123,6 @@
   <node concept="24kQdi" id="52LigkvXIPr">
     <ref role="1XX52x" to="lyeg:5oC_XKWYMaG" resolve="DataStreamList" />
     <node concept="3EZMnI" id="52LigkvXISH" role="2wV5jI">
-      <node concept="3F0ifn" id="52LigkvXITe" role="3EZMnx">
-        <property role="3F0ifm" value="dataStreams:" />
-        <node concept="ljvvj" id="52LigkvXITf" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
       <node concept="3F2HdR" id="52LigkvXITg" role="3EZMnx">
         <ref role="1NtTu8" to="lyeg:5oC_XKWYMaQ" resolve="dataStreams" />
         <node concept="lj46D" id="52LigkvXITh" role="3F10Kt">
