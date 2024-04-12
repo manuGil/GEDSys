@@ -35,7 +35,7 @@
       <concept id="6208379058501919557" name="GeDL.structure.Event" flags="ng" index="1EOVip">
         <child id="7054498623859667179" name="notification" index="1uhqRO" />
         <child id="7490970978449142778" name="detectionRules" index="3ANvmg" />
-        <child id="7490970978449142783" name="dataStreams" index="3ANvml" />
+        <child id="7490970978449142783" name="dataStream" index="3ANvml" />
       </concept>
       <concept id="6208379058501919433" name="GeDL.structure.Distance" flags="ng" index="1EOVkl">
         <property id="7054498623859045543" name="unit" index="1uvMAS" />
@@ -96,7 +96,7 @@
         </node>
       </node>
       <node concept="1EOVlT" id="49T52aZC3Y2" role="1EORFk">
-        <property role="1bfvJf" value="&gt; 15" />
+        <property role="1bfvJf" value="&lt; 15.0" />
       </node>
     </node>
     <node concept="1uujJe" id="478cfFz2lpa" role="1uhqRO">
@@ -110,50 +110,22 @@
       </node>
     </node>
   </node>
-  <node concept="1EOVip" id="478cfFz2t_i">
+  <node concept="1EOVip" id="4qxPl3WB1J1">
     <property role="TrG5h" value="ColdDay" />
-    <node concept="1EORFp" id="478cfFz2t_o" role="3ANvmg">
-      <node concept="1EOVlT" id="478cfFz2t_p" role="1EORFk">
-        <property role="1bfvJf" value="&lt; 5" />
-      </node>
-      <node concept="1EOVku" id="478cfFz2Bvq" role="1EORFl">
-        <property role="TrG5h" value="city" />
-        <node concept="1EOVkr" id="478cfFz2Bvs" role="1EOVko">
-          <property role="1EOVkk" value="&quot;MyPOL()&quot;" />
-          <property role="1uv_TD" value="4326" />
-        </node>
-      </node>
-      <node concept="1EORFg" id="478cfFz2Bvu" role="1uvbWI">
-        <node concept="1uvcLx" id="478cfFz2Bvw" role="1EORFh">
-          <node concept="1EOVif" id="478cfFz2Bvx" role="1uvcvF">
-            <node concept="1EOVl_" id="478cfFz2BvA" role="1EOVia">
-              <property role="1EOVlA" value="2016-11-24T10:00:00" />
-            </node>
-          </node>
-          <node concept="1EOVif" id="478cfFz2Bvy" role="1uvc8Z">
-            <node concept="1EOVl_" id="478cfFz2BvC" role="1EOVia">
-              <property role="1EOVlA" value="2016-11-24T10:00:00" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="1EOVii" id="478cfFz2BBu" role="1EORFm">
-        <property role="1EOVic" value="5oC_XKWYMdt/single" />
-        <node concept="1EOVkl" id="478cfFz2BBw" role="1uvRWl">
-          <property role="1uvMAS" value="m" />
-          <property role="1EOVkm" value="100.f" />
-        </node>
-      </node>
-    </node>
-    <node concept="1uujJe" id="478cfFz2t_s" role="1uhqRO">
-      <property role="TrG5h" value="AlertColdDay" />
-      <ref role="1uujdF" node="478cfFz2t_i" resolve="ColdDay" />
-      <ref role="1b1Dw7" node="478cfFz3t1H" resolve="Temperature" />
-    </node>
-    <node concept="1EOVlO" id="478cfFz3t1G" role="3ANvml">
-      <node concept="1uuihD" id="478cfFz3t1H" role="1uuibp">
+    <node concept="1EOVlO" id="4qxPl3WB1J2" role="3ANvml">
+      <node concept="1uuihD" id="4qxPl3WB1J3" role="1uuibp">
         <property role="TrG5h" value="Temperature" />
       </node>
+    </node>
+    <node concept="1EORFp" id="4qxPl3WB1J6" role="3ANvmg">
+      <node concept="1EOVlT" id="4qxPl3WB1J7" role="1EORFk">
+        <property role="1bfvJf" value="&lt; 50" />
+      </node>
+    </node>
+    <node concept="1uujJe" id="4qxPl3WB1Ja" role="1uhqRO">
+      <property role="TrG5h" value="ColDayAlert" />
+      <ref role="1uujdF" node="4qxPl3WB1J1" resolve="ColdDay" />
+      <ref role="1b1Dw7" node="4qxPl3WB1J3" resolve="Temperature" />
     </node>
   </node>
 </model>
