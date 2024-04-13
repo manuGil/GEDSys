@@ -146,13 +146,34 @@
         <property role="3F0ifm" value="cond" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
-      <node concept="2iRfu4" id="52LigkvXOPb" role="2iSdaV" />
-      <node concept="3F0A7n" id="52LigkvXOPE" role="3EZMnx">
-        <ref role="1NtTu8" to="lyeg:5qwE5stBleo" resolve="expression" />
-        <node concept="ljvvj" id="52LigkvXOPF" role="3F10Kt">
+      <node concept="3F1sOY" id="4qxPl3WD4sW" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WCZZ0" resolve="LeftComparison" />
+        <node concept="lj46D" id="4qxPl3WD4sX" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4qxPl3WD4sY" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F1sOY" id="4qxPl3WF32c" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WEHV3" resolve="Operator" />
+        <node concept="lj46D" id="4qxPl3WF32d" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4qxPl3WF32e" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="4qxPl3WD53j" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WD0k$" resolve="RightComparison" />
+        <node concept="lj46D" id="4qxPl3WD53k" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4qxPl3WD53l" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="2iRfu4" id="52LigkvXOPb" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="52LigkvXZRm">
@@ -333,6 +354,63 @@
         <property role="3F0ifm" value=";" />
       </node>
       <node concept="l2Vlx" id="52LigkvZ_1F" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4qxPl3WDK0E">
+    <ref role="1XX52x" to="lyeg:5oC_XKWYMaz" resolve="Comparison" />
+    <node concept="3EZMnI" id="4qxPl3WDK0H" role="2wV5jI">
+      <node concept="2iRfu4" id="4qxPl3WDK0I" role="2iSdaV" />
+      <node concept="1iCGBv" id="4qxPl3WDK0N" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:67ABhWZB_UX" resolve="variable" />
+        <node concept="ljvvj" id="4qxPl3WDK0O" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="4qxPl3WDK0P" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="1sVBvm" id="4qxPl3WDK0Q" role="1sWHZn">
+          <node concept="3SHvHV" id="4qxPl3WDK0S" role="2wV5jI" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="4qxPl3WDK18" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:67ABhWZBuTQ" resolve="ComparisonOperator" />
+        <node concept="ljvvj" id="4qxPl3WDK19" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="4qxPl3WDK1s" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WBZ9B" resolve="value" />
+        <node concept="lj46D" id="4qxPl3WDK1t" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4qxPl3WDK1u" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4qxPl3WEfoL">
+    <ref role="1XX52x" to="lyeg:4qxPl3WBZdl" resolve="Value" />
+    <node concept="3EZMnI" id="4qxPl3WEfoN" role="2wV5jI">
+      <node concept="2iRfu4" id="4qxPl3WEfoO" role="2iSdaV" />
+      <node concept="3F0A7n" id="4qxPl3WEfoT" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WBZgc" resolve="value" />
+        <node concept="ljvvj" id="4qxPl3WEfoU" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4qxPl3WFcVg">
+    <ref role="1XX52x" to="lyeg:4qxPl3WEIw5" resolve="LogicalOperator" />
+    <node concept="3EZMnI" id="4qxPl3WFcVi" role="2wV5jI">
+      <node concept="2iRfu4" id="4qxPl3WFcVj" role="2iSdaV" />
+      <node concept="3F0A7n" id="4qxPl3WFcVo" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:4qxPl3WEIGi" resolve="Operator" />
+        <node concept="ljvvj" id="4qxPl3WFcVp" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

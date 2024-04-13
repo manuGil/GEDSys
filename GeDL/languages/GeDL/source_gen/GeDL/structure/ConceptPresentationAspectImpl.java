@@ -25,6 +25,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_EventDefinition;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
+  private ConceptPresentation props_LogicalOperator;
   private ConceptPresentation props_Notification;
   private ConceptPresentation props_Phenomenon;
   private ConceptPresentation props_SpatialGranulariy;
@@ -32,6 +33,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TimeInstance;
   private ConceptPresentation props_TimeType;
   private ConceptPresentation props_TimeWindow;
+  private ConceptPresentation props_Value;
 
   @Override
   @Nullable
@@ -41,14 +43,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Comparison:
         if (props_Comparison == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("comparison");
+          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L, 0x61e69d1f3f9e5ebdL, "variable", "", "");
           props_Comparison = cpb.create();
         }
         return props_Comparison;
       case LanguageConceptSwitch.Condition:
         if (props_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("condition");
+          cpb.rawPresentation("Condition");
           props_Condition = cpb.create();
         }
         return props_Condition;
@@ -151,6 +153,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Feature = cpb.create();
         }
         return props_Feature;
+      case LanguageConceptSwitch.LogicalOperator:
+        if (props_LogicalOperator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LogicalOperator");
+          props_LogicalOperator = cpb.create();
+        }
+        return props_LogicalOperator;
       case LanguageConceptSwitch.Notification:
         if (props_Notification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -200,6 +209,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TimeWindow = cpb.create();
         }
         return props_TimeWindow;
+      case LanguageConceptSwitch.Value:
+        if (props_Value == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Value");
+          props_Value = cpb.create();
+        }
+        return props_Value;
     }
     return null;
   }

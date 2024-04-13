@@ -25,13 +25,15 @@ public final class LanguageConceptSwitch {
   public static final int EventDefinition = 13;
   public static final int Expression = 14;
   public static final int Feature = 15;
-  public static final int Notification = 16;
-  public static final int Phenomenon = 17;
-  public static final int SpatialGranulariy = 18;
-  public static final int Time = 19;
-  public static final int TimeInstance = 20;
-  public static final int TimeType = 21;
-  public static final int TimeWindow = 22;
+  public static final int LogicalOperator = 16;
+  public static final int Notification = 17;
+  public static final int Phenomenon = 18;
+  public static final int SpatialGranulariy = 19;
+  public static final int Time = 20;
+  public static final int TimeInstance = 21;
+  public static final int TimeType = 22;
+  public static final int TimeWindow = 23;
+  public static final int Value = 24;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL);
@@ -51,6 +53,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfb2348L, EventDefinition);
     builder.put(0x562897dc3cfb234dL, Expression);
     builder.put(0x562897dc3cfb22c7L, Feature);
+    builder.put(0x46a1d550fcaae805L, LogicalOperator);
     builder.put(0x61e69d1f3f9fa6d1L, Notification);
     builder.put(0x61e69d1f3f9fb976L, Phenomenon);
     builder.put(0x562897dc3cfb234eL, SpatialGranulariy);
@@ -58,6 +61,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfb2353L, TimeInstance);
     builder.put(0x562897dc3cfb2359L, TimeType);
     builder.put(0x61e69d1f3f9a517eL, TimeWindow);
+    builder.put(0x46a1d550fc9ff355L, Value);
     myIndex = builder.seal();
   }
 

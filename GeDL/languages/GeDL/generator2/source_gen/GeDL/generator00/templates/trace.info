@@ -5,10 +5,10 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="105,0,109,0" name="GeDL.generator00.templates.QueriesGenerated$PROPS" />
-      <unit at="110,0,117,0" name="GeDL.generator00.templates.QueriesGenerated$LINKS" />
+      <unit at="105,0,108,0" name="GeDL.generator00.templates.QueriesGenerated$PROPS" />
+      <unit at="109,0,116,0" name="GeDL.generator00.templates.QueriesGenerated$LINKS" />
       <unit at="72,0,104,0" name="GeDL.generator00.templates.QueriesGenerated$PVQ" />
-      <unit at="21,0,118,0" name="GeDL.generator00.templates.QueriesGenerated" />
+      <unit at="21,0,117,0" name="GeDL.generator00.templates.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:cb28cbc9-17cf-4d56-b947-9a7c1b9717ff(GeDL.generator00.templates@generator)/1770002311599744805">
@@ -19,7 +19,7 @@
       <node id="5089583597717638585" at="35,88,36,178" concept="1" />
       <node id="5089583597717655002" at="38,88,39,130" concept="1" />
       <node id="5089583597717661375" at="41,88,42,78" concept="1" />
-      <node id="5089583597717670563" at="44,88,45,186" concept="1" />
+      <node id="5089583597717670563" at="44,88,45,164" concept="1" />
       <node id="5089583597717679927" at="47,88,48,130" concept="1" />
       <node id="772789844100572423" at="50,88,51,78" concept="1" />
       <node id="5089583597717618370" at="55,14,56,183" concept="0" />
@@ -55,7 +55,7 @@
       <scope id="5089583597717638079" at="35,88,36,178" />
       <scope id="5089583597717654548" at="38,88,39,130" />
       <scope id="5089583597717661317" at="41,88,42,78" />
-      <scope id="5089583597717670453" at="44,88,45,186" />
+      <scope id="5089583597717670453" at="44,88,45,164" />
       <scope id="5089583597717679843" at="47,88,48,130" />
       <scope id="772789844100572417" at="50,88,51,78" />
       <scope id="5089583597717618370" at="81,15,82,66" />
