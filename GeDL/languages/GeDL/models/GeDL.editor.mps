@@ -48,6 +48,7 @@
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -156,7 +157,8 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4qxPl3WF32c" role="3EZMnx">
-        <ref role="1NtTu8" to="lyeg:4qxPl3WEHV3" resolve="Operator" />
+        <property role="1$x2rV" value="logic operator" />
+        <ref role="1NtTu8" to="lyeg:4qxPl3WEHV3" resolve="LogicOperator" />
         <node concept="lj46D" id="4qxPl3WF32d" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -252,6 +254,7 @@
       <node concept="3EZMnI" id="52LigkvYR4E" role="3EZMnx">
         <node concept="2iRfu4" id="52LigkvYR4F" role="2iSdaV" />
         <node concept="3F0A7n" id="52LigkvYmHd" role="3EZMnx">
+          <property role="1$x2rV" value="notification name" />
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="ljvvj" id="52LigkvYmHe" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -264,6 +267,7 @@
           <property role="3F0ifm" value="(" />
         </node>
         <node concept="1iCGBv" id="52LigkvYIOb" role="3EZMnx">
+          <property role="1$x2rV" value="event name" />
           <ref role="1NtTu8" to="lyeg:67ABhWZBUTO" resolve="eventName" />
           <node concept="ljvvj" id="52LigkvYIOc" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -294,6 +298,7 @@
       <node concept="3EZMnI" id="52LigkvYZQg" role="3EZMnx">
         <node concept="2iRfu4" id="52LigkvYZQh" role="2iSdaV" />
         <node concept="1iCGBv" id="52LigkvYywB" role="3EZMnx">
+          <property role="1$x2rV" value="payload" />
           <ref role="1NtTu8" to="lyeg:5qwE5stDz1g" resolve="payloadPhenomenon" />
           <node concept="ljvvj" id="52LigkvYywC" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -361,7 +366,8 @@
     <node concept="3EZMnI" id="4qxPl3WDK0H" role="2wV5jI">
       <node concept="2iRfu4" id="4qxPl3WDK0I" role="2iSdaV" />
       <node concept="1iCGBv" id="4qxPl3WDK0N" role="3EZMnx">
-        <ref role="1NtTu8" to="lyeg:67ABhWZB_UX" resolve="variable" />
+        <property role="1$x2rV" value="datastream" />
+        <ref role="1NtTu8" to="lyeg:67ABhWZB_UX" resolve="datastreamName" />
         <node concept="ljvvj" id="4qxPl3WDK0O" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -373,12 +379,14 @@
         </node>
       </node>
       <node concept="3F0A7n" id="4qxPl3WDK18" role="3EZMnx">
+        <property role="1$x2rV" value="operator" />
         <ref role="1NtTu8" to="lyeg:67ABhWZBuTQ" resolve="ComparisonOperator" />
         <node concept="ljvvj" id="4qxPl3WDK19" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>
       <node concept="3F1sOY" id="4qxPl3WDK1s" role="3EZMnx">
+        <property role="1$x2rV" value="value" />
         <ref role="1NtTu8" to="lyeg:4qxPl3WBZ9B" resolve="value" />
         <node concept="lj46D" id="4qxPl3WDK1t" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -394,6 +402,7 @@
     <node concept="3EZMnI" id="4qxPl3WEfoN" role="2wV5jI">
       <node concept="2iRfu4" id="4qxPl3WEfoO" role="2iSdaV" />
       <node concept="3F0A7n" id="4qxPl3WEfoT" role="3EZMnx">
+        <property role="1$x2rV" value="value" />
         <ref role="1NtTu8" to="lyeg:4qxPl3WBZgc" resolve="value" />
         <node concept="ljvvj" id="4qxPl3WEfoU" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -402,10 +411,11 @@
     </node>
   </node>
   <node concept="24kQdi" id="4qxPl3WFcVg">
-    <ref role="1XX52x" to="lyeg:4qxPl3WEIw5" resolve="LogicalOperator" />
+    <ref role="1XX52x" to="lyeg:4qxPl3WEIw5" resolve="LogicOperator" />
     <node concept="3EZMnI" id="4qxPl3WFcVi" role="2wV5jI">
       <node concept="2iRfu4" id="4qxPl3WFcVj" role="2iSdaV" />
       <node concept="3F0A7n" id="4qxPl3WFcVo" role="3EZMnx">
+        <property role="1$x2rV" value="logic operator" />
         <ref role="1NtTu8" to="lyeg:4qxPl3WEIGi" resolve="Operator" />
         <node concept="ljvvj" id="4qxPl3WFcVp" role="3F10Kt">
           <property role="VOm3f" value="true" />

@@ -25,7 +25,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_EventDefinition;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
-  private ConceptPresentation props_LogicalOperator;
+  private ConceptPresentation props_Hello;
+  private ConceptPresentation props_LogicOperator;
   private ConceptPresentation props_Notification;
   private ConceptPresentation props_Phenomenon;
   private ConceptPresentation props_SpatialGranulariy;
@@ -43,7 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Comparison:
         if (props_Comparison == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L, 0x61e69d1f3f9e5ebdL, "variable", "", "");
+          cpb.rawPresentation("comparison");
           props_Comparison = cpb.create();
         }
         return props_Comparison;
@@ -153,13 +154,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Feature = cpb.create();
         }
         return props_Feature;
-      case LanguageConceptSwitch.LogicalOperator:
-        if (props_LogicalOperator == null) {
+      case LanguageConceptSwitch.Hello:
+        if (props_Hello == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LogicalOperator");
-          props_LogicalOperator = cpb.create();
+          cpb.presentationByName();
+          props_Hello = cpb.create();
         }
-        return props_LogicalOperator;
+        return props_Hello;
+      case LanguageConceptSwitch.LogicOperator:
+        if (props_LogicOperator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LogicOperator");
+          props_LogicOperator = cpb.create();
+        }
+        return props_LogicOperator;
       case LanguageConceptSwitch.Notification:
         if (props_Notification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

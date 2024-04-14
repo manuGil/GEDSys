@@ -61,7 +61,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       final SProperty property = PROPS.value$P0xh;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no value>");
+      editorCell.setDefaultText("value");
       editorCell.setCellId("property_value");
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

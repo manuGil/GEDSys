@@ -123,14 +123,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new OperatorSingleRoleHandler_2lgv54_c0(myNode, LINKS.Operator$MyzW, getEditorContext());
+    SingleRoleCellProvider provider = new LogicOperatorSingleRoleHandler_2lgv54_c0(myNode, LINKS.LogicOperator$MyzW, getEditorContext());
     return provider.createCell();
   }
-  private static class OperatorSingleRoleHandler_2lgv54_c0 extends SingleRoleCellProvider {
+  private static class LogicOperatorSingleRoleHandler_2lgv54_c0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public OperatorSingleRoleHandler_2lgv54_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public LogicOperatorSingleRoleHandler_2lgv54_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -143,8 +143,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.Operator$MyzW, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.Operator$MyzW, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.LogicOperator$MyzW, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.LogicOperator$MyzW, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -156,7 +156,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.Operator$MyzW);
+        editorCell.setSRole(LINKS.LogicOperator$MyzW);
       }
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -166,10 +166,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.Operator$MyzW));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.LogicOperator$MyzW));
       try {
         EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_Operator");
+        editorCell.setCellId("empty_LogicOperator");
         installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
@@ -178,7 +178,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no Operator>";
+      return "logic operator";
     }
   }
   private EditorCell createRefNode_2() {
@@ -243,7 +243,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink LeftComparison$Ic57 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fca3ffc0L, "LeftComparison");
-    /*package*/ static final SContainmentLink Operator$MyzW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fcaadec3L, "Operator");
+    /*package*/ static final SContainmentLink LogicOperator$MyzW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fcaadec3L, "LogicOperator");
     /*package*/ static final SContainmentLink RightComparison$DgWG = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fca40524L, "RightComparison");
   }
 }
