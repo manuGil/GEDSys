@@ -26,7 +26,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
   private ConceptPresentation props_Hello;
-  private ConceptPresentation props_LogicOperator;
+  private ConceptPresentation props_LogicalOperator;
   private ConceptPresentation props_Notification;
   private ConceptPresentation props_Phenomenon;
   private ConceptPresentation props_SpatialGranulariy;
@@ -161,13 +161,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Hello = cpb.create();
         }
         return props_Hello;
-      case LanguageConceptSwitch.LogicOperator:
-        if (props_LogicOperator == null) {
+      case LanguageConceptSwitch.LogicalOperator:
+        if (props_LogicalOperator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LogicOperator");
-          props_LogicOperator = cpb.create();
+          cpb.rawPresentation("LogicalOperator");
+          props_LogicalOperator = cpb.create();
         }
-        return props_LogicOperator;
+        return props_LogicalOperator;
       case LanguageConceptSwitch.Notification:
         if (props_Notification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

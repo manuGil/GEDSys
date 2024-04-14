@@ -389,7 +389,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_LogicOperator" />
+      <property role="TrG5h" value="props_LogicalOperator" />
       <node concept="3uibUv" id="11" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -1684,7 +1684,7 @@
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String)" resolve="rawPresentation" />
                         <uo k="s:originTrace" v="n:5089583597718530053" />
                         <node concept="Xl_RD" id="91" role="37wK5m">
-                          <property role="Xl_RC" value="LogicOperator" />
+                          <property role="Xl_RC" value="LogicalOperator" />
                           <uo k="s:originTrace" v="n:5089583597718530053" />
                         </node>
                       </node>
@@ -1701,7 +1701,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="94" role="37vLTJ">
-                        <ref role="3cqZAo" node="j" resolve="props_LogicOperator" />
+                        <ref role="3cqZAo" node="j" resolve="props_LogicalOperator" />
                       </node>
                     </node>
                   </node>
@@ -1709,19 +1709,19 @@
                 <node concept="3clFbC" id="8Q" role="3clFbw">
                   <node concept="10Nm6u" id="97" role="3uHU7w" />
                   <node concept="37vLTw" id="98" role="3uHU7B">
-                    <ref role="3cqZAo" node="j" resolve="props_LogicOperator" />
+                    <ref role="3cqZAo" node="j" resolve="props_LogicalOperator" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="8O" role="3cqZAp">
                 <node concept="37vLTw" id="99" role="3cqZAk">
-                  <ref role="3cqZAo" node="j" resolve="props_LogicOperator" />
+                  <ref role="3cqZAo" node="j" resolve="props_LogicalOperator" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="8M" role="3Kbmr1">
               <ref role="1PxDUh" node="oq" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="oH" resolve="LogicOperator" />
+              <ref role="3cqZAo" node="oH" resolve="LogicalOperator" />
             </node>
           </node>
           <node concept="3KbdKl" id="1S" role="3KbHQx">
@@ -3028,7 +3028,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fz">
-    <property role="TrG5h" value="EnumerationDescriptor_LogicOperators" />
+    <property role="TrG5h" value="EnumerationDescriptor_LogicalOperators" />
     <uo k="s:originTrace" v="n:2522843395561253397" />
     <node concept="2tJIrI" id="f$" role="jymVt">
       <uo k="s:originTrace" v="n:2522843395561253397" />
@@ -3059,7 +3059,7 @@
             <uo k="s:originTrace" v="n:2522843395561253397" />
           </node>
           <node concept="Xl_RD" id="fY" role="37wK5m">
-            <property role="Xl_RC" value="LogicOperators" />
+            <property role="Xl_RC" value="LogicalOperators" />
             <uo k="s:originTrace" v="n:2522843395561253397" />
           </node>
           <node concept="Xl_RD" id="fZ" role="37wK5m">
@@ -4751,15 +4751,15 @@
         </node>
       </node>
       <node concept="39e2AG" id="mZ" role="39e3Y0">
-        <ref role="39e2AK" to="lyeg:2c2WbewnACl" resolve="LogicOperators" />
+        <ref role="39e2AK" to="lyeg:2c2WbewnACl" resolve="LogicalOperators" />
         <node concept="385nmt" id="n5" role="385vvn">
-          <property role="385vuF" value="LogicOperators" />
+          <property role="385vuF" value="LogicalOperators" />
           <node concept="3u3nmq" id="n7" role="385v07">
             <property role="3u3nmv" value="2522843395561253397" />
           </node>
         </node>
         <node concept="39e2AT" id="n6" role="39e2AY">
-          <ref role="39e2AS" node="f_" resolve="EnumerationDescriptor_LogicOperators" />
+          <ref role="39e2AS" node="f_" resolve="EnumerationDescriptor_LogicalOperators" />
         </node>
       </node>
       <node concept="39e2AG" id="n0" role="39e3Y0">
@@ -5229,7 +5229,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="LogicOperator" />
+      <property role="TrG5h" value="LogicalOperator" />
       <node concept="3Tm1VV" id="pM" role="1B3o_S" />
       <node concept="10Oyi0" id="pN" role="1tU5fm" />
       <node concept="3cmrfG" id="pO" role="33vP2m">
@@ -5631,7 +5631,7 @@
                 <property role="1adDun" value="0x46a1d550fcaae805L" />
               </node>
               <node concept="37vLTw" id="sb" role="37wK5m">
-                <ref role="3cqZAo" node="oH" resolve="LogicOperator" />
+                <ref role="3cqZAo" node="oH" resolve="LogicalOperator" />
               </node>
             </node>
           </node>
@@ -6049,12 +6049,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptLogicOperator" />
+      <property role="TrG5h" value="myConceptLogicalOperator" />
       <node concept="3uibUv" id="uS" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="uT" role="33vP2m">
-        <ref role="37wK5l" node="ud" resolve="createDescriptorForLogicOperator" />
+        <ref role="37wK5l" node="ud" resolve="createDescriptorForLogicalOperator" />
       </node>
     </node>
     <node concept="312cEg" id="tw" role="jymVt">
@@ -6171,13 +6171,13 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myEnumerationLogicOperators" />
+      <property role="TrG5h" value="myEnumerationLogicalOperators" />
       <node concept="3uibUv" id="vd" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~EnumerationDescriptor" resolve="EnumerationDescriptor" />
       </node>
       <node concept="2ShNRf" id="ve" role="33vP2m">
         <node concept="1pGfFk" id="vf" role="2ShVmc">
-          <ref role="37wK5l" node="f_" resolve="EnumerationDescriptor_LogicOperators" />
+          <ref role="37wK5l" node="f_" resolve="EnumerationDescriptor_LogicalOperators" />
         </node>
       </node>
     </node>
@@ -6337,7 +6337,7 @@
               <ref role="3cqZAo" node="tu" resolve="myConceptHello" />
             </node>
             <node concept="37vLTw" id="w4" role="37wK5m">
-              <ref role="3cqZAo" node="tv" resolve="myConceptLogicOperator" />
+              <ref role="3cqZAo" node="tv" resolve="myConceptLogicalOperator" />
             </node>
             <node concept="37vLTw" id="w5" role="37wK5m">
               <ref role="3cqZAo" node="tw" resolve="myConceptNotification" />
@@ -6616,13 +6616,13 @@
             <node concept="3clFbS" id="xQ" role="3Kbo56">
               <node concept="3cpWs6" id="xS" role="3cqZAp">
                 <node concept="37vLTw" id="xT" role="3cqZAk">
-                  <ref role="3cqZAo" node="tv" resolve="myConceptLogicOperator" />
+                  <ref role="3cqZAo" node="tv" resolve="myConceptLogicalOperator" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="xR" role="3Kbmr1">
               <ref role="1PxDUh" node="oq" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="oH" resolve="LogicOperator" />
+              <ref role="3cqZAo" node="oH" resolve="LogicalOperator" />
             </node>
           </node>
           <node concept="3KbdKl" id="wC" role="3KbHQx">
@@ -6776,7 +6776,7 @@
               <ref role="3cqZAo" node="tC" resolve="myEnumerationDurationUnit" />
             </node>
             <node concept="37vLTw" id="yB" role="37wK5m">
-              <ref role="3cqZAo" node="tD" resolve="myEnumerationLogicOperators" />
+              <ref role="3cqZAo" node="tD" resolve="myEnumerationLogicalOperators" />
             </node>
             <node concept="37vLTw" id="yC" role="37wK5m">
               <ref role="3cqZAo" node="tE" resolve="myEnumerationObservationType" />
@@ -10450,7 +10450,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForLogicOperator" />
+      <property role="TrG5h" value="createDescriptorForLogicalOperator" />
       <node concept="3clFbS" id="Sm" role="3clF47">
         <node concept="3cpWs8" id="Sp" role="3cqZAp">
           <node concept="3cpWsn" id="Sv" role="3cpWs9">
@@ -10465,7 +10465,7 @@
                   <property role="Xl_RC" value="GeDL" />
                 </node>
                 <node concept="Xl_RD" id="S$" role="37wK5m">
-                  <property role="Xl_RC" value="LogicOperator" />
+                  <property role="Xl_RC" value="LogicalOperator" />
                 </node>
                 <node concept="1adDum" id="S_" role="37wK5m">
                   <property role="1adDun" value="0x35b540ea51fc45c2L" />

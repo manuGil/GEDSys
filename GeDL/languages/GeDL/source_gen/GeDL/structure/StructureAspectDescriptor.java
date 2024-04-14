@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
   /*package*/ final ConceptDescriptor myConceptFeature = createDescriptorForFeature();
   /*package*/ final ConceptDescriptor myConceptHello = createDescriptorForHello();
-  /*package*/ final ConceptDescriptor myConceptLogicOperator = createDescriptorForLogicOperator();
+  /*package*/ final ConceptDescriptor myConceptLogicalOperator = createDescriptorForLogicalOperator();
   /*package*/ final ConceptDescriptor myConceptNotification = createDescriptorForNotification();
   /*package*/ final ConceptDescriptor myConceptPhenomenon = createDescriptorForPhenomenon();
   /*package*/ final ConceptDescriptor myConceptSpatialGranulariy = createDescriptorForSpatialGranulariy();
@@ -43,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTimeWindow = createDescriptorForTimeWindow();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final EnumerationDescriptor myEnumerationDurationUnit = new EnumerationDescriptor_DurationUnit();
-  /*package*/ final EnumerationDescriptor myEnumerationLogicOperators = new EnumerationDescriptor_LogicOperators();
+  /*package*/ final EnumerationDescriptor myEnumerationLogicalOperators = new EnumerationDescriptor_LogicalOperators();
   /*package*/ final EnumerationDescriptor myEnumerationObservationType = new EnumerationDescriptor_ObservationType();
   /*package*/ final EnumerationDescriptor myEnumerationSpatialRelation = new EnumerationDescriptor_SpatialRelation();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -60,7 +60,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicOperator, myConceptNotification, myConceptPhenomenon, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPhenomenon, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
   }
 
   @Override
@@ -101,8 +101,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFeature;
       case LanguageConceptSwitch.Hello:
         return myConceptHello;
-      case LanguageConceptSwitch.LogicOperator:
-        return myConceptLogicOperator;
+      case LanguageConceptSwitch.LogicalOperator:
+        return myConceptLogicalOperator;
       case LanguageConceptSwitch.Notification:
         return myConceptNotification;
       case LanguageConceptSwitch.Phenomenon:
@@ -126,7 +126,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationDurationUnit, myEnumerationLogicOperators, myEnumerationObservationType, myEnumerationSpatialRelation);
+    return Arrays.asList(myEnumerationDurationUnit, myEnumerationLogicalOperators, myEnumerationObservationType, myEnumerationSpatialRelation);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -306,8 +306,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("hello");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForLogicOperator() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "LogicOperator", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fcaae805L);
+  private static ConceptDescriptor createDescriptorForLogicalOperator() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "LogicalOperator", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fcaae805L);
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/5089583597718530053");
     b.version(3);

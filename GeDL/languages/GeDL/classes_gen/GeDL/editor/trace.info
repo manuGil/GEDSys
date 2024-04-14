@@ -361,18 +361,18 @@
     </file>
   </root>
   <root nodeRef="r:b4e19d01-8f13-4ef3-a24b-da3bf5787452(GeDL.editor)/5089583597718654672">
-    <file name="LogicOperator_Editor.java">
-      <node id="5089583597718654672" at="11,79,12,79" concept="6" />
+    <file name="LogicalOperator_Editor.java">
+      <node id="5089583597718654672" at="11,79,12,81" concept="6" />
       <node id="5089583597718654672" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5089583597718654672" at="11,79,12,79" />
+      <scope id="5089583597718654672" at="11,79,12,81" />
       <scope id="5089583597718654672" at="11,0,14,0">
         <var name="editorContext" id="5089583597718654672" />
         <var name="node" id="5089583597718654672" />
       </scope>
-      <unit id="5089583597718654672" at="10,0,15,0" name="GeDL.editor.LogicOperator_Editor" />
+      <unit id="5089583597718654672" at="10,0,15,0" name="GeDL.editor.LogicalOperator_Editor" />
     </file>
-    <file name="LogicOperator_EditorBuilder_a.java">
-      <node id="5089583597718654672" at="35,93,36,19" concept="10" />
+    <file name="LogicalOperator_EditorBuilder_a.java">
+      <node id="5089583597718654672" at="35,95,36,19" concept="10" />
       <node id="5089583597718654672" at="36,19,37,18" concept="1" />
       <node id="5089583597718654672" at="42,26,43,18" concept="6" />
       <node id="5089583597718654672" at="46,39,47,32" concept="6" />
@@ -404,7 +404,7 @@
       <node id="5089583597718654672" at="32,0,34,0" concept="2" trace="myNode" />
       <node id="5089583597718654672" at="46,0,49,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5089583597718654680" at="73,0,76,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5089583597718654672" at="35,0,39,0" concept="0" trace="LogicOperator_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5089583597718654672" at="35,0,39,0" concept="0" trace="LogicalOperator_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5089583597718654672" at="40,0,45,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5089583597718654680" at="71,155,76,9" concept="5" />
       <node id="5089583597718654680" at="76,9,81,24" concept="3" />
@@ -415,7 +415,7 @@
       <scope id="5089583597718654672" at="46,39,47,32" />
       <scope id="5089583597718654680" at="73,41,74,118" />
       <scope id="5089583597718654680" at="82,15,83,40" />
-      <scope id="5089583597718654672" at="35,93,37,18" />
+      <scope id="5089583597718654672" at="35,95,37,18" />
       <scope id="5089583597718654680" at="77,74,79,145">
         <var name="manager" id="5089583597718654680" />
       </scope>
@@ -441,10 +441,10 @@
       </scope>
       <scope id="5089583597718654680" at="58,41,84,5" />
       <scope id="5089583597718654680" at="58,0,86,0" />
-      <unit id="5089583597718654672" at="87,0,90,0" name="GeDL.editor.LogicOperator_EditorBuilder_a$PROPS" />
-      <unit id="5089583597718654672" at="91,0,94,0" name="GeDL.editor.LogicOperator_EditorBuilder_a$CONCEPTS" />
-      <unit id="5089583597718654680" at="72,102,76,7" name="GeDL.editor.LogicOperator_EditorBuilder_a$1" />
-      <unit id="5089583597718654672" at="31,0,95,0" name="GeDL.editor.LogicOperator_EditorBuilder_a" />
+      <unit id="5089583597718654672" at="87,0,90,0" name="GeDL.editor.LogicalOperator_EditorBuilder_a$PROPS" />
+      <unit id="5089583597718654672" at="91,0,94,0" name="GeDL.editor.LogicalOperator_EditorBuilder_a$CONCEPTS" />
+      <unit id="5089583597718654680" at="72,102,76,7" name="GeDL.editor.LogicalOperator_EditorBuilder_a$1" />
+      <unit id="5089583597718654672" at="31,0,95,0" name="GeDL.editor.LogicalOperator_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:b4e19d01-8f13-4ef3-a24b-da3bf5787452(GeDL.editor)/5814508880271686633">

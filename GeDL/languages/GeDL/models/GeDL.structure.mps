@@ -102,7 +102,7 @@
       <property role="IQ2ns" value="5089583597718527683" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="LogicOperator" />
-      <ref role="20lvS9" node="4qxPl3WEIw5" resolve="LogicOperator" />
+      <ref role="20lvS9" node="4qxPl3WEIw5" resolve="LogicalOperator" />
     </node>
     <node concept="1TJgyj" id="4qxPl3WD0k$" role="1TKVEi">
       <property role="IQ2ns" value="5089583597718078756" />
@@ -559,7 +559,7 @@
   </node>
   <node concept="1TIwiD" id="4qxPl3WEIw5">
     <property role="EcuMT" value="5089583597718530053" />
-    <property role="TrG5h" value="LogicOperator" />
+    <property role="TrG5h" value="LogicalOperator" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
     <node concept="1TJgyi" id="4qxPl3WEIGi" role="1TKVEl">
       <property role="IQ2nx" value="5089583597718530834" />
@@ -584,7 +584,7 @@
   </node>
   <node concept="25R3W" id="2c2WbewnACl">
     <property role="3F6X1D" value="2522843395561253397" />
-    <property role="TrG5h" value="LogicOperators" />
+    <property role="TrG5h" value="LogicalOperators" />
     <node concept="25R33" id="2c2WbewnACm" role="25R1y">
       <property role="3tVfz5" value="2522843395561253398" />
       <property role="TrG5h" value="and" />

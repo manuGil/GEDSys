@@ -26,7 +26,7 @@ public final class LanguageConceptSwitch {
   public static final int Expression = 14;
   public static final int Feature = 15;
   public static final int Hello = 16;
-  public static final int LogicOperator = 17;
+  public static final int LogicalOperator = 17;
   public static final int Notification = 18;
   public static final int Phenomenon = 19;
   public static final int SpatialGranulariy = 20;
@@ -55,7 +55,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfb234dL, Expression);
     builder.put(0x562897dc3cfb22c7L, Feature);
     builder.put(0x46a1d550fcb9b416L, Hello);
-    builder.put(0x46a1d550fcaae805L, LogicOperator);
+    builder.put(0x46a1d550fcaae805L, LogicalOperator);
     builder.put(0x61e69d1f3f9fa6d1L, Notification);
     builder.put(0x61e69d1f3f9fb976L, Phenomenon);
     builder.put(0x562897dc3cfb234eL, SpatialGranulariy);

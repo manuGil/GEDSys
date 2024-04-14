@@ -411,7 +411,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4qxPl3WFcVg">
-    <ref role="1XX52x" to="lyeg:4qxPl3WEIw5" resolve="LogicOperator" />
+    <ref role="1XX52x" to="lyeg:4qxPl3WEIw5" resolve="LogicalOperator" />
     <node concept="3EZMnI" id="4qxPl3WFcVi" role="2wV5jI">
       <node concept="2iRfu4" id="4qxPl3WFcVj" role="2iSdaV" />
       <node concept="3F0A7n" id="4qxPl3WFcVo" role="3EZMnx">

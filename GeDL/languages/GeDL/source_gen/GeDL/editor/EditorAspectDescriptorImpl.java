@@ -33,7 +33,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 6:
         return Collections.<ConceptEditor>singletonList(new Feature_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new LogicOperator_Editor());
+        return Collections.<ConceptEditor>singletonList(new LogicalOperator_Editor());
       case 8:
         return Collections.<ConceptEditor>singletonList(new Notification_Editor());
       case 9:
