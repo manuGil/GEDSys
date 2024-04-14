@@ -12,6 +12,7 @@
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -719,21 +720,31 @@
       <node concept="30G5F_" id="4qxPl3WJgJx" role="30HLyM">
         <node concept="3clFbS" id="4qxPl3WJgJy" role="2VODD2">
           <node concept="3clFbF" id="4qxPl3WJgOp" role="3cqZAp">
-            <node concept="2OqwBi" id="4qxPl3WJoOj" role="3clFbG">
-              <node concept="2OqwBi" id="4qxPl3WJnU3" role="2Oq$k0">
-                <node concept="2OqwBi" id="4qxPl3WJh3M" role="2Oq$k0">
-                  <node concept="30H73N" id="4qxPl3WJgOo" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="4qxPl3WJnSw" role="2OqNvi">
-                    <ref role="3Tt5mk" to="lyeg:4qxPl3WEHV3" resolve="Operator" />
+            <node concept="2OqwBi" id="2c2Wbewo0Es" role="3clFbG">
+              <node concept="2OqwBi" id="2c2WbewoeHG" role="2Oq$k0">
+                <node concept="2OqwBi" id="2c2WbewnVQR" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4qxPl3WJnU3" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4qxPl3WJh3M" role="2Oq$k0">
+                      <node concept="30H73N" id="4qxPl3WJgOo" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4qxPl3WJnSw" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lyeg:4qxPl3WEHV3" resolve="LogicOperator" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="4qxPl3WJnYP" role="2OqNvi">
+                      <ref role="3TsBF5" to="lyeg:4qxPl3WEIGi" resolve="Operator" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2c2Wbewo0jT" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SEnumerationLiteral.getEnumeration()" resolve="getEnumeration" />
                   </node>
                 </node>
-                <node concept="3TrcHB" id="4qxPl3WJnYP" role="2OqNvi">
-                  <ref role="3TsBF5" to="lyeg:4qxPl3WEIGi" resolve="Operator" />
+                <node concept="liA8E" id="2c2WbewofoP" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Object.toString()" resolve="toString" />
                 </node>
               </node>
-              <node concept="liA8E" id="4qxPl3WJpxM" role="2OqNvi">
+              <node concept="liA8E" id="2c2Wbewo1gW" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
-                <node concept="Xl_RD" id="4qxPl3WJpzd" role="37wK5m">
+                <node concept="Xl_RD" id="2c2Wbewo32Y" role="37wK5m">
                   <property role="Xl_RC" value="AND" />
                 </node>
               </node>

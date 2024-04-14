@@ -28,7 +28,7 @@ public class QueriesGenerated extends QueryProviderBase {
     super(1);
   }
   public static boolean rule_Condition_3_0(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.LogicOperator$MyzW), PROPS.Operator$E3zl).equals("AND");
+    return SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.LogicOperator$MyzW), PROPS.Operator$E3zl).getEnumeration().toString().equals("AND");
   }
   public static Object propertyMacro_GetValue_1_0(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -52,7 +52,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH), LINKS.LeftComparison$Ic57), LINKS.variable$BspM), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH), LINKS.LeftComparison$Ic57), LINKS.datastreamName$BspM), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH), LINKS.LeftComparison$Ic57), PROPS.ComparisonOperator$JGH7);
@@ -161,7 +161,7 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
     /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
     /*package*/ static final SContainmentLink LeftComparison$Ic57 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fca3ffc0L, "LeftComparison");
-    /*package*/ static final SReferenceLink variable$BspM = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L, 0x61e69d1f3f9e5ebdL, "variable");
+    /*package*/ static final SReferenceLink datastreamName$BspM = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L, 0x61e69d1f3f9e5ebdL, "datastreamName");
     /*package*/ static final SContainmentLink value$7J_a = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L, 0x46a1d550fc9ff267L, "value");
   }
 

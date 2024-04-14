@@ -43,6 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTimeWindow = createDescriptorForTimeWindow();
   /*package*/ final ConceptDescriptor myConceptValue = createDescriptorForValue();
   /*package*/ final EnumerationDescriptor myEnumerationDurationUnit = new EnumerationDescriptor_DurationUnit();
+  /*package*/ final EnumerationDescriptor myEnumerationLogicOperators = new EnumerationDescriptor_LogicOperators();
   /*package*/ final EnumerationDescriptor myEnumerationObservationType = new EnumerationDescriptor_ObservationType();
   /*package*/ final EnumerationDescriptor myEnumerationSpatialRelation = new EnumerationDescriptor_SpatialRelation();
   private final LanguageConceptSwitch myIndexSwitch;
@@ -125,7 +126,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationDurationUnit, myEnumerationObservationType, myEnumerationSpatialRelation);
+    return Arrays.asList(myEnumerationDurationUnit, myEnumerationLogicOperators, myEnumerationObservationType, myEnumerationSpatialRelation);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -310,7 +311,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/5089583597718530053");
     b.version(3);
-    b.property("Operator", 0x46a1d550fcaaeb12L).type(PrimitiveTypeId.STRING).origin("5089583597718530834").done();
+    b.property("Operator", 0x46a1d550fcaaeb12L).type(MetaIdFactory.dataTypeId(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x2302f0b3a05e6a15L)).origin("5089583597718530834").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNotification() {

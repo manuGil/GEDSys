@@ -564,7 +564,7 @@
     <node concept="1TJgyi" id="4qxPl3WEIGi" role="1TKVEl">
       <property role="IQ2nx" value="5089583597718530834" />
       <property role="TrG5h" value="Operator" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <ref role="AX2Wp" node="2c2WbewnACl" resolve="LogicOperators" />
     </node>
   </node>
   <node concept="1TIwiD" id="4qxPl3WIrgm">
@@ -580,6 +580,25 @@
       <property role="IQ2nx" value="5089583597719500451" />
       <property role="TrG5h" value="message" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="25R3W" id="2c2WbewnACl">
+    <property role="3F6X1D" value="2522843395561253397" />
+    <property role="TrG5h" value="LogicOperators" />
+    <node concept="25R33" id="2c2WbewnACm" role="25R1y">
+      <property role="3tVfz5" value="2522843395561253398" />
+      <property role="TrG5h" value="and" />
+      <property role="1L1pqM" value="&amp;&amp;" />
+    </node>
+    <node concept="25R33" id="2c2WbewnACn" role="25R1y">
+      <property role="3tVfz5" value="2522843395561253399" />
+      <property role="TrG5h" value="or" />
+      <property role="1L1pqM" value="||" />
+    </node>
+    <node concept="25R33" id="2c2WbewossL" role="25R1y">
+      <property role="3tVfz5" value="2522843395561473841" />
+      <property role="TrG5h" value="not" />
+      <property role="1L1pqM" value="!" />
     </node>
   </node>
 </model>

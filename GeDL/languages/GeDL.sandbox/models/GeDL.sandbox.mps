@@ -28,7 +28,6 @@
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
         <child id="5089583597718077376" name="LeftComparison" index="2U0yEg" />
-        <child id="5089583597718078756" name="RightComparison" index="2U1t1O" />
       </concept>
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
         <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
@@ -54,25 +53,36 @@
       <ref role="1uujdF" node="67ABhWZ_Mfe" resolve="HotDay" />
       <ref role="1b1Dw7" node="4qxPl3WGF98" resolve="Temperature" />
     </node>
-    <node concept="1EORFp" id="4qxPl3WJ$Eb" role="3ANvmg">
-      <node concept="1EOVlT" id="4qxPl3WJ$Ec" role="1EORFk">
-        <node concept="1EOVlZ" id="4qxPl3WJ$Ed" role="2U0yEg">
-          <property role="1uuRdD" value="&lt;" />
-          <ref role="1uucey" node="4qxPl3WGF98" resolve="Temperature" />
-          <node concept="2Ufyo5" id="4qxPl3WJ$Ee" role="2UfysR">
-            <property role="2Ufy5s" value="10.0f" />
-          </node>
-        </node>
-        <node concept="1EOVlZ" id="4qxPl3WJ$Gl" role="2U1t1O">
+    <node concept="1EORFp" id="2c2WbewoW9B" role="3ANvmg">
+      <node concept="1EOVlT" id="2c2WbewoW9C" role="1EORFk">
+        <node concept="1EOVlZ" id="2c2WbewoW9D" role="2U0yEg">
           <property role="1uuRdD" value="&gt;" />
           <ref role="1uucey" node="4qxPl3WGF98" resolve="Temperature" />
-          <node concept="2Ufyo5" id="4qxPl3WJ$Gm" role="2UfysR">
-            <property role="2Ufy5s" value="15.0f" />
+          <node concept="2Ufyo5" id="2c2WbewoW9E" role="2UfysR">
+            <property role="2Ufy5s" value="15.f" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="1EOVip" id="2c2Wbewn$_I" />
+  <node concept="1EOVip" id="2c2Wbewn$_I">
+    <property role="TrG5h" value="ColdDay" />
+    <node concept="1EOVlO" id="2c2WbewnABR" role="3ANvml">
+      <node concept="1uuihD" id="2c2WbewnABS" role="1uuibp">
+        <property role="TrG5h" value="Temperature" />
+      </node>
+    </node>
+    <node concept="1EORFp" id="2c2WbewossA" role="3ANvmg">
+      <node concept="1EOVlT" id="2c2WbewossB" role="1EORFk">
+        <node concept="1EOVlZ" id="2c2WbewossC" role="2U0yEg">
+          <property role="1uuRdD" value="&gt;" />
+          <ref role="1uucey" node="2c2WbewnABS" resolve="Temperature" />
+          <node concept="2Ufyo5" id="2c2WbewossD" role="2UfysR">
+            <property role="2Ufy5s" value="10.f" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
