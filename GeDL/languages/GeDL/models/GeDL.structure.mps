@@ -90,7 +90,6 @@
   <node concept="1TIwiD" id="5oC_XKWYMa_">
     <property role="EcuMT" value="6208379058501919397" />
     <property role="TrG5h" value="Condition" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4qxPl3WCZZ0" role="1TKVEi">
       <property role="IQ2ns" value="5089583597718077376" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -220,23 +219,16 @@
     <node concept="PrWs8" id="5oC_XKWYMd6" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="6vPhAE1ebfZ" role="1TKVEi">
-      <property role="IQ2ns" value="7490970978449142783" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="dataStream" />
-      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
-    </node>
     <node concept="1TJgyj" id="6vPhAE1ebfU" role="1TKVEi">
       <property role="IQ2ns" value="7490970978449142778" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="detectionRules" />
       <ref role="20lvS9" node="5oC_XKWYYO5" resolve="DetectionRule" />
     </node>
-    <node concept="1TJgyj" id="67ABhWZCN3F" role="1TKVEi">
-      <property role="IQ2ns" value="7054498623859667179" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="notification" />
-      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
+    <node concept="1TJgyj" id="48an8Cbw9qx" role="1TKVEi">
+      <property role="IQ2ns" value="4758717704238569121" />
+      <property role="20kJfa" value="phenomenonList" />
+      <ref role="20lvS9" node="48an8Cbw9AK" resolve="PhenomenonList" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMd8">
@@ -245,20 +237,23 @@
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="event definition" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="5oC_XKWYMda" role="1TKVEi">
-      <property role="IQ2ns" value="6208379058501919562" />
+    <node concept="1TJgyj" id="48an8CbuwPR" role="1TKVEi">
+      <property role="IQ2ns" value="4758717704238140791" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="datastreams" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <ref role="20lvS9" node="5oC_XKWYMaC" resolve="DataStream" />
+      <ref role="20lvS9" node="5oC_XKWYMaG" resolve="DataStreamList" />
     </node>
-    <node concept="1TJgyj" id="4qxPl3WCztD" role="1TKVEi">
-      <property role="IQ2ns" value="5089583597717960553" />
+    <node concept="1TJgyj" id="48an8CbuweE" role="1TKVEi">
+      <property role="IQ2ns" value="4758717704238138282" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="condition" />
-      <ref role="20lvS9" node="5oC_XKWYMa_" resolve="Condition" />
+      <property role="20kJfa" value="event" />
+      <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
     </node>
-    <node concept="PrWs8" id="67ABhWZBICU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="1TJgyj" id="48an8CbuwsV" role="1TKVEi">
+      <property role="IQ2ns" value="4758717704238139195" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="notification" />
+      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMdd">
@@ -599,6 +594,18 @@
       <property role="3tVfz5" value="2522843395561473841" />
       <property role="TrG5h" value="not" />
       <property role="1L1pqM" value="!" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="48an8Cbw9AK">
+    <property role="EcuMT" value="4758717704238569904" />
+    <property role="TrG5h" value="PhenomenonList" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="48an8Cbw9Yn" role="1TKVEi">
+      <property role="IQ2ns" value="4758717704238571415" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="phenomenon" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
 </model>

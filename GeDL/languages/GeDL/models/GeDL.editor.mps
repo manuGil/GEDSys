@@ -423,5 +423,48 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="48an8Cbvocn">
+    <ref role="1XX52x" to="lyeg:5oC_XKWYMd8" resolve="EventDefinition" />
+    <node concept="3EZMnI" id="48an8CbvohN" role="2wV5jI">
+      <node concept="l2Vlx" id="48an8CbvohO" role="2iSdaV" />
+      <node concept="3F1sOY" id="48an8Cbvoi0" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:48an8CbuwPR" resolve="datastreams" />
+        <node concept="lj46D" id="48an8Cbvoi1" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="48an8Cbvoi2" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="48an8Cbvoi3" role="3EZMnx">
+        <node concept="ljvvj" id="48an8Cbvoi4" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="48an8Cbvoi9" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:48an8CbuweE" resolve="event" />
+        <node concept="lj46D" id="48an8Cbvoia" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="48an8Cbvoib" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="48an8Cbvoic" role="3EZMnx">
+        <node concept="ljvvj" id="48an8Cbvoid" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F1sOY" id="48an8Cbvoii" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:48an8CbuwsV" resolve="notification" />
+        <node concept="lj46D" id="48an8Cbvoij" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="48an8Cbvoik" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

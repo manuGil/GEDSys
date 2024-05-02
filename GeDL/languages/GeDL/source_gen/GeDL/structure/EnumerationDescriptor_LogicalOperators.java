@@ -9,10 +9,10 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-public class EnumerationDescriptor_LogicOperators extends EnumerationDescriptorBase {
+public class EnumerationDescriptor_LogicalOperators extends EnumerationDescriptorBase {
 
-  public EnumerationDescriptor_LogicOperators() {
-    super(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x2302f0b3a05e6a15L, "LogicOperators", "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561253397");
+  public EnumerationDescriptor_LogicalOperators() {
+    super(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x2302f0b3a05e6a15L, "LogicalOperators", "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561253397");
   }
 
   private final EnumerationDescriptor.MemberDescriptor myMember_and_0 = new EnumerationDescriptor.MemberDescriptor("and", "&&", 0x2302f0b3a05e6a16L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561253398");
