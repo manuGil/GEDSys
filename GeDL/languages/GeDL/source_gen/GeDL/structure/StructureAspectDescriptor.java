@@ -264,7 +264,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919557");
     b.version(3);
-    b.associate("phenomenonList", 0x420a5c8a0b8096a1L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x420a5c8a0b8099b0L).optional(true).origin("4758717704238569121").done();
+    b.aggregate("parameters", 0x24b3732dd8d8ecefL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("2644584046945430767").done();
     b.aggregate("detectionRules", 0x67f5466a8138b3faL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L).optional(true).ordered(true).multiple(false).origin("7490970978449142778").done();
     b.alias("event");
     return b.create();

@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -48,14 +49,34 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createRefNode_0());
-    editorCell.addEditorCell(createConstant_0());
+    if (nodeCondition_um5yyt_a1a()) {
+      editorCell.addEditorCell(createConstant_0());
+    }
     editorCell.addEditorCell(createRefNode_1());
-    editorCell.addEditorCell(createConstant_1());
+    if (nodeCondition_um5yyt_a3a()) {
+      editorCell.addEditorCell(createConstant_1());
+    }
     editorCell.addEditorCell(createRefNode_2());
-    editorCell.addEditorCell(createConstant_2());
+    if (nodeCondition_um5yyt_a5a()) {
+      editorCell.addEditorCell(createConstant_2());
+    }
     editorCell.addEditorCell(createRefNode_3());
-    editorCell.addEditorCell(createConstant_3());
+    if (nodeCondition_um5yyt_a7a()) {
+      editorCell.addEditorCell(createConstant_3());
+    }
     return editorCell;
+  }
+  private boolean nodeCondition_um5yyt_a1a() {
+    return (SLinkOperations.getTarget(myNode, LINKS.condition$HxlH) != null);
+  }
+  private boolean nodeCondition_um5yyt_a3a() {
+    return (SLinkOperations.getTarget(myNode, LINKS.extent$Hx$I) != null);
+  }
+  private boolean nodeCondition_um5yyt_a5a() {
+    return (SLinkOperations.getTarget(myNode, LINKS.granularity$HAJ4) != null);
+  }
+  private boolean nodeCondition_um5yyt_a7a() {
+    return (SLinkOperations.getTarget(myNode, LINKS.detectionTime$ahFo) != null);
   }
   private EditorCell createRefNode_0() {
     SingleRoleCellProvider provider = new conditionSingleRoleHandler_um5yyt_a0(myNode, LINKS.condition$HxlH, getEditorContext());
@@ -109,7 +130,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no condition>";
+      return "condition";
     }
   }
   private EditorCell createConstant_0() {
@@ -173,7 +194,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no extent>";
+      return "detection extent";
     }
   }
   private EditorCell createConstant_1() {
@@ -237,7 +258,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no granularity>";
+      return "spatial granularity";
     }
   }
   private EditorCell createConstant_2() {
@@ -301,7 +322,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no detectionTime>";
+      return "detection time";
     }
   }
   private EditorCell createConstant_3() {
