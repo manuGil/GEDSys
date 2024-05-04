@@ -55,7 +55,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x562897dc3cfb2348L, EventDefinition);
     builder.put(0x562897dc3cfb234dL, Expression);
     builder.put(0x562897dc3cfb22c7L, Feature);
-    builder.put(0x46a1d550fcb9b416L, Hello);
+    builder.put(0x24b3732dd8eff842L, Hello);
     builder.put(0x46a1d550fcaae805L, LogicalOperator);
     builder.put(0x61e69d1f3f9fa6d1L, Notification);
     builder.put(0x61e69d1f3f9fb976L, Phenomenon);

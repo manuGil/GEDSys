@@ -119,7 +119,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no LeftComparison>";
+      return "<comparison expression>";
     }
   }
   private EditorCell createRefNode_1() {
@@ -178,7 +178,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "logic operator";
+      return "<logical operator>";
     }
   }
   private EditorCell createRefNode_2() {
@@ -237,7 +237,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no RightComparison>";
+      return "<comparison expression>";
     }
   }
 

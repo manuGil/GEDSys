@@ -130,7 +130,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "condition";
+      return "<condition>";
     }
   }
   private EditorCell createConstant_0() {
@@ -194,7 +194,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "detection extent";
+      return "<detection extent>";
     }
   }
   private EditorCell createConstant_1() {
@@ -258,7 +258,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "spatial granularity";
+      return "<spatial granularity>";
     }
   }
   private EditorCell createConstant_2() {
@@ -322,7 +322,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "detection time";
+      return "<detection time>";
     }
   }
   private EditorCell createConstant_3() {

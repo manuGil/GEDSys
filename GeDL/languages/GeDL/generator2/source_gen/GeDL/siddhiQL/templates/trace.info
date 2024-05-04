@@ -30,7 +30,7 @@
       <node id="5089583597719719193" at="29,83,30,174" concept="1" />
       <node id="5089583597719718877" at="37,14,38,56" concept="0" />
       <node id="5089583597719718877" at="54,15,55,58" concept="1" />
-      <node id="5089583597719718881" at="29,0,32,0" concept="2" trace="rule_Condition_2_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
+      <node id="5089583597719718881" at="29,0,32,0" concept="2" trace="rule_Condition_1_0#(Ljetbrains/mps/generator/template/BaseMappingRuleContext;)Z" />
       <scope id="5089583597719718882" at="29,83,30,174" />
       <scope id="5089583597719718877" at="54,15,55,58" />
       <scope id="5089583597719718881" at="29,0,32,0">

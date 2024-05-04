@@ -26,7 +26,7 @@ public class EnumerationDescriptor_SpatialRelation extends EnumerationDescriptor
   @Nullable
   @Override
   public EnumerationDescriptor.MemberDescriptor getDefault() {
-    return null;
+    return myMember_single_0;
   }
 
   @NotNull

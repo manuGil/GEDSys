@@ -9,10 +9,10 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
-public class EnumerationDescriptor_DurationUnit extends EnumerationDescriptorBase {
+public class EnumerationDescriptor_TimeUnits extends EnumerationDescriptorBase {
 
-  public EnumerationDescriptor_DurationUnit() {
-    super(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf5f1L, "DurationUnit", "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258865");
+  public EnumerationDescriptor_TimeUnits() {
+    super(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf5f1L, "TimeUnits", "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258865");
   }
 
   private final EnumerationDescriptor.MemberDescriptor myMember_second_0 = new EnumerationDescriptor.MemberDescriptor("second", "sec", 0x61e69d1f3f9cf5f3L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258867");

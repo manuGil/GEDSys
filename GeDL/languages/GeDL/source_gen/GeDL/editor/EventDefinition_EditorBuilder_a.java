@@ -178,7 +178,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no event>";
+      return "<geographic event>";
     }
   }
   private EditorCell createConstant_1() {
@@ -246,7 +246,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no notification>";
+      return "<notification>";
     }
   }
 

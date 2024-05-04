@@ -80,7 +80,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DateTime:
         if (props_DateTime == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("date time");
+          cpb.shortDesc("a string with date and time like yyyy-mm-ddThh:mm:ss");
+          cpb.rawPresentation("datetime");
           props_DateTime = cpb.create();
         }
         return props_DateTime;
@@ -101,6 +102,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DetectionTime:
         if (props_DetectionTime == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("time within which an event will be detected");
           cpb.rawPresentation("detection time");
           props_DetectionTime = cpb.create();
         }
@@ -158,7 +160,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Hello:
         if (props_Hello == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
+          cpb.rawPresentation("Hello");
           props_Hello = cpb.create();
         }
         return props_Hello;
@@ -200,6 +202,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Time:
         if (props_Time == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("a string represing at time like hh:mm:ss");
           cpb.rawPresentation("time");
           props_Time = cpb.create();
         }
@@ -207,20 +210,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TimeInstance:
         if (props_TimeInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("time instance");
           props_TimeInstance = cpb.create();
         }
         return props_TimeInstance;
       case LanguageConceptSwitch.TimeType:
         if (props_TimeType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("types of time allowed in detection time");
           props_TimeType = cpb.create();
         }
         return props_TimeType;
       case LanguageConceptSwitch.TimeWindow:
         if (props_TimeWindow == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("time window for tiem type");
+          cpb.shortDesc("time window with start and end");
           cpb.rawPresentation("time window");
           props_TimeWindow = cpb.create();
         }

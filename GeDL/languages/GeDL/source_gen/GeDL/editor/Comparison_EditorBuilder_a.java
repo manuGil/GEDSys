@@ -84,7 +84,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     };
 
-    provider.setNoTargetText("datastream");
+    provider.setNoTargetText("<datastream>");
     EditorCell editorCell = provider.createCell();
 
     if (editorCell.getSRole() == null) {
@@ -141,7 +141,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       final SProperty property = PROPS.ComparisonOperator$JGH7;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("operator");
+      editorCell.setDefaultText("<operator>");
       editorCell.setCellId("property_ComparisonOperator");
       Style style = new StyleImpl();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -219,7 +219,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
     protected String getNoTargetText() {
-      return "value";
+      return "<value>";
     }
   }
 
