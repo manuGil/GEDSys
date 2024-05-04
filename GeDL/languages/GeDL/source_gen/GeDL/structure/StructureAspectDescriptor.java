@@ -30,11 +30,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDurationWithUnits = createDescriptorForDurationWithUnits();
   /*package*/ final ConceptDescriptor myConceptEvent = createDescriptorForEvent();
   /*package*/ final ConceptDescriptor myConceptEventDefinition = createDescriptorForEventDefinition();
+  /*package*/ final ConceptDescriptor myConceptEventParameter = createDescriptorForEventParameter();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
   /*package*/ final ConceptDescriptor myConceptFeature = createDescriptorForFeature();
   /*package*/ final ConceptDescriptor myConceptHello = createDescriptorForHello();
   /*package*/ final ConceptDescriptor myConceptLogicalOperator = createDescriptorForLogicalOperator();
   /*package*/ final ConceptDescriptor myConceptNotification = createDescriptorForNotification();
+  /*package*/ final ConceptDescriptor myConceptPayloadPhenomenon = createDescriptorForPayloadPhenomenon();
   /*package*/ final ConceptDescriptor myConceptPhenomenon = createDescriptorForPhenomenon();
   /*package*/ final ConceptDescriptor myConceptPhenomenonList = createDescriptorForPhenomenonList();
   /*package*/ final ConceptDescriptor myConceptSpatialGranulariy = createDescriptorForSpatialGranulariy();
@@ -61,7 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
   }
 
   @Override
@@ -96,6 +98,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEvent;
       case LanguageConceptSwitch.EventDefinition:
         return myConceptEventDefinition;
+      case LanguageConceptSwitch.EventParameter:
+        return myConceptEventParameter;
       case LanguageConceptSwitch.Expression:
         return myConceptExpression;
       case LanguageConceptSwitch.Feature:
@@ -106,6 +110,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptLogicalOperator;
       case LanguageConceptSwitch.Notification:
         return myConceptNotification;
+      case LanguageConceptSwitch.PayloadPhenomenon:
+        return myConceptPayloadPhenomenon;
       case LanguageConceptSwitch.Phenomenon:
         return myConceptPhenomenon;
       case LanguageConceptSwitch.PhenomenonList:
@@ -144,7 +150,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919395");
     b.version(3);
     b.property("ComparisonOperator", 0x61e69d1f3f9dee76L).type(PrimitiveTypeId.STRING).origin("7054498623859322486").done();
-    b.associate("datastreamName", 0x61e69d1f3f9e5ebdL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("7054498623859351229").done();
+    b.associate("datastreamName", 0x61e69d1f3f9e5ebdL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).origin("7054498623859351229").done();
     b.aggregate("value", 0x46a1d550fc9ff267L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fc9ff355L).optional(false).ordered(true).multiple(false).origin("5089583597717811815").done();
     b.alias("comparison");
     return b.create();
@@ -260,11 +266,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForEvent() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Event", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L);
-    b.class_(false, false, true);
+    b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919557");
     b.version(3);
-    b.aggregate("parameters", 0x24b3732dd8d8ecefL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("2644584046945430767").done();
+    b.aggregate("parameters", 0x24b3732dd8d8ecefL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).ordered(true).multiple(true).origin("2644584046945430767").done();
     b.aggregate("detectionRules", 0x67f5466a8138b3faL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L).optional(true).ordered(true).multiple(false).origin("7490970978449142778").done();
     b.alias("event");
     return b.create();
@@ -278,6 +284,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4758717704238138282").done();
     b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4758717704238139195").done();
     b.alias("event definition");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForEventParameter() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "EventParameter", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L);
+    b.class_(false, false, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046949351673");
+    b.version(3);
+    b.associate("datastreamName", 0x24b3732dd920911bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("2644584046950125851").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExpression() {
@@ -321,8 +335,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859435217");
     b.version(3);
     b.associate("eventName", 0x61e69d1f3f9fae74L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).origin("7054498623859437172").done();
-    b.aggregate("payload", 0x24b3732dd912eab1L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("2644584046949231281").done();
+    b.aggregate("payload", 0x24b3732dd912eab1L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd9166feeL).optional(false).ordered(true).multiple(true).origin("2644584046949231281").done();
     b.alias("notification");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForPayloadPhenomenon() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "PayloadPhenomenon", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd9166feeL);
+    b.class_(false, false, false);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046949461998");
+    b.version(3);
+    b.associate("datastreamName", 0x24b3732dd9167433L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("2644584046949463091").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPhenomenon() {

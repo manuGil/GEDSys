@@ -23,19 +23,21 @@ public final class LanguageConceptSwitch {
   public static final int DurationWithUnits = 11;
   public static final int Event = 12;
   public static final int EventDefinition = 13;
-  public static final int Expression = 14;
-  public static final int Feature = 15;
-  public static final int Hello = 16;
-  public static final int LogicalOperator = 17;
-  public static final int Notification = 18;
-  public static final int Phenomenon = 19;
-  public static final int PhenomenonList = 20;
-  public static final int SpatialGranulariy = 21;
-  public static final int Time = 22;
-  public static final int TimeInstance = 23;
-  public static final int TimeType = 24;
-  public static final int TimeWindow = 25;
-  public static final int Value = 26;
+  public static final int EventParameter = 14;
+  public static final int Expression = 15;
+  public static final int Feature = 16;
+  public static final int Hello = 17;
+  public static final int LogicalOperator = 18;
+  public static final int Notification = 19;
+  public static final int PayloadPhenomenon = 20;
+  public static final int Phenomenon = 21;
+  public static final int PhenomenonList = 22;
+  public static final int SpatialGranulariy = 23;
+  public static final int Time = 24;
+  public static final int TimeInstance = 25;
+  public static final int TimeType = 26;
+  public static final int TimeWindow = 27;
+  public static final int Value = 28;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL);
@@ -53,11 +55,13 @@ public final class LanguageConceptSwitch {
     builder.put(0x61e69d1f3f9cf8d6L, DurationWithUnits);
     builder.put(0x562897dc3cfb2345L, Event);
     builder.put(0x562897dc3cfb2348L, EventDefinition);
+    builder.put(0x24b3732dd914c0f9L, EventParameter);
     builder.put(0x562897dc3cfb234dL, Expression);
     builder.put(0x562897dc3cfb22c7L, Feature);
     builder.put(0x24b3732dd8eff842L, Hello);
     builder.put(0x46a1d550fcaae805L, LogicalOperator);
     builder.put(0x61e69d1f3f9fa6d1L, Notification);
+    builder.put(0x24b3732dd9166feeL, PayloadPhenomenon);
     builder.put(0x61e69d1f3f9fb976L, Phenomenon);
     builder.put(0x420a5c8a0b8099b0L, PhenomenonList);
     builder.put(0x562897dc3cfb234eL, SpatialGranulariy);

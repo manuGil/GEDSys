@@ -23,11 +23,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DurationWithUnits;
   private ConceptPresentation props_Event;
   private ConceptPresentation props_EventDefinition;
+  private ConceptPresentation props_EventParameter;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
   private ConceptPresentation props_Hello;
   private ConceptPresentation props_LogicalOperator;
   private ConceptPresentation props_Notification;
+  private ConceptPresentation props_PayloadPhenomenon;
   private ConceptPresentation props_Phenomenon;
   private ConceptPresentation props_PhenomenonList;
   private ConceptPresentation props_SpatialGranulariy;
@@ -143,6 +145,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_EventDefinition = cpb.create();
         }
         return props_EventDefinition;
+      case LanguageConceptSwitch.EventParameter:
+        if (props_EventParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "datastreamName", "", "");
+          props_EventParameter = cpb.create();
+        }
+        return props_EventParameter;
       case LanguageConceptSwitch.Expression:
         if (props_Expression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -178,6 +187,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Notification = cpb.create();
         }
         return props_Notification;
+      case LanguageConceptSwitch.PayloadPhenomenon:
+        if (props_PayloadPhenomenon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd9166feeL, 0x24b3732dd9167433L, "datastreamName", "", "");
+          props_PayloadPhenomenon = cpb.create();
+        }
+        return props_PayloadPhenomenon;
       case LanguageConceptSwitch.Phenomenon:
         if (props_Phenomenon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

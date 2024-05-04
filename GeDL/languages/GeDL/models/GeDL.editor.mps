@@ -8,8 +8,8 @@
   </languages>
   <imports>
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" implicit="true" />
-    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
@@ -120,10 +120,23 @@
     <node concept="14StLt" id="52LigkvWFJH" role="V601i">
       <property role="TrG5h" value="geldKeyword" />
       <node concept="VSNWy" id="52LigkvWFJM" role="3F10Kt">
-        <property role="1lJzqX" value="12" />
+        <property role="1lJzqX" value="14" />
       </node>
       <node concept="Vb9p2" id="52LigkvXlb_" role="3F10Kt">
         <property role="Vbekb" value="g1_k_vY/BOLD" />
+      </node>
+      <node concept="VechU" id="2iNsMRpcIMh" role="3F10Kt">
+        <property role="Vb096" value="fLwANPu/blue" />
+      </node>
+    </node>
+    <node concept="14StLt" id="2iNsMRpcYZa" role="V601i">
+      <property role="TrG5h" value="gedlString" />
+      <node concept="VSNWy" id="2iNsMRpcYZj" role="3F10Kt">
+        <property role="1lJzqX" value="14" />
+      </node>
+      <node concept="Vb9p2" id="2iNsMRpcYZp" role="3F10Kt" />
+      <node concept="VechU" id="2iNsMRpcYZx" role="3F10Kt">
+        <property role="Vb096" value="g1_qRwE/darkGreen" />
       </node>
     </node>
   </node>
@@ -132,7 +145,7 @@
     <node concept="3EZMnI" id="52LigkvWFXQ" role="2wV5jI">
       <node concept="3F0ifn" id="52LigkvWG4t" role="3EZMnx">
         <property role="3F0ifm" value="datastream" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="2iRfu4" id="52LigkvXDLi" role="2iSdaV" />
       <node concept="3F1sOY" id="52LigkvWGAa" role="3EZMnx">
@@ -190,7 +203,7 @@
     <node concept="3EZMnI" id="52LigkvXOPa" role="2wV5jI">
       <node concept="3F0ifn" id="52LigkvXUj3" role="3EZMnx">
         <property role="3F0ifm" value="cond" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="3F1sOY" id="4qxPl3WD4sW" role="3EZMnx">
         <property role="1$x2rV" value="&lt;comparison expression&gt;" />
@@ -231,6 +244,7 @@
       <node concept="l2Vlx" id="2iNsMRoXuFW" role="2iSdaV" />
       <node concept="3F0ifn" id="2iNsMRoXuIU" role="3EZMnx">
         <property role="3F0ifm" value="extent" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="3EZMnI" id="2iNsMRoXv3D" role="3EZMnx">
         <node concept="2iRfu4" id="2iNsMRoXv3E" role="2iSdaV" />
@@ -267,6 +281,7 @@
       <node concept="3F0ifn" id="2iNsMRoY74Y" role="3EZMnx">
         <property role="3F0ifm" value="buffer:" />
         <property role="ilYzB" value="&lt;buffer&gt;" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
         <node concept="lj46D" id="2iNsMRoY7dO" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -293,10 +308,12 @@
         <node concept="VPM3Z" id="2iNsMRoXKWX" role="3F10Kt" />
         <node concept="3F0ifn" id="2iNsMRoXKWZ" role="3EZMnx">
           <property role="3F0ifm" value="feature:" />
+          <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
         </node>
         <node concept="3F0A7n" id="2iNsMRoXL0R" role="3EZMnx">
           <property role="1$x2rV" value="&lt;well-known text&gt;" />
           <ref role="1NtTu8" to="lyeg:5oC_XKWYMb8" resolve="wkt" />
+          <ref role="1k5W1q" node="2iNsMRpcYZa" resolve="geldString" />
         </node>
         <node concept="3F0ifn" id="2iNsMRoXLr_" role="3EZMnx">
           <property role="3F0ifm" value="," />
@@ -307,6 +324,7 @@
         <node concept="VPM3Z" id="2iNsMRoXLk5" role="3F10Kt" />
         <node concept="3F0ifn" id="2iNsMRoXLk7" role="3EZMnx">
           <property role="3F0ifm" value="srid:" />
+          <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
         </node>
         <node concept="3F0A7n" id="2iNsMRoXLl$" role="3EZMnx">
           <property role="1$x2rV" value="&lt;EPSG id&gt;" />
@@ -377,14 +395,11 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3EZMnI" id="52LigkvYZQg" role="3EZMnx">
-        <node concept="2iRfu4" id="52LigkvYZQh" role="2iSdaV" />
-        <node concept="3F2HdR" id="2iNsMRp4K11" role="3EZMnx">
-          <property role="2czwfO" value="," />
-          <ref role="1NtTu8" to="lyeg:2iNsMRp4IEL" resolve="payload" />
-          <node concept="2iRfu4" id="2iNsMRp4K12" role="2czzBx" />
-          <node concept="VPM3Z" id="2iNsMRp4K13" role="3F10Kt" />
-        </node>
+      <node concept="3F2HdR" id="2iNsMRp4K11" role="3EZMnx">
+        <property role="2czwfO" value="," />
+        <ref role="1NtTu8" to="lyeg:2iNsMRp4IEL" resolve="payload" />
+        <node concept="2iRfu4" id="2iNsMRp4K12" role="2czzBx" />
+        <node concept="VPM3Z" id="2iNsMRp4K13" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="52LigkvYzEd" role="3EZMnx">
         <property role="3F0ifm" value="]" />
@@ -614,6 +629,7 @@
         <node concept="2iRfu4" id="2iNsMRoRlWO" role="2iSdaV" />
         <node concept="3F0ifn" id="2iNsMRoRlWB" role="3EZMnx">
           <property role="3F0ifm" value="event" />
+          <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
         </node>
         <node concept="3F0A7n" id="2iNsMRoRlWW" role="3EZMnx">
           <property role="1$x2rV" value="&lt;event name&gt;" />
@@ -660,7 +676,7 @@
       <node concept="2iRfu4" id="2iNsMRoTM42" role="2iSdaV" />
       <node concept="3F0ifn" id="2iNsMRoTM8C" role="3EZMnx">
         <property role="3F0ifm" value="granularity" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="3F0ifn" id="2iNsMRoTMb$" role="3EZMnx">
         <property role="3F0ifm" value="(" />
@@ -717,6 +733,7 @@
       <node concept="3F0A7n" id="2iNsMRoYqzV" role="3EZMnx">
         <property role="1$x2rV" value="&lt;time&gt;" />
         <ref role="1NtTu8" to="lyeg:5oC_XKWYMdi" resolve="time" />
+        <ref role="1k5W1q" node="2iNsMRpcYZa" resolve="gedlString" />
         <node concept="ljvvj" id="2iNsMRoYqzW" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -730,6 +747,7 @@
       <node concept="3F0A7n" id="2iNsMRoYqJJ" role="3EZMnx">
         <property role="1$x2rV" value="&lt;datetime&gt;" />
         <ref role="1NtTu8" to="lyeg:5oC_XKWYMaU" resolve="datetime" />
+        <ref role="1k5W1q" node="2iNsMRpcYZa" resolve="gedlString" />
         <node concept="ljvvj" id="2iNsMRoYqJK" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -739,9 +757,13 @@
   <node concept="24kQdi" id="2iNsMRp0od0">
     <ref role="1XX52x" to="lyeg:67ABhWZA_5Y" resolve="TimeWindow" />
     <node concept="3EZMnI" id="2iNsMRp0ofu" role="2wV5jI">
+      <node concept="3F0ifn" id="2iNsMRpcKpC" role="3EZMnx">
+        <property role="3F0ifm" value="window" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
+      </node>
       <node concept="2iRfu4" id="2iNsMRp0ofv" role="2iSdaV" />
-      <node concept="3F0ifn" id="2iNsMRp0okv" role="3EZMnx">
-        <property role="3F0ifm" value="window (" />
+      <node concept="3F0ifn" id="2iNsMRpcKmO" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
       </node>
       <node concept="3F1sOY" id="2iNsMRp0omf" role="3EZMnx">
         <property role="1$x2rV" value="&lt;start time&gt;" />
@@ -780,6 +802,7 @@
       <node concept="2iRfu4" id="2iNsMRp0O9V" role="2iSdaV" />
       <node concept="3F0ifn" id="2iNsMRp0Oaq" role="3EZMnx">
         <property role="3F0ifm" value="time" />
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="3F1sOY" id="2iNsMRp0OgC" role="3EZMnx">
         <property role="1$x2rV" value="&lt;time instance&gt;" />
@@ -789,6 +812,33 @@
         </node>
         <node concept="ljvvj" id="2iNsMRp0OgE" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2iNsMRp5BZm">
+    <ref role="1XX52x" to="lyeg:2iNsMRp5AZI" resolve="PayloadPhenomenon" />
+    <node concept="3EZMnI" id="2iNsMRpaFhH" role="2wV5jI">
+      <node concept="1iCGBv" id="2iNsMRpaFjP" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:2iNsMRp5BgN" resolve="datastreamName" />
+        <node concept="lj46D" id="2iNsMRpaFjR" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="1sVBvm" id="2iNsMRpaFjS" role="1sWHZn">
+          <node concept="3SHvHV" id="2iNsMRpaFjU" role="2wV5jI" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="2iNsMRpaFhI" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2iNsMRp649L">
+    <ref role="1XX52x" to="lyeg:2iNsMRp5c3T" resolve="EventParameter" />
+    <node concept="3EZMnI" id="2iNsMRp8P2a" role="2wV5jI">
+      <node concept="l2Vlx" id="2iNsMRp8P2b" role="2iSdaV" />
+      <node concept="1iCGBv" id="2iNsMRp8P2f" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:2iNsMRp894r" resolve="datastreamName" />
+        <node concept="1sVBvm" id="2iNsMRp8P2i" role="1sWHZn">
+          <node concept="3SHvHV" id="2iNsMRp95c6" role="2wV5jI" />
         </node>
       </node>
     </node>

@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import GeDL.editor.gedlStyles_StyleSheet.geldKeywordStyleClass;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -88,6 +89,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "event");
     editorCell.setCellId("Constant_ymj9mh_a0a");
+    Style style = new StyleImpl();
+    new geldKeywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -152,7 +156,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.parameters$xFqW;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Phenomenon$QQ;
+      return CONCEPTS.EventParameter$sK;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -293,7 +297,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-    /*package*/ static final SConcept Phenomenon$QQ = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L, "GeDL.structure.Phenomenon");
+    /*package*/ static final SConcept EventParameter$sK = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, "GeDL.structure.EventParameter");
   }
 
   private static final class LINKS {

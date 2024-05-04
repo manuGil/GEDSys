@@ -77,7 +77,7 @@
       <property role="IQ2ns" value="7054498623859351229" />
       <property role="20kJfa" value="datastreamName" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+      <ref role="20lvS9" node="2iNsMRp5c3T" resolve="EventParameter" />
     </node>
     <node concept="1TJgyj" id="4qxPl3WBZ9B" role="1TKVEi">
       <property role="IQ2ns" value="5089583597717811815" />
@@ -214,7 +214,6 @@
   <node concept="1TIwiD" id="5oC_XKWYMd5">
     <property role="EcuMT" value="6208379058501919557" />
     <property role="TrG5h" value="Event" />
-    <property role="19KtqR" value="true" />
     <property role="34LRSv" value="event" />
     <property role="R4oN_" value="geographic event" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -226,7 +225,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="parameters" />
       <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+      <ref role="20lvS9" node="2iNsMRp5c3T" resolve="EventParameter" />
     </node>
     <node concept="1TJgyj" id="6vPhAE1ebfU" role="1TKVEi">
       <property role="IQ2ns" value="7490970978449142778" />
@@ -500,7 +499,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="payload" />
       <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+      <ref role="20lvS9" node="2iNsMRp5AZI" resolve="PayloadPhenomenon" />
     </node>
   </node>
   <node concept="1TIwiD" id="67ABhWZBV_Q">
@@ -602,6 +601,28 @@
       <property role="IQ2nx" value="2644584046946958088" />
       <property role="TrG5h" value="message" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2iNsMRp5c3T">
+    <property role="EcuMT" value="2644584046949351673" />
+    <property role="TrG5h" value="EventParameter" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="2iNsMRp894r" role="1TKVEi">
+      <property role="IQ2ns" value="2644584046950125851" />
+      <property role="20kJfa" value="datastreamName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2iNsMRp5AZI">
+    <property role="EcuMT" value="2644584046949461998" />
+    <property role="TrG5h" value="PayloadPhenomenon" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="2iNsMRp5BgN" role="1TKVEi">
+      <property role="IQ2ns" value="2644584046949463091" />
+      <property role="20kJfa" value="datastreamName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
 </model>
