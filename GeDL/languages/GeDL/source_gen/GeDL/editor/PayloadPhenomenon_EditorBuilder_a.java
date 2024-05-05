@@ -80,7 +80,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     };
 
-    provider.setNoTargetText("<no datastreamName>");
+    provider.setNoTargetText("<datastream name>");
     EditorCell editorCell = provider.createCell();
 
     if (editorCell.getSRole() == null) {

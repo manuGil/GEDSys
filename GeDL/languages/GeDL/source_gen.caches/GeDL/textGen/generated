@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="2fv4s6j78xis4iyt1c0ltgdjhpek8ay">
-  <files names="TextGenAspectDescriptor.java" />
+<product version="3" modelHash="3gbm5r5fwg9dndpby91jg24t440270u">
+  <files names="EventDefinition_TextGen.java:TextGenAspectDescriptor.java" />
 </product>
 

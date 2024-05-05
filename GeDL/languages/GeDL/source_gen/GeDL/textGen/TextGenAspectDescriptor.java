@@ -8,6 +8,13 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.text.rt.TextGenModelOutline;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.text.TextUnit;
+import jetbrains.mps.text.impl.BufferLayoutBuilder;
+import jetbrains.mps.text.impl.RegularTextUnit;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final LanguageConceptSwitch myIndex = new LanguageConceptSwitch();
@@ -19,8 +26,41 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.EventDefinition:
+        return new EventDefinition_TextGen();
     }
     return null;
   }
 
+  @Override
+  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
+    for (SNode root : outline.getModel().getRootNodes()) {
+      if (root.getConcept().equals(CONCEPTS.EventDefinition$Ha)) {
+        String fname = getFileName_EventDefinition(root);
+        String ext = getFileExtension_EventDefinition(root);
+        outline.registerTextUnit(createTextUnit0((ext == null ? fname : (fname + '.' + ext)), root));
+        continue;
+      }
+    }
+  }
+  private static String getFileName_EventDefinition(SNode node) {
+    return node.getName();
+  }
+  private static String getFileExtension_EventDefinition(SNode node) {
+    return "siddhi";
+  }
+  private static TextUnit createTextUnit0(String filename, SNode node) {
+    BufferLayoutBuilder lb = new BufferLayoutBuilder();
+    lb.add("DATASTREAMS");
+    lb.add("EVENT");
+    lb.add("NOTIFICATION");
+    lb.activate("DATASTREAMS");
+    RegularTextUnit rv = new RegularTextUnit(node, filename, null);
+    rv.setBufferLayout(lb.create());
+    return rv;
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept EventDefinition$Ha = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2348L, "GeDL.structure.EventDefinition");
+  }
 }

@@ -174,6 +174,15 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
+      <node concept="3F0ifn" id="2iNsMRpeq_8" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+      </node>
+      <node concept="3F0A7n" id="2iNsMRpeqBI" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:5qwE5stCSLo" resolve="observationType" />
+        <node concept="ljvvj" id="2iNsMRpeqBJ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="52LigkvXIPr">
@@ -820,6 +829,7 @@
     <ref role="1XX52x" to="lyeg:2iNsMRp5AZI" resolve="PayloadPhenomenon" />
     <node concept="3EZMnI" id="2iNsMRpaFhH" role="2wV5jI">
       <node concept="1iCGBv" id="2iNsMRpaFjP" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;datastream name&gt;" />
         <ref role="1NtTu8" to="lyeg:2iNsMRp5BgN" resolve="datastreamName" />
         <node concept="lj46D" id="2iNsMRpaFjR" role="3F10Kt">
           <property role="VOm3f" value="true" />
