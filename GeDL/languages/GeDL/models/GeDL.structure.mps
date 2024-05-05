@@ -57,7 +57,7 @@
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
-      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ngI" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
@@ -131,9 +131,6 @@
     <property role="TrG5h" value="DataStreamList" />
     <property role="34LRSv" value="DataStream List" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="5oC_XKWYMaH" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
     <node concept="1TJgyj" id="5oC_XKWYMaQ" role="1TKVEi">
       <property role="IQ2ns" value="6208379058501919414" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -470,7 +467,7 @@
     <node concept="1TJgyi" id="67ABhWZBfTN" role="1TKVEl">
       <property role="IQ2nx" value="7054498623859261043" />
       <property role="TrG5h" value="unit" />
-      <ref role="AX2Wp" node="67ABhWZBfnL" resolve="DurationUnit" />
+      <ref role="AX2Wp" node="67ABhWZBfnL" resolve="TimeUnits" />
     </node>
   </node>
   <node concept="1TIwiD" id="67ABhWZB$Fg">
@@ -544,7 +541,7 @@
   <node concept="1TIwiD" id="4qxPl3WBZdl">
     <property role="EcuMT" value="5089583597717812053" />
     <property role="TrG5h" value="Value" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4qxPl3WBZgc" role="1TKVEl">
       <property role="IQ2nx" value="5089583597717812236" />
       <property role="TrG5h" value="value" />
@@ -554,11 +551,11 @@
   <node concept="1TIwiD" id="4qxPl3WEIw5">
     <property role="EcuMT" value="5089583597718530053" />
     <property role="TrG5h" value="LogicalOperator" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4qxPl3WEIGi" role="1TKVEl">
       <property role="IQ2nx" value="5089583597718530834" />
       <property role="TrG5h" value="Operator" />
-      <ref role="AX2Wp" node="2c2WbewnACl" resolve="LogicOperators" />
+      <ref role="AX2Wp" node="2c2WbewnACl" resolve="LogicalOperators" />
     </node>
   </node>
   <node concept="25R3W" id="2c2WbewnACl">
@@ -583,7 +580,7 @@
   <node concept="1TIwiD" id="48an8Cbw9AK">
     <property role="EcuMT" value="4758717704238569904" />
     <property role="TrG5h" value="PhenomenonList" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="48an8Cbw9Yn" role="1TKVEi">
       <property role="IQ2ns" value="4758717704238571415" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -596,7 +593,7 @@
     <property role="EcuMT" value="2644584046946940994" />
     <property role="TrG5h" value="Hello" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2iNsMRoW3G8" role="1TKVEl">
       <property role="IQ2nx" value="2644584046946958088" />
       <property role="TrG5h" value="message" />
@@ -606,7 +603,7 @@
   <node concept="1TIwiD" id="2iNsMRp5c3T">
     <property role="EcuMT" value="2644584046949351673" />
     <property role="TrG5h" value="EventParameter" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2iNsMRp894r" role="1TKVEi">
       <property role="IQ2ns" value="2644584046950125851" />
       <property role="20kJfa" value="datastreamName" />
@@ -617,12 +614,60 @@
   <node concept="1TIwiD" id="2iNsMRp5AZI">
     <property role="EcuMT" value="2644584046949461998" />
     <property role="TrG5h" value="PayloadPhenomenon" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2iNsMRp5BgN" role="1TKVEi">
       <property role="IQ2ns" value="2644584046949463091" />
       <property role="20kJfa" value="datastreamName" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3ID9j62ey4n">
+    <property role="EcuMT" value="4299008213870321943" />
+    <property role="TrG5h" value="EventDefinitionPython" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3ID9j62ey4o" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870321944" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="datastreams" />
+      <ref role="20lvS9" node="5oC_XKWYMaG" resolve="DataStreamList" />
+    </node>
+    <node concept="1TJgyj" id="3ID9j62ey4p" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870321945" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="event" />
+      <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
+    </node>
+    <node concept="1TJgyj" id="3ID9j62ey4q" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870321946" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="notification" />
+      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3ID9j62e_22">
+    <property role="EcuMT" value="4299008213870334082" />
+    <property role="TrG5h" value="EventDefinitionSiddhi" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3ID9j62e_23" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870334083" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="datastreams" />
+      <ref role="20lvS9" node="5oC_XKWYMaG" resolve="DataStreamList" />
+    </node>
+    <node concept="1TJgyj" id="3ID9j62e_24" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870334084" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="event" />
+      <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
+    </node>
+    <node concept="1TJgyj" id="3ID9j62e_25" role="1TKVEi">
+      <property role="IQ2ns" value="4299008213870334085" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="notification" />
+      <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
     </node>
   </node>
 </model>

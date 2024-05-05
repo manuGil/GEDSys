@@ -23,6 +23,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DurationWithUnits;
   private ConceptPresentation props_Event;
   private ConceptPresentation props_EventDefinition;
+  private ConceptPresentation props_EventDefinitionPython;
+  private ConceptPresentation props_EventDefinitionSiddhi;
   private ConceptPresentation props_EventParameter;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
@@ -75,7 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DataStreamList:
         if (props_DataStreamList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
+          cpb.rawPresentation("DataStream List");
           props_DataStreamList = cpb.create();
         }
         return props_DataStreamList;
@@ -145,6 +147,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_EventDefinition = cpb.create();
         }
         return props_EventDefinition;
+      case LanguageConceptSwitch.EventDefinitionPython:
+        if (props_EventDefinitionPython == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EventDefinitionPython");
+          props_EventDefinitionPython = cpb.create();
+        }
+        return props_EventDefinitionPython;
+      case LanguageConceptSwitch.EventDefinitionSiddhi:
+        if (props_EventDefinitionSiddhi == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EventDefinitionSiddhi");
+          props_EventDefinitionSiddhi = cpb.create();
+        }
+        return props_EventDefinitionSiddhi;
       case LanguageConceptSwitch.EventParameter:
         if (props_EventParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -11,18 +11,18 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
 
-public class EventDefinition_TextGen extends TextGenDescriptorBase {
+public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("this the event definition of ");
-    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$PKjL), PROPS.name$MnvL));
+    tgs.append("this the event definition in SiddhiQL: ");
+    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc), PROPS.name$MnvL));
     tgs.newLine();
     tgs.append("EOF");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink event$PKjL = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2348L, 0x420a5c8a0b7a03aaL, "event");
+    /*package*/ static final SContainmentLink event$zhcc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5084L, "event");
   }
 
   private static final class PROPS {

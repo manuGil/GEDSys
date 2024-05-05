@@ -30,6 +30,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDurationWithUnits = createDescriptorForDurationWithUnits();
   /*package*/ final ConceptDescriptor myConceptEvent = createDescriptorForEvent();
   /*package*/ final ConceptDescriptor myConceptEventDefinition = createDescriptorForEventDefinition();
+  /*package*/ final ConceptDescriptor myConceptEventDefinitionPython = createDescriptorForEventDefinitionPython();
+  /*package*/ final ConceptDescriptor myConceptEventDefinitionSiddhi = createDescriptorForEventDefinitionSiddhi();
   /*package*/ final ConceptDescriptor myConceptEventParameter = createDescriptorForEventParameter();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
   /*package*/ final ConceptDescriptor myConceptFeature = createDescriptorForFeature();
@@ -63,7 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventDefinitionPython, myConceptEventDefinitionSiddhi, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
   }
 
   @Override
@@ -98,6 +100,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEvent;
       case LanguageConceptSwitch.EventDefinition:
         return myConceptEventDefinition;
+      case LanguageConceptSwitch.EventDefinitionPython:
+        return myConceptEventDefinitionPython;
+      case LanguageConceptSwitch.EventDefinitionSiddhi:
+        return myConceptEventDefinitionSiddhi;
       case LanguageConceptSwitch.EventParameter:
         return myConceptEventParameter;
       case LanguageConceptSwitch.Expression:
@@ -185,7 +191,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForDataStreamList() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "DataStreamList", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL);
     b.class_(false, false, false);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919404");
     b.version(3);
     b.aggregate("dataStreams", 0x562897dc3cfb22b6L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a8L).optional(true).ordered(true).multiple(true).origin("6208379058501919414").done();
@@ -284,6 +289,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4758717704238138282").done();
     b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4758717704238139195").done();
     b.alias("event definition");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForEventDefinitionPython() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "EventDefinitionPython", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a2117L);
+    b.class_(false, false, true);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/4299008213870321943");
+    b.version(3);
+    b.aggregate("datastreams", 0x3ba92531823a2118L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(true).ordered(true).multiple(false).origin("4299008213870321944").done();
+    b.aggregate("event", 0x3ba92531823a2119L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4299008213870321945").done();
+    b.aggregate("notification", 0x3ba92531823a211aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4299008213870321946").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForEventDefinitionSiddhi() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "EventDefinitionSiddhi", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L);
+    b.class_(false, false, true);
+    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/4299008213870334082");
+    b.version(3);
+    b.aggregate("datastreams", 0x3ba92531823a5083L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(true).ordered(true).multiple(false).origin("4299008213870334083").done();
+    b.aggregate("event", 0x3ba92531823a5084L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4299008213870334084").done();
+    b.aggregate("notification", 0x3ba92531823a5085L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4299008213870334085").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEventParameter() {
