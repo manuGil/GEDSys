@@ -75,7 +75,7 @@
     </node>
     <node concept="1TJgyj" id="67ABhWZB_UX" role="1TKVEi">
       <property role="IQ2ns" value="7054498623859351229" />
-      <property role="20kJfa" value="datastreamName" />
+      <property role="20kJfa" value="parameter" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2iNsMRp5c3T" resolve="EventParameter" />
     </node>

@@ -530,7 +530,7 @@
       <node concept="2iRfu4" id="4qxPl3WDK0I" role="2iSdaV" />
       <node concept="1iCGBv" id="4qxPl3WDK0N" role="3EZMnx">
         <property role="1$x2rV" value="&lt;datastream&gt;" />
-        <ref role="1NtTu8" to="lyeg:67ABhWZB_UX" resolve="datastreamName" />
+        <ref role="1NtTu8" to="lyeg:67ABhWZB_UX" resolve="parameter" />
         <node concept="ljvvj" id="4qxPl3WDK0O" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

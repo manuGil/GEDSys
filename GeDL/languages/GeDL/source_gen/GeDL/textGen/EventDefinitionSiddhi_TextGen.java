@@ -7,6 +7,9 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -15,14 +18,30 @@ public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("this the event definition in SiddhiQL: ");
+    // Siddhi App header
+    tgs.append("@App:name('");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc), PROPS.name$MnvL));
+    tgs.append("')");
     tgs.newLine();
-    tgs.append("EOF");
+    tgs.append("@App:description('A descriptionn of the app')");
+    tgs.newLine();
+    tgs.newLine();
+    // data sources declaration
+    for (SNode stream : ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.datastreams$zgXb)))) {
+      tgs.appendNode(stream);
+    }
+    // sinks
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.notification$zhrd));
+    tgs.newLine();
+    // queries
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc));
+    tgs.newLine();
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink event$zhcc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5084L, "event");
+    /*package*/ static final SContainmentLink datastreams$zgXb = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5083L, "datastreams");
+    /*package*/ static final SContainmentLink notification$zhrd = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5085L, "notification");
   }
 
   private static final class PROPS {
