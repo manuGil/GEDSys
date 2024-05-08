@@ -27,6 +27,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.Condition:
+        return new Condition_TextGen();
       case LanguageConceptSwitch.DataStream:
         return new DataStream_TextGen();
       case LanguageConceptSwitch.DataStreamList:
@@ -41,6 +43,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new EventParameter_TextGen();
       case LanguageConceptSwitch.Notification:
         return new Notification_TextGen();
+      case LanguageConceptSwitch.Value:
+        return new Value_TextGen();
     }
     return null;
   }

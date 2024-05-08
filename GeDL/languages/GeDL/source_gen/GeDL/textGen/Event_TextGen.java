@@ -7,6 +7,8 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -19,15 +21,46 @@ public class Event_TextGen extends TextGenDescriptorBase {
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
     tgs.append("')");
     tgs.newLine();
-    if (SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW).size() == 1) {
-      // CONTINUE HERE: try generating text for query in condition concept 
-      // or using for (if) to overcome the sequence type of parameters
-      tgs.append("from s1=");
+    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
+    tgs.newLine();
+    // TIME detection should go here
+    // CONTINUE HERE: try generating text for query in condition concept 
+    // or using for (if) to overcome the sequence type of parameters
+    tgs.append("select '");
+    tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
+    tgs.append("Alert' as Notification,");
+    tgs.newLine();
+    ctx.getBuffer().area().increaseIndent();
+    tgs.indent();
+    tgs.append("map:create(");
+    tgs.newLine();
+    for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW))) {
+      tgs.append("'");
+      tgs.appendNode(param);
+      tgs.append("',");
       tgs.newLine();
-      tgs.append("select '");
-      tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
-      tgs.append("' as Notification,");
+      tgs.indent();
+      tgs.append("map:create(");
+      tgs.newLine();
+      tgs.append("'observedProperty', ");
+      tgs.append("s1");
+      tgs.append(".observedProperty,");
+      tgs.newLine();
+      tgs.append("'resultTime', ");
+      tgs.append("s1");
+      tgs.append(".resultTime,");
+      tgs.newLine();
+      tgs.append("'result', ");
+      tgs.append("s1");
+      tgs.append(".result,");
+      tgs.newLine();
+      tgs.append("'location', ");
+      tgs.append("s1");
+      tgs.append(".location,");
+      tgs.newLine();
     }
+    ctx.getBuffer().area().decreaseIndent();
+
   }
 
   private static final class PROPS {
@@ -35,6 +68,8 @@ public class Event_TextGen extends TextGenDescriptorBase {
   }
 
   private static final class LINKS {
+    /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
+    /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
     /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
   }
 }
