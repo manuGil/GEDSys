@@ -75,7 +75,7 @@
     </node>
     <node concept="1TJgyj" id="67ABhWZB_UX" role="1TKVEi">
       <property role="IQ2ns" value="7054498623859351229" />
-      <property role="20kJfa" value="parameter" />
+      <property role="20kJfa" value="parameterRef" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2iNsMRp5c3T" resolve="EventParameter" />
     </node>
@@ -589,26 +589,12 @@
       <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
-  <node concept="1TIwiD" id="2iNsMRoVZx2">
-    <property role="EcuMT" value="2644584046946940994" />
-    <property role="TrG5h" value="Hello" />
-    <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2iNsMRoW3G8" role="1TKVEl">
-      <property role="IQ2nx" value="2644584046946958088" />
-      <property role="TrG5h" value="message" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="2iNsMRp5c3T">
     <property role="EcuMT" value="2644584046949351673" />
     <property role="TrG5h" value="EventParameter" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="2iNsMRp894r" role="1TKVEi">
-      <property role="IQ2ns" value="2644584046950125851" />
-      <property role="20kJfa" value="phenomenon" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
+    <node concept="PrWs8" id="6$_D5OOLJeR" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" />
     </node>
   </node>
   <node concept="1TIwiD" id="2iNsMRp5AZI">

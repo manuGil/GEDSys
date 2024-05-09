@@ -41,8 +41,6 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new EventDefinitionPython_TextGen();
       case LanguageConceptSwitch.EventDefinitionSiddhi:
         return new EventDefinitionSiddhi_TextGen();
-      case LanguageConceptSwitch.EventParameter:
-        return new EventParameter_TextGen();
       case LanguageConceptSwitch.Notification:
         return new Notification_TextGen();
       case LanguageConceptSwitch.Value:

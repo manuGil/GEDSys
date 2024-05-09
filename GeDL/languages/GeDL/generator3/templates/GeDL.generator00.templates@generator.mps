@@ -52,9 +52,7 @@
       <concept id="2644584046949461998" name="GeDL.structure.PayloadPhenomenon" flags="ng" index="3XDhN3">
         <reference id="2644584046949463091" name="datastreamName" index="3XDgsu" />
       </concept>
-      <concept id="2644584046949351673" name="GeDL.structure.EventParameter" flags="ng" index="3XDVfk">
-        <reference id="2644584046950125851" name="datastreamName" index="3X$Y8Q" />
-      </concept>
+      <concept id="2644584046949351673" name="GeDL.structure.EventParameter" flags="ng" index="3XDVfk" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
@@ -129,9 +127,9 @@
       </node>
     </node>
     <node concept="1EOVip" id="3ID9j62A4NW" role="2T$RmP">
-      <property role="TrG5h" value="eventsiddi" />
-      <node concept="3XDVfk" id="3ID9j62A4NX" role="3WqTZ2">
-        <ref role="3X$Y8Q" node="3ID9j62A4NT" resolve="data" />
+      <property role="TrG5h" value="eventsiddhi" />
+      <node concept="3XDVfk" id="6$_D5OOMpNB" role="3WqTZ2">
+        <property role="TrG5h" value="datashiddhi" />
       </node>
       <node concept="29HgVG" id="3ID9j62A4T4" role="lGtFl">
         <node concept="3NFfHV" id="3ID9j62A4T5" role="3NFExx">
@@ -218,8 +216,8 @@
     </node>
     <node concept="1EOVip" id="3ID9j62BfXN" role="2T$KgC">
       <property role="TrG5h" value="eventpython" />
-      <node concept="3XDVfk" id="3ID9j62BfXO" role="3WqTZ2">
-        <ref role="3X$Y8Q" node="3ID9j62BfRR" resolve="datapython" />
+      <node concept="3XDVfk" id="6$_D5OOMp3_" role="3WqTZ2">
+        <property role="TrG5h" value="datapython" />
       </node>
       <node concept="29HgVG" id="3ID9j62Bg3t" role="lGtFl">
         <node concept="3NFfHV" id="3ID9j62Bg3u" role="3NFExx">

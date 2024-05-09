@@ -9,6 +9,7 @@
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -35,6 +36,7 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -96,7 +98,18 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
+        <reference id="1204851882689" name="link" index="26LbJp" />
+      </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="4124388153790980106" name="jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation" flags="nn" index="2ZHEkA" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="3609773094169249792" name="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" flags="nn" index="37Cfm0">
+        <child id="3609773094169252180" name="linkQualifier" index="37CeNk" />
+      </concept>
+      <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
+        <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
+      </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
@@ -977,9 +990,9 @@
             <property role="lacIc" value="from condition: " />
           </node>
           <node concept="l9hG8" id="6liHQj7lh_p" role="lcghm">
-            <node concept="2OqwBi" id="6liHQj7lhIn" role="lb14g">
+            <node concept="2OqwBi" id="6$_D5OOO4yv" role="lb14g">
               <node concept="117lpO" id="6liHQj7lh_X" role="2Oq$k0" />
-              <node concept="3TrEf2" id="6liHQj7ljBA" role="2OqNvi">
+              <node concept="3TrEf2" id="6$_D5OOO4Mp" role="2OqNvi">
                 <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" resolve="LeftComparison" />
               </node>
             </node>
@@ -1012,11 +1025,11 @@
                           </node>
                         </node>
                         <node concept="3TrEf2" id="6liHQj7lpV_" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:67ABhWZB_UX" resolve="parameter" />
+                          <ref role="3Tt5mk" to="lyeg:67ABhWZB_UX" resolve="parameterRef" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="6liHQj7lqqN" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:2iNsMRp894r" resolve="phenomenon" />
+                        <ref role="3Tt5mk" to="lyeg:2iNsMRp894r" resolve="phenomenonRef" />
                       </node>
                     </node>
                   </node>
@@ -1089,45 +1102,59 @@
       </node>
     </node>
   </node>
-  <node concept="WtQ9Q" id="6$_D5OOrbbQ">
+  <node concept="WtQ9Q" id="6$_D5OOOUJK">
     <ref role="WuzLi" to="lyeg:5oC_XKWYMaz" resolve="Comparison" />
-    <node concept="11bSqf" id="6$_D5OOrbbR" role="11c4hB">
-      <node concept="3clFbS" id="6$_D5OOrbbS" role="2VODD2">
-        <node concept="lc7rE" id="6$_D5OOrbcj" role="3cqZAp">
-          <node concept="l9hG8" id="6$_D5OO_3SB" role="lcghm">
-            <node concept="2OqwBi" id="6$_D5OO_40f" role="lb14g">
-              <node concept="117lpO" id="6$_D5OO_3T8" role="2Oq$k0" />
-              <node concept="3TrEf2" id="6$_D5OO_4je" role="2OqNvi">
-                <ref role="3Tt5mk" to="lyeg:67ABhWZB_UX" resolve="parameter" />
+    <node concept="11bSqf" id="6$_D5OOOUJL" role="11c4hB">
+      <node concept="3clFbS" id="6$_D5OOOUJM" role="2VODD2">
+        <node concept="lc7rE" id="6$_D5OOOVEW" role="3cqZAp">
+          <node concept="la8eA" id="6$_D5OOOVGj" role="lcghm">
+            <property role="lacIc" value="from comparison" />
+          </node>
+        </node>
+        <node concept="lc7rE" id="6$_D5OOOUKd" role="3cqZAp">
+          <node concept="l9hG8" id="6$_D5OOR4Tj" role="lcghm">
+            <node concept="2OqwBi" id="6$_D5OOR5Lr" role="lb14g">
+              <node concept="2OqwBi" id="6$_D5OOR5vV" role="2Oq$k0">
+                <node concept="2OqwBi" id="6$_D5OOR50V" role="2Oq$k0">
+                  <node concept="117lpO" id="6$_D5OOR4TO" role="2Oq$k0" />
+                  <node concept="37Cfm0" id="6$_D5OOR5jU" role="2OqNvi">
+                    <node concept="1aIX9F" id="6$_D5OOR5jW" role="37CeNk">
+                      <node concept="26LbJo" id="6$_D5OOR5po" role="1aIX9E">
+                        <ref role="26LbJp" to="lyeg:67ABhWZB_UX" resolve="parameterRef" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2ZHEkA" id="6$_D5OOR5Fo" role="2OqNvi" />
+              </node>
+              <node concept="2qgKlT" id="6$_D5OOR61p" role="2OqNvi">
+                <ref role="37wK5l" to="tpcu:hEwIMiw" resolve="getPresentation" />
               </node>
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="WtQ9Q" id="6$_D5OO_vcX">
-    <ref role="WuzLi" to="lyeg:2iNsMRp5c3T" resolve="EventParameter" />
-    <node concept="11bSqf" id="6$_D5OO_vcY" role="11c4hB">
-      <node concept="3clFbS" id="6$_D5OO_vcZ" role="2VODD2">
-        <node concept="lc7rE" id="6$_D5OOC3Vc" role="3cqZAp">
-          <node concept="la8eA" id="6$_D5OOC3We" role="lcghm">
-            <property role="lacIc" value="this is a parameter: " />
+        <node concept="3clFbJ" id="6$_D5OOPKWn" role="3cqZAp">
+          <node concept="3clFbS" id="6$_D5OOPKWp" role="3clFbx">
+            <node concept="lc7rE" id="6$_D5OOPOrj" role="3cqZAp">
+              <node concept="la8eA" id="6$_D5OOPOrM" role="lcghm">
+                <property role="lacIc" value="reference is empty :-/" />
+              </node>
+            </node>
+            <node concept="3clFbH" id="6$_D5OOPKWo" role="3cqZAp" />
           </node>
-        </node>
-        <node concept="lc7rE" id="6$_D5OO_vea" role="3cqZAp">
-          <node concept="l9hG8" id="6$_D5OO_veA" role="lcghm">
-            <node concept="2OqwBi" id="6$_D5OOAmQN" role="lb14g">
-              <node concept="2OqwBi" id="6$_D5OO_vlG" role="2Oq$k0">
-                <node concept="117lpO" id="6$_D5OO_vf9" role="2Oq$k0" />
-                <node concept="3TrEf2" id="6$_D5OO_vAb" role="2OqNvi">
-                  <ref role="3Tt5mk" to="lyeg:2iNsMRp894r" resolve="phenomenon" />
+          <node concept="2OqwBi" id="6$_D5OOPN8d" role="3clFbw">
+            <node concept="2OqwBi" id="6$_D5OOPLIg" role="2Oq$k0">
+              <node concept="2OqwBi" id="6$_D5OOPL68" role="2Oq$k0">
+                <node concept="117lpO" id="6$_D5OOPKXx" role="2Oq$k0" />
+                <node concept="3TrEf2" id="6$_D5OOPLqf" role="2OqNvi">
+                  <ref role="3Tt5mk" to="lyeg:67ABhWZB_UX" resolve="parameterRef" />
                 </node>
               </node>
-              <node concept="3TrcHB" id="6$_D5OOAngm" role="2OqNvi">
+              <node concept="3TrcHB" id="6$_D5OOPM55" role="2OqNvi">
                 <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
+            <node concept="17RlXB" id="6$_D5OOPOqa" role="2OqNvi" />
           </node>
         </node>
       </node>

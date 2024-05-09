@@ -35,7 +35,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEventParameter = createDescriptorForEventParameter();
   /*package*/ final ConceptDescriptor myConceptExpression = createDescriptorForExpression();
   /*package*/ final ConceptDescriptor myConceptFeature = createDescriptorForFeature();
-  /*package*/ final ConceptDescriptor myConceptHello = createDescriptorForHello();
   /*package*/ final ConceptDescriptor myConceptLogicalOperator = createDescriptorForLogicalOperator();
   /*package*/ final ConceptDescriptor myConceptNotification = createDescriptorForNotification();
   /*package*/ final ConceptDescriptor myConceptPayloadPhenomenon = createDescriptorForPayloadPhenomenon();
@@ -65,7 +64,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventDefinitionPython, myConceptEventDefinitionSiddhi, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptHello, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventDefinitionPython, myConceptEventDefinitionSiddhi, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
   }
 
   @Override
@@ -110,8 +109,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptExpression;
       case LanguageConceptSwitch.Feature:
         return myConceptFeature;
-      case LanguageConceptSwitch.Hello:
-        return myConceptHello;
       case LanguageConceptSwitch.LogicalOperator:
         return myConceptLogicalOperator;
       case LanguageConceptSwitch.Notification:
@@ -156,7 +153,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919395");
     b.version(3);
     b.property("ComparisonOperator", 0x61e69d1f3f9dee76L).type(PrimitiveTypeId.STRING).origin("7054498623859322486").done();
-    b.associate("parameter", 0x61e69d1f3f9e5ebdL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).origin("7054498623859351229").done();
+    b.associate("parameterRef", 0x61e69d1f3f9e5ebdL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).origin("7054498623859351229").done();
     b.aggregate("value", 0x46a1d550fc9ff267L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fc9ff355L).optional(false).ordered(true).multiple(false).origin("5089583597717811815").done();
     b.alias("comparison");
     return b.create();
@@ -314,9 +311,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForEventParameter() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "EventParameter", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L);
     b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046949351673");
     b.version(3);
-    b.associate("phenomenon", 0x24b3732dd920911bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("2644584046950125851").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExpression() {
@@ -335,14 +332,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("srid", 0x61e69d1f3f98c376L).type(PrimitiveTypeId.INTEGER).origin("7054498623858983798").done();
     b.property("wkt", 0x562897dc3cfb22c8L).type(PrimitiveTypeId.STRING).origin("6208379058501919432").done();
     b.alias("feature");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForHello() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "Hello", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd8eff842L);
-    b.class_(false, false, true);
-    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046946940994");
-    b.version(3);
-    b.property("message", 0x24b3732dd8f03b08L).type(PrimitiveTypeId.STRING).origin("2644584046946958088").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLogicalOperator() {
