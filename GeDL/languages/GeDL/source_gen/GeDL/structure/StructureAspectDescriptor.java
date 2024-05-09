@@ -316,7 +316,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046949351673");
     b.version(3);
-    b.associate("datastreamName", 0x24b3732dd920911bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("2644584046950125851").done();
+    b.associate("phenomenon", 0x24b3732dd920911bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("2644584046950125851").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExpression() {

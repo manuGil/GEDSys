@@ -846,7 +846,7 @@
     <node concept="3EZMnI" id="2iNsMRp8P2a" role="2wV5jI">
       <node concept="l2Vlx" id="2iNsMRp8P2b" role="2iSdaV" />
       <node concept="1iCGBv" id="2iNsMRp8P2f" role="3EZMnx">
-        <ref role="1NtTu8" to="lyeg:2iNsMRp894r" resolve="datastreamName" />
+        <ref role="1NtTu8" to="lyeg:2iNsMRp894r" resolve="phenomenon" />
         <node concept="1sVBvm" id="2iNsMRp8P2i" role="1sWHZn">
           <node concept="3SHvHV" id="2iNsMRp95c6" role="2wV5jI" />
         </node>

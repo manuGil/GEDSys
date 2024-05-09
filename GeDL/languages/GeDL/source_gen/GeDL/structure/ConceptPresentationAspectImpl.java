@@ -164,7 +164,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EventParameter:
         if (props_EventParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "datastreamName", "", "");
+          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "phenomenon", "", "");
           props_EventParameter = cpb.create();
         }
         return props_EventParameter;

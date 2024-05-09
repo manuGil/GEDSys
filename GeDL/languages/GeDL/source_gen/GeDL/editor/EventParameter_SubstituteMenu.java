@@ -38,7 +38,7 @@ public class EventParameter_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_ReferenceScope_1zl21g_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_1zl21g_a() {
-      super(CONCEPTS.EventParameter$sK, LINKS.datastreamName$Hx5X, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+      super(CONCEPTS.EventParameter$sK, LINKS.phenomenon$Hx5X, new EditorMenuDescriptorBase("reference scope substitute menu part", null));
     }
 
   }
@@ -63,6 +63,6 @@ public class EventParameter_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink datastreamName$Hx5X = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "datastreamName");
+    /*package*/ static final SReferenceLink phenomenon$Hx5X = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "phenomenon");
   }
 }

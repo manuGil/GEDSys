@@ -1698,7 +1698,7 @@
                           <uo k="s:originTrace" v="n:2644584046949351673" />
                         </node>
                         <node concept="Xl_RD" id="97" role="37wK5m">
-                          <property role="Xl_RC" value="datastreamName" />
+                          <property role="Xl_RC" value="phenomenon" />
                           <uo k="s:originTrace" v="n:2644584046949351673" />
                         </node>
                         <node concept="Xl_RD" id="98" role="37wK5m">
@@ -11335,7 +11335,7 @@
                     <node concept="liA8E" id="XF" role="2OqNvi">
                       <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.associate(java.lang.String,long)" resolve="associate" />
                       <node concept="Xl_RD" id="XG" role="37wK5m">
-                        <property role="Xl_RC" value="datastreamName" />
+                        <property role="Xl_RC" value="phenomenon" />
                       </node>
                       <node concept="1adDum" id="XH" role="37wK5m">
                         <property role="1adDun" value="0x24b3732dd920911bL" />

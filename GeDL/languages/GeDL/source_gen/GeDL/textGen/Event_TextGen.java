@@ -34,32 +34,51 @@ public class Event_TextGen extends TextGenDescriptorBase {
     tgs.indent();
     tgs.append("map:create(");
     tgs.newLine();
+
+    Integer countStream = 1;
     for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW))) {
       tgs.append("'");
       tgs.appendNode(param);
       tgs.append("',");
       tgs.newLine();
       tgs.indent();
+      tgs.indent();
       tgs.append("map:create(");
       tgs.newLine();
+      tgs.indent();
       tgs.append("'observedProperty', ");
-      tgs.append("s1");
+      tgs.append("s");
+      tgs.append(countStream.toString());
       tgs.append(".observedProperty,");
       tgs.newLine();
+      tgs.indent();
       tgs.append("'resultTime', ");
-      tgs.append("s1");
+      tgs.append("s");
+      tgs.append(countStream.toString());
       tgs.append(".resultTime,");
       tgs.newLine();
+      tgs.indent();
       tgs.append("'result', ");
-      tgs.append("s1");
+      tgs.append("s");
+      tgs.append(countStream.toString());
       tgs.append(".result,");
       tgs.newLine();
+      tgs.indent();
       tgs.append("'location', ");
-      tgs.append("s1");
+      tgs.append("s");
+      tgs.append(countStream.toString());
       tgs.append(".location,");
       tgs.newLine();
+      tgs.append("),");
+      tgs.newLine();
+      countStream++;
     }
+    tgs.append(") as observations,");
+    tgs.newLine();
+    tgs.append("time:currentTimestamp() as detection time");
+    tgs.newLine();
     ctx.getBuffer().area().decreaseIndent();
+    tgs.append("insert into ");
 
   }
 

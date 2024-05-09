@@ -15,11 +15,12 @@ public class EventParameter_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.datastreamName$Hx5X), PROPS.name$MnvL));
+    tgs.append("this is a parameter: ");
+    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.phenomenon$Hx5X), PROPS.name$MnvL));
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink datastreamName$Hx5X = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "datastreamName");
+    /*package*/ static final SReferenceLink phenomenon$Hx5X = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "phenomenon");
   }
 
   private static final class PROPS {
