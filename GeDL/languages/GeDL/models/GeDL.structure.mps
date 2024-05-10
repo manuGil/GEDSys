@@ -73,9 +73,10 @@
       <property role="TrG5h" value="ComparisonOperator" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
-    <node concept="1TJgyj" id="67ABhWZB_UX" role="1TKVEi">
-      <property role="IQ2ns" value="7054498623859351229" />
-      <property role="20kJfa" value="parameterRef" />
+    <node concept="1TJgyj" id="6kf09COGs7W" role="1TKVEi">
+      <property role="IQ2ns" value="7282039784790409724" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="expression" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2iNsMRp5c3T" resolve="EventParameter" />
     </node>
@@ -254,6 +255,9 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="notification" />
       <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
+    </node>
+    <node concept="PrWs8" id="6kf09COorFF" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hWu5dyl" resolve="IContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="5oC_XKWYMdd">
@@ -593,8 +597,11 @@
     <property role="EcuMT" value="2644584046949351673" />
     <property role="TrG5h" value="EventParameter" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="6$_D5OOLJeR" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" />
+    <node concept="1TJgyj" id="6kf09COtPoX" role="1TKVEi">
+      <property role="IQ2ns" value="7282039784786581053" />
+      <property role="20kJfa" value="parameterName" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
     </node>
   </node>
   <node concept="1TIwiD" id="2iNsMRp5AZI">
@@ -631,6 +638,9 @@
       <property role="20kJfa" value="notification" />
       <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
     </node>
+    <node concept="PrWs8" id="6kf09COq6oR" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hWu5dyl" resolve="IContainer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3ID9j62e_22">
     <property role="EcuMT" value="4299008213870334082" />
@@ -654,6 +664,9 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="notification" />
       <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
+    </node>
+    <node concept="PrWs8" id="6kf09COpgx8" role="PzmwI">
+      <ref role="PrY4T" to="tpck:hWu5dyl" resolve="IContainer" />
     </node>
   </node>
 </model>

@@ -34,15 +34,13 @@ public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.notification$zhrd));
     tgs.newLine();
     // queries
-    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
+    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc));
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink event$zhcc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5084L, "event");
     /*package*/ static final SContainmentLink datastreams$zgXb = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5083L, "datastreams");
     /*package*/ static final SContainmentLink notification$zhrd = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5085L, "notification");
-    /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
-    /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
   }
 
   private static final class PROPS {

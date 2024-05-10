@@ -5,70 +5,85 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="85,0,90,0" name="GeDL.generator00.templates.QueriesGenerated$LINKS" />
-      <unit at="59,0,84,0" name="GeDL.generator00.templates.QueriesGenerated$SNQ" />
-      <unit at="20,0,91,0" name="GeDL.generator00.templates.QueriesGenerated" />
-    </file>
-  </root>
-  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/4299008213875816668">
-    <file name="QueriesGenerated.java">
-      <node id="4299008213876493581" at="25,92,26,81" concept="1" />
-      <node id="4299008213876493900" at="28,92,29,75" concept="1" />
-      <node id="4299008213876494219" at="31,92,32,82" concept="1" />
-      <node id="4299008213876493574" at="45,14,46,56" concept="0" />
-      <node id="4299008213876493893" at="46,56,47,56" concept="0" />
-      <node id="4299008213876494212" at="47,56,48,56" concept="0" />
-      <node id="4299008213876493574" at="67,15,68,59" concept="1" />
-      <node id="4299008213876493893" at="69,15,70,59" concept="1" />
-      <node id="4299008213876494212" at="71,15,72,59" concept="1" />
-      <node id="4299008213876493574" at="25,0,28,0" concept="2" trace="sourceNodeQuery_1_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4299008213876493893" at="28,0,31,0" concept="2" trace="sourceNodeQuery_1_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4299008213876494212" at="31,0,34,0" concept="2" trace="sourceNodeQuery_1_2#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4299008213876493575" at="25,92,26,81" />
-      <scope id="4299008213876493894" at="28,92,29,75" />
-      <scope id="4299008213876494213" at="31,92,32,82" />
-      <scope id="4299008213876493574" at="67,15,68,59" />
-      <scope id="4299008213876493893" at="69,15,70,59" />
-      <scope id="4299008213876494212" at="71,15,72,59" />
-      <scope id="4299008213876493574" at="25,0,28,0">
-        <var name="_context" id="4299008213876493574" />
-      </scope>
-      <scope id="4299008213876493893" at="28,0,31,0">
-        <var name="_context" id="4299008213876493893" />
-      </scope>
-      <scope id="4299008213876494212" at="31,0,34,0">
-        <var name="_context" id="4299008213876494212" />
-      </scope>
+      <unit at="126,0,129,0" name="GeDL.generator00.templates.QueriesGenerated$PROPS" />
+      <unit at="119,0,125,0" name="GeDL.generator00.templates.QueriesGenerated$LINKS" />
+      <unit at="102,0,118,0" name="GeDL.generator00.templates.QueriesGenerated$RTQ" />
+      <unit at="67,0,92,0" name="GeDL.generator00.templates.QueriesGenerated$SNQ" />
+      <unit at="25,0,130,0" name="GeDL.generator00.templates.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/4299008213875907466">
     <file name="QueriesGenerated.java">
-      <node id="4299008213876398038" at="34,92,35,82" concept="1" />
-      <node id="4299008213876801033" at="37,92,38,81" concept="1" />
-      <node id="4299008213876801765" at="40,92,41,75" concept="1" />
-      <node id="4299008213876398031" at="48,56,49,56" concept="0" />
-      <node id="4299008213876801026" at="49,56,50,56" concept="0" />
-      <node id="4299008213876801758" at="50,56,51,56" concept="0" />
-      <node id="4299008213876398031" at="73,15,74,59" concept="1" />
-      <node id="4299008213876801026" at="75,15,76,59" concept="1" />
-      <node id="4299008213876801758" at="77,15,78,59" concept="1" />
-      <node id="4299008213876398031" at="34,0,37,0" concept="2" trace="sourceNodeQuery_2_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4299008213876801026" at="37,0,40,0" concept="2" trace="sourceNodeQuery_2_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4299008213876801758" at="40,0,43,0" concept="2" trace="sourceNodeQuery_2_2#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="4299008213876398032" at="34,92,35,82" />
-      <scope id="4299008213876801027" at="37,92,38,81" />
-      <scope id="4299008213876801759" at="40,92,41,75" />
-      <scope id="4299008213876398031" at="73,15,74,59" />
-      <scope id="4299008213876801026" at="75,15,76,59" />
-      <scope id="4299008213876801758" at="77,15,78,59" />
-      <scope id="4299008213876398031" at="34,0,37,0">
+      <node id="4299008213876398038" at="33,92,34,82" concept="1" />
+      <node id="4299008213876801033" at="36,92,37,81" concept="1" />
+      <node id="4299008213876801765" at="39,92,40,75" concept="1" />
+      <node id="4299008213876398031" at="53,14,54,56" concept="0" />
+      <node id="4299008213876801026" at="54,56,55,56" concept="0" />
+      <node id="4299008213876801758" at="55,56,56,56" concept="0" />
+      <node id="4299008213876398031" at="75,15,76,59" concept="1" />
+      <node id="4299008213876801026" at="77,15,78,59" concept="1" />
+      <node id="4299008213876801758" at="79,15,80,59" concept="1" />
+      <node id="4299008213876398031" at="33,0,36,0" concept="2" trace="sourceNodeQuery_1_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4299008213876801026" at="36,0,39,0" concept="2" trace="sourceNodeQuery_1_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4299008213876801758" at="39,0,42,0" concept="2" trace="sourceNodeQuery_1_2#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="4299008213876398032" at="33,92,34,82" />
+      <scope id="4299008213876801027" at="36,92,37,81" />
+      <scope id="4299008213876801759" at="39,92,40,75" />
+      <scope id="4299008213876398031" at="75,15,76,59" />
+      <scope id="4299008213876801026" at="77,15,78,59" />
+      <scope id="4299008213876801758" at="79,15,80,59" />
+      <scope id="4299008213876398031" at="33,0,36,0">
         <var name="_context" id="4299008213876398031" />
       </scope>
-      <scope id="4299008213876801026" at="37,0,40,0">
+      <scope id="4299008213876801026" at="36,0,39,0">
         <var name="_context" id="4299008213876801026" />
       </scope>
-      <scope id="4299008213876801758" at="40,0,43,0">
+      <scope id="4299008213876801758" at="39,0,42,0">
         <var name="_context" id="4299008213876801758" />
+      </scope>
+    </file>
+  </root>
+  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/7282039784789237287">
+    <file name="QueriesGenerated.java">
+      <node id="7282039784789237313" at="42,92,43,81" concept="1" />
+      <node id="7282039784789237622" at="45,92,46,75" concept="1" />
+      <node id="7282039784789237693" at="48,92,49,82" concept="1" />
+      <node id="7282039784789237306" at="56,56,57,56" concept="0" />
+      <node id="7282039784789237615" at="57,56,58,56" concept="0" />
+      <node id="7282039784789237686" at="58,56,59,56" concept="0" />
+      <node id="7282039784789237306" at="81,15,82,59" concept="1" />
+      <node id="7282039784789237615" at="83,15,84,59" concept="1" />
+      <node id="7282039784789237686" at="85,15,86,59" concept="1" />
+      <node id="7282039784789237306" at="42,0,45,0" concept="2" trace="sourceNodeQuery_2_0#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7282039784789237615" at="45,0,48,0" concept="2" trace="sourceNodeQuery_2_1#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7282039784789237686" at="48,0,51,0" concept="2" trace="sourceNodeQuery_2_2#(Ljetbrains/mps/generator/template/SourceSubstituteMacroNodeContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7282039784789237307" at="42,92,43,81" />
+      <scope id="7282039784789237616" at="45,92,46,75" />
+      <scope id="7282039784789237687" at="48,92,49,82" />
+      <scope id="7282039784789237306" at="81,15,82,59" />
+      <scope id="7282039784789237615" at="83,15,84,59" />
+      <scope id="7282039784789237686" at="85,15,86,59" />
+      <scope id="7282039784789237306" at="42,0,45,0">
+        <var name="_context" id="7282039784789237306" />
+      </scope>
+      <scope id="7282039784789237615" at="45,0,48,0">
+        <var name="_context" id="7282039784789237615" />
+      </scope>
+      <scope id="7282039784789237686" at="48,0,51,0">
+        <var name="_context" id="7282039784789237686" />
+      </scope>
+    </file>
+  </root>
+  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/7282039784790819656">
+    <file name="QueriesGenerated.java">
+      <node id="7282039784791524197" at="30,93,31,131" concept="1" />
+      <node id="7282039784791524143" at="93,3,94,60" concept="0" />
+      <node id="7282039784791524143" at="111,15,112,70" concept="1" />
+      <node id="7282039784791524144" at="30,0,33,0" concept="2" trace="referenceMacro_GetReferent_3_0#(Ljetbrains/mps/generator/template/ReferenceMacroContext;)Ljava/lang/Object;" />
+      <scope id="7282039784791524145" at="30,93,31,131" />
+      <scope id="7282039784791524143" at="111,15,112,70" />
+      <scope id="7282039784791524144" at="30,0,33,0">
+        <var name="_context" id="7282039784791524144" />
       </scope>
     </file>
   </root>
