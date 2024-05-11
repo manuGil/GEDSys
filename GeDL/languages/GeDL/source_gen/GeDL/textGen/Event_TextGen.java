@@ -6,15 +6,15 @@ import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Event_TextGen extends TextGenDescriptorBase {
   @Override
@@ -24,17 +24,17 @@ public class Event_TextGen extends TextGenDescriptorBase {
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
     tgs.append("')");
     tgs.newLine();
-    // condition
-
+    // Query: condition
+    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
     // TIME detection rule
 
+    // Query: projection
     String notificationName = "";
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(ctx.getPrimaryInput())))) {
       if (SNodeOperations.isInstanceOf(child, CONCEPTS.Notification$fE)) {
         notificationName = BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child);
       }
     }
-
     tgs.append("select '");
     tgs.append(notificationName);
     tgs.append("' as Notification,");
@@ -101,11 +101,13 @@ public class Event_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SProperty parameterName$nSEP = MetaAdapterFactory.getProperty(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x650f009a35064e7aL, "parameterName");
   }
 
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept Notification$fE = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L, "GeDL.structure.Notification");
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
+    /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
+    /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
   }
 
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Notification$fE = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L, "GeDL.structure.Notification");
   }
 }

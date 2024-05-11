@@ -101,7 +101,7 @@
     <node concept="1TJgyj" id="4qxPl3WEHV3" role="1TKVEi">
       <property role="IQ2ns" value="5089583597718527683" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="LogicOperator" />
+      <property role="20kJfa" value="LogicalOperator" />
       <ref role="20lvS9" node="4qxPl3WEIw5" resolve="LogicalOperator" />
     </node>
     <node concept="1TJgyj" id="4qxPl3WD0k$" role="1TKVEi">
@@ -410,16 +410,11 @@
     <property role="TrG5h" value="Duration" />
     <property role="34LRSv" value="duration" />
     <ref role="1TJDcQ" node="5oC_XKWYMdp" resolve="TimeType" />
-    <node concept="1TJgyj" id="67ABhWZBfaF" role="1TKVEi">
-      <property role="IQ2ns" value="7054498623859258027" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="time" />
-      <ref role="20lvS9" node="5oC_XKWYMdh" resolve="Time" />
-    </node>
     <node concept="1TJgyj" id="67ABhWZBgp$" role="1TKVEi">
       <property role="IQ2ns" value="7054498623859263076" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="timeUni" />
+      <property role="20kJfa" value="timeAndUnits" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="67ABhWZBfzm" resolve="DurationWithUnits" />
     </node>
   </node>

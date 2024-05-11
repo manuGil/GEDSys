@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import GeDL.editor.gedlStyles_StyleSheet.geldOperatorStyleClass;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class Condition_EditorBuilder_a extends AbstractEditorBuilder {
@@ -123,14 +124,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new LogicOperatorSingleRoleHandler_2lgv54_c0(myNode, LINKS.LogicOperator$MyzW, getEditorContext());
+    SingleRoleCellProvider provider = new LogicalOperatorSingleRoleHandler_2lgv54_c0(myNode, LINKS.LogicalOperator$MyzW, getEditorContext());
     return provider.createCell();
   }
-  private static class LogicOperatorSingleRoleHandler_2lgv54_c0 extends SingleRoleCellProvider {
+  private static class LogicalOperatorSingleRoleHandler_2lgv54_c0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public LogicOperatorSingleRoleHandler_2lgv54_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public LogicalOperatorSingleRoleHandler_2lgv54_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -143,8 +144,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.LogicOperator$MyzW, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.LogicOperator$MyzW, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.LogicalOperator$MyzW, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.LogicalOperator$MyzW, child));
       installCellInfo(child, editorCell, false);
       return editorCell;
     }
@@ -156,9 +157,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
       }
       if (editorCell.getSRole() == null) {
-        editorCell.setSRole(LINKS.LogicOperator$MyzW);
+        editorCell.setSRole(LINKS.LogicalOperator$MyzW);
       }
       Style style = new StyleImpl();
+      new geldOperatorStyleClass(this).apply(style, editorCell);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       editorCell.getStyle().putAll(style);
@@ -166,10 +168,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.LogicOperator$MyzW));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.LogicalOperator$MyzW));
       try {
         EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_LogicOperator");
+        editorCell.setCellId("empty_LogicalOperator");
         installCellInfo(null, editorCell, true);
         setCellContext(editorCell);
         return editorCell;
@@ -243,7 +245,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink LeftComparison$Ic57 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fca3ffc0L, "LeftComparison");
-    /*package*/ static final SContainmentLink LogicOperator$MyzW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fcaadec3L, "LogicOperator");
+    /*package*/ static final SContainmentLink LogicalOperator$MyzW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fcaadec3L, "LogicalOperator");
     /*package*/ static final SContainmentLink RightComparison$DgWG = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a5L, 0x46a1d550fca40524L, "RightComparison");
   }
 }

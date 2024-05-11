@@ -138,6 +138,30 @@
         <property role="Vb096" value="g1_qRwE/darkGreen" />
       </node>
     </node>
+    <node concept="14StLt" id="4j1YrdJlAQ2" role="V601i">
+      <property role="TrG5h" value="gedlFunction" />
+      <node concept="VSNWy" id="4j1YrdJlAQf" role="3F10Kt">
+        <property role="1lJzqX" value="14" />
+      </node>
+      <node concept="Vb9p2" id="4j1YrdJlAQl" role="3F10Kt">
+        <property role="Vbekb" value="g1_kEg4/ITALIC" />
+      </node>
+      <node concept="VechU" id="4j1YrdJlAQt" role="3F10Kt">
+        <property role="Vb096" value="fLwANPu/blue" />
+      </node>
+    </node>
+    <node concept="14StLt" id="4j1YrdJm5pQ" role="V601i">
+      <property role="TrG5h" value="geldOperator" />
+      <node concept="VSNWy" id="4j1YrdJm5q7" role="3F10Kt">
+        <property role="1lJzqX" value="14" />
+      </node>
+      <node concept="Vb9p2" id="4j1YrdJm5qd" role="3F10Kt">
+        <property role="Vbekb" value="g1_k_vY/BOLD" />
+      </node>
+      <node concept="VechU" id="4j1YrdJm5qm" role="3F10Kt">
+        <property role="Vb096" value="g1_eI4o/darkBlue" />
+      </node>
+    </node>
   </node>
   <node concept="24kQdi" id="52LigkvWFQ3">
     <ref role="1XX52x" to="lyeg:5oC_XKWYMaC" resolve="DataStream" />
@@ -213,7 +237,8 @@
       </node>
       <node concept="3F1sOY" id="4qxPl3WF32c" role="3EZMnx">
         <property role="1$x2rV" value="&lt;logical operator&gt;" />
-        <ref role="1NtTu8" to="lyeg:4qxPl3WEHV3" resolve="LogicOperator" />
+        <ref role="1NtTu8" to="lyeg:4qxPl3WEHV3" resolve="LogicalOperator" />
+        <ref role="1k5W1q" node="4j1YrdJm5pQ" resolve="geldOperator" />
         <node concept="lj46D" id="4qxPl3WF32d" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -835,6 +860,51 @@
       <node concept="l2Vlx" id="4j1YrdJ1Rre" role="2iSdaV" />
       <node concept="3F0A7n" id="6kf09CP1$TZ" role="3EZMnx">
         <ref role="1NtTu8" to="lyeg:6kf09CP1$TU" resolve="parameterName" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4j1YrdJeYA8">
+    <ref role="1XX52x" to="lyeg:67ABhWZBeVC" resolve="Duration" />
+    <node concept="3EZMnI" id="4j1YrdJeYAa" role="2wV5jI">
+      <node concept="2iRfu4" id="4j1YrdJeYAd" role="2iSdaV" />
+      <node concept="3F0ifn" id="4j1YrdJkD_k" role="3EZMnx">
+        <property role="3F0ifm" value="duration" />
+        <ref role="1k5W1q" node="4j1YrdJlAQ2" resolve="gedlFunction" />
+      </node>
+      <node concept="3F0ifn" id="4j1YrdJkD_w" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+      </node>
+      <node concept="3F1sOY" id="4j1YrdJeYA$" role="3EZMnx">
+        <ref role="1NtTu8" to="lyeg:67ABhWZBgp$" resolve="timeAndUnits" />
+        <node concept="lj46D" id="4j1YrdJeYA_" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4j1YrdJeYAA" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4j1YrdJkD_I" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4j1YrdJjG$A">
+    <ref role="1XX52x" to="lyeg:67ABhWZBfzm" resolve="DurationWithUnits" />
+    <node concept="3EZMnI" id="4j1YrdJjG$C" role="2wV5jI">
+      <node concept="2iRfu4" id="4j1YrdJjG_m" role="2iSdaV" />
+      <node concept="3F0A7n" id="4j1YrdJjG$R" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;value&gt;" />
+        <ref role="1NtTu8" to="lyeg:67ABhWZBfGH" resolve="number" />
+        <node concept="ljvvj" id="4j1YrdJjG$S" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="4j1YrdJjG_f" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;unit&gt;" />
+        <ref role="1NtTu8" to="lyeg:67ABhWZBfTN" resolve="unit" />
+        <node concept="ljvvj" id="4j1YrdJjG_g" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
       </node>
     </node>
   </node>

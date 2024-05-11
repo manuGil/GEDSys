@@ -18,7 +18,18 @@
         <reference id="7054498623859437172" name="eventName" index="1uujdF" />
         <child id="2644584046949231281" name="payload" index="3XCpAs" />
       </concept>
+      <concept id="7054498623859259606" name="GeDL.structure.DurationWithUnits" flags="ng" index="1uuAn9">
+        <property id="7054498623859261043" name="unit" index="1uuAdG" />
+        <property id="7054498623859260205" name="number" index="1uuAoM" />
+      </concept>
+      <concept id="7054498623859257064" name="GeDL.structure.Duration" flags="ng" index="1uuBfR">
+        <child id="7054498623859263076" name="timeAndUnits" index="1uuTHV" />
+      </concept>
+      <concept id="6208379058501971212" name="GeDL.structure.DetectionTime" flags="ng" index="1EORFg">
+        <child id="6208379058501971213" name="timeType" index="1EORFh" />
+      </concept>
       <concept id="6208379058501971205" name="GeDL.structure.DetectionRule" flags="ng" index="1EORFp">
+        <child id="7054498623859073585" name="detectionTime" index="1uvbWI" />
         <child id="6208379058501971208" name="condition" index="1EORFk" />
       </concept>
       <concept id="6208379058501919560" name="GeDL.structure.EventDefinition" flags="ng" index="1EOVik">
@@ -39,7 +50,7 @@
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
         <child id="5089583597718077376" name="LeftComparison" index="2U0yEg" />
         <child id="5089583597718078756" name="RightComparison" index="2U1t1O" />
-        <child id="5089583597718527683" name="LogicOperator" index="2U2KIj" />
+        <child id="5089583597718527683" name="LogicalOperator" index="2U2KIj" />
       </concept>
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
         <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
@@ -80,34 +91,42 @@
       <node concept="3XDVfk" id="4j1YrdJ375G" role="3WqTZ2">
         <property role="1g2kVw" value="hum" />
       </node>
-      <node concept="1EORFp" id="4j1YrdJ3x$f" role="3ANvmg">
-        <node concept="1EOVlT" id="4j1YrdJ3x$g" role="1EORFk">
-          <node concept="1EOVlZ" id="4j1YrdJ3x$h" role="2U0yEg">
+      <node concept="1EORFp" id="4j1YrdJd8dH" role="3ANvmg">
+        <node concept="1EOVlT" id="4j1YrdJd8dI" role="1EORFk">
+          <node concept="1EOVlZ" id="4j1YrdJd8dJ" role="2U0yEg">
             <property role="1uuRdD" value="&gt;" />
-            <node concept="2Ufyo5" id="4j1YrdJ3x$i" role="2UfysR">
-              <property role="2Ufy5s" value="30.f" />
+            <node concept="2Ufyo5" id="4j1YrdJd8dK" role="2UfysR">
+              <property role="2Ufy5s" value="10.f" />
             </node>
-            <node concept="3XDVfk" id="4j1YrdJ3x$j" role="1hMpOy">
+            <node concept="3XDVfk" id="4j1YrdJd8dL" role="1hMpOy">
               <property role="1g2kVw" value="temp" />
             </node>
           </node>
-          <node concept="2U2NPl" id="4j1YrdJ3x$p" role="2U2KIj">
+          <node concept="2U2NPl" id="4j1YrdJd_7y" role="2U2KIj">
             <property role="2U2NT2" value="2c2WbewnACm/and" />
           </node>
-          <node concept="1EOVlZ" id="4j1YrdJ3x$r" role="2U1t1O">
+          <node concept="1EOVlZ" id="4j1YrdJd_7$" role="2U1t1O">
             <property role="1uuRdD" value="&lt;" />
-            <node concept="2Ufyo5" id="4j1YrdJ3x$s" role="2UfysR">
+            <node concept="2Ufyo5" id="4j1YrdJd_7_" role="2UfysR">
               <property role="2Ufy5s" value="40.f" />
             </node>
-            <node concept="3XDVfk" id="4j1YrdJ3x$t" role="1hMpOy">
+            <node concept="3XDVfk" id="4j1YrdJd_7A" role="1hMpOy">
               <property role="1g2kVw" value="hum" />
+            </node>
+          </node>
+        </node>
+        <node concept="1EORFg" id="4j1YrdJjdXx" role="1uvbWI">
+          <node concept="1uuBfR" id="4j1YrdJjdX_" role="1EORFh">
+            <node concept="1uuAn9" id="4j1YrdJjdXB" role="1uuTHV">
+              <property role="1uuAoM" value="10" />
+              <property role="1uuAdG" value="67ABhWZBfnN/second" />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="1uujJe" id="4j1YrdJ09rJ" role="19s5IL">
-      <property role="TrG5h" value="hoDayAler" />
+      <property role="TrG5h" value="hotDayAler" />
       <ref role="1uujdF" node="4j1YrdJ09rH" resolve="hotDay" />
       <node concept="3XDhN3" id="4j1YrdJ09rK" role="3XCpAs">
         <ref role="3XDgsu" node="4j1YrdJ09rM" resolve="temp" />

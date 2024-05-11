@@ -164,7 +164,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919397");
     b.version(3);
     b.aggregate("LeftComparison", 0x46a1d550fca3ffc0L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L).optional(false).ordered(true).multiple(false).origin("5089583597718077376").done();
-    b.aggregate("LogicOperator", 0x46a1d550fcaadec3L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fcaae805L).optional(true).ordered(true).multiple(false).origin("5089583597718527683").done();
+    b.aggregate("LogicalOperator", 0x46a1d550fcaadec3L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fcaae805L).optional(true).ordered(true).multiple(false).origin("5089583597718527683").done();
     b.aggregate("RightComparison", 0x46a1d550fca40524L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22a3L).optional(true).ordered(true).multiple(false).origin("5089583597718078756").done();
     return b.create();
   }
@@ -252,8 +252,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2359L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859257064");
     b.version(3);
-    b.aggregate("time", 0x61e69d1f3f9cf2abL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2351L).optional(true).ordered(true).multiple(false).origin("7054498623859258027").done();
-    b.aggregate("timeUni", 0x61e69d1f3f9d0664L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf8d6L).optional(true).ordered(true).multiple(false).origin("7054498623859263076").done();
+    b.aggregate("timeAndUnits", 0x61e69d1f3f9d0664L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9cf8d6L).optional(false).ordered(true).multiple(false).origin("7054498623859263076").done();
     b.alias("duration");
     return b.create();
   }

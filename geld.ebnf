@@ -103,7 +103,7 @@ TimeType ::=  TimeInstance
 TimeInstance ::= '"' Time '"' | '"' DateTime '"'
 
 Duration ::=  "duration" "(" '"'Time '"' ")"
-         | "duration" "(" Number "," TimeUnit ")"
+         | "duration" "(" Number TimeUnit ")"
 
 TimeUnit ::= "second" | "minute" | "hour" | "day" | "week" | "month" | "year"
 TimeWindow ::=  "window" "(" TimeInstance "," TimeInstance ")"

@@ -21,12 +21,13 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     String eventName = "";
+    // find event name in the root concept (Event definition
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(ctx.getPrimaryInput())))))) {
       if (SNodeOperations.isInstanceOf(child, CONCEPTS.Event$xy)) {
         if (isNotEmptyString(BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child))) {
           eventName = BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child);
         } else {
-          tgs.append("\"ERROR: no instance of Event was found in parents!!\"");
+          tgs.append(">>> \"ERROR: no instance of Event was found in parents!\"");
         }
       }
     }
@@ -38,7 +39,7 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.indent();
     tgs.append("receiver.url=\"http://localhost:8006/");
-    tgs.append(eventName);
+    tgs.append(eventName.toLowerCase());
     tgs.append("-");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.Phenomenon$O7ge), PROPS.name$MnvL));
     tgs.append("\",");
