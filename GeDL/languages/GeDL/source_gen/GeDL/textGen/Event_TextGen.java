@@ -7,8 +7,8 @@ import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -27,6 +27,12 @@ public class Event_TextGen extends TextGenDescriptorBase {
     // Query: condition
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
     // TIME detection rule
+
+    // For multiple parameters!!!
+    Integer countParams = ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW)).count();
+    tgs.append("count ");
+    tgs.append(countParams.toString());
+
 
     // Query: projection
     String notificationName = "";
