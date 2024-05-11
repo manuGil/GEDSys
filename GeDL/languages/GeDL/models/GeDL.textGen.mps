@@ -8,11 +8,14 @@
   <imports>
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
+        <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
       <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
         <child id="1068498886297" name="rValue" index="37vLTx" />
         <child id="1068498886295" name="lValue" index="37vLTJ" />
@@ -42,6 +45,7 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -50,6 +54,7 @@
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
       </concept>
@@ -347,6 +352,119 @@
     <ref role="WuzLi" to="lyeg:5oC_XKWYMaC" resolve="DataStream" />
     <node concept="11bSqf" id="3ID9j62DzPc" role="11c4hB">
       <node concept="3clFbS" id="3ID9j62DzPd" role="2VODD2">
+        <node concept="3cpWs8" id="4j1YrdJ3zp_" role="3cqZAp">
+          <node concept="3cpWsn" id="4j1YrdJ3zpx" role="3cpWs9">
+            <property role="TrG5h" value="eventName" />
+            <node concept="17QB3L" id="4j1YrdJ3zvF" role="1tU5fm" />
+            <node concept="Xl_RD" id="4j1YrdJ3E1n" role="33vP2m">
+              <property role="Xl_RC" value="" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4j1YrdJ8t5Y" role="3cqZAp">
+          <node concept="1PaTwC" id="4j1YrdJ8t5Z" role="1aUNEU">
+            <node concept="3oM_SD" id="4j1YrdJ8tf4" role="1PaTwD">
+              <property role="3oM_SC" value="find" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tfg" role="1PaTwD">
+              <property role="3oM_SC" value="event" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tfq" role="1PaTwD">
+              <property role="3oM_SC" value="name" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tfz" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tfF" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tfP" role="1PaTwD">
+              <property role="3oM_SC" value="root" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tgf" role="1PaTwD">
+              <property role="3oM_SC" value="concept" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tgx" role="1PaTwD">
+              <property role="3oM_SC" value="(Event" />
+            </node>
+            <node concept="3oM_SD" id="4j1YrdJ8tgL" role="1PaTwD">
+              <property role="3oM_SC" value="definition" />
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="4j1YrdJ3EjQ" role="3cqZAp">
+          <node concept="2GrKxI" id="4j1YrdJ3EjR" role="2Gsz3X">
+            <property role="TrG5h" value="child" />
+          </node>
+          <node concept="2OqwBi" id="4j1YrdJ6nMg" role="2GsD0m">
+            <node concept="2OqwBi" id="4j1YrdJ6nBH" role="2Oq$k0">
+              <node concept="2OqwBi" id="4j1YrdJ3EjS" role="2Oq$k0">
+                <node concept="2OqwBi" id="4j1YrdJ3EjT" role="2Oq$k0">
+                  <node concept="117lpO" id="4j1YrdJ3EjU" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="4j1YrdJ3EjV" role="2OqNvi" />
+                </node>
+                <node concept="1mfA1w" id="4j1YrdJ6ntQ" role="2OqNvi" />
+              </node>
+              <node concept="1mfA1w" id="4j1YrdJ6nHk" role="2OqNvi" />
+            </node>
+            <node concept="32TBzR" id="4j1YrdJ6nUw" role="2OqNvi" />
+          </node>
+          <node concept="3clFbS" id="4j1YrdJ3EjX" role="2LFqv$">
+            <node concept="3clFbJ" id="4j1YrdJ6OwY" role="3cqZAp">
+              <node concept="3clFbS" id="4j1YrdJ6Ox0" role="3clFbx">
+                <node concept="3clFbJ" id="4j1YrdJ7VhW" role="3cqZAp">
+                  <node concept="3clFbS" id="4j1YrdJ7VhY" role="3clFbx">
+                    <node concept="3clFbF" id="4j1YrdJ7Zqf" role="3cqZAp">
+                      <node concept="37vLTI" id="4j1YrdJ7Zqg" role="3clFbG">
+                        <node concept="2OqwBi" id="4j1YrdJ7Zqh" role="37vLTx">
+                          <node concept="2GrUjf" id="4j1YrdJ7Zqi" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="4j1YrdJ3EjR" resolve="child" />
+                          </node>
+                          <node concept="2qgKlT" id="4j1YrdJ7Zqj" role="2OqNvi">
+                            <ref role="37wK5l" to="tpcu:22G2W3WJ92t" resolve="getDetailedPresentation" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="4j1YrdJ7Zqk" role="37vLTJ">
+                          <ref role="3cqZAo" node="4j1YrdJ3zpx" resolve="eventName" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4j1YrdJ7WLd" role="3clFbw">
+                    <node concept="2OqwBi" id="4j1YrdJ7VoA" role="2Oq$k0">
+                      <node concept="2GrUjf" id="4j1YrdJ7ViV" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="4j1YrdJ3EjR" resolve="child" />
+                      </node>
+                      <node concept="2qgKlT" id="4j1YrdJ7VWK" role="2OqNvi">
+                        <ref role="37wK5l" to="tpcu:22G2W3WJ92t" resolve="getDetailedPresentation" />
+                      </node>
+                    </node>
+                    <node concept="17RvpY" id="4j1YrdJ7YlN" role="2OqNvi" />
+                  </node>
+                  <node concept="9aQIb" id="4j1YrdJ80im" role="9aQIa">
+                    <node concept="3clFbS" id="4j1YrdJ80in" role="9aQI4">
+                      <node concept="lc7rE" id="4j1YrdJ80n7" role="3cqZAp">
+                        <node concept="la8eA" id="4j1YrdJ80n8" role="lcghm">
+                          <property role="lacIc" value="&quot;ERROR: no instance of Event was found in parents!!&quot;" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4j1YrdJ6ODm" role="3clFbw">
+                <node concept="2GrUjf" id="4j1YrdJ6Oy3" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="4j1YrdJ3EjR" resolve="child" />
+                </node>
+                <node concept="1mIQ4w" id="4j1YrdJ6Pjv" role="2OqNvi">
+                  <node concept="chp4Y" id="4j1YrdJ6PnN" role="cj9EA">
+                    <ref role="cht4Q" to="lyeg:5oC_XKWYMd5" resolve="Event" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="lc7rE" id="3ID9j62GI16" role="3cqZAp">
           <node concept="la8eA" id="3ID9j62GI2a" role="lcghm">
             <property role="lacIc" value="@source(" />
@@ -366,6 +484,19 @@
               <node concept="2BGw6n" id="3ID9j62I7J0" role="lcghm" />
               <node concept="la8eA" id="3ID9j62GIjD" role="lcghm">
                 <property role="lacIc" value="receiver.url=&quot;http://localhost:8006/" />
+              </node>
+              <node concept="l9hG8" id="4j1YrdJ3EQH" role="lcghm">
+                <node concept="2OqwBi" id="4j1YrdJ8w7X" role="lb14g">
+                  <node concept="37vLTw" id="4j1YrdJ3ERR" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4j1YrdJ3zpx" resolve="eventName" />
+                  </node>
+                  <node concept="liA8E" id="4j1YrdJ8wgD" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase()" resolve="toLowerCase" />
+                  </node>
+                </node>
+              </node>
+              <node concept="la8eA" id="4j1YrdJ3ET$" role="lcghm">
+                <property role="lacIc" value="-" />
               </node>
               <node concept="l9hG8" id="3ID9j62GIjE" role="lcghm">
                 <node concept="2OqwBi" id="3ID9j62GIjF" role="lb14g">

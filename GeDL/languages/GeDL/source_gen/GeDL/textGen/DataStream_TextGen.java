@@ -5,16 +5,31 @@ package GeDL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public class DataStream_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+    String eventName = "";
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(ctx.getPrimaryInput())))))) {
+      if (SNodeOperations.isInstanceOf(child, CONCEPTS.Event$xy)) {
+        if (isNotEmptyString(BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child))) {
+          eventName = BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child);
+        } else {
+          tgs.append("\"ERROR: no instance of Event was found in parents!!\"");
+        }
+      }
+    }
     tgs.append("@source(");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
@@ -23,6 +38,8 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.indent();
     tgs.append("receiver.url=\"http://localhost:8006/");
+    tgs.append(eventName);
+    tgs.append("-");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.Phenomenon$O7ge), PROPS.name$MnvL));
     tgs.append("\",");
     tgs.newLine();
@@ -58,6 +75,13 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     ctx.getBuffer().area().decreaseIndent();
     tgs.append(");");
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Event$xy = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, "GeDL.structure.Event");
   }
 
   private static final class LINKS {
