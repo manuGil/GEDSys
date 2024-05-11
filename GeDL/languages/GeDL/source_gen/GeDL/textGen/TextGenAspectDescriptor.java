@@ -27,8 +27,6 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
-      case LanguageConceptSwitch.Condition:
-        return new Condition_TextGen();
       case LanguageConceptSwitch.DataStream:
         return new DataStream_TextGen();
       case LanguageConceptSwitch.DataStreamList:

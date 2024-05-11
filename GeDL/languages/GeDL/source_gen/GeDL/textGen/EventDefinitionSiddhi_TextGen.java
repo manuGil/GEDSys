@@ -34,7 +34,6 @@ public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.notification$zhrd));
     tgs.newLine();
     // queries
-    tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc));
   }
 
   private static final class LINKS {

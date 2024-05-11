@@ -153,8 +153,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919395");
     b.version(3);
     b.property("ComparisonOperator", 0x61e69d1f3f9dee76L).type(PrimitiveTypeId.STRING).origin("7054498623859322486").done();
-    b.aggregate("expression", 0x650f009a34b1c1fcL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).ordered(true).multiple(false).origin("7282039784790409724").done();
     b.aggregate("value", 0x46a1d550fc9ff267L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x46a1d550fc9ff355L).optional(false).ordered(true).multiple(false).origin("5089583597717811815").done();
+    b.aggregate("expression", 0x650f009a34c69db8L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L).optional(false).ordered(true).multiple(false).origin("7282039784791776696").done();
     b.alias("comparison");
     return b.create();
   }
@@ -283,9 +283,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919560");
     b.version(3);
-    b.aggregate("datastreams", 0x420a5c8a0b7a0d77L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(true).ordered(true).multiple(false).origin("4758717704238140791").done();
-    b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4758717704238138282").done();
-    b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4758717704238139195").done();
+    b.aggregate("datastreams", 0x420a5c8a0b7a0d77L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(false).ordered(true).multiple(false).origin("4758717704238140791").done();
+    b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).ordered(true).multiple(false).origin("4758717704238138282").done();
+    b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(false).ordered(true).multiple(false).origin("4758717704238139195").done();
     b.alias("event definition");
     return b.create();
   }
@@ -295,9 +295,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/4299008213870321943");
     b.version(3);
-    b.aggregate("datastreams", 0x3ba92531823a2118L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(true).ordered(true).multiple(false).origin("4299008213870321944").done();
-    b.aggregate("event", 0x3ba92531823a2119L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4299008213870321945").done();
-    b.aggregate("notification", 0x3ba92531823a211aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4299008213870321946").done();
+    b.aggregate("datastreams", 0x3ba92531823a2118L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(false).ordered(true).multiple(false).origin("4299008213870321944").done();
+    b.aggregate("event", 0x3ba92531823a2119L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).ordered(true).multiple(false).origin("4299008213870321945").done();
+    b.aggregate("notification", 0x3ba92531823a211aL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(false).ordered(true).multiple(false).origin("4299008213870321946").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEventDefinitionSiddhi() {
@@ -306,9 +306,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/4299008213870334082");
     b.version(3);
-    b.aggregate("datastreams", 0x3ba92531823a5083L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(true).ordered(true).multiple(false).origin("4299008213870334083").done();
-    b.aggregate("event", 0x3ba92531823a5084L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4299008213870334084").done();
-    b.aggregate("notification", 0x3ba92531823a5085L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4299008213870334085").done();
+    b.aggregate("datastreams", 0x3ba92531823a5083L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(false).ordered(true).multiple(false).origin("4299008213870334083").done();
+    b.aggregate("event", 0x3ba92531823a5084L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).ordered(true).multiple(false).origin("4299008213870334084").done();
+    b.aggregate("notification", 0x3ba92531823a5085L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(false).ordered(true).multiple(false).origin("4299008213870334085").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEventParameter() {
@@ -316,7 +316,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2644584046949351673");
     b.version(3);
-    b.associate("parameterName", 0x650f009a3477563dL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).origin("7282039784786581053").done();
+    b.property("parameterName", 0x650f009a35064e7aL).type(PrimitiveTypeId.STRING).origin("7282039784795950714").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExpression() {

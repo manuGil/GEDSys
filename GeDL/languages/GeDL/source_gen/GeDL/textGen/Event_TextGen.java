@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class Event_TextGen extends TextGenDescriptorBase {
@@ -38,7 +37,7 @@ public class Event_TextGen extends TextGenDescriptorBase {
     Integer countStream = 1;
     for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW))) {
       tgs.append("'");
-      tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(param, LINKS.parameterName$R8yL), PROPS.name$MnvL));
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append("',");
       tgs.newLine();
       tgs.indent();
@@ -80,20 +79,16 @@ public class Event_TextGen extends TextGenDescriptorBase {
     ctx.getBuffer().area().decreaseIndent();
     tgs.append("insert into ");
     tgs.newLine();
-    tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
-    tgs.newLine();
 
 
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty parameterName$nSEP = MetaAdapterFactory.getProperty(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x650f009a35064e7aL, "parameterName");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink parameterName$R8yL = MetaAdapterFactory.getReferenceLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x650f009a3477563dL, "parameterName");
     /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
-    /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
-    /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
   }
 }

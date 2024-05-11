@@ -39,13 +39,13 @@
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
         <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
         <child id="5089583597717811815" name="value" index="2UfysR" />
-        <child id="7282039784790409724" name="expression" index="1hJG5A" />
+        <child id="7282039784791776696" name="expression" index="1hMpOy" />
       </concept>
       <concept id="2644584046949461998" name="GeDL.structure.PayloadPhenomenon" flags="ng" index="3XDhN3">
         <reference id="2644584046949463091" name="datastreamName" index="3XDgsu" />
       </concept>
       <concept id="2644584046949351673" name="GeDL.structure.EventParameter" flags="ng" index="3XDVfk">
-        <reference id="7282039784786581053" name="parameterName" index="1hu5qB" />
+        <property id="7282039784795950714" name="parameterName" index="1g2kVw" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -54,38 +54,38 @@
       </concept>
     </language>
   </registry>
-  <node concept="1EOVik" id="6kf09COHztj">
-    <node concept="1EOVlK" id="6kf09COHztk" role="19s57X">
-      <node concept="1EOVlO" id="6kf09COHztm" role="1EOVlE">
-        <node concept="1uuihD" id="6kf09COHztn" role="1uuibp">
-          <property role="TrG5h" value="tem" />
+  <node concept="1EOVik" id="6kf09CP3Urk">
+    <node concept="1EOVlK" id="4j1YrdIPU4p" role="19s57X">
+      <node concept="1EOVlO" id="4j1YrdIPU4r" role="1EOVlE">
+        <node concept="1uuihD" id="4j1YrdIPU4s" role="1uuibp">
+          <property role="TrG5h" value="temp" />
         </node>
       </node>
     </node>
-    <node concept="1EOVip" id="6kf09COHztq" role="19s5Ww">
+    <node concept="1EOVip" id="4j1YrdIPU4v" role="19s5Ww">
       <property role="TrG5h" value="hotday" />
-      <node concept="3XDVfk" id="6kf09COHztr" role="3WqTZ2">
-        <ref role="1hu5qB" node="6kf09COHztn" resolve="tem" />
+      <node concept="3XDVfk" id="4j1YrdIPU4w" role="3WqTZ2">
+        <property role="1g2kVw" value="temp" />
       </node>
-      <node concept="1EORFp" id="6kf09COHztu" role="3ANvmg">
-        <node concept="1EOVlT" id="6kf09COHztv" role="1EORFk">
-          <node concept="1EOVlZ" id="6kf09COHztw" role="2U0yEg">
+      <node concept="1EORFp" id="4j1YrdIPU4z" role="3ANvmg">
+        <node concept="1EOVlT" id="4j1YrdIPU4$" role="1EORFk">
+          <node concept="1EOVlZ" id="4j1YrdIPU4_" role="2U0yEg">
             <property role="1uuRdD" value="&gt;" />
-            <node concept="3XDVfk" id="6kf09COHztx" role="1hJG5A">
-              <ref role="1hu5qB" node="6kf09COHztn" resolve="tem" />
-            </node>
-            <node concept="2Ufyo5" id="6kf09COHzty" role="2UfysR">
+            <node concept="2Ufyo5" id="4j1YrdIPU4A" role="2UfysR">
               <property role="2Ufy5s" value="10.f" />
+            </node>
+            <node concept="3XDVfk" id="4j1YrdIPU4B" role="1hMpOy">
+              <property role="1g2kVw" value="temp" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node concept="1uujJe" id="6kf09COHztC" role="19s5IL">
-      <property role="TrG5h" value="alert" />
-      <ref role="1uujdF" node="6kf09COHztq" resolve="hotday" />
-      <node concept="3XDhN3" id="6kf09COHztD" role="3XCpAs">
-        <ref role="3XDgsu" node="6kf09COHztn" resolve="tem" />
+    <node concept="1uujJe" id="4j1YrdIPU4H" role="19s5IL">
+      <property role="TrG5h" value="alerthotday" />
+      <ref role="1uujdF" node="4j1YrdIPU4v" resolve="hotday" />
+      <node concept="3XDhN3" id="4j1YrdIPU4I" role="3XCpAs">
+        <ref role="3XDgsu" node="4j1YrdIPU4s" resolve="temp" />
       </node>
     </node>
   </node>
