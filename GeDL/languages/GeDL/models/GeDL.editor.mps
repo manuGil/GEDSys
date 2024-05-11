@@ -640,13 +640,9 @@
           <node concept="lj46D" id="6kf09CP2_$M" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
-          <node concept="ljvvj" id="6kf09CP2_$N" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-          <node concept="pj6Ft" id="6kf09CP2_$O" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
-          <node concept="l2Vlx" id="4j1YrdIZJ05" role="2czzBx" />
+          <node concept="ljvvj" id="6kf09CP2_$N" role="3F10Kt" />
+          <node concept="pj6Ft" id="6kf09CP2_$O" role="3F10Kt" />
+          <node concept="l2Vlx" id="4j1YrdJ2i4A" role="2czzBx" />
         </node>
         <node concept="3F0ifn" id="2iNsMRoRlXF" role="3EZMnx">
           <property role="3F0ifm" value="){" />
@@ -835,11 +831,11 @@
   </node>
   <node concept="24kQdi" id="2iNsMRp649L">
     <ref role="1XX52x" to="lyeg:2iNsMRp5c3T" resolve="EventParameter" />
-    <node concept="3EZMnI" id="2iNsMRp8P2a" role="2wV5jI">
+    <node concept="3EZMnI" id="4j1YrdJ1Rr8" role="2wV5jI">
+      <node concept="l2Vlx" id="4j1YrdJ1Rre" role="2iSdaV" />
       <node concept="3F0A7n" id="6kf09CP1$TZ" role="3EZMnx">
         <ref role="1NtTu8" to="lyeg:6kf09CP1$TU" resolve="parameterName" />
       </node>
-      <node concept="l2Vlx" id="2iNsMRp8P2b" role="2iSdaV" />
     </node>
   </node>
 </model>
