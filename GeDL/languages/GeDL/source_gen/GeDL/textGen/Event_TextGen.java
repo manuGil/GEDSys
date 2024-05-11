@@ -8,9 +8,12 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class Event_TextGen extends TextGenDescriptorBase {
@@ -21,19 +24,24 @@ public class Event_TextGen extends TextGenDescriptorBase {
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
     tgs.append("')");
     tgs.newLine();
-    // TIME detection should go here
-    // CONTINUE HERE: try generating text for query in condition concept 
-    // or using for (if) to overcome the sequence type of parameters
+    // condition
+
+    // TIME detection rule
+
+    String notificationName = "";
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(ctx.getPrimaryInput())))) {
+      if (SNodeOperations.isInstanceOf(child, CONCEPTS.Notification$fE)) {
+        notificationName = BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child);
+      }
+    }
 
     tgs.append("select '");
-    tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
-    tgs.append("Alert' as Notification,");
+    tgs.append(notificationName);
+    tgs.append("' as Notification,");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
-    tgs.indent();
+    tgs.increaseIndent();
     tgs.append("map:create(");
-    tgs.newLine();
-
     Integer countStream = 1;
     for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW))) {
       tgs.append("'");
@@ -41,9 +49,9 @@ public class Event_TextGen extends TextGenDescriptorBase {
       tgs.append("',");
       tgs.newLine();
       tgs.indent();
-      tgs.indent();
       tgs.append("map:create(");
       tgs.newLine();
+      tgs.increaseIndent();
       tgs.indent();
       tgs.append("'observedProperty', ");
       tgs.append("s");
@@ -68,24 +76,33 @@ public class Event_TextGen extends TextGenDescriptorBase {
       tgs.append(countStream.toString());
       tgs.append(".location,");
       tgs.newLine();
-      tgs.append("),");
-      tgs.newLine();
+      tgs.indent();
+      tgs.append(")");
+      if (countStream > 1) {
+        tgs.append(",");
+        tgs.newLine();
+      }
       countStream++;
     }
-    tgs.append(") as observations,");
+    tgs.append(" ) as observations,");
     tgs.newLine();
+    tgs.indent();
     tgs.append("time:currentTimestamp() as detection time");
     tgs.newLine();
-    ctx.getBuffer().area().decreaseIndent();
     tgs.append("insert into ");
+    tgs.append(notificationName);
+    tgs.append(";");
     tgs.newLine();
-
-
+    ctx.getBuffer().area().decreaseIndent();
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty parameterName$nSEP = MetaAdapterFactory.getProperty(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x650f009a35064e7aL, "parameterName");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Notification$fE = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L, "GeDL.structure.Notification");
   }
 
   private static final class LINKS {
