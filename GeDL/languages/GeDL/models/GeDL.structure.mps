@@ -434,7 +434,7 @@
     <node concept="25R33" id="67ABhWZBfnM" role="25R1y">
       <property role="3tVfz5" value="7054498623859258866" />
       <property role="TrG5h" value="hour" />
-      <property role="1L1pqM" value="hr" />
+      <property role="1L1pqM" value="hour" />
     </node>
     <node concept="25R33" id="67ABhWZBfnU" role="25R1y">
       <property role="3tVfz5" value="7054498623859258874" />

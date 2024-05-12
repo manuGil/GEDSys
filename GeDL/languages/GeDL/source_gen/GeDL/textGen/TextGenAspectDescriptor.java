@@ -33,6 +33,12 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new DataStream_TextGen();
       case LanguageConceptSwitch.DataStreamList:
         return new DataStreamList_TextGen();
+      case LanguageConceptSwitch.DateTime:
+        return new DateTime_TextGen();
+      case LanguageConceptSwitch.DetectionTime:
+        return new DetectionTime_TextGen();
+      case LanguageConceptSwitch.Duration:
+        return new Duration_TextGen();
       case LanguageConceptSwitch.Event:
         return new Event_TextGen();
       case LanguageConceptSwitch.EventDefinitionPython:
@@ -41,6 +47,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new EventDefinitionSiddhi_TextGen();
       case LanguageConceptSwitch.Notification:
         return new Notification_TextGen();
+      case LanguageConceptSwitch.TimeWindow:
+        return new TimeWindow_TextGen();
       case LanguageConceptSwitch.Value:
         return new Value_TextGen();
     }

@@ -4480,7 +4480,7 @@
             <uo k="s:originTrace" v="n:7054498623859258865" />
           </node>
           <node concept="Xl_RD" id="mD" role="37wK5m">
-            <property role="Xl_RC" value="hr" />
+            <property role="Xl_RC" value="hour" />
             <uo k="s:originTrace" v="n:7054498623859258865" />
           </node>
           <node concept="1adDum" id="mE" role="37wK5m">

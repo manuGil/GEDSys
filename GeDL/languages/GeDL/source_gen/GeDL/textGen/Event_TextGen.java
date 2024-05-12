@@ -8,8 +8,8 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -27,12 +27,27 @@ public class Event_TextGen extends TextGenDescriptorBase {
     // Query: condition
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
     // TIME detection rule
-
-    // For multiple parameters!!!
     Integer countParams = ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW)).count();
-    tgs.append("count ");
-    tgs.append(countParams.toString());
-
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo) != null)) {
+      // For multiple parameters with a duration
+      if (countParams > 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
+        // returns statement using 'within x '
+        tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo));
+        tgs.newLine();
+      } else if (countParams == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
+        tgs.newLine();
+        tgs.append("\">>> ERROR: Duration is not implemented for single parameter!\"");
+        tgs.newLine();
+      } else if (countParams == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
+        // attach statement '#window.externaTime(..)' to end of from clause
+        tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo));
+        tgs.newLine();
+      } else if (countParams > 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
+        // TODO: implement this combination. Refer to the join clause in SiddhiQL
+        tgs.append("\">>> ERROR: Time window not implemented for multiple parameters!");
+        tgs.newLine();
+      }
+    }
 
     // Query: projection
     String notificationName = "";
@@ -111,9 +126,13 @@ public class Event_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SContainmentLink detectionRules$WVw6 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x67f5466a8138b3faL, "detectionRules");
     /*package*/ static final SContainmentLink condition$HxlH = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed08L, "condition");
     /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
+    /*package*/ static final SContainmentLink detectionTime$ahFo = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x61e69d1f3f9a2231L, "detectionTime");
+    /*package*/ static final SContainmentLink timeType$HBDF = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed0cL, 0x562897dc3cfbed0dL, "timeType");
   }
 
   private static final class CONCEPTS {
+    /*package*/ static final SConcept Duration$ti = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9ceee8L, "GeDL.structure.Duration");
+    /*package*/ static final SConcept TimeWindow$4C = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL, "GeDL.structure.TimeWindow");
     /*package*/ static final SConcept Notification$fE = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L, "GeDL.structure.Notification");
   }
 }

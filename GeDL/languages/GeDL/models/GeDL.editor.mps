@@ -814,7 +814,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="2iNsMRp0oNo" role="3EZMnx">
-        <property role="3F0ifm" value=");" />
+        <property role="3F0ifm" value=")" />
       </node>
     </node>
   </node>

@@ -17,7 +17,7 @@ public class EnumerationDescriptor_TimeUnits extends EnumerationDescriptorBase {
 
   private final EnumerationDescriptor.MemberDescriptor myMember_second_0 = new EnumerationDescriptor.MemberDescriptor("second", "sec", 0x61e69d1f3f9cf5f3L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258867");
   private final EnumerationDescriptor.MemberDescriptor myMember_minunte_0 = new EnumerationDescriptor.MemberDescriptor("minunte", "min", 0x61e69d1f3f9cf5f6L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258870");
-  private final EnumerationDescriptor.MemberDescriptor myMember_hour_0 = new EnumerationDescriptor.MemberDescriptor("hour", "hr", 0x61e69d1f3f9cf5f2L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258866");
+  private final EnumerationDescriptor.MemberDescriptor myMember_hour_0 = new EnumerationDescriptor.MemberDescriptor("hour", "hour", 0x61e69d1f3f9cf5f2L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258866");
   private final EnumerationDescriptor.MemberDescriptor myMember_day_0 = new EnumerationDescriptor.MemberDescriptor("day", "day", 0x61e69d1f3f9cf5faL, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258874");
   private final EnumerationDescriptor.MemberDescriptor myMember_week_0 = new EnumerationDescriptor.MemberDescriptor("week", "week", 0x61e69d1f3f9cf5ffL, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258879");
   private final EnumerationDescriptor.MemberDescriptor myMember_month_0 = new EnumerationDescriptor.MemberDescriptor("month", "month", 0x61e69d1f3f9cf605L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/7054498623859258885");

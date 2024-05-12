@@ -23,7 +23,6 @@ public class Condition_TextGen extends TextGenDescriptorBase {
       tgs.append(" ");
       tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.value$7J_a));
       tgs.append("]");
-      tgs.newLine();
     } else if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57) != null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG) != null) && SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LogicalOperator$MyzW), PROPS.Operator$E3zl).toString() == "&&") {
       tgs.append("from every s1=");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.expression$mq_y), PROPS.parameterName$nSEP));

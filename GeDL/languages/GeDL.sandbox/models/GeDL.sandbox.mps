@@ -7,9 +7,6 @@
   <imports />
   <registry>
     <language id="35b540ea-51fc-45c2-8fb0-1d48ca99c3db" name="GeDL">
-      <concept id="5089583597718530053" name="GeDL.structure.LogicalOperator" flags="ng" index="2U2NPl">
-        <property id="5089583597718530834" name="Operator" index="2U2NT2" />
-      </concept>
       <concept id="5089583597717812053" name="GeDL.structure.Value" flags="ng" index="2Ufyo5">
         <property id="5089583597717812236" name="value" index="2Ufy5s" />
       </concept>
@@ -49,8 +46,6 @@
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
         <child id="5089583597718077376" name="LeftComparison" index="2U0yEg" />
-        <child id="5089583597718078756" name="RightComparison" index="2U1t1O" />
-        <child id="5089583597718527683" name="LogicalOperator" index="2U2KIj" />
       </concept>
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
         <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
@@ -88,9 +83,6 @@
       <node concept="3XDVfk" id="4j1YrdJ09rI" role="3WqTZ2">
         <property role="1g2kVw" value="temp" />
       </node>
-      <node concept="3XDVfk" id="4j1YrdJ375G" role="3WqTZ2">
-        <property role="1g2kVw" value="hum" />
-      </node>
       <node concept="1EORFp" id="4j1YrdJd8dH" role="3ANvmg">
         <node concept="1EOVlT" id="4j1YrdJd8dI" role="1EORFk">
           <node concept="1EOVlZ" id="4j1YrdJd8dJ" role="2U0yEg">
@@ -102,24 +94,12 @@
               <property role="1g2kVw" value="temp" />
             </node>
           </node>
-          <node concept="2U2NPl" id="4j1YrdJd_7y" role="2U2KIj">
-            <property role="2U2NT2" value="2c2WbewnACm/and" />
-          </node>
-          <node concept="1EOVlZ" id="4j1YrdJd_7$" role="2U1t1O">
-            <property role="1uuRdD" value="&lt;" />
-            <node concept="2Ufyo5" id="4j1YrdJd_7_" role="2UfysR">
-              <property role="2Ufy5s" value="40.f" />
-            </node>
-            <node concept="3XDVfk" id="4j1YrdJd_7A" role="1hMpOy">
-              <property role="1g2kVw" value="hum" />
-            </node>
-          </node>
         </node>
-        <node concept="1EORFg" id="4j1YrdJjdXx" role="1uvbWI">
-          <node concept="1uuBfR" id="4j1YrdJjdX_" role="1EORFh">
-            <node concept="1uuAn9" id="4j1YrdJjdXB" role="1uuTHV">
+        <node concept="1EORFg" id="4j1YrdJCWUa" role="1uvbWI">
+          <node concept="1uuBfR" id="4j1YrdJI4Ei" role="1EORFh">
+            <node concept="1uuAn9" id="4j1YrdJI4Ek" role="1uuTHV">
               <property role="1uuAoM" value="10" />
-              <property role="1uuAdG" value="67ABhWZBfnN/second" />
+              <property role="1uuAdG" value="67ABhWZBfnQ/minunte" />
             </node>
           </node>
         </node>
