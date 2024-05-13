@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
+import GeDL.editor.gedlStyles_StyleSheet.geldKeywordStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -58,7 +58,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cond");
     editorCell.setCellId("Constant_2lgv54_a0");
     Style style = new StyleImpl();
-    new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    new geldKeywordStyleClass(this).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -119,7 +119,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no LeftComparison>";
+      return "<comparison expression>";
     }
   }
   private EditorCell createRefNode_1() {
@@ -178,7 +178,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "logic operator";
+      return "<logical operator>";
     }
   }
   private EditorCell createRefNode_2() {
@@ -237,7 +237,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     }
     protected String getNoTargetText() {
-      return "<no RightComparison>";
+      return "<comparison expression>";
     }
   }
 

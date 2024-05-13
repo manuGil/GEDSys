@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="897j0nciuhfi5qgzbd2rprcdvi887em">
-  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_DurationUnit.java:EnumerationDescriptor_LogicalOperators.java:EnumerationDescriptor_ObservationType.java:EnumerationDescriptor_SpatialRelation.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
+<product version="3" modelHash="3w0nbwitf7ifuqcgu2khrubkl323uem">
+  <files names="ConceptPresentationAspectImpl.java:EnumerationDescriptor_LogicalOperators.java:EnumerationDescriptor_ObservationType.java:EnumerationDescriptor_SpatialRelation.java:EnumerationDescriptor_TimeUnits.java:LanguageConceptSwitch.java:StructureAspectDescriptor.java" />
 </product>
 
