@@ -28,7 +28,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_EventParameter;
   private ConceptPresentation props_Expression;
   private ConceptPresentation props_Feature;
-  private ConceptPresentation props_Hello;
   private ConceptPresentation props_LogicalOperator;
   private ConceptPresentation props_Notification;
   private ConceptPresentation props_PayloadPhenomenon;
@@ -164,7 +163,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EventParameter:
         if (props_EventParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x24b3732dd914c0f9L, 0x24b3732dd920911bL, "datastreamName", "", "");
+          cpb.rawPresentation("EventParameter");
           props_EventParameter = cpb.create();
         }
         return props_EventParameter;
@@ -182,13 +181,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Feature = cpb.create();
         }
         return props_Feature;
-      case LanguageConceptSwitch.Hello:
-        if (props_Hello == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Hello");
-          props_Hello = cpb.create();
-        }
-        return props_Hello;
       case LanguageConceptSwitch.LogicalOperator:
         if (props_LogicalOperator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

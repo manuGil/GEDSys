@@ -45,4 +45,36 @@ public class gedlStyles_StyleSheet {
     }
 
   }
+  public static class gedlFunctionStyleClass extends AbstractStyleClass {
+    public gedlFunctionStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+    public gedlFunctionStyleClass(EditorBuilderEnvironment builderEnv) {
+      super(builderEnv);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_SIZE, 14);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.blue));
+    }
+
+  }
+  public static class geldOperatorStyleClass extends AbstractStyleClass {
+    public geldOperatorStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+    public geldOperatorStyleClass(EditorBuilderEnvironment builderEnv) {
+      super(builderEnv);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_SIZE, 14);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, getStyleRegistry().getSimpleColor(MPSColors.DARK_BLUE));
+    }
+
+  }
 }
