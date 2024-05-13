@@ -346,24 +346,135 @@
     </node>
     <node concept="11bSqf" id="3ID9j62ezcO" role="11c4hB">
       <node concept="3clFbS" id="3ID9j62ezcP" role="2VODD2">
-        <node concept="lc7rE" id="3ID9j62eztG" role="3cqZAp">
-          <node concept="la8eA" id="3ID9j62ezut" role="lcghm">
-            <property role="lacIc" value="This is the python file for event: " />
+        <node concept="lc7rE" id="DRx07$Pz$H" role="3cqZAp">
+          <node concept="la8eA" id="DRx07$Pz_L" role="lcghm">
+            <property role="lacIc" value="#################################################" />
           </node>
-          <node concept="l9hG8" id="3ID9j62_gcX" role="lcghm">
-            <node concept="2OqwBi" id="3ID9j62_mnx" role="lb14g">
-              <node concept="2OqwBi" id="3ID9j62_gma" role="2Oq$k0">
-                <node concept="117lpO" id="3ID9j62_gdy" role="2Oq$k0" />
-                <node concept="3TrEf2" id="3ID9j62_mbo" role="2OqNvi">
-                  <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
+          <node concept="l8MVK" id="DRx07$PzDH" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="DRx07$PzHo" role="3cqZAp">
+          <node concept="la8eA" id="DRx07$PzIz" role="lcghm">
+            <property role="lacIc" value="##  Event defiition for data stream generator  ##" />
+          </node>
+          <node concept="l8MVK" id="DRx07$PzSJ" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="DRx07$PzF9" role="3cqZAp">
+          <node concept="la8eA" id="DRx07$PzFa" role="lcghm">
+            <property role="lacIc" value="#################################################" />
+          </node>
+          <node concept="l8MVK" id="DRx07$PzFb" role="lcghm" />
+        </node>
+        <node concept="3clFbH" id="DRx07$PzE9" role="3cqZAp" />
+        <node concept="lc7rE" id="DRx07$PzYu" role="3cqZAp">
+          <node concept="la8eA" id="DRx07$P$3S" role="lcghm">
+            <property role="lacIc" value="expiration = None" />
+          </node>
+          <node concept="l8MVK" id="DRx07$P$7l" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="DRx07$P$8V" role="3cqZAp">
+          <node concept="la8eA" id="DRx07$P$ac" role="lcghm">
+            <property role="lacIc" value="update_frequency = 5 # seconds" />
+          </node>
+          <node concept="l8MVK" id="DRx07$P$eh" role="lcghm" />
+        </node>
+        <node concept="3clFbJ" id="DRx07$P$oS" role="3cqZAp">
+          <node concept="3clFbS" id="DRx07$P$oU" role="3clFbx">
+            <node concept="lc7rE" id="DRx07$PBxw" role="3cqZAp">
+              <node concept="la8eA" id="DRx07$PBxY" role="lcghm">
+                <property role="lacIc" value="detection_extent = " />
+              </node>
+              <node concept="l9hG8" id="DRx07$PB$B" role="lcghm">
+                <node concept="2OqwBi" id="DRx07$PDxN" role="lb14g">
+                  <node concept="2OqwBi" id="DRx07$PCRL" role="2Oq$k0">
+                    <node concept="2OqwBi" id="DRx07$PCHN" role="2Oq$k0">
+                      <node concept="2OqwBi" id="DRx07$PCcq" role="2Oq$k0">
+                        <node concept="2OqwBi" id="DRx07$PBIm" role="2Oq$k0">
+                          <node concept="117lpO" id="DRx07$PB_b" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="DRx07$PC2x" role="2OqNvi">
+                            <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="DRx07$PC$F" role="2OqNvi">
+                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="DRx07$PCNK" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" resolve="extent" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="DRx07$PDfV" role="2OqNvi">
+                      <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb4" resolve="feature" />
+                    </node>
+                  </node>
+                  <node concept="3TrcHB" id="DRx07$PDPw" role="2OqNvi">
+                    <ref role="3TsBF5" to="lyeg:5oC_XKWYMb8" resolve="wkt" />
+                  </node>
                 </node>
               </node>
-              <node concept="3TrcHB" id="3ID9j62_mHF" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="l8MVK" id="DRx07$PRuQ" role="lcghm" />
+            </node>
+            <node concept="3SKdUt" id="DRx07$S70O" role="3cqZAp">
+              <node concept="1PaTwC" id="DRx07$S70P" role="1aUNEU">
+                <node concept="3oM_SD" id="DRx07$S72a" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+                <node concept="3oM_SD" id="DRx07$S72h" role="1PaTwD">
+                  <property role="3oM_SC" value="todo:" />
+                </node>
+                <node concept="3oM_SD" id="DRx07$S72m" role="1PaTwD">
+                  <property role="3oM_SC" value="include" />
+                </node>
+                <node concept="3oM_SD" id="DRx07$S72y" role="1PaTwD">
+                  <property role="3oM_SC" value="srid" />
+                </node>
+                <node concept="3oM_SD" id="DRx07$S72G" role="1PaTwD">
+                  <property role="3oM_SC" value="into" />
+                </node>
+                <node concept="3oM_SD" id="DRx07$S73z" role="1PaTwD">
+                  <property role="3oM_SC" value="code" />
+                </node>
               </node>
             </node>
           </node>
-          <node concept="l8MVK" id="3ID9j62e$Co" role="lcghm" />
+          <node concept="2OqwBi" id="DRx07$PB5n" role="3clFbw">
+            <node concept="2OqwBi" id="DRx07$PApf" role="2Oq$k0">
+              <node concept="2OqwBi" id="DRx07$P$Zf" role="2Oq$k0">
+                <node concept="2OqwBi" id="DRx07$P$yV" role="2Oq$k0">
+                  <node concept="117lpO" id="DRx07$P$qk" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="DRx07$P$PU" role="2OqNvi">
+                    <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="DRx07$PAcb" role="2OqNvi">
+                  <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="DRx07$PAH7" role="2OqNvi">
+                <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" resolve="extent" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="DRx07$PBsG" role="2OqNvi" />
+          </node>
+          <node concept="9aQIb" id="DRx07$S7eo" role="9aQIa">
+            <node concept="3clFbS" id="DRx07$S7ep" role="9aQI4">
+              <node concept="lc7rE" id="DRx07$S7gj" role="3cqZAp">
+                <node concept="la8eA" id="DRx07$S7gJ" role="lcghm">
+                  <property role="lacIc" value="detection_extent = None" />
+                </node>
+                <node concept="l8MVK" id="DRx07$S7k6" role="lcghm" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="DRx07$S7_8" role="3cqZAp">
+          <node concept="1PaTwC" id="DRx07$S7_9" role="1aUNEU">
+            <node concept="3oM_SD" id="DRx07$S7Bx" role="1PaTwD">
+              <property role="3oM_SC" value="CONTINUE" />
+            </node>
+            <node concept="3oM_SD" id="DRx07$S7BJ" role="1PaTwD">
+              <property role="3oM_SC" value="HERE" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

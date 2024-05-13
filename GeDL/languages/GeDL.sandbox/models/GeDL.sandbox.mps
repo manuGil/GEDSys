@@ -28,6 +28,7 @@
       <concept id="6208379058501971205" name="GeDL.structure.DetectionRule" flags="ng" index="1EORFp">
         <child id="7054498623859073585" name="detectionTime" index="1uvbWI" />
         <child id="6208379058501971208" name="condition" index="1EORFk" />
+        <child id="6208379058501971209" name="extent" index="1EORFl" />
       </concept>
       <concept id="6208379058501919560" name="GeDL.structure.EventDefinition" flags="ng" index="1EOVik">
         <child id="4758717704238140791" name="datastreams" index="19s57X" />
@@ -37,6 +38,13 @@
       <concept id="6208379058501919557" name="GeDL.structure.Event" flags="ng" index="1EOVip">
         <child id="7490970978449142778" name="detectionRules" index="3ANvmg" />
         <child id="2644584046945430767" name="parameters" index="3WqTZ2" />
+      </concept>
+      <concept id="6208379058501919431" name="GeDL.structure.Feature" flags="ng" index="1EOVkr">
+        <property id="7054498623858983798" name="srid" index="1uv_TD" />
+        <property id="6208379058501919432" name="wkt" index="1EOVkk" />
+      </concept>
+      <concept id="6208379058501919426" name="GeDL.structure.DetectionExtent" flags="ng" index="1EOVku">
+        <child id="6208379058501919428" name="feature" index="1EOVko" />
       </concept>
       <concept id="6208379058501919417" name="GeDL.structure.DateTime" flags="ng" index="1EOVl_">
         <property id="6208379058501919418" name="datetime" index="1EOVlA" />
@@ -123,6 +131,13 @@
             <node concept="1EOVl_" id="DRx07$Dqey" role="1uvc8Z">
               <property role="1EOVlA" value="'2023-02-02 00:00:00'" />
             </node>
+          </node>
+        </node>
+        <node concept="1EOVku" id="DRx07$QKxn" role="1EORFl">
+          <property role="TrG5h" value="ccity" />
+          <node concept="1EOVkr" id="DRx07$QKxo" role="1EOVko">
+            <property role="1EOVkk" value="'polygon (2.12 23.4 )'" />
+            <property role="1uv_TD" value="4627" />
           </node>
         </node>
       </node>
