@@ -20,31 +20,22 @@ public class Event_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+    tgs.newLine();
     tgs.append("@info(name = '");
     tgs.append(SPropertyOperations.getString(ctx.getPrimaryInput(), PROPS.name$MnvL));
     tgs.append("')");
     tgs.newLine();
     // Query: condition
     tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.condition$HxlH));
-    // TIME detection rule
-    Integer countParams = ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW)).count();
+    // TIME detection rule for duration
+    Integer numberParams = ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW)).count();
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo) != null)) {
       // For multiple parameters with a duration
-      if (countParams > 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
+      if (numberParams > 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
         // returns statement using 'within x '
         tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo));
-        tgs.newLine();
-      } else if (countParams == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
-        tgs.newLine();
+      } else if (numberParams == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
         tgs.append("\">>> ERROR: Duration is not implemented for single parameter!\"");
-        tgs.newLine();
-      } else if (countParams == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
-        // attach statement '#window.externaTime(..)' to end of from clause
-        tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo));
-        tgs.newLine();
-      } else if (countParams > 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
-        // TODO: implement this combination. Refer to the join clause in SiddhiQL
-        tgs.append("\">>> ERROR: Time window not implemented for multiple parameters!");
         tgs.newLine();
       }
     }
@@ -56,15 +47,19 @@ public class Event_TextGen extends TextGenDescriptorBase {
         notificationName = BaseConcept__BehaviorDescriptor.getDetailedPresentation_id22G2W3WJ92t.invoke(child);
       }
     }
+    tgs.newLine();
     tgs.append("select '");
     tgs.append(notificationName);
-    tgs.append("' as Notification,");
+    tgs.append("' as notification,");
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.increaseIndent();
     tgs.append("map:create(");
     Integer countStream = 1;
     for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.parameters$xFqW))) {
+      if (countStream > 1) {
+        tgs.append(", ");
+      }
       tgs.append("'");
       tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append("',");
@@ -75,41 +70,38 @@ public class Event_TextGen extends TextGenDescriptorBase {
       tgs.increaseIndent();
       tgs.indent();
       tgs.append("'observedProperty', ");
-      tgs.append("s");
-      tgs.append(countStream.toString());
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append(".observedProperty,");
       tgs.newLine();
       tgs.indent();
       tgs.append("'resultTime', ");
-      tgs.append("s");
-      tgs.append(countStream.toString());
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append(".resultTime,");
       tgs.newLine();
       tgs.indent();
       tgs.append("'result', ");
-      tgs.append("s");
-      tgs.append(countStream.toString());
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append(".result,");
       tgs.newLine();
       tgs.indent();
       tgs.append("'location', ");
-      tgs.append("s");
-      tgs.append(countStream.toString());
-      tgs.append(".location,");
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
+      tgs.append(".location");
       tgs.newLine();
       tgs.indent();
       tgs.append(")");
-      if (countStream > 1) {
-        tgs.append(",");
-        tgs.newLine();
-      }
-      countStream++;
+      countStream = countStream + 1;
     }
     tgs.append(" ) as observations,");
     tgs.newLine();
     tgs.indent();
-    tgs.append("time:currentTimestamp() as detection time");
+    tgs.append("time:currentTimestamp() as detectionTime");
     tgs.newLine();
+    //  Time detection rule for time window
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
+      tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo));
+      tgs.newLine();
+    }
     tgs.append("insert into ");
     tgs.append(notificationName);
     tgs.append(";");
@@ -132,7 +124,7 @@ public class Event_TextGen extends TextGenDescriptorBase {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Duration$ti = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9ceee8L, "GeDL.structure.Duration");
-    /*package*/ static final SConcept TimeWindow$4C = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL, "GeDL.structure.TimeWindow");
     /*package*/ static final SConcept Notification$fE = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L, "GeDL.structure.Notification");
+    /*package*/ static final SConcept TimeWindow$4C = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL, "GeDL.structure.TimeWindow");
   }
 }

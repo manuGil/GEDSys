@@ -56,7 +56,7 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     ctx.getBuffer().area().increaseIndent();
     tgs.indent();
-    tgs.append("observedProterty string,");
+    tgs.append("observedProperty string,");
     tgs.newLine();
     tgs.indent();
     tgs.append("resultTime string,");

@@ -5,49 +5,66 @@ package GeDL.textGen;
 import jetbrains.mps.text.rt.TextGenDescriptorBase;
 import jetbrains.mps.text.rt.TextGenContext;
 import jetbrains.mps.text.impl.TextGenSupport;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 public class Condition_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
+
+    // check if definition contains a time window
+    boolean hasTimeWindow = false;
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(ctx.getPrimaryInput())))) {
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SNodeOperations.getChildren(child)).last(), CONCEPTS.TimeWindow$4C)) {
+        hasTimeWindow = true;
+      }
+    }
+
     if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57) != null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG) == null)) {
-      tgs.append("from s1=");
+      tgs.append("from ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.expression$mq_y), PROPS.parameterName$nSEP));
+      if (hasTimeWindow) {
+        // creates a very small time window required by the having clause
+        tgs.append("#window.time(10 millisecond)");
+      }
       tgs.append("[result ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), PROPS.ComparisonOperator$JGH7));
       tgs.append(" ");
       tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.value$7J_a));
       tgs.append("]");
     } else if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57) != null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG) != null) && SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LogicalOperator$MyzW), PROPS.Operator$E3zl).toString() == "&&") {
-      tgs.append("from every s1=");
+      tgs.append("from every ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.expression$mq_y), PROPS.parameterName$nSEP));
       tgs.append("[result ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), PROPS.ComparisonOperator$JGH7));
       tgs.append(" ");
       tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57), LINKS.value$7J_a));
       tgs.append("], ");
-      tgs.append("s2=");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG), LINKS.expression$mq_y), PROPS.parameterName$nSEP));
       tgs.append("[result ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG), PROPS.ComparisonOperator$JGH7));
       tgs.append(" ");
       tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG), LINKS.value$7J_a));
       tgs.append("]");
-      tgs.newLine();
     } else if ((SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LogicalOperator$MyzW), PROPS.Operator$E3zl) != null) && SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LogicalOperator$MyzW), PROPS.Operator$E3zl).toString() != "&&") {
       tgs.append(">>> \"ERROR: the operator ");
       tgs.append(SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LogicalOperator$MyzW), PROPS.Operator$E3zl).toString());
       tgs.append(" is not implemented!\"");
-      tgs.newLine();
     } else if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.LeftComparison$Ic57) == null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.RightComparison$DgWG) == null)) {
-      tgs.append(">>> \"ERROR: No condtions was specified in detection rules!\"");
-      tgs.newLine();
+      tgs.append(">>> \"ERROR: No condition was specified in detection rules!\"");
     }
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept TimeWindow$4C = MetaAdapterFactory.getConcept(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9a517eL, "GeDL.structure.TimeWindow");
   }
 
   private static final class LINKS {

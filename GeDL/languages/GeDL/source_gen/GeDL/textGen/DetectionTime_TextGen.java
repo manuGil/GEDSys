@@ -19,7 +19,8 @@ public class DetectionTime_TextGen extends TextGenDescriptorBase {
       tgs.append("within ");
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF));
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
-      tgs.append("#");
+      // applies to one or two parameters
+      tgs.append("having ");
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF));
     }
   }
