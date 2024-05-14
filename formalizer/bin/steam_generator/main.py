@@ -28,6 +28,7 @@ def main():
     update_frequency = 5 # seconds
     detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
     event_name = 'hotday'
+    buffer = (0.5, 'degree')
 
     # event definition
     gevent = Gevent(name=event_name, 
@@ -35,7 +36,7 @@ def main():
                     phenomena=['Temperature'], 
                     update_frequency=update_frequency,
                     detection_extent=detection_extent,
-                    buffer_distance=0.5
+                    buffer_distance=buffer[0]
                     )
     
     ###################################################################

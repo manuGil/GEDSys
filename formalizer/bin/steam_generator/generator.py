@@ -157,7 +157,7 @@ class Gevent():
     """
 
     name: str 
-    expiration: datetime
+    expiration: datetime | None
     phenomena: List[str] 
     eventId: str = uuid.uuid4()
     update_frequency: int = 2 # seconds
