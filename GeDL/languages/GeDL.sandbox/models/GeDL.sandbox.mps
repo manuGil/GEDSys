@@ -149,12 +149,15 @@
             <property role="1uv_TD" value="4326" />
           </node>
           <node concept="1EOVkl" id="51bW6QbzGY7" role="1EOVkp">
-            <property role="1uvMAS" value="degree" />
+            <property role="1uvMAS" value="deg" />
             <property role="1EOVkm" value="0.5f" />
           </node>
         </node>
         <node concept="1EOVii" id="51bW6QbCYIv" role="1EORFm">
-          <node concept="1EOVkl" id="51bW6QbCYIw" role="1uvRWl" />
+          <node concept="1EOVkl" id="51bW6QbCYIw" role="1uvRWl">
+            <property role="1EOVkm" value="45.f" />
+            <property role="1uvMAS" value="m" />
+          </node>
         </node>
       </node>
     </node>

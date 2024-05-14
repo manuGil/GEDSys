@@ -860,9 +860,49 @@
           <node concept="la8eA" id="51bW6QbAilq" role="lcghm">
             <property role="lacIc" value=")" />
           </node>
+          <node concept="l8MVK" id="51bW6QbFT5f" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="51bW6QbAgmg" role="3cqZAp" />
-        <node concept="3clFbH" id="51bW6QbAfXs" role="3cqZAp" />
+        <node concept="3clFbH" id="51bW6QbFSOv" role="3cqZAp" />
+        <node concept="3clFbJ" id="51bW6QbFau_" role="3cqZAp">
+          <node concept="3clFbS" id="51bW6QbFauB" role="3clFbx">
+            <node concept="lc7rE" id="51bW6QbFT8K" role="3cqZAp">
+              <node concept="l8MVK" id="51bW6QbFT9j" role="lcghm" />
+            </node>
+            <node concept="lc7rE" id="51bW6QbFdJd" role="3cqZAp">
+              <node concept="la8eA" id="51bW6QbFdJF" role="lcghm">
+                <property role="lacIc" value="# WARNING: Granularity is not implemented, and it won't have any effect" />
+              </node>
+              <node concept="l8MVK" id="51bW6QbFdT9" role="lcghm" />
+            </node>
+            <node concept="lc7rE" id="51bW6QbFdTZ" role="3cqZAp">
+              <node concept="la8eA" id="51bW6QbFdUw" role="lcghm">
+                <property role="lacIc" value="# on this script." />
+              </node>
+            </node>
+            <node concept="lc7rE" id="51bW6QbFTac" role="3cqZAp">
+              <node concept="l8MVK" id="51bW6QbFTaL" role="lcghm" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="51bW6QbFdj0" role="3clFbw">
+            <node concept="2OqwBi" id="51bW6QbFcNi" role="2Oq$k0">
+              <node concept="2OqwBi" id="51bW6QbFcdS" role="2Oq$k0">
+                <node concept="2OqwBi" id="51bW6QbFbEw" role="2Oq$k0">
+                  <node concept="117lpO" id="51bW6QbFbw6" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="51bW6QbFc2K" role="2OqNvi">
+                    <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="51bW6QbFcCB" role="2OqNvi">
+                  <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="51bW6QbFd8g" role="2OqNvi">
+                <ref role="3Tt5mk" to="lyeg:5oC_XKWYYOa" resolve="granularity" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="51bW6QbFdCV" role="2OqNvi" />
+          </node>
+        </node>
         <node concept="3clFbH" id="51bW6QbAf$M" role="3cqZAp" />
         <node concept="3clFbH" id="51bW6QbAdrz" role="3cqZAp" />
         <node concept="3clFbH" id="51bW6QbAdfv" role="3cqZAp" />

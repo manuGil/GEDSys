@@ -97,8 +97,15 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.decreaseIndent();
     tgs.append(")");
+    tgs.newLine();
 
-
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.granularity$HAJ4) != null)) {
+      tgs.newLine();
+      tgs.append("# WARNING: Granularity is not implemented, and it won't have any effect");
+      tgs.newLine();
+      tgs.append("# on this script.");
+      tgs.newLine();
+    }
 
 
 
@@ -111,6 +118,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SContainmentLink feature$iitc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c2L, 0x562897dc3cfb22c4L, "feature");
     /*package*/ static final SContainmentLink parameters$xFqW = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L, 0x24b3732dd8d8ecefL, "parameters");
     /*package*/ static final SContainmentLink buffer$iiGd = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22c2L, 0x562897dc3cfb22c5L, "buffer");
+    /*package*/ static final SContainmentLink granularity$HAJ4 = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfbed05L, 0x562897dc3cfbed0aL, "granularity");
   }
 
   private static final class PROPS {

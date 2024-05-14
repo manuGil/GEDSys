@@ -93,33 +93,41 @@
       <node id="5785982499571699239" at="96,44,97,18" concept="2" />
       <node id="5785982499571885601" at="97,18,98,25" concept="2" />
       <node id="5785982499571705178" at="98,25,99,20" concept="2" />
-      <node id="5785982499571697040" at="99,20,100,0" concept="9" />
-      <node id="5785982499571695452" at="100,0,101,0" concept="9" />
-      <node id="5785982499571693874" at="101,0,102,0" concept="9" />
-      <node id="5785982499571685091" at="102,0,103,0" concept="9" />
-      <node id="5785982499571684319" at="103,0,104,0" concept="9" />
-      <node id="4299008213870321948" at="108,0,109,0" concept="10" trace="event$azOc" />
-      <node id="4299008213870321948" at="109,0,110,0" concept="10" trace="detectionRules$WVw6" />
-      <node id="4299008213870321948" at="110,0,111,0" concept="10" trace="extent$Hx$I" />
-      <node id="4299008213870321948" at="111,0,112,0" concept="10" trace="feature$iitc" />
-      <node id="4299008213870321948" at="112,0,113,0" concept="10" trace="parameters$xFqW" />
-      <node id="4299008213870321948" at="113,0,114,0" concept="10" trace="buffer$iiGd" />
-      <node id="4299008213870321948" at="117,0,118,0" concept="10" trace="name$MnvL" />
-      <node id="4299008213870321948" at="118,0,119,0" concept="10" trace="wkt$ioxb" />
-      <node id="4299008213870321948" at="119,0,120,0" concept="10" trace="srid$1GlA" />
-      <node id="4299008213870321948" at="120,0,121,0" concept="10" trace="parameterName$nSEP" />
-      <node id="4299008213870321948" at="121,0,122,0" concept="10" trace="value$ip0b" />
-      <node id="4299008213870321948" at="122,0,123,0" concept="10" trace="unit$4HPA" />
+      <node id="5785982499573174607" at="99,20,100,18" concept="2" />
+      <node id="5785982499573173535" at="100,18,101,0" concept="9" />
+      <node id="5785982499573174867" at="102,192,103,20" concept="2" />
+      <node id="5785982499572997099" at="103,20,104,92" concept="2" />
+      <node id="5785982499572997705" at="104,92,105,20" concept="2" />
+      <node id="5785982499572997792" at="105,20,106,38" concept="2" />
+      <node id="5785982499573174961" at="106,38,107,20" concept="2" />
+      <node id="5785982499571693874" at="108,5,109,0" concept="9" />
+      <node id="5785982499571685091" at="109,0,110,0" concept="9" />
+      <node id="5785982499571684319" at="110,0,111,0" concept="9" />
+      <node id="4299008213870321948" at="115,0,116,0" concept="10" trace="event$azOc" />
+      <node id="4299008213870321948" at="116,0,117,0" concept="10" trace="detectionRules$WVw6" />
+      <node id="4299008213870321948" at="117,0,118,0" concept="10" trace="extent$Hx$I" />
+      <node id="4299008213870321948" at="118,0,119,0" concept="10" trace="feature$iitc" />
+      <node id="4299008213870321948" at="119,0,120,0" concept="10" trace="parameters$xFqW" />
+      <node id="4299008213870321948" at="120,0,121,0" concept="10" trace="buffer$iiGd" />
+      <node id="4299008213870321948" at="121,0,122,0" concept="10" trace="granularity$HAJ4" />
+      <node id="4299008213870321948" at="125,0,126,0" concept="10" trace="name$MnvL" />
+      <node id="4299008213870321948" at="126,0,127,0" concept="10" trace="wkt$ioxb" />
+      <node id="4299008213870321948" at="127,0,128,0" concept="10" trace="srid$1GlA" />
+      <node id="4299008213870321948" at="128,0,129,0" concept="10" trace="parameterName$nSEP" />
+      <node id="4299008213870321948" at="129,0,130,0" concept="10" trace="value$ip0b" />
+      <node id="4299008213870321948" at="130,0,131,0" concept="10" trace="unit$4HPA" />
       <node id="5785982499570053349" at="53,167,56,7" concept="4" />
       <node id="5785982499571051929" at="73,10,76,5" concept="0" />
       <node id="754216606277596056" at="41,10,46,5" concept="0" />
+      <node id="5785982499572983717" at="101,0,108,5" concept="4" />
       <node id="5785982499569844212" at="52,27,61,5" concept="3" />
       <node id="5785982499571039994" at="64,0,76,5" concept="4" />
       <node id="754216606276929080" at="33,63,46,5" concept="4" />
-      <node id="4299008213870321948" at="17,0,106,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <node id="4299008213870321948" at="17,0,113,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="5785982499570053351" at="54,31,55,25" />
       <scope id="5785982499571051930" at="73,12,75,20" />
       <scope id="754216606277596057" at="41,12,45,20" />
+      <scope id="5785982499572983719" at="102,192,107,20" />
       <scope id="754216606276929082" at="34,234,40,20" />
       <scope id="5785982499569844218" at="53,167,60,42" />
       <scope id="5785982499571039996" at="65,233,72,20">
@@ -128,16 +136,16 @@
       <scope id="5785982499569844212" at="52,27,61,5">
         <var name="child" id="5785982499569844214" />
       </scope>
-      <scope id="4299008213870321948" at="18,54,104,0">
+      <scope id="4299008213870321948" at="18,54,111,0">
         <var name="parameterCount" id="5785982499570433063" />
         <var name="tgs" id="4299008213870321948" />
       </scope>
-      <scope id="4299008213870321948" at="17,0,106,0">
+      <scope id="4299008213870321948" at="17,0,113,0">
         <var name="ctx" id="4299008213870321948" />
       </scope>
-      <unit id="4299008213870321948" at="107,0,115,0" name="GeDL.textGen.EventDefinitionPython_TextGen$LINKS" />
-      <unit id="4299008213870321948" at="116,0,124,0" name="GeDL.textGen.EventDefinitionPython_TextGen$PROPS" />
-      <unit id="4299008213870321948" at="16,0,125,0" name="GeDL.textGen.EventDefinitionPython_TextGen" />
+      <unit id="4299008213870321948" at="124,0,132,0" name="GeDL.textGen.EventDefinitionPython_TextGen$PROPS" />
+      <unit id="4299008213870321948" at="114,0,123,0" name="GeDL.textGen.EventDefinitionPython_TextGen$LINKS" />
+      <unit id="4299008213870321948" at="16,0,133,0" name="GeDL.textGen.EventDefinitionPython_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="4299008213870321948" at="44,55,45,51" concept="7" />
