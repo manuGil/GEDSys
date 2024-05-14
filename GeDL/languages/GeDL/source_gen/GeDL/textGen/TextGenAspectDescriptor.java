@@ -76,7 +76,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.event$zhcc), PROPS.name$MnvL);
   }
   private static String getFileName_EventDefinitionPython(SNode node) {
-    return "event";
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.event$azOc), PROPS.name$MnvL);
   }
   private static String getFileExtension_EventDefinitionSiddhi(SNode node) {
     return "siddhi";
@@ -92,6 +92,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink event$zhcc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a5082L, 0x3ba92531823a5084L, "event");
+    /*package*/ static final SContainmentLink event$azOc = MetaAdapterFactory.getContainmentLink(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x3ba92531823a2117L, 0x3ba92531823a2119L, "event");
   }
 
   private static final class PROPS {

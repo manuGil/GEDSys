@@ -99,6 +99,7 @@
       <ref role="3lhOvi" node="3ID9j62zPIa" />
     </node>
     <node concept="3lhOvk" id="6kf09CP4lCw" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="lyeg:5oC_XKWYMd8" resolve="EventDefinition" />
       <ref role="3lhOvi" node="6kf09COP26m" />
     </node>

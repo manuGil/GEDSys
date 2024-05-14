@@ -29,6 +29,10 @@
         <child id="7054498623859073585" name="detectionTime" index="1uvbWI" />
         <child id="6208379058501971208" name="condition" index="1EORFk" />
         <child id="6208379058501971209" name="extent" index="1EORFl" />
+        <child id="6208379058501971210" name="granularity" index="1EORFm" />
+      </concept>
+      <concept id="6208379058501919566" name="GeDL.structure.SpatialGranulariy" flags="ng" index="1EOVii">
+        <child id="7054498623859057162" name="distance" index="1uvRWl" />
       </concept>
       <concept id="6208379058501919560" name="GeDL.structure.EventDefinition" flags="ng" index="1EOVik">
         <child id="4758717704238140791" name="datastreams" index="19s57X" />
@@ -141,13 +145,16 @@
         <node concept="1EOVku" id="51bW6QbtX0I" role="1EORFl">
           <property role="TrG5h" value="city" />
           <node concept="1EOVkr" id="51bW6QbtX0J" role="1EOVko">
-            <property role="1EOVkk" value="'Polygon( 2 1, 4 5, 3 8)'" />
+            <property role="1EOVkk" value="'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'" />
             <property role="1uv_TD" value="4326" />
           </node>
           <node concept="1EOVkl" id="51bW6QbzGY7" role="1EOVkp">
             <property role="1uvMAS" value="degree" />
             <property role="1EOVkm" value="0.5f" />
           </node>
+        </node>
+        <node concept="1EOVii" id="51bW6QbCYIv" role="1EORFm">
+          <node concept="1EOVkl" id="51bW6QbCYIw" role="1uvRWl" />
         </node>
       </node>
     </node>
