@@ -19,11 +19,11 @@ The fastest way to deploy the FROST Server is using Docker.
 | Action | Reference |
 |----------|----------|
 | Start the server   | `docker compose up`   |
-| Stop the server | ` CTL + c` |
+| Stop the server | ` CTRL + c` |
 | Sart the server in detached mode   | `docker compose up --detach`   |
 | Stop the server if in detached mode  | `docker compose down`   |
 
 ## License and Copyright
 
-The FROST Server is copyrighted by Fraunhofer Institut IOSB, Fraunhoferstr. 1, D 76131 Karlsruhe, Germany. And distributed under the [LGPL-3.0 license](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+The FROST Server is copyrighted by © 2023 Fraunhofer Institut IOSB, Fraunhoferstr. 1, D 76131 Karlsruhe, Germany. And distributed under the [LGPL-3.0 license](https://www.gnu.org/licenses/lgpl-3.0.en.html).
 
