@@ -8,7 +8,7 @@ import time, json
 import uuid
 from typing import List, Optional
 from abc import ABC, abstractmethod
-from parse_response import parse_response_obsservedProperty_location
+from parse_response import parse_response_observedProperty_location
 from prepare_requests import prepare_request_observedProperty_location
 
 # Use to format the payloads to be sent to the CEP server
@@ -87,7 +87,7 @@ class DataStream():
             response_sensor_api = sensor_api.get(self.sensor_thing_request) 
             # parse response
             ## returns  = {latest_observation: url, location:url}
-            parsed_response = parse_response_obsservedProperty_location(response_sensor_api.json())
+            parsed_response = parse_response_observedProperty_location(response_sensor_api.json())
 
             # Checks if any observations were found at the Sensor API and if the latest observation is different from the last one
             if parsed_response: #and parsed_response['latest_observation'] != self.latest_observation:
