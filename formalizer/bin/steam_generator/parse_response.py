@@ -47,7 +47,7 @@ Parse the response from from SensorThing API and Siddhi EPE.
 }
 
 
-def parse_response_obsservedProperty_location(dict_response: dict) -> dict:
+def parse_response_observedProperty_location(dict_response: dict) -> dict:
     """
     Parse the response from the SensorThing API to get the latest observation of a thing with a given observed property.
 
@@ -125,4 +125,4 @@ if __name__ == '__main__':
     ]
     }
 
-    print(parse_response_obsservedProperty_location(dict_response))
+    print(parse_response_observedProperty_location(dict_response))
