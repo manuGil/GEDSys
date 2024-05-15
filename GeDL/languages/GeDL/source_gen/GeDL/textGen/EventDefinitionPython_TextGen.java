@@ -44,8 +44,9 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
       tgs.append("srid = None");
       tgs.newLine();
     }
-    tgs.append("event_name = ");
+    tgs.append("event_name = '");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), PROPS.name$MnvL).toLowerCase());
+    tgs.append("'");
     tgs.newLine();
     tgs.append("phenomena = [");
 

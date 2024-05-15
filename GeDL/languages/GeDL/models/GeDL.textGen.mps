@@ -555,7 +555,7 @@
         </node>
         <node concept="lc7rE" id="51bW6Qbuzdm" role="3cqZAp">
           <node concept="la8eA" id="51bW6QbuzgV" role="lcghm">
-            <property role="lacIc" value="event_name = " />
+            <property role="lacIc" value="event_name = '" />
           </node>
           <node concept="l9hG8" id="51bW6QbuziQ" role="lcghm">
             <node concept="2OqwBi" id="51bW6QbCjLC" role="lb14g">
@@ -574,6 +574,9 @@
                 <ref role="37wK5l" to="wyt6:~String.toLowerCase()" resolve="toLowerCase" />
               </node>
             </node>
+          </node>
+          <node concept="la8eA" id="51bW6QbJXso" role="lcghm">
+            <property role="lacIc" value="'" />
           </node>
           <node concept="l8MVK" id="51bW6Qbu_bD" role="lcghm" />
         </node>
@@ -1060,15 +1063,20 @@
                 <property role="lacIc" value="-" />
               </node>
               <node concept="l9hG8" id="3ID9j62GIjE" role="lcghm">
-                <node concept="2OqwBi" id="3ID9j62GIjF" role="lb14g">
-                  <node concept="2OqwBi" id="3ID9j62GIjG" role="2Oq$k0">
-                    <node concept="117lpO" id="3ID9j62GIjH" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="3ID9j62GIjI" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:67ABhWZBVZ6" />
+                <node concept="2OqwBi" id="51bW6QbIDle" role="lb14g">
+                  <node concept="2OqwBi" id="3ID9j62GIjF" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3ID9j62GIjG" role="2Oq$k0">
+                      <node concept="117lpO" id="3ID9j62GIjH" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="3ID9j62GIjI" role="2OqNvi">
+                        <ref role="3Tt5mk" to="lyeg:67ABhWZBVZ6" resolve="Phenomenon" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="3ID9j62GIjJ" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
-                  <node concept="3TrcHB" id="3ID9j62GIjJ" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  <node concept="liA8E" id="51bW6QbIEFp" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase()" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>

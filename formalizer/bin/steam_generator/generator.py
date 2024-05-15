@@ -189,9 +189,10 @@ class StreamGenerator():
             epe_template = cep_payload_template.copy()
             epe_template['event'].update({'observedProperty': phenomenon})
 
+            receiver_slug = self.gevent.name.lower() + '-' + phenomenon.lower()
             stream = DataStream(request, 
                                 epe_payload_template=epe_template,
-                                reciever_url=self.eventProcessorApi.get_reciever_url(self.gevent.name.lower()),
+                                reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug),
                                 expiration=self.gevent.expiration,
                                 update_frequency=self.gevent.update_frequency,
                                 )

@@ -24,20 +24,41 @@ def main():
     ##                  Event Definition                             ##
     ###################################################################
     
-    expiration = datetime.now().replace(second=datetime.now().second+10) # match with detection window
-    update_frequency = 5 # seconds
-    detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
-    event_name = 'hotday'
-    buffer = (0.5, 'degree')
+    # expiration = datetime.now().replace(second=datetime.now().second+10) # match with detection window
+    # update_frequency = 5 # seconds
+    # detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
+    # event_name = 'hotday'
+    # buffer = (0.5, 'degree')
 
-    # event definition
-    gevent = Gevent(name=event_name, 
-                    expiration=expiration, 
-                    phenomena=['Temperature'], 
-                    update_frequency=update_frequency,
-                    detection_extent=detection_extent,
-                    buffer_distance=buffer[0]
-                    )
+    # # event definition
+    # gevent = Gevent(name=event_name, 
+    #                 expiration=expiration, 
+    #                 phenomena=['Temperature'], 
+    #                 update_frequency=update_frequency,
+    #                 detection_extent=detection_extent,
+    #                 buffer_distance=buffer[0]
+    #                 )
+
+    # expiration = None # most provide a value, use a 1 day default for this prototype
+    
+    # this works
+    # TODO: test two phenomena
+    # TODO: develop demos based on the examples in chapter 4.
+    expiration = datetime.now().replace(second=datetime.now().second+30) # match with detection window
+    update_frequency = 5 # seconds
+    detection_extent = 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'
+    srid = 4326
+    event_name = 'hotday'
+    phenomena = ['Temperature']
+    buffer = (0.5, 'deg')
+
+    gevent = Gevent(name=event_name,
+    expiration=expiration,
+    phenomena=phenomena,
+    update_frequency=update_frequency,
+    detection_extent=detection_extent,
+    buffer_distance=buffer[0]
+    )
     
     ###################################################################
 

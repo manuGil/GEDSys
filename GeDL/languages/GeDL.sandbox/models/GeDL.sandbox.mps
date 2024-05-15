@@ -7,9 +7,6 @@
   <imports />
   <registry>
     <language id="35b540ea-51fc-45c2-8fb0-1d48ca99c3db" name="GeDL">
-      <concept id="5089583597718530053" name="GeDL.structure.LogicalOperator" flags="ng" index="2U2NPl">
-        <property id="5089583597718530834" name="Operator" index="2U2NT2" />
-      </concept>
       <concept id="5089583597717812053" name="GeDL.structure.Value" flags="ng" index="2Ufyo5">
         <property id="5089583597717812236" name="value" index="2Ufy5s" />
       </concept>
@@ -18,21 +15,9 @@
         <reference id="7054498623859437172" name="eventName" index="1uujdF" />
         <child id="2644584046949231281" name="payload" index="3XCpAs" />
       </concept>
-      <concept id="7054498623859085694" name="GeDL.structure.TimeWindow" flags="ng" index="1uvcLx">
-        <child id="7054498623859089184" name="EndTime" index="1uvc8Z" />
-        <child id="7054498623859088116" name="StartTime" index="1uvcvF" />
-      </concept>
-      <concept id="6208379058501971212" name="GeDL.structure.DetectionTime" flags="ng" index="1EORFg">
-        <child id="6208379058501971213" name="timeType" index="1EORFh" />
-      </concept>
       <concept id="6208379058501971205" name="GeDL.structure.DetectionRule" flags="ng" index="1EORFp">
-        <child id="7054498623859073585" name="detectionTime" index="1uvbWI" />
         <child id="6208379058501971208" name="condition" index="1EORFk" />
         <child id="6208379058501971209" name="extent" index="1EORFl" />
-        <child id="6208379058501971210" name="granularity" index="1EORFm" />
-      </concept>
-      <concept id="6208379058501919566" name="GeDL.structure.SpatialGranulariy" flags="ng" index="1EOVii">
-        <child id="7054498623859057162" name="distance" index="1uvRWl" />
       </concept>
       <concept id="6208379058501919560" name="GeDL.structure.EventDefinition" flags="ng" index="1EOVik">
         <child id="4758717704238140791" name="datastreams" index="19s57X" />
@@ -55,9 +40,6 @@
         <child id="6208379058501919428" name="feature" index="1EOVko" />
         <child id="6208379058501919429" name="buffer" index="1EOVkp" />
       </concept>
-      <concept id="6208379058501919417" name="GeDL.structure.DateTime" flags="ng" index="1EOVl_">
-        <property id="6208379058501919418" name="datetime" index="1EOVlA" />
-      </concept>
       <concept id="6208379058501919404" name="GeDL.structure.DataStreamList" flags="ng" index="1EOVlK">
         <child id="6208379058501919414" name="dataStreams" index="1EOVlE" />
       </concept>
@@ -66,8 +48,6 @@
       </concept>
       <concept id="6208379058501919397" name="GeDL.structure.Condition" flags="ng" index="1EOVlT">
         <child id="5089583597718077376" name="LeftComparison" index="2U0yEg" />
-        <child id="5089583597718078756" name="RightComparison" index="2U1t1O" />
-        <child id="5089583597718527683" name="LogicalOperator" index="2U2KIj" />
       </concept>
       <concept id="6208379058501919395" name="GeDL.structure.Comparison" flags="ng" index="1EOVlZ">
         <property id="7054498623859322486" name="ComparisonOperator" index="1uuRdD" />
@@ -91,54 +71,24 @@
     <node concept="1EOVlK" id="4j1YrdJ09rG" role="19s57X">
       <node concept="1EOVlO" id="4j1YrdJ09rL" role="1EOVlE">
         <node concept="1uuihD" id="4j1YrdJ09rM" role="1uuibp">
-          <property role="TrG5h" value="temp" />
-        </node>
-      </node>
-      <node concept="1EOVlO" id="DRx07$Ogvk" role="1EOVlE">
-        <node concept="1uuihD" id="DRx07$Ogvl" role="1uuibp">
-          <property role="TrG5h" value="hum" />
+          <property role="TrG5h" value="Temperature" />
         </node>
       </node>
     </node>
     <node concept="1EOVip" id="4j1YrdJ09rH" role="19s5Ww">
-      <property role="TrG5h" value="testEvent" />
+      <property role="TrG5h" value="hotDay" />
       <node concept="3XDVfk" id="4j1YrdJ09rI" role="3WqTZ2">
-        <property role="1g2kVw" value="temp" />
-      </node>
-      <node concept="3XDVfk" id="DRx07$Mwfb" role="3WqTZ2">
-        <property role="1g2kVw" value="hum" />
+        <property role="1g2kVw" value="Temperature" />
       </node>
       <node concept="1EORFp" id="4j1YrdJd8dH" role="3ANvmg">
         <node concept="1EOVlT" id="4j1YrdJd8dI" role="1EORFk">
           <node concept="1EOVlZ" id="4j1YrdJd8dJ" role="2U0yEg">
             <property role="1uuRdD" value="&gt;" />
             <node concept="2Ufyo5" id="4j1YrdJd8dK" role="2UfysR">
-              <property role="2Ufy5s" value="10.f" />
+              <property role="2Ufy5s" value="19.f" />
             </node>
             <node concept="3XDVfk" id="4j1YrdJd8dL" role="1hMpOy">
-              <property role="1g2kVw" value="temp" />
-            </node>
-          </node>
-          <node concept="2U2NPl" id="DRx07$Mwf3" role="2U2KIj">
-            <property role="2U2NT2" value="2c2WbewnACm/and" />
-          </node>
-          <node concept="1EOVlZ" id="DRx07$Mwf5" role="2U1t1O">
-            <property role="1uuRdD" value="&lt;" />
-            <node concept="2Ufyo5" id="DRx07$Mwf6" role="2UfysR">
-              <property role="2Ufy5s" value="50.f" />
-            </node>
-            <node concept="3XDVfk" id="DRx07$Mwf7" role="1hMpOy">
-              <property role="1g2kVw" value=" hum" />
-            </node>
-          </node>
-        </node>
-        <node concept="1EORFg" id="DRx07$Dqeq" role="1uvbWI">
-          <node concept="1uvcLx" id="DRx07$Dqeu" role="1EORFh">
-            <node concept="1EOVl_" id="DRx07$Dqew" role="1uvcvF">
-              <property role="1EOVlA" value="'2023-02-01 00:00:00'" />
-            </node>
-            <node concept="1EOVl_" id="DRx07$Dqey" role="1uvc8Z">
-              <property role="1EOVlA" value="'2023-02-02 00:00:00'" />
+              <property role="1g2kVw" value="Temperature" />
             </node>
           </node>
         </node>
@@ -151,12 +101,6 @@
           <node concept="1EOVkl" id="51bW6QbzGY7" role="1EOVkp">
             <property role="1uvMAS" value="deg" />
             <property role="1EOVkm" value="0.5f" />
-          </node>
-        </node>
-        <node concept="1EOVii" id="51bW6QbCYIv" role="1EORFm">
-          <node concept="1EOVkl" id="51bW6QbCYIw" role="1uvRWl">
-            <property role="1EOVkm" value="45.f" />
-            <property role="1uvMAS" value="m" />
           </node>
         </node>
       </node>

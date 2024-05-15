@@ -41,7 +41,7 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.append("receiver.url=\"http://localhost:8006/");
     tgs.append(eventName.toLowerCase());
     tgs.append("-");
-    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.Phenomenon$O7ge), PROPS.name$MnvL));
+    tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.Phenomenon$O7ge), PROPS.name$MnvL).toLowerCase());
     tgs.append("\",");
     tgs.newLine();
     tgs.indent();
