@@ -359,13 +359,13 @@
       <node concept="3clFbS" id="3ID9j62ezcP" role="2VODD2">
         <node concept="lc7rE" id="DRx07$Pz$H" role="3cqZAp">
           <node concept="la8eA" id="DRx07$Pz_L" role="lcghm">
-            <property role="lacIc" value="#################################################" />
+            <property role="lacIc" value="&quot;&quot;&quot;" />
           </node>
           <node concept="l8MVK" id="DRx07$PzDH" role="lcghm" />
         </node>
         <node concept="lc7rE" id="DRx07$PzHo" role="3cqZAp">
           <node concept="la8eA" id="DRx07$PzIz" role="lcghm">
-            <property role="lacIc" value="##  Stream generator for " />
+            <property role="lacIc" value=" Stream generator for " />
           </node>
           <node concept="l9hG8" id="51bW6QbBCjq" role="lcghm">
             <node concept="2OqwBi" id="51bW6QbBCZJ" role="lb14g">
@@ -380,25 +380,134 @@
               </node>
             </node>
           </node>
+          <node concept="la8eA" id="2gttFslJL8G" role="lcghm">
+            <property role="lacIc" value="event." />
+          </node>
           <node concept="l8MVK" id="DRx07$PzSJ" role="lcghm" />
         </node>
         <node concept="lc7rE" id="DRx07$PzF9" role="3cqZAp">
           <node concept="la8eA" id="DRx07$PzFa" role="lcghm">
-            <property role="lacIc" value="#################################################" />
+            <property role="lacIc" value="&quot;&quot;&quot;" />
           </node>
           <node concept="l8MVK" id="DRx07$PzFb" role="lcghm" />
+          <node concept="l8MVK" id="2gttFslJNBO" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="DRx07$PzE9" role="3cqZAp" />
+        <node concept="3SKdUt" id="2gttFslJMhB" role="3cqZAp">
+          <node concept="1PaTwC" id="2gttFslJMhC" role="1aUNEU">
+            <node concept="3oM_SD" id="2gttFslJMwh" role="1PaTwD">
+              <property role="3oM_SC" value="" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslJMwr" role="1PaTwD">
+              <property role="3oM_SC" value="imports" />
+            </node>
+          </node>
+        </node>
+        <node concept="lc7rE" id="2gttFslJNE4" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslJNSQ" role="lcghm">
+            <property role="lacIc" value="import os" />
+          </node>
+          <node concept="l8MVK" id="2gttFslJOju" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslJP59" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslJPjY" role="lcghm">
+            <property role="lacIc" value="from datetime import datetime" />
+          </node>
+          <node concept="l8MVK" id="2gttFslJPK2" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslJQxK" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslJQKC" role="lcghm">
+            <property role="lacIc" value="from dotenv import load_dotenv" />
+          </node>
+          <node concept="l8MVK" id="2gttFslJRcl" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslJRY6" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslJSd1" role="lcghm">
+            <property role="lacIc" value="from generator import StreamGenerator, Gevent, SensingService, EventProcessor" />
+          </node>
+          <node concept="l8MVK" id="2gttFslJVoZ" role="lcghm" />
+          <node concept="l8MVK" id="2gttFslK0eO" role="lcghm" />
+        </node>
+        <node concept="3clFbH" id="2gttFslJLcE" role="3cqZAp" />
+        <node concept="lc7rE" id="2gttFslJZ0_" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslK0h4" role="lcghm">
+            <property role="lacIc" value="def main():" />
+          </node>
+          <node concept="l8MVK" id="2gttFslK0OO" role="lcghm" />
+        </node>
+        <node concept="3SKdUt" id="2gttFslK84t" role="3cqZAp">
+          <node concept="1PaTwC" id="2gttFslK84u" role="1aUNEU">
+            <node concept="3oM_SD" id="2gttFslK8jB" role="1PaTwD">
+              <property role="3oM_SC" value="configurations" />
+            </node>
+          </node>
+        </node>
+        <node concept="11p84A" id="2gttFslK0zC" role="3cqZAp" />
+        <node concept="lc7rE" id="2gttFslK1kW" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLxiq" role="lcghm" />
+          <node concept="la8eA" id="2gttFslK1T3" role="lcghm">
+            <property role="lacIc" value="# loads services settings" />
+          </node>
+          <node concept="l8MVK" id="2gttFslK2FK" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslK3yd" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLxmT" role="lcghm" />
+          <node concept="la8eA" id="2gttFslK3Ll" role="lcghm">
+            <property role="lacIc" value="sensingapi = SensigService(root_url=os.getenv(&quot;OBSERVATION_API&quot;))" />
+          </node>
+          <node concept="l8MVK" id="2gttFslK4qm" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslK5cn" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLxro" role="lcghm" />
+          <node concept="la8eA" id="2gttFslK6hT" role="lcghm">
+            <property role="lacIc" value="cep = EventProcessor(events_url=os.getenv(&quot;EPE_RECEIVER_API&quot;))" />
+          </node>
+          <node concept="l8MVK" id="2gttFslK73m" role="lcghm" />
+        </node>
+        <node concept="3clFbH" id="2gttFslK2M$" role="3cqZAp" />
+        <node concept="3SKdUt" id="2gttFslK8z2" role="3cqZAp">
+          <node concept="1PaTwC" id="2gttFslK8z3" role="1aUNEU">
+            <node concept="3oM_SD" id="2gttFslK8Mf" role="1PaTwD">
+              <property role="3oM_SC" value="event" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslK8Mm" role="1PaTwD">
+              <property role="3oM_SC" value="definition" />
+            </node>
+          </node>
+        </node>
         <node concept="lc7rE" id="51bW6QbEjY3" role="3cqZAp">
           <node concept="l8MVK" id="51bW6QbEkbX" role="lcghm" />
         </node>
+        <node concept="3SKdUt" id="2gttFslKgm0" role="3cqZAp">
+          <node concept="1PaTwC" id="2gttFslKgm1" role="1aUNEU">
+            <node concept="3oM_SD" id="2gttFslKgWP" role="1PaTwD">
+              <property role="3oM_SC" value="defaults," />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKii6" role="1PaTwD">
+              <property role="3oM_SC" value="can" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKiie" role="1PaTwD">
+              <property role="3oM_SC" value="be" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKiil" role="1PaTwD">
+              <property role="3oM_SC" value="changed" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKik5" role="1PaTwD">
+              <property role="3oM_SC" value="after" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKikz" role="1PaTwD">
+              <property role="3oM_SC" value="generation" />
+            </node>
+          </node>
+        </node>
         <node concept="lc7rE" id="DRx07$PzYu" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLxPM" role="lcghm" />
           <node concept="la8eA" id="DRx07$P$3S" role="lcghm">
-            <property role="lacIc" value="expiration = None" />
+            <property role="lacIc" value="expiration = datetime.now().replace(hour=datetime.now().hour+1)" />
           </node>
           <node concept="l8MVK" id="DRx07$P$7l" role="lcghm" />
         </node>
         <node concept="lc7rE" id="DRx07$P$8V" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLxUt" role="lcghm" />
           <node concept="la8eA" id="DRx07$P$ac" role="lcghm">
             <property role="lacIc" value="update_frequency = 5 # seconds" />
           </node>
@@ -441,6 +550,7 @@
         <node concept="3clFbJ" id="DRx07$P$oS" role="3cqZAp">
           <node concept="3clFbS" id="DRx07$P$oU" role="3clFbx">
             <node concept="lc7rE" id="DRx07$PBxw" role="3cqZAp">
+              <node concept="2BGw6n" id="2gttFslLy3Z" role="lcghm" />
               <node concept="la8eA" id="DRx07$PBxY" role="lcghm">
                 <property role="lacIc" value="detection_extent = " />
               </node>
@@ -475,6 +585,7 @@
               <node concept="l8MVK" id="DRx07$PRuQ" role="lcghm" />
             </node>
             <node concept="lc7rE" id="51bW6QbtlLj" role="3cqZAp">
+              <node concept="2BGw6n" id="2gttFslLymx" role="lcghm" />
               <node concept="la8eA" id="51bW6QbtlLk" role="lcghm">
                 <property role="lacIc" value="srid = " />
               </node>
@@ -539,12 +650,14 @@
           <node concept="9aQIb" id="DRx07$S7eo" role="9aQIa">
             <node concept="3clFbS" id="DRx07$S7ep" role="9aQI4">
               <node concept="lc7rE" id="51bW6Qbtmqt" role="3cqZAp">
+                <node concept="2BGw6n" id="2gttFslLyou" role="lcghm" />
                 <node concept="la8eA" id="51bW6Qbtmqu" role="lcghm">
                   <property role="lacIc" value="detection_extent = None" />
                 </node>
                 <node concept="l8MVK" id="51bW6QbtmqF" role="lcghm" />
               </node>
               <node concept="lc7rE" id="51bW6Qbtmw1" role="3cqZAp">
+                <node concept="2BGw6n" id="2gttFslLypn" role="lcghm" />
                 <node concept="la8eA" id="51bW6Qbtmw2" role="lcghm">
                   <property role="lacIc" value="srid = None" />
                 </node>
@@ -554,6 +667,7 @@
           </node>
         </node>
         <node concept="lc7rE" id="51bW6Qbuzdm" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLys_" role="lcghm" />
           <node concept="la8eA" id="51bW6QbuzgV" role="lcghm">
             <property role="lacIc" value="event_name = '" />
           </node>
@@ -581,6 +695,7 @@
           <node concept="l8MVK" id="51bW6Qbu_bD" role="lcghm" />
         </node>
         <node concept="lc7rE" id="51bW6QbvYTV" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLyxv" role="lcghm" />
           <node concept="la8eA" id="51bW6QbvZ0z" role="lcghm">
             <property role="lacIc" value="phenomena = [" />
           </node>
@@ -710,6 +825,7 @@
               </node>
             </node>
             <node concept="lc7rE" id="51bW6QbzMfw" role="3cqZAp">
+              <node concept="2BGw6n" id="2gttFslLz2v" role="lcghm" />
               <node concept="la8eA" id="51bW6QbzMfx" role="lcghm">
                 <property role="lacIc" value="buffer = (" />
               </node>
@@ -803,6 +919,7 @@
           <node concept="9aQIb" id="51bW6QbzMQp" role="9aQIa">
             <node concept="3clFbS" id="51bW6QbzMQq" role="9aQI4">
               <node concept="lc7rE" id="51bW6QbzMTb" role="3cqZAp">
+                <node concept="2BGw6n" id="2gttFslLzsd" role="lcghm" />
                 <node concept="la8eA" id="51bW6QbzMTB" role="lcghm">
                   <property role="lacIc" value="buffer = None" />
                 </node>
@@ -815,8 +932,8 @@
         <node concept="lc7rE" id="51bW6QbAW6R" role="3cqZAp">
           <node concept="l8MVK" id="51bW6QbAWjw" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="51bW6QbAXA9" role="3cqZAp" />
         <node concept="lc7rE" id="51bW6QbAdNI" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLzuT" role="lcghm" />
           <node concept="la8eA" id="51bW6QbAeNp" role="lcghm">
             <property role="lacIc" value="gevent = Gevent(name=event_name," />
           </node>
@@ -858,29 +975,55 @@
           </node>
           <node concept="l8MVK" id="51bW6QbAgSB" role="lcghm" />
         </node>
-        <node concept="11pn5k" id="51bW6QbAYox" role="3cqZAp" />
         <node concept="lc7rE" id="51bW6QbAi8N" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslMWya" role="lcghm" />
           <node concept="la8eA" id="51bW6QbAilq" role="lcghm">
             <property role="lacIc" value=")" />
           </node>
           <node concept="l8MVK" id="51bW6QbFT5f" role="lcghm" />
+          <node concept="l8MVK" id="2gttFslMWAE" role="lcghm" />
         </node>
-        <node concept="3clFbH" id="51bW6QbFSOv" role="3cqZAp" />
+        <node concept="11pn5k" id="2gttFslMiyc" role="3cqZAp" />
+        <node concept="3clFbH" id="2gttFslKkSH" role="3cqZAp" />
+        <node concept="lc7rE" id="2gttFslKlns" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLzzo" role="lcghm" />
+          <node concept="la8eA" id="2gttFslKlAV" role="lcghm">
+            <property role="lacIc" value="stream_generator = StreamGenerator(gevent, sensingapi, cep)" />
+          </node>
+          <node concept="l8MVK" id="2gttFslKmGc" role="lcghm" />
+        </node>
+        <node concept="lc7rE" id="2gttFslKlT0" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLzBS" role="lcghm" />
+          <node concept="la8eA" id="2gttFslKm8x" role="lcghm">
+            <property role="lacIc" value="stream_generator.run()" />
+          </node>
+          <node concept="l8MVK" id="2gttFslKmyS" role="lcghm" />
+          <node concept="l8MVK" id="2gttFslKmBy" role="lcghm" />
+        </node>
+        <node concept="3SKdUt" id="2gttFslKjt_" role="3cqZAp">
+          <node concept="1PaTwC" id="2gttFslKjtA" role="1aUNEU">
+            <node concept="3oM_SD" id="2gttFslKjHx" role="1PaTwD">
+              <property role="3oM_SC" value="Not" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKjHL" role="1PaTwD">
+              <property role="3oM_SC" value="implemented" />
+            </node>
+            <node concept="3oM_SD" id="2gttFslKjI3" role="1PaTwD">
+              <property role="3oM_SC" value="yet" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbJ" id="51bW6QbFau_" role="3cqZAp">
           <node concept="3clFbS" id="51bW6QbFauB" role="3clFbx">
             <node concept="lc7rE" id="51bW6QbFT8K" role="3cqZAp">
               <node concept="l8MVK" id="51bW6QbFT9j" role="lcghm" />
             </node>
             <node concept="lc7rE" id="51bW6QbFdJd" role="3cqZAp">
+              <node concept="2BGw6n" id="2gttFslLzE_" role="lcghm" />
               <node concept="la8eA" id="51bW6QbFdJF" role="lcghm">
-                <property role="lacIc" value="# WARNING: Granularity is not implemented, and it won't have any effect" />
+                <property role="lacIc" value="# WARNING: Granularity is not implemented, and it won't have any effect." />
               </node>
               <node concept="l8MVK" id="51bW6QbFdT9" role="lcghm" />
-            </node>
-            <node concept="lc7rE" id="51bW6QbFdTZ" role="3cqZAp">
-              <node concept="la8eA" id="51bW6QbFdUw" role="lcghm">
-                <property role="lacIc" value="# on this script." />
-              </node>
             </node>
             <node concept="lc7rE" id="51bW6QbFTac" role="3cqZAp">
               <node concept="l8MVK" id="51bW6QbFTaL" role="lcghm" />
@@ -906,9 +1049,22 @@
             <node concept="3x8VRR" id="51bW6QbFdCV" role="2OqNvi" />
           </node>
         </node>
-        <node concept="3clFbH" id="51bW6QbAf$M" role="3cqZAp" />
-        <node concept="3clFbH" id="51bW6QbAdrz" role="3cqZAp" />
-        <node concept="3clFbH" id="51bW6QbAdfv" role="3cqZAp" />
+        <node concept="3clFbH" id="2gttFslLx0G" role="3cqZAp" />
+        <node concept="11pn5k" id="2gttFslL$mj" role="3cqZAp" />
+        <node concept="lc7rE" id="2gttFslL$A9" role="3cqZAp">
+          <node concept="la8eA" id="2gttFslLAem" role="lcghm">
+            <property role="lacIc" value="if __name__ == &quot;__main__&quot;:" />
+          </node>
+          <node concept="l8MVK" id="2gttFslLBA1" role="lcghm" />
+        </node>
+        <node concept="11p84A" id="2gttFslMhMp" role="3cqZAp" />
+        <node concept="lc7rE" id="2gttFslLAwN" role="3cqZAp">
+          <node concept="2BGw6n" id="2gttFslLAKK" role="lcghm" />
+          <node concept="la8eA" id="2gttFslLAPc" role="lcghm">
+            <property role="lacIc" value="main()" />
+          </node>
+          <node concept="l8MVK" id="2gttFslLBEF" role="lcghm" />
+        </node>
       </node>
     </node>
   </node>

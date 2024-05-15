@@ -17,37 +17,73 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("#################################################");
+    tgs.append("\"\"\"");
     tgs.newLine();
-    tgs.append("##  Stream generator for ");
+    tgs.append(" Stream generator for ");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), PROPS.name$MnvL));
+    tgs.append("event.");
     tgs.newLine();
-    tgs.append("#################################################");
+    tgs.append("\"\"\"");
+    tgs.newLine();
+    tgs.newLine();
+    //  imports
+    tgs.append("import os");
+    tgs.newLine();
+    tgs.append("from datetime import datetime");
+    tgs.newLine();
+    tgs.append("from dotenv import load_dotenv");
+    tgs.newLine();
+    tgs.append("from generator import StreamGenerator, Gevent, SensingService, EventProcessor");
+    tgs.newLine();
     tgs.newLine();
 
+    tgs.append("def main():");
     tgs.newLine();
-    tgs.append("expiration = None");
+    // configurations
+    tgs.increaseIndent();
+    tgs.indent();
+    tgs.append("# loads services settings");
     tgs.newLine();
+    tgs.indent();
+    tgs.append("sensingapi = SensigService(root_url=os.getenv(\"OBSERVATION_API\"))");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("cep = EventProcessor(events_url=os.getenv(\"EPE_RECEIVER_API\"))");
+    tgs.newLine();
+
+    // event definition
+    tgs.newLine();
+    // defaults, can be changed after generation
+    tgs.indent();
+    tgs.append("expiration = datetime.now().replace(hour=datetime.now().hour+1)");
+    tgs.newLine();
+    tgs.indent();
     tgs.append("update_frequency = 5 # seconds");
     tgs.newLine();
     //  append values for detection extent if they are provided
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.feature$iitc) != null)) {
+      tgs.indent();
       tgs.append("detection_extent = ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.feature$iitc), PROPS.wkt$ioxb));
       tgs.newLine();
+      tgs.indent();
       tgs.append("srid = ");
       tgs.append("" + SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.feature$iitc), PROPS.srid$1GlA));
       tgs.newLine();
     } else {
+      tgs.indent();
       tgs.append("detection_extent = None");
       tgs.newLine();
+      tgs.indent();
       tgs.append("srid = None");
       tgs.newLine();
     }
+    tgs.indent();
     tgs.append("event_name = '");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), PROPS.name$MnvL).toLowerCase());
     tgs.append("'");
     tgs.newLine();
+    tgs.indent();
     tgs.append("phenomena = [");
 
     int parameterCount = 1;
@@ -65,6 +101,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
 
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.buffer$iiGd) != null)) {
       String bufferValue = SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.buffer$iiGd), PROPS.value$ip0b).toString();
+      tgs.indent();
       tgs.append("buffer = (");
       tgs.append(bufferValue.substring(0, bufferValue.length() - 1));
       tgs.append(", '");
@@ -72,12 +109,13 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
       tgs.append("')");
       tgs.newLine();
     } else {
+      tgs.indent();
       tgs.append("buffer = None");
       tgs.newLine();
     }
 
     tgs.newLine();
-
+    tgs.indent();
     tgs.append("gevent = Gevent(name=event_name,");
     tgs.newLine();
     tgs.increaseIndent();
@@ -96,20 +134,35 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.indent();
     tgs.append("buffer_distance=buffer[0]");
     tgs.newLine();
-    tgs.decreaseIndent();
+    tgs.indent();
     tgs.append(")");
     tgs.newLine();
+    tgs.newLine();
+    tgs.decreaseIndent();
 
+    tgs.indent();
+    tgs.append("stream_generator = StreamGenerator(gevent, sensingapi, cep)");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("stream_generator.run()");
+    tgs.newLine();
+    tgs.newLine();
+    // Not implemented yet
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.granularity$HAJ4) != null)) {
       tgs.newLine();
-      tgs.append("# WARNING: Granularity is not implemented, and it won't have any effect");
+      tgs.indent();
+      tgs.append("# WARNING: Granularity is not implemented, and it won't have any effect.");
       tgs.newLine();
-      tgs.append("# on this script.");
       tgs.newLine();
     }
 
-
-
+    tgs.decreaseIndent();
+    tgs.append("if __name__ == \"__main__\":");
+    tgs.newLine();
+    tgs.increaseIndent();
+    tgs.indent();
+    tgs.append("main()");
+    tgs.newLine();
   }
 
   private static final class LINKS {
