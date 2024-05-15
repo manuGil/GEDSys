@@ -51,11 +51,6 @@ def create_buffer(extent:str, buffer:float) -> str:
     return buffered_poly.wkt
 
 
-
-#     # TODO: find out if sensor thing api can do coordinates transformation 
-#     # R. I could not find evidence that the API can do coordinate transformation.
-
-
 def prepare_request_observedProperty_location(root_url:str, 
                                               observedProperty:str, 
                                               detection_extent:str=None, 
