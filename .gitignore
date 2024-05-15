@@ -21,4 +21,4 @@ GeDL/languages/GeDL.sandbox/
 
 
 # GEDsys
-event-interpreter/config.env
+gedl-interpreter/config.env
