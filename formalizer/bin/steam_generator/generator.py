@@ -128,24 +128,30 @@ class DataStream():
 
 
 @dataclass
-class SensorAPI(ABC):
+class SensingServiceAPI(ABC):
     """
     Represents an endpoint for collecting observation from a SensorThing API 
+
+    root_url: str - the root url of the SensorThing API
     """
 
     root_url: str # read from .env
 
 
 @dataclass
-class EventProcessorAPI(ABC):
+class EventProcessingAPI(ABC):
     """
     Represents an endpoint for fowarding observations to a Siddhi EPE.
+
+    events_url: str - the root url for sending observations (events) to the Siddhi EPE
+    deployment_url: str - the root url for deploying Siddhi apps
     """
 
-    root_url: str # read from .env
+    events_url: str # read from .env
+    deployment_url: str = None
 
     def get_reciever_url(self, reciever_slug: str) -> str:
-        return f"{self.root_url}/{reciever_slug}"
+        return f"{self.events_url}/{reciever_slug}"
     
 
 #################################################################
@@ -173,8 +179,8 @@ class StreamGenerator():
     """
 
     gevent: Gevent
-    sensorApi: SensorAPI
-    eventProcessorApi: EventProcessorAPI 
+    sensorApi: SensingServiceAPI
+    eventProcessorApi: EventProcessingAPI 
     generated_datastreams = [] # list of datastreams
 
     def generate(self)-> None:
@@ -236,8 +242,8 @@ if __name__ == "__main__":
                     )
     
     # global settings
-    sensorthing = SensorAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
-    cep = EventProcessorAPI(root_url="http://localhost:8006")
+    sensorthing = SensingServiceAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
+    cep = EventProcessingAPI(events_url="http://localhost:8006")
 
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
