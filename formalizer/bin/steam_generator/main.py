@@ -4,7 +4,7 @@ Responsible for handling events and generating data streams
 
 
 
-from generator import StreamGenerator, Gevent, SensorAPI, EventProcessorAPI
+from generator import StreamGenerator, Gevent, SensingService, EventProcessor
 
 from datetime import datetime
 from dotenv import load_dotenv
@@ -17,8 +17,8 @@ def main():
     # create request to find things within the extent
 
     # global settings: registered api endpoints
-    sensorthing = SensorAPI(root_url=os.getenv("SENSOR_API"))
-    cep = EventProcessorAPI(root_url=os.getenv("SIDDHI_API"))
+    sensorthing = SensingService(root_url=os.getenv("OBSERVATION_API"))
+    cep = EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
 
     ###################################################################
     ##                  Event Definition                             ##
@@ -44,7 +44,7 @@ def main():
     # this works
     # TODO: test two phenomena
     # TODO: develop demos based on the examples in chapter 4.
-    expiration = datetime.now().replace(second=datetime.now().second+30) # match with detection window
+    expiration = datetime.now().replace(hour=datetime.now().hour+1) # match with detection window
     update_frequency = 5 # seconds
     detection_extent = 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'
     srid = 4326
@@ -63,7 +63,7 @@ def main():
     ###################################################################
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
-    stream_generator.generate()
+    stream_generator.run()
 
 if __name__ == "__main__":
     main()
