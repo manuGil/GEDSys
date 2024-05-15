@@ -7,7 +7,7 @@ from datetime import datetime
 import time, json
 import uuid
 from typing import List, Optional
-from abc import ABC, abstractmethod
+from abc import ABC
 from parse_response import parse_response_observedProperty_location
 from prepare_requests import prepare_request_observedProperty_location
 
