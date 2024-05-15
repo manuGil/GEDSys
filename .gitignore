@@ -15,12 +15,11 @@ venv/*
 **/__pycache__/
 
 
-
-
-
 # MPS
 GeDL/languages/GeDL.sandbox/
 .DS_Store
 
 
-# formalizer
+# GEDsys
+gedl-interpreter/config.env
+*/dist/

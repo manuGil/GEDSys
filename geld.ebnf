@@ -103,7 +103,7 @@ TimeType ::=  TimeInstance
 TimeInstance ::= '"' Time '"' | '"' DateTime '"'
 
 Duration ::=  "duration" "(" '"'Time '"' ")"
-         | "duration" "(" Number "," TimeUnit ")"
+         | "duration" "(" Number TimeUnit ")"
 
 TimeUnit ::= "second" | "minute" | "hour" | "day" | "week" | "month" | "year"
 TimeWindow ::=  "window" "(" TimeInstance "," TimeInstance ")"
@@ -155,7 +155,7 @@ Negation ::= "!"
 LogicalOperator ::= "&&" | "||"
 Identifier ::= Letter (Letter | Digit | "_")*
 Value ::= Number | String | Boolean | "null"
-Distance ::=   Digit+ ("." Digit+)? 
+Distance ::=   Digit+ ("." Digit+)? SRIDUnit
 Number ::=  "-"? Digit+ ("." Digit+)?
 Fraction ::= Digit+
 String ::= '"' Char* '"'
@@ -167,5 +167,6 @@ Letter ::= [a-zA-Z]
 Digit ::= [0-9]
 Symbol ::= "_" | "@" | "#" | "$" | "%" | "^" | "&" | "(" | ")" | "~"
 SpatialRelation ::= "single" | "cloud" | "specks" | "all" 
+SRIDUnitUnit ::= "m" | "km" | "mi" | "ft" | "yd" | "in" | "cm" | "mm" | "deg" | "rad"
 Newline ::= "\r" | "\n" | "\r\n"
 Space ::= #x9 | #xA | #xD | #x20

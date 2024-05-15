@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="1t0o7suu882v9cabsdk35214irp6g7h">
-  <files names="CompositeEvent.siddhi:HotDay.siddhi" />
+<product version="3" modelHash="-e1vl214erqzf84quekydt6u0x8iym3y">
+  <files names="hotDay.py:hotDay.siddhi" />
 </product>
 
