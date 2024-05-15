@@ -11,6 +11,9 @@ R:  read notes on siddhi runner repo
 # Frost server as docker container
 For the sake of testing the language transformation, the demo data that comes with FROST is enough
 
+- TODO: find out if sensor thing api can do coordinates transformation 
+    - R. I could not find evidence that the API can do coordinate transformation.
+
 
 
 
