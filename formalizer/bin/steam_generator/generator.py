@@ -139,7 +139,7 @@ class SensingServiceAPI(ABC):
 
 
 @dataclass
-class EventProcessingAPI(ABC):
+class EventProcessorAPI(ABC):
     """
     Represents an endpoint for fowarding observations to a Siddhi EPE.
 
@@ -180,7 +180,7 @@ class StreamGenerator():
 
     gevent: Gevent
     sensorApi: SensingServiceAPI
-    eventProcessorApi: EventProcessingAPI 
+    eventProcessorApi: EventProcessorAPI 
     generated_datastreams = [] # list of datastreams
 
     def generate(self)-> None:
@@ -243,7 +243,7 @@ if __name__ == "__main__":
     
     # global settings
     sensorthing = SensingServiceAPI(root_url="http://localhost:8080/FROST-Server/v1.0")
-    cep = EventProcessingAPI(events_url="http://localhost:8006")
+    cep = EventProcessorAPI(events_url="http://localhost:8006")
 
 
     stream_generator = StreamGenerator(gevent, sensorthing, cep)
