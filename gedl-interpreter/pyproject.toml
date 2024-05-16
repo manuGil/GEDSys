@@ -39,7 +39,8 @@ dev = [
     "pytest",
     "twine",
     "wheel",
-    "hatchling"
+    "hatchling",
+    "sphinx",
 ]
 [tool.hatch.version]
 path = "src/version.py"

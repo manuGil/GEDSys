@@ -1,0 +1,27 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Geographic Event Detection System
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Manuel G.
+    family-names: Garcia Alvarez
+    email: m.g.garciaalvarez@tudelft.nl
+    affiliation: University of Twente
+    orcid: 'https://orcid.org/0000-0003-1579-9989'
+repository-code: 'https://github.com/manuGil/GEDsys'
+abstract: >-
+  Components of a distributed system for the detection of
+  geographic events on data streams from sensor networks. 
+keywords:
+  - geographic event
+  - complex event processing
+  - domain specific language
+  - sensor networks
+license: MIT
+version: 0.1.0
+date-released: '2024-05-16'

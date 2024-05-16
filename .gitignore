@@ -23,3 +23,5 @@ GeDL/languages/GeDL.sandbox/
 # GEDsys
 gedl-interpreter/config.env
 */dist/
+*/.DS_Store
+
