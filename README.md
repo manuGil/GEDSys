@@ -24,10 +24,11 @@ Each of the component have different requirements, therefore we provide separate
 - [FROST Server](./frost-server/README.md)
 - [Siddhi runner](./siddhi-runner/README.md)
 
-
-## Copyright
+## Copyright and License
 
 &copy; 2024 Manuel G. Garcia, Enschede, The Netherlands. 
+
+The GEDSys software is distributted under a [MIT License](./LICENSE), unless indicated otherwise.
 
 ## Citation
 
