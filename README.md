@@ -19,9 +19,10 @@ This repository contains source code for the following components:
 
 Each of the component have different requirements, therefore we provide separated instruction for each of them. Refere to the following resources to install and deploy each component:
 
-1. 
-
-
+- [GeDL MPS](./GeDL/README.md)
+- [GeDL interpreter](./gedl-interpreter/README.md)
+- [FROST Server](./frost-server/README.md)
+- [Siddhi runner](./siddhi-runner/README.md)
 
 
 ## Copyright
@@ -30,6 +31,8 @@ Each of the component have different requirements, therefore we provide separate
 
 ## Citation
 
+Please cite this software as follows:
 
+Garcia Alvarez, M. G. (2024). Geographic Event Detection System (Version 2.0.0-beta.1) [Computer software]. https://github.com/manuGil/GEDsys
 
 
