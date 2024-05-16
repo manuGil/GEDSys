@@ -19,9 +19,10 @@ This repository contains source code for the following components:
 
 Each of the component have different requirements, therefore we provide separated instruction for each of them. Refere to the following resources to install and deploy each component:
 
-1. 
-
-
+- [GeDL MPS](./GeDL/README.md)
+- [GeDL interpreter](./gedl-interpreter/README.md)
+- [FROST Server](./frost-server/README.md)
+- [Siddhi runner](./siddhi-runner/README.md)
 
 
 ## Copyright
