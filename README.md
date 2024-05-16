@@ -30,6 +30,8 @@ Each of the component have different requirements, therefore we provide separate
 
 ## Citation
 
+Please cite this software as follows:
 
+Garcia Alvarez, M. G. (2024). Geographic Event Detection System (Version 2.0.0-beta.1) [Computer software]. https://github.com/manuGil/GEDsys
 
 
