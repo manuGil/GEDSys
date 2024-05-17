@@ -88,7 +88,7 @@ def main():
                 "definition": "https://www.aqua-calc.com/what-is/density/microgram-per-cubic-meter"
             },
             Sensor = Sensor(
-                name = stations_no2[s].iloc[8] + "/NO2",
+                name = "NO2",
                 description = stations_no2[s].iloc[6],
                 encodingType = "text/html",
                 metadata = "https://www.luchtmeetnet.nl/informatie/metingen/type--meetstations"
@@ -158,7 +158,7 @@ def main():
                 "definition": "https://www.aqua-calc.com/what-is/density/microgram-per-cubic-meter"
             },
             Sensor = Sensor(
-                name = stations_pm25[s].iloc[8] + "/PM25",
+                name = "PM25",
                 description = stations_pm25[s].iloc[6],
                 encodingType = "text/html",
                 metadata = "https://www.luchtmeetnet.nl/informatie/metingen/type--meetstations"
