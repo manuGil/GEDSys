@@ -54,6 +54,9 @@ class Thing:
     Locations: List[Location]
     Datastreams: List[Datastream] 
 
+
+
+
 def main():
 
 
@@ -69,7 +72,6 @@ def main():
     stations_pm25 = df_pm25.iloc[:, 5:] # remove the fris three columns
     pm25_data = df_pm25
 
-    print(stations_no2["NL10107"].iloc[1])
 
     things = []
 
@@ -148,7 +150,7 @@ def main():
 
         datastream = Datastream(
             name = "Fine particulate matter in " + stations_pm25[s].iloc[1] ,
-            description = "The concentration of particulate matter 2.5 micron " + stations_pm25[s].iloc[1],
+            description = "The concentration of particulate matter 2.5 micron around " + stations_pm25[s].iloc[1],
             observationType = "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
             unitOfMeasurement = {
                 "name": "microgram per cubic meter",
@@ -196,7 +198,7 @@ def main():
 
     # save the things to json files
     for i, thing in enumerate(things):
-        with open('thing' + thing.name + '.json', 'w') as f:
+        with open('./examples/data/thing' + thing.name + '.json', 'w') as f:
             json.dump(asdict(thing), f, indent=4)   
 
 if __name__ == "__main__":
