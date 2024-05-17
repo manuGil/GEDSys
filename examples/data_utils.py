@@ -27,9 +27,9 @@ import json
 import subprocess
 from tqdm import tqdm
 
-def update_data_files(data_dir: str, output_dir: str, SENSOR_ID_NO2: int, 
-                      SENSOR_ID_PM25: int, OBSERVED_PROPERTY_ID_NO2: int, 
-                      OBSERVED_PROPERTY_ID_PM25: int) -> None:
+def update_data_files(data_dir: str, output_dir: str, sensor_id_no2: int, 
+                      sensor_id_pm25: int, observed_prop_id_no2: int, 
+                      observed_prop_id_pm25: int) -> None:
     """
     Updates the 'Sensor' and 'ObservedProperty' values in the JSON files 
     distributed in the 'examples/data' directory.
@@ -59,7 +59,7 @@ def update_data_files(data_dir: str, output_dir: str, SENSOR_ID_NO2: int,
     json_files = json_files[1:]
 
     # For each JSON file...
-    for json_file in tqdm(json_files, unit='file'):
+    for json_file in tqdm(json_files, unit='file', desc='Processing JSON files'):
         # Construct the full path to the input file
         input_file_path = os.path.join(data_dir, json_file)
 
@@ -70,8 +70,8 @@ def update_data_files(data_dir: str, output_dir: str, SENSOR_ID_NO2: int,
         # For each item in the 'Datastreams' list...
         for item in data.get('Datastreams', []):
             # Extract the 'Sensor' and 'ObservedProperty' values
-            item['Sensor'] = {"@iot.id": SENSOR_ID_NO2 if item.get('Sensor')['name'] == 'NO2' else SENSOR_ID_PM25}
-            item['ObservedProperty'] = {"@iot.id": OBSERVED_PROPERTY_ID_NO2 if item.get('ObservedProperty')['name'] == 'NO2' else OBSERVED_PROPERTY_ID_PM25}
+            item['Sensor'] = {"@iot.id": sensor_id_no2 if item.get('Sensor')['name'] == 'NO2' else sensor_id_pm25}
+            item['ObservedProperty'] = {"@iot.id": observed_prop_id_no2 if item.get('ObservedProperty')['name'] == 'NO2' else observed_prop_id_pm25}
 
         # Construct the full path to the output file
         output_file_path = os.path.join(output_dir, json_file)
@@ -98,7 +98,7 @@ def register_things(input_directory: str, things_endpoint: str) -> None:
     json_files = [f for f in os.listdir(input_directory) if f.endswith('.json')]
 
     # For each JSON file...
-    for json_file in tqdm(json_files, unit='file'):
+    for json_file in tqdm(json_files, unit='file', desc='Registering to FROST-Server'):
         # Construct the full path to the file
         file_path = os.path.join(input_directory, json_file)
 
@@ -109,4 +109,37 @@ def register_things(input_directory: str, things_endpoint: str) -> None:
         ]
 
         # Run the curl command
-        subprocess.run(curl_command)
+        subprocess.run(curl_command, check=True)
+
+def main():
+    """
+    This prgram perfoms steps to upload the sample data to the FROST-Server.
+    """
+
+    # parameters
+    data_directory = './examples/data'
+    updated_data_dir = './examples/updated_data'
+    endpoint = 'http://localhost:8080/FROST-Server/v1.1/Things'
+    SENSOR_ID_NO2=1,
+    SENSOR_ID_PM25=2,
+    OBSERVED_PROPERTY_ID_NO2=1,
+    OBSERVED_PROPERTY_ID_PM25=2
+    
+    # Update the data files, except of 000Xthing.json
+    update_data_files(
+        data_dir=data_directory,
+        output_dir=updated_data_dir,
+        sensor_id_no2=SENSOR_ID_NO2,
+        sensor_id_pm25=SENSOR_ID_PM25,
+        observed_prop_id_no2=OBSERVED_PROPERTY_ID_NO2,
+        observed_prop_id_pm25=OBSERVED_PROPERTY_ID_PM25
+    )
+
+    # Register the things to the FROST-Server
+    register_things(
+        input_directory=updated_data_dir,
+        things_endpoint=endpoint
+    )
+
+if __name__ == '__main__':
+    main()
