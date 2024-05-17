@@ -197,9 +197,12 @@ def main():
             thing.Datastreams.append(datastream)
 
     # save the things to json files
-    for i, thing in enumerate(things):
-        with open('./examples/data/thing' + thing.name + '.json', 'w') as f:
+    for i, thing in enumerate(things, start=1):
+
+        with open('./examples/data/' + str(i).zfill(3) +'thing' + thing.name + '.json', 'w') as f:
             json.dump(asdict(thing), f, indent=4)   
+        
+        i+=1
 
 if __name__ == "__main__":
     main()
