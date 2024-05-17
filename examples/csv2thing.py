@@ -54,18 +54,12 @@ class Thing:
     Locations: List[Location]
     Datastreams: List[Datastream] 
 
-
-
-
 def main():
-
 
     df_no2  = pd.read_csv('./examples/data/2024_04_NO2.csv', encoding='ISO-8859-1', delimiter=';')
     df_pm25  = pd.read_csv('./examples/data/2024_04_PM25.csv', encoding='ISO-8859-1', delimiter=';')
 
-
     # extract the names of stations > things
-
     stations_no2 = df_no2.iloc[:, 5:] # remove the fris three columns
     no2_data = df_no2
 
@@ -206,3 +200,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
