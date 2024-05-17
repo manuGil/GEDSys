@@ -31,7 +31,7 @@
                 "definition": "https://www.aqua-calc.com/what-is/density/microgram-per-cubic-meter"
             },
             "Sensor": {
-                "name": "NL10107/NO2",
+                "name": "NO2",
                 "description": "Teledyne API T200 chemiluminescent NOx analyser",
                 "encodingType": "text/html",
                 "metadata": "https://www.luchtmeetnet.nl/informatie/metingen/type--meetstations"
