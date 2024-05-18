@@ -2,23 +2,16 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/event_handler", "src/stream_generator", "src/version.py"]
-
-[tool.hatch.build.targets.sdist]
-exclude = [
-  "*.env",
-]
-
 [project]
 name = "gedl-interpreter"
 dynamic = ["version"]
+authors = [ 
+    {name = "Manuel G. Garcia Alvarez", email = "m.g.garciaalvarez@tudelft.nl"}]
+
 description = "An interpreter for the GEDL language"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
-authors = [ 
-    {name = "Manuel G. Garcia Alvarez", email = "m.g.garciaalvarez@tudelft.nl"}]
 keywords = ["gedl", "interpreter", "language", "GEDSys"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -42,8 +35,11 @@ dev = [
     "hatchling",
     "sphinx",
 ]
+
+
 [tool.hatch.version]
-path = "src/version.py"
+path = "src/gedl_interpreter/version.py"
 
-
-
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
