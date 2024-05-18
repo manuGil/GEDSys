@@ -39,3 +39,4 @@ gedl-interpreter/config.env
 */dist/
 **/.DS_Store
 
+examples/updated_data/*
