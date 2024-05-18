@@ -59,6 +59,9 @@ public class DataStream_TextGen extends TextGenDescriptorBase {
     tgs.append("observedProperty string,");
     tgs.newLine();
     tgs.indent();
+    tgs.append("phenomenonTime string,");
+    tgs.newLine();
+    tgs.indent();
     tgs.append("resultTime string,");
     tgs.newLine();
     if (SPropertyOperations.getEnum(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.Phenomenon$O7ge), PROPS.observationType$XTKQ).toString().equals("measurement")) {

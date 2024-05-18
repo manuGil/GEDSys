@@ -74,6 +74,11 @@ public class Event_TextGen extends TextGenDescriptorBase {
       tgs.append(".observedProperty,");
       tgs.newLine();
       tgs.indent();
+      tgs.append("'phenomenonTime', ");
+      tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
+      tgs.append(".phenomenonTime,");
+      tgs.newLine();
+      tgs.indent();
       tgs.append("'resultTime', ");
       tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append(".resultTime,");

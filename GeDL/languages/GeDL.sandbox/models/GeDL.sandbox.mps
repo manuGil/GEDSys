@@ -15,7 +15,15 @@
         <reference id="7054498623859437172" name="eventName" index="1uujdF" />
         <child id="2644584046949231281" name="payload" index="3XCpAs" />
       </concept>
+      <concept id="7054498623859085694" name="GeDL.structure.TimeWindow" flags="ng" index="1uvcLx">
+        <child id="7054498623859089184" name="EndTime" index="1uvc8Z" />
+        <child id="7054498623859088116" name="StartTime" index="1uvcvF" />
+      </concept>
+      <concept id="6208379058501971212" name="GeDL.structure.DetectionTime" flags="ng" index="1EORFg">
+        <child id="6208379058501971213" name="timeType" index="1EORFh" />
+      </concept>
       <concept id="6208379058501971205" name="GeDL.structure.DetectionRule" flags="ng" index="1EORFp">
+        <child id="7054498623859073585" name="detectionTime" index="1uvbWI" />
         <child id="6208379058501971208" name="condition" index="1EORFk" />
         <child id="6208379058501971209" name="extent" index="1EORFl" />
       </concept>
@@ -39,6 +47,9 @@
       <concept id="6208379058501919426" name="GeDL.structure.DetectionExtent" flags="ng" index="1EOVku">
         <child id="6208379058501919428" name="feature" index="1EOVko" />
         <child id="6208379058501919429" name="buffer" index="1EOVkp" />
+      </concept>
+      <concept id="6208379058501919417" name="GeDL.structure.DateTime" flags="ng" index="1EOVl_">
+        <property id="6208379058501919418" name="datetime" index="1EOVlA" />
       </concept>
       <concept id="6208379058501919404" name="GeDL.structure.DataStreamList" flags="ng" index="1EOVlK">
         <child id="6208379058501919414" name="dataStreams" index="1EOVlE" />
@@ -67,49 +78,101 @@
       </concept>
     </language>
   </registry>
-  <node concept="1EOVik" id="4j1YrdJ09rF">
-    <node concept="1EOVlK" id="4j1YrdJ09rG" role="19s57X">
-      <node concept="1EOVlO" id="4j1YrdJ09rL" role="1EOVlE">
-        <node concept="1uuihD" id="4j1YrdJ09rM" role="1uuibp">
+  <node concept="1EOVik" id="5kh69SRwrlb">
+    <node concept="1EOVlK" id="5kh69SRwrlc" role="19s57X">
+      <node concept="1EOVlO" id="5kh69SRyF33" role="1EOVlE">
+        <node concept="1uuihD" id="5kh69SRyF34" role="1uuibp">
+          <property role="TrG5h" value="PM25" />
+        </node>
+      </node>
+    </node>
+    <node concept="1EOVip" id="5kh69SRyF37" role="19s5Ww">
+      <property role="TrG5h" value="AirQuality" />
+      <node concept="3XDVfk" id="5kh69SRyF38" role="3WqTZ2">
+        <property role="1g2kVw" value="PM25" />
+      </node>
+      <node concept="1EORFp" id="5kh69SRyF3b" role="3ANvmg">
+        <node concept="1EOVlT" id="5kh69SRyF3c" role="1EORFk">
+          <node concept="1EOVlZ" id="5kh69SRyF3d" role="2U0yEg">
+            <property role="1uuRdD" value="&gt;" />
+            <node concept="2Ufyo5" id="5kh69SRyF3e" role="2UfysR">
+              <property role="2Ufy5s" value="15.f" />
+            </node>
+            <node concept="3XDVfk" id="5kh69SRyF3f" role="1hMpOy">
+              <property role="1g2kVw" value="PM25" />
+            </node>
+          </node>
+        </node>
+        <node concept="1EOVku" id="5kh69SRyF3l" role="1EORFl">
+          <property role="TrG5h" value="Amsterdam" />
+          <node concept="1EOVkr" id="5kh69SRyF3m" role="1EOVko">
+            <property role="1uv_TD" value="4326" />
+            <property role="1EOVkk" value="&quot;POLYGON ((4.6997419 52.4827406, 5.0308502 52.4865278, 5.0335553 52.2625428, 4.7024470 52.2684941, 4.6997419 52.4827406))&quot;" />
+          </node>
+        </node>
+        <node concept="1EORFg" id="5kh69SRyF3p" role="1uvbWI">
+          <node concept="1uvcLx" id="5kh69SRyF3t" role="1EORFh">
+            <node concept="1EOVl_" id="5kh69SRyF3v" role="1uvcvF">
+              <property role="1EOVlA" value="&quot;2024-04-06 10:00:00&quot;" />
+            </node>
+            <node concept="1EOVl_" id="5kh69SRyF3x" role="1uvc8Z">
+              <property role="1EOVlA" value="&quot;2024-04-06 18:00:00&quot;" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1uujJe" id="5kh69SRyF3A" role="19s5IL">
+      <property role="TrG5h" value="AlertPM25" />
+      <ref role="1uujdF" node="5kh69SRyF37" resolve="AirQuality" />
+      <node concept="3XDhN3" id="5kh69SRyF3B" role="3XCpAs">
+        <ref role="3XDgsu" node="5kh69SRyF34" resolve="PM25" />
+      </node>
+    </node>
+  </node>
+  <node concept="1EOVik" id="5kh69SRBjPo">
+    <node concept="1EOVlK" id="5kh69SRBjPp" role="19s57X">
+      <node concept="1EOVlO" id="5kh69SRBjPq" role="1EOVlE">
+        <node concept="1uuihD" id="5kh69SRBjPr" role="1uuibp">
           <property role="TrG5h" value="Temperature" />
         </node>
       </node>
     </node>
-    <node concept="1EOVip" id="4j1YrdJ09rH" role="19s5Ww">
-      <property role="TrG5h" value="hotDay" />
-      <node concept="3XDVfk" id="4j1YrdJ09rI" role="3WqTZ2">
+    <node concept="1EOVip" id="5kh69SRBjPu" role="19s5Ww">
+      <property role="TrG5h" value="HotDay" />
+      <node concept="3XDVfk" id="5kh69SRBjPv" role="3WqTZ2">
         <property role="1g2kVw" value="Temperature" />
       </node>
-      <node concept="1EORFp" id="4j1YrdJd8dH" role="3ANvmg">
-        <node concept="1EOVlT" id="4j1YrdJd8dI" role="1EORFk">
-          <node concept="1EOVlZ" id="4j1YrdJd8dJ" role="2U0yEg">
+      <node concept="1EORFp" id="5kh69SRBjPy" role="3ANvmg">
+        <node concept="1EOVlT" id="5kh69SRBjPz" role="1EORFk">
+          <node concept="1EOVlZ" id="5kh69SRBjP$" role="2U0yEg">
             <property role="1uuRdD" value="&gt;" />
-            <node concept="2Ufyo5" id="4j1YrdJd8dK" role="2UfysR">
+            <node concept="2Ufyo5" id="5kh69SRBjP_" role="2UfysR">
               <property role="2Ufy5s" value="19.f" />
             </node>
-            <node concept="3XDVfk" id="4j1YrdJd8dL" role="1hMpOy">
-              <property role="1g2kVw" value="Temperature" />
+            <node concept="3XDVfk" id="5kh69SRBjPA" role="1hMpOy">
+              <property role="1g2kVw" value="Temparature" />
             </node>
           </node>
         </node>
-        <node concept="1EOVku" id="51bW6QbtX0I" role="1EORFl">
+        <node concept="1EOVku" id="5kh69SRBjPG" role="1EORFl">
           <property role="TrG5h" value="city" />
-          <node concept="1EOVkr" id="51bW6QbtX0J" role="1EOVko">
+          <node concept="1EOVkr" id="5kh69SRBjPH" role="1EOVko">
             <property role="1EOVkk" value="'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'" />
             <property role="1uv_TD" value="4326" />
           </node>
-          <node concept="1EOVkl" id="51bW6QbzGY7" role="1EOVkp">
-            <property role="1uvMAS" value="deg" />
+          <node concept="1EOVkl" id="5kh69SRBjPK" role="1EOVkp">
             <property role="1EOVkm" value="0.5f" />
+            <property role="1uvMAS" value="deg" />
           </node>
         </node>
       </node>
     </node>
-    <node concept="1uujJe" id="4j1YrdJ09rJ" role="19s5IL">
-      <property role="TrG5h" value="hotDayAlert" />
-      <ref role="1uujdF" node="4j1YrdJ09rH" resolve="hotDay" />
-      <node concept="3XDhN3" id="4j1YrdJ09rK" role="3XCpAs">
-        <ref role="3XDgsu" node="4j1YrdJ09rM" resolve="temp" />
+    <node concept="1uujJe" id="5kh69SRBjPM" role="19s5IL">
+      <property role="TrG5h" value="HotDayAlert" />
+      <ref role="1uujdF" node="5kh69SRBjPu" resolve="HotDay" />
+      <node concept="3XDhN3" id="5kh69SRBjPN" role="3XCpAs">
+        <ref role="3XDgsu" node="5kh69SRBjPr" resolve="Temperature" />
       </node>
     </node>
   </node>

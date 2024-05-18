@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-e1vl214erqzf84quekydt6u0x8iym3y">
-  <files names="hotDay.py:hotDay.siddhi" />
+<product version="3" modelHash="65zy0retggyjnluz4qfae5l6j8mgwb7">
+  <files names="AirQuality.py:AirQuality.siddhi:HotDay.py:HotDay.siddhi" />
 </product>
 

@@ -21,7 +21,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append(" Stream generator for ");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), PROPS.name$MnvL));
-    tgs.append("event.");
+    tgs.append(" gevent.");
     tgs.newLine();
     tgs.append("\"\"\"");
     tgs.newLine();
