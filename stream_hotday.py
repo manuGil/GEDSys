@@ -6,7 +6,6 @@ import os
 from datetime import datetime
 from dotenv import load_dotenv
 
-
 def main():
   # loads services settings
   sensingapi = SensigService(root_url=os.getenv("OBSERVATION_API"))
@@ -32,4 +31,6 @@ def main():
   stream_generator.run()
 
 if __name__ == "__main__":
+
+ 
   main()
