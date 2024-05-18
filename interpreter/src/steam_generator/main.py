@@ -2,9 +2,7 @@
 Responsible for handling events and generating data streams
 """
 
-
-
-from generator import StreamGenerator, Gevent, SensingService, EventProcessor
+import generator
 
 from datetime import datetime
 from dotenv import load_dotenv
@@ -13,12 +11,15 @@ import os
 
 def main():
 
-    load_dotenv("formalizer/bin/config.env") 
+    # load_dotenv("gedl-interpreter/config.env") 
     # create request to find things within the extent
 
     # global settings: registered api endpoints
-    sensorthing = SensingService(root_url=os.getenv("OBSERVATION_API"))
-    cep = EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
+    sensingapi = generator.SensingService(root_url=os.getenv("OBSERVATION_API"))
+    cep = generator.EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
+
+    observation_api = os.getenv("OBSERVATION_API")
+    print(os.getenv("OBSERVATION_API"))
 
     ###################################################################
     ##                  Event Definition                             ##
@@ -44,7 +45,8 @@ def main():
     # this works
     # TODO: test two phenomena
     # TODO: develop demos based on the examples in chapter 4.
-    expiration = datetime.now().replace(hour=datetime.now().hour+1) # match with detection window
+    
+    expiration = datetime.now().replace(hour=datetime.now().hour+1)
     update_frequency = 5 # seconds
     detection_extent = 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'
     srid = 4326
@@ -52,17 +54,15 @@ def main():
     phenomena = ['Temperature']
     buffer = (0.5, 'deg')
 
-    gevent = Gevent(name=event_name,
-    expiration=expiration,
-    phenomena=phenomena,
-    update_frequency=update_frequency,
-    detection_extent=detection_extent,
-    buffer_distance=buffer[0]
-    )
-    
-    ###################################################################
+    gevent = generator.Gevent(name=event_name,
+        expiration=expiration,
+        phenomena=phenomena,
+        update_frequency=update_frequency,
+        detection_extent=detection_extent,
+        buffer_distance=buffer[0]
+        )
 
-    stream_generator = StreamGenerator(gevent, sensorthing, cep)
+    stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
     stream_generator.run()
 
 if __name__ == "__main__":
