@@ -35,7 +35,7 @@ GeDL/languages/GeDL.sandbox/
 # .mps-caches/
 
 # GEDsys
-gedl-interpreter/config.env
+interpreter/config.env
 */dist/
 **/.DS_Store
 
