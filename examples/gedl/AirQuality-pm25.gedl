@@ -1,2 +1,18 @@
 // A simple gevent about PM2.5 using a time window
 
+datastream PM25 : measurement ; 
+ 
+  event AirQuality ( PM25 ){ 
+    cond PM25 > 15.f <logical operator> <comparison expression>; 
+    extent Amsterdam = {  
+      feature: "POLYGON ((4.6997419 52.4827406, 5.0308502 52.4865278, 5.0335553 52.2625428, 4.7024470 52.2684941, 4.6997419 52.4827406))" ,  
+      srid: 4326,
+      buffer: <no buffer> 
+    } ; 
+    
+    time window ( "2024-04-06 10:00:00" , "2024-04-06 18:00:00" ); 
+  }; 
+ 
+  notification AlertPM25( AirQuality) { 
+    [ PM25 ] 
+  };

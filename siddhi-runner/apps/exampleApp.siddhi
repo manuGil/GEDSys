@@ -23,7 +23,7 @@ define stream exampleAppAlert (
   detectionTime string
 );
 
-@info(name = 'hotDay')
+@info(name = 'HotDay')
 from Temperature[result > 19.f]
 select 'exampleAppAlert' as notification,
 map:create('Temperature',
