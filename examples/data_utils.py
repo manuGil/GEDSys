@@ -120,9 +120,9 @@ def main():
     data_directory = './examples/data'
     updated_data_dir = './examples/updated_data'
     endpoint = 'http://localhost:8080/FROST-Server/v1.1/Things'
-    SENSOR_ID_NO2=1,
-    SENSOR_ID_PM25=2,
-    OBSERVED_PROPERTY_ID_NO2=1,
+    SENSOR_ID_NO2=1
+    SENSOR_ID_PM25=2
+    OBSERVED_PROPERTY_ID_NO2=1
     OBSERVED_PROPERTY_ID_PM25=2
     
     # Update the data files, except of 000Xthing.json
