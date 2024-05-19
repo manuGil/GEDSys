@@ -157,7 +157,7 @@ class SensingService(ABC):
         """Extracts the version of the SensorThing API."""
         self.vesion = self.root_url.split('/')[-1]
 
-        if self.vesion != 'v1.1' or self.vesion != 'v1.0':
+        if self.vesion != 'v1.1' and self.vesion != 'v1.0':
             raise ValueError(f"Invalid SensorThing API version: {self.vesion}")
 
 @dataclass
