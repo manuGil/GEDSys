@@ -25,6 +25,7 @@ classifiers = [
  dependencies = [
     "python-dotenv >= 1.0.1",
     "shapely >= 2.0.4",
+    "requests >=2.31.0",
  ]
 
 [project.optional-dependencies]
@@ -36,9 +37,16 @@ dev = [
     "sphinx",
 ]
 
-
 [tool.hatch.version]
 path = "src/gedl_interpreter/version.py"
+[tool.hatch.build.targets.sdist]
+include = [
+]
+exclude = [
+  "docs/",
+  "tests/",
+  "*.env",
+]
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"
