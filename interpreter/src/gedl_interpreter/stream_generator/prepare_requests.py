@@ -56,8 +56,8 @@ def prepare_request_observedProperty_location(root_url:str,
                                               detection_extent:str=None, 
                                               buffer:float=0) -> str:
     """
-    Creates a query that returns a list of observations urls of things that intersect an extent, 
-    and have a given observed property.
+    Creates an HTTP request for the SensorThings API that will returns a list of Observations (urls) of Things 
+    that intersect a geograhic extent, and have a given observed property.
 
     Parameters
     ----------
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
     request = prepare_request_observedProperty_location(root_url, observed_property, detection_extent, buffer)
 
-
+    print(request)
 
     location_api = {"@iot.selfLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)","@iot.id":1,"name":"My Living Room","description":"The living room of Fraunhoferstr. 1","encodingType":"application/vnd.geo+json","location":{"type":"Point","coordinates":[8.4259727,49.015308]},"HistoricalLocations@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/HistoricalLocations","Things@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/Things"}
 
