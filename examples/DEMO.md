@@ -141,7 +141,7 @@ Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5
     datastream Temperature : measurement ; 
     
     event HotDay ( Temperature ){ 
-        cond Temperature > 19.f <logical operator> <comparison expression>; 
+        cond Temperature > 20.f <logical operator> <comparison expression>; 
         extent city = {  
         feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))' , 
         srid: 4326, 
