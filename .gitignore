@@ -38,5 +38,6 @@ GeDL/languages/GeDL.sandbox/
 interpreter/config.env
 */dist/
 **/.DS_Store
+/playground
 
 examples/updated_data/*
