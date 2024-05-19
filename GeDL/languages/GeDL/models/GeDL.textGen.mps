@@ -256,7 +256,7 @@
                     <node concept="2OqwBi" id="5kh69SRxJPo" role="2Oq$k0">
                       <node concept="117lpO" id="5kh69SRxJPp" role="2Oq$k0" />
                       <node concept="3TrEf2" id="5kh69SRxJPq" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:3ID9j62e_24" />
+                        <ref role="3Tt5mk" to="lyeg:3ID9j62e_24" resolve="event" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="5kh69SRxJPr" role="2OqNvi">
@@ -299,7 +299,7 @@
                   <node concept="2OqwBi" id="5kh69SRxJPF" role="2Oq$k0">
                     <node concept="117lpO" id="5kh69SRxJPG" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5kh69SRxJPH" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_23" />
+                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_23" resolve="datastreams" />
                     </node>
                   </node>
                   <node concept="32TBzR" id="5kh69SRxJPI" role="2OqNvi" />
@@ -326,7 +326,7 @@
                   <node concept="2OqwBi" id="5kh69SRxJPS" role="lb14g">
                     <node concept="117lpO" id="5kh69SRxJPT" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5kh69SRxJPU" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_25" />
+                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_25" resolve="notification" />
                     </node>
                   </node>
                 </node>
@@ -344,7 +344,7 @@
                   <node concept="2OqwBi" id="5kh69SRxJQ1" role="lb14g">
                     <node concept="117lpO" id="5kh69SRxJQ2" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5kh69SRxJQ3" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_24" />
+                      <ref role="3Tt5mk" to="lyeg:3ID9j62e_24" resolve="event" />
                     </node>
                   </node>
                 </node>
@@ -643,19 +643,19 @@
                           <node concept="2OqwBi" id="51bW6QbtlLr" role="2Oq$k0">
                             <node concept="117lpO" id="51bW6QbtlLs" role="2Oq$k0" />
                             <node concept="3TrEf2" id="51bW6QbtlLt" role="2OqNvi">
-                              <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" />
+                              <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="51bW6QbtlLu" role="2OqNvi">
-                            <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" />
+                            <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="51bW6QbtlLv" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" />
+                          <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" resolve="extent" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="51bW6QbtlLw" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb4" />
+                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb4" resolve="feature" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="51bW6QbtlLx" role="2OqNvi">
@@ -911,19 +911,19 @@
                         <node concept="2OqwBi" id="51bW6QbzMfO" role="2Oq$k0">
                           <node concept="117lpO" id="51bW6QbzMfP" role="2Oq$k0" />
                           <node concept="3TrEf2" id="51bW6QbzMfQ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" />
+                            <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="51bW6QbzMfR" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" />
+                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="51bW6QbzMfS" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" />
+                        <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" resolve="extent" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="51bW6QbzMfT" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb5" />
+                      <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb5" resolve="buffer" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="51bW6QbzMfU" role="2OqNvi">
@@ -1683,11 +1683,11 @@
                       <node concept="2OqwBi" id="4j1YrdJBBLp" role="2Oq$k0">
                         <node concept="117lpO" id="4j1YrdJBBLq" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4j1YrdJBBLr" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" />
+                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="4j1YrdJBBLs" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:67ABhWZAy8L" />
+                        <ref role="3Tt5mk" to="lyeg:67ABhWZAy8L" resolve="detectionTime" />
                       </node>
                     </node>
                   </node>
@@ -1719,7 +1719,7 @@
                 </node>
                 <node concept="3eOSWO" id="4j1YrdJBB8w" role="3uHU7B">
                   <node concept="37vLTw" id="4j1YrdJBzk2" role="3uHU7B">
-                    <ref role="3cqZAo" node="4j1YrdJyr5g" resolve="countParams" />
+                    <ref role="3cqZAo" node="4j1YrdJyr5g" resolve="numberParams" />
                   </node>
                   <node concept="3cmrfG" id="4j1YrdJBB96" role="3uHU7w">
                     <property role="3cmrfH" value="1" />
@@ -1753,7 +1753,7 @@
                   </node>
                   <node concept="3clFbC" id="4j1YrdJJfgj" role="3uHU7B">
                     <node concept="37vLTw" id="4j1YrdJJcXh" role="3uHU7B">
-                      <ref role="3cqZAo" node="4j1YrdJyr5g" resolve="countParams" />
+                      <ref role="3cqZAo" node="4j1YrdJyr5g" resolve="numberParams" />
                     </node>
                     <node concept="3cmrfG" id="4j1YrdJJfDh" role="3uHU7w">
                       <property role="3cmrfH" value="1" />
@@ -2109,11 +2109,11 @@
                       <node concept="2OqwBi" id="DRx07$ICtj" role="2Oq$k0">
                         <node concept="117lpO" id="DRx07$ICtk" role="2Oq$k0" />
                         <node concept="3TrEf2" id="DRx07$ICtl" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" />
+                          <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="DRx07$ICtm" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:67ABhWZAy8L" />
+                        <ref role="3Tt5mk" to="lyeg:67ABhWZAy8L" resolve="detectionTime" />
                       </node>
                     </node>
                   </node>
@@ -2453,11 +2453,11 @@
                       <node concept="2OqwBi" id="4j1YrdJauAX" role="2Oq$k0">
                         <node concept="117lpO" id="4j1YrdJauAY" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4j1YrdJauAZ" role="2OqNvi">
-                          <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" />
+                          <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" resolve="LeftComparison" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="4j1YrdJauB0" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:6kf09COLDQS" />
+                        <ref role="3Tt5mk" to="lyeg:6kf09COLDQS" resolve="expression" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="4j1YrdJauB1" role="2OqNvi">
@@ -2473,7 +2473,7 @@
                     <node concept="2OqwBi" id="4j1YrdJauB5" role="2Oq$k0">
                       <node concept="117lpO" id="4j1YrdJauB6" role="2Oq$k0" />
                       <node concept="3TrEf2" id="4j1YrdJauB7" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" />
+                        <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" resolve="LeftComparison" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="4j1YrdJauB8" role="2OqNvi">
@@ -2489,11 +2489,11 @@
                     <node concept="2OqwBi" id="4j1YrdJauBc" role="2Oq$k0">
                       <node concept="117lpO" id="4j1YrdJauBd" role="2Oq$k0" />
                       <node concept="3TrEf2" id="4j1YrdJauBe" role="2OqNvi">
-                        <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" />
+                        <ref role="3Tt5mk" to="lyeg:4qxPl3WCZZ0" resolve="LeftComparison" />
                       </node>
                     </node>
                     <node concept="3TrEf2" id="4j1YrdJauBf" role="2OqNvi">
-                      <ref role="3Tt5mk" to="lyeg:4qxPl3WBZ9B" />
+                      <ref role="3Tt5mk" to="lyeg:4qxPl3WBZ9B" resolve="value" />
                     </node>
                   </node>
                 </node>
