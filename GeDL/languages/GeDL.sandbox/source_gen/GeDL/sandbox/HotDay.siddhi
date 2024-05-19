@@ -1,0 +1,39 @@
+@App:name('HotDay')
+@App:description('A descriptionn of the app')
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/hotday-temperature",
+  @map(type = 'json')
+)
+define stream Temperature (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@sink(
+  type = 'log',
+  @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
+)
+define stream HotDayAlert (
+  notification string,
+  observations object,
+  detectionTime string
+);
+
+@info(name = 'HotDay')
+from Temparature[result > 19.f]
+select 'HotDayAlert' as notification,
+map:create('Temperature',
+    map:create(
+      'observedProperty', Temperature.observedProperty,
+      'phenomenonTime', Temperature.phenomenonTime,
+      'resultTime', Temperature.resultTime,
+      'result', Temperature.result,
+      'location', Temperature.location
+      ) ) as observations,
+      time:currentTimestamp() as detectionTime
+insert into HotDayAlert;
