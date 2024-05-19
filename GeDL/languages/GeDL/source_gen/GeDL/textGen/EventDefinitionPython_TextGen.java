@@ -33,7 +33,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append("from dotenv import load_dotenv");
     tgs.newLine();
-    tgs.append("from generator import StreamGenerator, Gevent, SensingService, EventProcessor");
+    tgs.append("import gedl_interpreter.stream_generator.generator as  generator");
     tgs.newLine();
     tgs.newLine();
 
@@ -45,10 +45,13 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.append("# loads services settings");
     tgs.newLine();
     tgs.indent();
-    tgs.append("sensingapi = SensigService(root_url=os.getenv(\"OBSERVATION_API\"))");
+    tgs.append("generator.load_config('./config.env') # set path to config file");
     tgs.newLine();
     tgs.indent();
-    tgs.append("cep = EventProcessor(events_url=os.getenv(\"EPE_RECEIVER_API\"))");
+    tgs.append("sensingapi = generator.SensingService(root_url=os.getenv(\"OBSERVATION_API\"))");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("cep = generator.EventProcessor(events_url=os.getenv(\"EPE_RECEIVER_API\"))");
     tgs.newLine();
 
     // event definition
@@ -116,7 +119,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
 
     tgs.newLine();
     tgs.indent();
-    tgs.append("gevent = Gevent(name=event_name,");
+    tgs.append("gevent = generator.Gevent(name=event_name,");
     tgs.newLine();
     tgs.increaseIndent();
     tgs.indent();
@@ -141,7 +144,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.decreaseIndent();
 
     tgs.indent();
-    tgs.append("stream_generator = StreamGenerator(gevent, sensingapi, cep)");
+    tgs.append("stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)");
     tgs.newLine();
     tgs.indent();
     tgs.append("stream_generator.run()");
