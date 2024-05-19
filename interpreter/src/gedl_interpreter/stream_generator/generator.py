@@ -34,7 +34,8 @@ def format_location(location) -> dict:
     dict
 
     """
-    return {"x":location['location']['coordinates'][0], "y":location['location']['coordinates'][1]}
+
+    return {'name': location['name'], 'geojson': location['location']}
 
 
 @dataclass
@@ -105,21 +106,21 @@ class DataStream():
                 observation.raise_for_status()
                 location.raise_for_status()
 
-                # send data to EPE API
-                formatted_location = format_location(location.json())
-
                 # prepare payload for EPE
                 cep_payload = self.epe_payload_template.copy()
+                formatted_location = format_location(location.json())
 
                 # TODO: allow other types for result
                 cep_payload['event'].update({'resultTime': observation.json()['resultTime'],
                                              'phenomenonTime': observation.json()['phenomenonTime'],
                                              'result': float(observation.json()['result']), # ensure result is a float 
-                                             'location': formatted_location})
+                                             'location': formatted_location 
+                                             }) 
                         
                 print("cep_payload:", cep_payload)
-                cep_headers = {'Content-Type': 'application/json'}
 
+                cep_headers = {'Content-Type': 'application/json'}
+                # send data to EPE API
                 try:
                     cep_response = cep_engine.post(self.reciever_url, 
                                     data=json.dumps(cep_payload), 
