@@ -213,7 +213,7 @@
     <ref role="1XX52x" to="lyeg:5oC_XKWYMaG" resolve="DataStreamList" />
     <node concept="3EZMnI" id="52LigkvXISH" role="2wV5jI">
       <node concept="3F2HdR" id="6kf09COviLA" role="3EZMnx">
-        <ref role="1NtTu8" to="lyeg:5oC_XKWYMaQ" />
+        <ref role="1NtTu8" to="lyeg:5oC_XKWYMaQ" resolve="dataStreams" />
         <node concept="2iRkQZ" id="6kf09COviLD" role="2czzBx" />
       </node>
       <node concept="2iRkQZ" id="52LigkvXISK" role="2iSdaV" />
