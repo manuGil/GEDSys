@@ -10,6 +10,7 @@ from typing import List, Optional
 from abc import ABC
 from .parse_response import parse_response_observedProperty_location
 from .prepare_requests import prepare_request_observedProperty_location
+from dotenv import load_dotenv
 
 # Use to format the payloads to be sent to the CEP server
 cep_payload_template = {"event":{
@@ -36,6 +37,28 @@ def format_location(location) -> dict:
     """
 
     return {'name': location['name'], 'geojson': location['location']}
+
+
+def load_config(config_file: str) -> None:
+  """
+  Load the configuration from the specified '.env' config file.
+
+  Parameters
+  ----------
+  config_file : str
+    The path to the configuration file.
+
+  Raises
+  ------
+  FileNotFoundError
+    If the config file is not found.
+
+  Returns
+  -------
+  None
+  """
+  if not load_dotenv(config_file):
+    raise FileNotFoundError("Missing config.env file. Check the provided path is correct.")
 
 
 @dataclass
