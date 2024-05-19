@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import GeDL.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.text.rt.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import GeDL.structure.ConceptPresentationAspectImpl;
@@ -49,9 +48,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
-    }
-    if (aspectClass == TextGenAspectDescriptor.class) {
-      return aspectClass.cast(new GeDL.textGen.TextGenAspectDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new GeDL.structure.StructureAspectDescriptor());
