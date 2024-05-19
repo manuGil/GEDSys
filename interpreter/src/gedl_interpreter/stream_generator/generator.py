@@ -8,8 +8,8 @@ import time, json
 import uuid
 from typing import List, Optional
 from abc import ABC
-from parse_response import parse_response_observedProperty_location
-from prepare_requests import prepare_request_observedProperty_location
+from .parse_response import parse_response_observedProperty_location
+from .prepare_requests import prepare_request_observedProperty_location
 
 # Use to format the payloads to be sent to the CEP server
 cep_payload_template = {"event":{
@@ -84,7 +84,15 @@ class DataStream():
         # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
         while self.status == 'running':
 
-            response_sensor_api = sensor_api.get(self.sensor_thing_request) 
+            try:
+                response_sensor_api = sensor_api.get(self.sensor_thing_request) 
+            except requests.exceptions.ConnectionError:
+                print(f"Unable to connect to the Sensor API. Is the server running?")
+                response_sensor_api.raise_for_status()
+                break
+            else:
+                response_sensor_api.raise_for_status()
+            
             # parse response
             ## returns  = {latest_observation: url, location:url}
             parsed_response = parse_response_observedProperty_location(response_sensor_api.json())
@@ -100,22 +108,30 @@ class DataStream():
                 # send data to EPE API
                 formatted_location = format_location(location.json())
 
-                result = observation.json()['result']
-                resultTime = observation.json()['phenomenonTime']
-                print("result:", result, resultTime)
-
                 # prepare payload for EPE
                 cep_payload = self.epe_payload_template.copy()
-                cep_payload['event'].update({'resultTime': observation.json()['phenomenonTime'], 
+
+                # TODO: allow other types for result
+                cep_payload['event'].update({'resultTime': observation.json()['resultTime'],
+                                             'phenomenonTime': observation.json()['phenomenonTime'],
                                              'result': float(observation.json()['result']), # ensure result is a float 
                                              'location': formatted_location})
-         
+                        
                 print("cep_payload:", cep_payload)
                 cep_headers = {'Content-Type': 'application/json'}
-                cep_response = cep_engine.post(self.reciever_url, 
-                                data=json.dumps(cep_payload), 
-                                headers=cep_headers)
-                cep_response.raise_for_status()
+
+                try:
+                    cep_response = cep_engine.post(self.reciever_url, 
+                                    data=json.dumps(cep_payload), 
+                                    headers=cep_headers)
+                except requests.exceptions.ConnectionError:
+                    print(f"Unable to connect to the EPE server. Is the server running?")
+                    cep_response.raise_for_status()
+                except requests.exceptions.HTTPError:
+                    print(f"Coudn't find data endpoint on EPE server. Is App deployed?")
+                    cep_response.raise_for_status()
+                else:    
+                    cep_response.raise_for_status()
                 
                 self.update_latest_observation(parsed_response['latest_observation'])
 
@@ -137,6 +153,12 @@ class SensingService(ABC):
 
     root_url: str # read from .env
 
+    def __post_init__(self):
+        """Extracts the version of the SensorThing API."""
+        self.vesion = self.root_url.split('/')[-1]
+
+        if self.vesion != 'v1.1' or self.vesion != 'v1.0':
+            raise ValueError(f"Invalid SensorThing API version: {self.vesion}")
 
 @dataclass
 class EventProcessor(ABC):
