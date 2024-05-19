@@ -93,8 +93,8 @@ class DataStream():
             self.status = 'expired'
         return self.status
 
-    def start_streaming(self) -> None:
-        """ Starts the streaming process."""
+    def start_streaming(self, latest:bool=True) -> None:
+        """ Starts data streaming."""
 
         if self.check_expiration() != 'expired':
             self.status = 'running'
@@ -118,49 +118,57 @@ class DataStream():
                 response_sensor_api.raise_for_status()
             
             # parse response
-            ## returns  = {latest_observation: url, location:url}
-            parsed_response = parse_response_observedProperty_location(response_sensor_api.json())
+            ## returns  = {latest_observation: [url], location:url}
+            parsed_response = parse_response_observedProperty_location(response_sensor_api.json(), latest=latest)
 
-            # Checks if any observations were found at the Sensor API and if the latest observation is different from the last one
-            if parsed_response: #and parsed_response['latest_observation'] != self.latest_observation:
+            # Checks if any observations were found at the Sensor API and 
+            # if the most recent observation is different from the last one sent to the EPE
+            if parsed_response and parsed_response['observations'][0] != self.latest_observation:
 
-                observation = sensor_api.get(parsed_response['latest_observation']) # SensorThing API object
+                # assums the location of the thing is the same for all observations
                 location = sensor_api.get(parsed_response['location']) # SensorThing API object
-                observation.raise_for_status()
                 location.raise_for_status()
 
-                # prepare payload for EPE
-                cep_payload = self.epe_payload_template.copy()
-                formatted_location = format_location(location.json())
+                # send each observation to the EPE, from oldest to latest if more than one
+                observations = parsed_response['observations']
+                
+                for observation_url in observations: 
+                    observation = sensor_api.get(observation_url) # SensorThing API object
+                    observation.raise_for_status()
 
-                # TODO: allow other types for result
-                cep_payload['event'].update({'resultTime': observation.json()['resultTime'],
+                    # prepare payload for EPE
+                    cep_payload = self.epe_payload_template.copy()
+                    formatted_location = format_location(location.json())
+
+                    # TODO: allow other types for result
+                    cep_payload['event'].update({'resultTime': observation.json()['resultTime'],
                                              'phenomenonTime': observation.json()['phenomenonTime'],
                                              'result': float(observation.json()['result']), # ensure result is a float 
                                              'location': formatted_location 
                                              }) 
                         
-                print("Sent to EPE: ", cep_payload)
+                    print("Sent to EPE: ", cep_payload)
 
-                cep_headers = {'Content-Type': 'application/json'}
-                # send data to EPE API
-                try:
-                    cep_response = cep_engine.post(self.reciever_url, 
-                                    data=json.dumps(cep_payload), 
-                                    headers=cep_headers)
-                except requests.exceptions.ConnectionError:
-                    print(f"Unable to connect to the EPE server. Is the server running?")
-                    cep_response.raise_for_status()
-                except requests.exceptions.HTTPError:
-                    print(f"Coudn't find data endpoint on EPE server. Is App deployed?")
-                    cep_response.raise_for_status()
-                else:    
-                    cep_response.raise_for_status()
+                    cep_headers = {'Content-Type': 'application/json'}
+                    # send data to EPE API
+                    try:
+                        cep_response = cep_engine.post(self.reciever_url, 
+                                        data=json.dumps(cep_payload), 
+                                        headers=cep_headers)
+                    except requests.exceptions.ConnectionError:
+                        print(f"Unable to connect to the EPE server. Is the server running?")
+                        cep_response.raise_for_status()
+                    except requests.exceptions.HTTPError:
+                        print(f"Coudn't find data endpoint on EPE server. Is App deployed?")
+                        cep_response.raise_for_status()
+                    else:    
+                        cep_response.raise_for_status()
                 
-                self.update_latest_observation(parsed_response['latest_observation'])
+                    self.update_latest_observation(observation_url)
 
-            else:
-                break
+                    # wait for the next cycle. This is for demonstration purposes only
+                    # should be removed in production
+                    time.sleep(1)  # time in seconds
 
             time.sleep(self.update_frequency)  # time in seconds
             # check expiration after every cycle
@@ -229,7 +237,7 @@ class StreamGenerator():
     eventProcessorApi: EventProcessor 
     generated_datastreams = [] # list of datastreams
 
-    def run(self)-> None:
+    def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each """
         for phenomenon in self.gevent.phenomena:
             request = prepare_request_observedProperty_location(self.sensorApi.root_url, 
@@ -248,7 +256,7 @@ class StreamGenerator():
                                 expiration=self.gevent.expiration,
                                 update_frequency=self.gevent.update_frequency,
                                 )
-            stream.start_streaming()
+            stream.start_streaming(latest=latest)
             self.generated_datastreams.append(stream)
 
     def stop(self):
