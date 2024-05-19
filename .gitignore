@@ -16,8 +16,8 @@ venv/*
 
 
 # MPS
-GeDL/languages/GeDL/classes_gen/
-GeDL/languages/GeDL/source_gen.caches/
+# GeDL/languages/GeDL/classes_gen/
+# GeDL/languages/GeDL/source_gen.caches/
 
 # source_gen/
 # source_gen.caches/
