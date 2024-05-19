@@ -47,35 +47,48 @@ Parse the response from from SensorThing API and Siddhi EPE.
 }
 
 
-def parse_response_observedProperty_location(dict_response: dict) -> dict:
+def parse_response_observedProperty_location(api_response: dict, latest:bool = True) -> dict:
     """
-    Parse the response from the SensorThing API to get the latest observation of a thing with a given observed property.
+    Parse the response from the SensorThing API (URLs to observations) to extract observations.
 
     Parameters
     ----------
-    dict_response : dict
+    api_response : dict
         response from the SensorThing API.
+    latest : bool, optional
+        If True, return the latest observation, otherwise return all found observations ordered
+        from latest to oldest.
 
     Returns
     -------
     dict
-        Dictionary with the URL of the latest observation and location of a thing with a given observed property.
+        Dictionary with URLs to observations and location of a Thing with a given observed property.
 
     Examples
     --------
     """
 
     # get the latest observation
-    if dict_response['@iot.count'] == 0:
-        print("No observations that match the creteria were found.")
+    if api_response['@iot.count'] == 0:
+        print("No observations match the creteria of the API request.")
         return None
-    else:
-        latest_observation = dict_response['value'][0]['Observations'][-1]['@iot.selfLink']
-
+    
+    if latest:
+        # count = api_response['value'][0]['Observations@iot.count'] # the number of observations in the response
+        latest_observation = api_response['value'][0]['Observations'][-1]['@iot.selfLink']
+     
         # get the location of the thing
-        location = dict_response['value'][0]['Thing']['Locations'][-1]['@iot.selfLink']
+        latest_location = api_response['value'][0]['Thing']['Locations'][-1]['@iot.selfLink']
 
-        return {'latest_observation': latest_observation, 'location': location}
+        return {'observations': [latest_observation], 'location': latest_location}
+    else:
+        # get all observations
+        observations = [obs['@iot.selfLink'] for obs in api_response['value'][0]['Observations']]
+
+        # assums that the location of the thing is the same for all observations
+        location = api_response['value'][0]['Thing']['Locations'][-1]['@iot.selfLink']
+
+        return {'observations': observations, 'location': location}
 
 
 if __name__ == '__main__':
