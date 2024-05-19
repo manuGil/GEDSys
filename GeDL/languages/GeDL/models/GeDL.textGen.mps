@@ -467,7 +467,7 @@
         </node>
         <node concept="lc7rE" id="2gttFslJRY6" role="3cqZAp">
           <node concept="la8eA" id="2gttFslJSd1" role="lcghm">
-            <property role="lacIc" value="from generator import StreamGenerator, Gevent, SensingService, EventProcessor" />
+            <property role="lacIc" value="import gedl_interpreter.stream_generator.generator as  generator" />
           </node>
           <node concept="l8MVK" id="2gttFslJVoZ" role="lcghm" />
           <node concept="l8MVK" id="2gttFslK0eO" role="lcghm" />
@@ -494,17 +494,24 @@
           </node>
           <node concept="l8MVK" id="2gttFslK2FK" role="lcghm" />
         </node>
+        <node concept="lc7rE" id="24FCU8YlOix" role="3cqZAp">
+          <node concept="2BGw6n" id="24FCU8YlPjn" role="lcghm" />
+          <node concept="la8eA" id="24FCU8YlPnN" role="lcghm">
+            <property role="lacIc" value="generator.load_config('./config.env') # set path to config file" />
+          </node>
+          <node concept="l8MVK" id="24FCU8Yn7C2" role="lcghm" />
+        </node>
         <node concept="lc7rE" id="2gttFslK3yd" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLxmT" role="lcghm" />
           <node concept="la8eA" id="2gttFslK3Ll" role="lcghm">
-            <property role="lacIc" value="sensingapi = SensigService(root_url=os.getenv(&quot;OBSERVATION_API&quot;))" />
+            <property role="lacIc" value="sensingapi = generator.SensingService(root_url=os.getenv(&quot;OBSERVATION_API&quot;))" />
           </node>
           <node concept="l8MVK" id="2gttFslK4qm" role="lcghm" />
         </node>
         <node concept="lc7rE" id="2gttFslK5cn" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLxro" role="lcghm" />
           <node concept="la8eA" id="2gttFslK6hT" role="lcghm">
-            <property role="lacIc" value="cep = EventProcessor(events_url=os.getenv(&quot;EPE_RECEIVER_API&quot;))" />
+            <property role="lacIc" value="cep = generator.EventProcessor(events_url=os.getenv(&quot;EPE_RECEIVER_API&quot;))" />
           </node>
           <node concept="l8MVK" id="2gttFslK73m" role="lcghm" />
         </node>
@@ -980,7 +987,7 @@
         <node concept="lc7rE" id="51bW6QbAdNI" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLzuT" role="lcghm" />
           <node concept="la8eA" id="51bW6QbAeNp" role="lcghm">
-            <property role="lacIc" value="gevent = Gevent(name=event_name," />
+            <property role="lacIc" value="gevent = generator.Gevent(name=event_name," />
           </node>
           <node concept="l8MVK" id="51bW6QbAeUY" role="lcghm" />
         </node>
@@ -1033,7 +1040,7 @@
         <node concept="lc7rE" id="2gttFslKlns" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLzzo" role="lcghm" />
           <node concept="la8eA" id="2gttFslKlAV" role="lcghm">
-            <property role="lacIc" value="stream_generator = StreamGenerator(gevent, sensingapi, cep)" />
+            <property role="lacIc" value="stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)" />
           </node>
           <node concept="l8MVK" id="2gttFslKmGc" role="lcghm" />
         </node>

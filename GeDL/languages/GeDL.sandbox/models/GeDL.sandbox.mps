@@ -151,7 +151,7 @@
               <property role="2Ufy5s" value="19.f" />
             </node>
             <node concept="3XDVfk" id="5kh69SRBjPA" role="1hMpOy">
-              <property role="1g2kVw" value="Temparature" />
+              <property role="1g2kVw" value="Temperature" />
             </node>
           </node>
         </node>
