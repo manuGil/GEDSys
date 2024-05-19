@@ -30,6 +30,7 @@
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" flags="ln" index="pVoyu" />
+      <concept id="4242538589859161874" name="jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification" flags="ng" index="2w$q5c" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -82,7 +83,9 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
-      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR">
+        <child id="7279578193766667846" name="addHints" index="78xua" />
+      </concept>
       <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -169,6 +172,7 @@
     <node concept="3EZMnI" id="52LigkvWFXQ" role="2wV5jI">
       <node concept="3F0ifn" id="52LigkvWG4t" role="3EZMnx">
         <property role="3F0ifm" value="datastream" />
+        <property role="ilYzB" value="datastream" />
         <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="2iRfu4" id="52LigkvXDLi" role="2iSdaV" />
@@ -215,6 +219,7 @@
       <node concept="3F2HdR" id="6kf09COviLA" role="3EZMnx">
         <ref role="1NtTu8" to="lyeg:5oC_XKWYMaQ" resolve="dataStreams" />
         <node concept="2iRkQZ" id="6kf09COviLD" role="2czzBx" />
+        <node concept="2w$q5c" id="24FCU8YtvJH" role="78xua" />
       </node>
       <node concept="2iRkQZ" id="52LigkvXISK" role="2iSdaV" />
     </node>

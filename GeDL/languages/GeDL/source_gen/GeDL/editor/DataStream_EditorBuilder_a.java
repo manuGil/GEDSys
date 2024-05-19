@@ -59,7 +59,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     Style style = new StyleImpl();
     new geldKeywordStyleClass(this).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
+    editorCell.setDefaultText("datastream");
     return editorCell;
   }
   private EditorCell createRefNode_0() {

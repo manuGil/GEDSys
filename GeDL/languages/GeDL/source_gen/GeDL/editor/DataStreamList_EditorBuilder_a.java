@@ -122,6 +122,18 @@ import org.jetbrains.mps.openapi.language.SConcept;
         }
       }
     }
+    @Override
+    protected void createInnerCells() {
+      try {
+        getCellFactory().pushCellContext();
+        getCellFactory().addCellContextHints(new String[]{});
+        getCellFactory().removeCellContextHints();
+        super.createInnerCells();
+        setInnerCellsContext();
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
   }
 
   private static final class LINKS {
