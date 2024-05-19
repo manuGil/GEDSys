@@ -18,7 +18,6 @@ venv/*
 # MPS
 GeDL/languages/GeDL/classes_gen/
 GeDL/languages/GeDL/source_gen.caches/
-
 # source_gen/
 # source_gen.caches/
 # test_gen/
@@ -27,13 +26,7 @@ GeDL/languages/GeDL.sandbox/
 
 **/.mps/workspace.xml
 
-# MPS temporary directories
-# /system/
-# /config/
-# markdown-navigator**
-# model-api/build
-# code/model-api/org.modelix.model.api/lib
-# .mps-caches/
+
 
 # GEDsys
 interpreter/config.env
