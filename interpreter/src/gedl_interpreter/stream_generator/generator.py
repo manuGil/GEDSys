@@ -117,7 +117,7 @@ class DataStream():
                                              'location': formatted_location 
                                              }) 
                         
-                print("cep_payload:", cep_payload)
+                print("Sent to EPE: ", cep_payload)
 
                 cep_headers = {'Content-Type': 'application/json'}
                 # send data to EPE API
