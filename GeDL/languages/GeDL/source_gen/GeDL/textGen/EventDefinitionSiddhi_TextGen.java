@@ -18,7 +18,6 @@ public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-
     if ((SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.datastreams$zgXb) == null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc) == null) && (SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.notification$zhrd) == null)) {
       tgs.append("// Event definition is empty");
     } else {
