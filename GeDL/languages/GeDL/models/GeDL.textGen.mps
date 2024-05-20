@@ -554,7 +554,7 @@
         <node concept="lc7rE" id="DRx07$PzYu" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLxPM" role="lcghm" />
           <node concept="la8eA" id="DRx07$P$3S" role="lcghm">
-            <property role="lacIc" value="expiration = datetime.now().replace(hour=datetime.now().hour+1)" />
+            <property role="lacIc" value="expiration = datetime.now() + timedelta(hours=1)" />
           </node>
           <node concept="l8MVK" id="DRx07$P$7l" role="lcghm" />
         </node>

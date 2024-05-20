@@ -3960,7 +3960,7 @@
               <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence)" resolve="append" />
               <uo k="s:originTrace" v="n:754216606276927736" />
               <node concept="Xl_RD" id="h$" role="37wK5m">
-                <property role="Xl_RC" value="expiration = datetime.now().replace(hour=datetime.now().hour+1)" />
+                <property role="Xl_RC" value="expiration = datetime.now() + timedelta(hours=1)" />
                 <uo k="s:originTrace" v="n:754216606276927736" />
               </node>
             </node>

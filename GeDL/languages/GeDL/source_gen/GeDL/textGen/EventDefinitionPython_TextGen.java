@@ -58,7 +58,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     // defaults, can be changed after generation
     tgs.indent();
-    tgs.append("expiration = datetime.now().replace(hour=datetime.now().hour+1)");
+    tgs.append("expiration = datetime.now() + timedelta(hours=1)");
     tgs.newLine();
     tgs.indent();
     tgs.append("update_frequency = 5 # seconds");
