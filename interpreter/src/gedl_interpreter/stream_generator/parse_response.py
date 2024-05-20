@@ -1,50 +1,6 @@
 """
-Parse the response from from SensorThing API and Siddhi EPE.
+Parsers  responses from SensorThing API
 """
-
-
-
-{
-    "@iot.count": 1,
-    "value": [
-        {
-            "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Datastreams(1)",
-            "ObservedProperty": {
-                "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/ObservedProperties(1)"
-            },
-            "Thing": {
-                "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Things(1)",
-                "Locations@iot.count": 1,
-                "Locations": [
-                    {
-                        "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Locations(1)"
-                    }
-                ]
-            },
-            "Observations@iot.count": 6,
-            "Observations": [
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(1)"
-                },
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(2)"
-                },
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(3)"
-                },
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(4)"
-                },
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(5)"
-                },
-                {
-                    "@iot.selfLink": "http://localhost:8080/FROST-Server/v1.0/Observations(6)"
-                }
-            ]
-        }
-    ]
-}
 
 
 def parse_response_datastream(datastream_response: dict, latest:bool = True) -> list:
