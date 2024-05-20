@@ -1,15 +1,15 @@
 """
 
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import requests
 from datetime import datetime
 import time, json
 import uuid
 from typing import List, Optional
 from abc import ABC
-from .parse_response import parse_response_observedProperty_location
-from .prepare_requests import prepare_request_observedProperty_location
+from .response_parser import parse_response_observations
+from .prepare_requests import prepare_datastreams_request, prepare_observations_request
 from dotenv import load_dotenv
 
 # Use to format the payloads to be sent to the CEP server
@@ -67,7 +67,10 @@ class DataStream():
     Represents a data stream 
     """
 
-    sensor_thing_request: str # http request as produced by the prepare_requests module
+    datastream_url: str # url to the Sensor API
+    observed_property_url: str
+    thing_url: str
+    locations_url: str
     epe_payload_template: dict
     reciever_url: str
     expiration: Optional[datetime] = None
@@ -108,8 +111,12 @@ class DataStream():
         # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
         while self.status == 'running':
 
+            # add parameters to the datastream url to retrieve the observations
+            observations_request = prepare_observations_request(self.datastream_url)
+
             try:
-                response_sensor_api = sensor_api.get(self.sensor_thing_request) 
+                # get observations from the Sensor API
+                response_sensor_api = sensor_api.get(observations_request) 
             except requests.exceptions.ConnectionError:
                 print(f"Unable to connect to the Sensor API. Is the server running?")
                 response_sensor_api.raise_for_status()
@@ -119,11 +126,13 @@ class DataStream():
             
             # parse response
             ## returns  = {latest_observation: [url], location:url}
-            parsed_response = parse_response_observedProperty_location(response_sensor_api.json(), latest=latest)
+            parsed_response = parse_response_observations(response_sensor_api.json())
+
+            #CONTINUE HERE: todo: loop over pages of observations in the code above
 
             # Checks if any observations were found at the Sensor API and 
             # if the most recent observation is different from the last one sent to the EPE
-            if parsed_response and parsed_response['observations'][0] != self.latest_observation:
+            if parsed_response and parsed_response['observations'][-1] != self.latest_observation:
 
                 # assums the location of the thing is the same for all observations
                 location = sensor_api.get(parsed_response['location']) # SensorThing API object
@@ -168,9 +177,10 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    time.sleep(1)  # time in seconds
+                    # time.sleep(1)  # time in seconds
 
-            time.sleep(self.update_frequency)  # time in seconds
+            if latest: # only if latest is True
+                time.sleep(self.update_frequency)  # time in seconds
             # check expiration after every cycle
             self.check_expiration()
 
@@ -235,29 +245,43 @@ class StreamGenerator():
     gevent: Gevent
     sensorApi: SensingService
     eventProcessorApi: EventProcessor 
-    generated_datastreams = [] # list of datastreams
+    generated_datastreams: List[DataStream] = field(default_factory=list)
 
-    def run(self, latest:bool = True)-> None:
-        """ Starts the streaming for each """
+    def create_datastreams(self) -> None:
+        """ Creates and appends a datastream to the list of generated datastreams."""
+        epe_template = cep_payload_template.copy()
+        
         for phenomenon in self.gevent.phenomena:
-            request = prepare_request_observedProperty_location(self.sensorApi.root_url, 
+
+            epe_template['event'].update({'observedProperty': phenomenon})
+            receiver_slug = self.gevent.name.lower() + '-' + phenomenon.lower()
+
+            request = prepare_datastreams_request(self.sensorApi.root_url, 
                                                                 phenomenon, 
                                                                 self.gevent.detection_extent, 
                                                                 self.gevent.buffer_distance)
             
+            # get the datastreams for the phenomenon
+            response = requests.get(request)
+            
+            for datastream in response.json()['value']:
+                stream = DataStream(datastream_url=datastream['@iot.selfLink'],
+                                    observed_property_url=datastream['ObservedProperty']['@iot.selfLink'],
+                                    thing_url=datastream['Thing']['@iot.selfLink'],
+                                    locations_url=datastream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
+                                    epe_payload_template=epe_template,
+                                    reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug),
+                                    expiration=self.gevent.expiration,
+                                    update_frequency=self.gevent.update_frequency,
+                            )
+                self.generated_datastreams.append(stream)
+    
+    def run(self, latest:bool = True)-> None:
+        """ Starts the streaming for each """
 
-            epe_template = cep_payload_template.copy()
-            epe_template['event'].update({'observedProperty': phenomenon})
-
-            receiver_slug = self.gevent.name.lower() + '-' + phenomenon.lower()
-            stream = DataStream(request, 
-                                epe_payload_template=epe_template,
-                                reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug),
-                                expiration=self.gevent.expiration,
-                                update_frequency=self.gevent.update_frequency,
-                                )
+        self.create_datastreams()
+        for stream in self.generated_datastreams:
             stream.start_streaming(latest=latest)
-            self.generated_datastreams.append(stream)
 
     def stop(self):
         """ Stops the streaming process."""
