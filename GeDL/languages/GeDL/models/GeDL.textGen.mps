@@ -271,7 +271,7 @@
               </node>
               <node concept="lc7rE" id="5kh69SRxJPu" role="3cqZAp">
                 <node concept="la8eA" id="5kh69SRxJPv" role="lcghm">
-                  <property role="lacIc" value="@App:description('A descriptionn of the app')" />
+                  <property role="lacIc" value="@App:description('A description of the app')" />
                 </node>
                 <node concept="l8MVK" id="5kh69SRxJPw" role="lcghm" />
               </node>
@@ -497,7 +497,7 @@
         <node concept="lc7rE" id="24FCU8YvsMN" role="3cqZAp">
           <node concept="2BGw6n" id="24FCU8YvtEu" role="lcghm" />
           <node concept="la8eA" id="24FCU8Yvt_F" role="lcghm">
-            <property role="lacIc" value="generator.load_config('.config.env') # set path to config file" />
+            <property role="lacIc" value="generator.load_config('./config.env') # set path to config file" />
           </node>
           <node concept="l8MVK" id="24FCU8YvtIW" role="lcghm" />
         </node>
@@ -1020,12 +1020,52 @@
           </node>
           <node concept="l8MVK" id="51bW6QbAgyE" role="lcghm" />
         </node>
-        <node concept="lc7rE" id="51bW6QbAgS$" role="3cqZAp">
-          <node concept="2BGw6n" id="51bW6QbAgS_" role="lcghm" />
-          <node concept="la8eA" id="51bW6QbAgSA" role="lcghm">
-            <property role="lacIc" value="buffer_distance=buffer[0]" />
+        <node concept="3clFbH" id="24FCU8Yyil1" role="3cqZAp" />
+        <node concept="3clFbJ" id="24FCU8YyiOV" role="3cqZAp">
+          <node concept="3clFbS" id="24FCU8YyiOX" role="3clFbx">
+            <node concept="lc7rE" id="24FCU8YymJQ" role="3cqZAp">
+              <node concept="2BGw6n" id="24FCU8YymJR" role="lcghm" />
+              <node concept="la8eA" id="24FCU8YymJS" role="lcghm">
+                <property role="lacIc" value="buffer_distance=buffer[0]" />
+              </node>
+              <node concept="l8MVK" id="24FCU8YymJT" role="lcghm" />
+            </node>
           </node>
-          <node concept="l8MVK" id="51bW6QbAgSB" role="lcghm" />
+          <node concept="2OqwBi" id="24FCU8Yymj8" role="3clFbw">
+            <node concept="2OqwBi" id="24FCU8Yylii" role="2Oq$k0">
+              <node concept="2OqwBi" id="24FCU8YykDm" role="2Oq$k0">
+                <node concept="2OqwBi" id="24FCU8Yyk4A" role="2Oq$k0">
+                  <node concept="2OqwBi" id="24FCU8Yyjzy" role="2Oq$k0">
+                    <node concept="117lpO" id="24FCU8Yyj55" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="24FCU8YyjTu" role="2OqNvi">
+                      <ref role="3Tt5mk" to="lyeg:3ID9j62ey4p" resolve="event" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="24FCU8YykuF" role="2OqNvi">
+                    <ref role="3Tt5mk" to="lyeg:6vPhAE1ebfU" resolve="detectionRules" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="24FCU8YykYk" role="2OqNvi">
+                  <ref role="3Tt5mk" to="lyeg:5oC_XKWYYO9" resolve="extent" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="24FCU8Yym67" role="2OqNvi">
+                <ref role="3Tt5mk" to="lyeg:5oC_XKWYMb5" resolve="buffer" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="24FCU8YymDp" role="2OqNvi" />
+          </node>
+          <node concept="9aQIb" id="24FCU8YynqB" role="9aQIa">
+            <node concept="3clFbS" id="24FCU8YynqC" role="9aQI4">
+              <node concept="lc7rE" id="24FCU8Yyntr" role="3cqZAp">
+                <node concept="2BGw6n" id="24FCU8Yynts" role="lcghm" />
+                <node concept="la8eA" id="24FCU8Yyntt" role="lcghm">
+                  <property role="lacIc" value="buffer_distance=buffer" />
+                </node>
+                <node concept="l8MVK" id="24FCU8Yyntu" role="lcghm" />
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="lc7rE" id="51bW6QbAi8N" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslMWya" role="lcghm" />

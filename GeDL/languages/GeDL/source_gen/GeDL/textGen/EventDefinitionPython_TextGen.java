@@ -45,7 +45,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.append("# loads services settings");
     tgs.newLine();
     tgs.indent();
-    tgs.append("generator.load_config('.config.env') # set path to config file");
+    tgs.append("generator.load_config('./config.env') # set path to config file");
     tgs.newLine();
     tgs.indent();
     tgs.append("sensingapi = generator.SensingService(root_url=os.getenv(\"OBSERVATION_API\"))");
@@ -134,9 +134,16 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.indent();
     tgs.append("detection_extent=detection_extent,");
     tgs.newLine();
-    tgs.indent();
-    tgs.append("buffer_distance=buffer[0]");
-    tgs.newLine();
+
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.buffer$iiGd) != null)) {
+      tgs.indent();
+      tgs.append("buffer_distance=buffer[0]");
+      tgs.newLine();
+    } else {
+      tgs.indent();
+      tgs.append("buffer_distance=buffer");
+      tgs.newLine();
+    }
     tgs.indent();
     tgs.append(")");
     tgs.newLine();

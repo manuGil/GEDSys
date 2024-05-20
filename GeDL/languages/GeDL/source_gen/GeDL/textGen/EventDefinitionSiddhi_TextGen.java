@@ -27,7 +27,7 @@ public class EventDefinitionSiddhi_TextGen extends TextGenDescriptorBase {
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$zhcc), PROPS.name$MnvL));
       tgs.append("')");
       tgs.newLine();
-      tgs.append("@App:description('A descriptionn of the app')");
+      tgs.append("@App:description('A description of the app')");
       tgs.newLine();
       tgs.newLine();
       // data sources declaration
