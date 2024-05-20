@@ -22,13 +22,13 @@ def parse_response_observations(observations_response: dict) -> list:
     """
 
     # get the latest observation
-    if observations_response['Observations@iot.count'] == 0:
+    if observations_response['@iot.count'] == 0 :
         print("No observations match the creteria of the API request.")
         return None
     
     observations = [] # obsevaton object
     
-    for obs in observations_response['Observations']:
+    for obs in observations_response['value']:
         observations.append(obs)
 
     return observations
