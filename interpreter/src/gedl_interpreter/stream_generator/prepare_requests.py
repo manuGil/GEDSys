@@ -96,7 +96,7 @@ def prepare_datastreams_request(root_url:str,
     return http_request
 
 
-def prepare_observations_request(datastream_url: str) -> str:
+def prepare_observations_request(datastream_url: str, latest: bool=True) -> str:
     """
     Creates an HTTP request for the SensorThings API that will returns a list of Observations (urls) for a given
     Datastream.
@@ -105,6 +105,8 @@ def prepare_observations_request(datastream_url: str) -> str:
     ----------
     datastream_url : str
         URL to the Datastream.
+    latest : bool, optional
+        If True, only the latest observation will be returned.
 
     Returns
     -------
@@ -119,8 +121,14 @@ def prepare_observations_request(datastream_url: str) -> str:
 
     """
 
-    http_request = "{}?$expand=Observations".format(datastream_url)
+    if latest:
+        http_request = "{}/Observations?$top=1&$orderby=phenomenonTime desc".format(datastream_url)
+    else:
+        http_request = "{}/Observations".format(datastream_url)
+
     return http_request
+
+
 
 
 if __name__ == '__main__':
