@@ -51,13 +51,13 @@ def create_buffer(extent:str, buffer:float) -> str:
     return buffered_poly.wkt
 
 
-def prepare_request_observedProperty_location(root_url:str, 
+def prepare_datastreams_request(root_url:str, 
                                               observedProperty:str, 
                                               detection_extent:str=None, 
                                               buffer:float=0) -> str:
     """
-    Creates an HTTP request for the SensorThings API that will returns a list of Observations (urls) of Things 
-    that intersect a geograhic extent, and have a given observed property.
+    Creates an HTTP request for the SensorThings API that will returns a list of Datastreams (urls) filtered by
+    Observed Property and the intersection of Locations of Things with a geograhic extent.
 
     Parameters
     ----------
@@ -91,10 +91,36 @@ def prepare_request_observedProperty_location(root_url:str,
     if buffer:    
         detection_extent = create_buffer(detection_extent, buffer)
     
-    http_request = "{}/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations,Observations&$filter=ObservedProperty/name eq '{}' and geo.intersects(Thing/Locations/location,geography'{}')".format(root_url, observedProperty, detection_extent)
+    http_request = "{}/Datastreams/$ref?$expand=ObservedProperty,Thing/Locations&$filter=ObservedProperty/name eq '{}' and geo.intersects(Thing/Locations/location,geography'{}')".format(root_url, observedProperty, detection_extent)
 
     return http_request
 
+
+def prepare_observations_request(datastream_url: str) -> str:
+    """
+    Creates an HTTP request for the SensorThings API that will returns a list of Observations (urls) for a given
+    Datastream.
+
+    Parameters
+    ----------
+    datastream_url : str
+        URL to the Datastream.
+
+    Returns
+    -------
+    str
+        fully qualified HTTP request for the SensorThings API.
+
+    Examples:
+    --------
+    datastream_url = "http://localhost:8080/FROST-Server/v1.0/Datastreams(1)"
+
+    request = prepare_observations_request(datastream_url)
+
+    """
+
+    http_request = "{}?$expand=Observations".format(datastream_url)
+    return http_request
 
 
 if __name__ == '__main__':
@@ -104,14 +130,21 @@ if __name__ == '__main__':
     observed_property = "Temperature"
     buffer = 0
 
-    request = prepare_request_observedProperty_location(root_url, observed_property, detection_extent, buffer)
+    request = prepare_datastreams_request (root_url, observed_property, detection_extent, buffer)
 
     print(request)
 
-    location_api = {"@iot.selfLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)","@iot.id":1,"name":"My Living Room","description":"The living room of Fraunhoferstr. 1","encodingType":"application/vnd.geo+json","location":{"type":"Point","coordinates":[8.4259727,49.015308]},"HistoricalLocations@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/HistoricalLocations","Things@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/Things"}
+    datastream_url = "http://localhost:8080/FROST-Server/v1.0/Datastreams(1)"
 
-    result_time = "2020-01-01T12:00:00Z"
-    result = 25.0
+    request = prepare_observations_request(datastream_url)
+
+    print(request)
+
+
+    # location_api = {"@iot.selfLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)","@iot.id":1,"name":"My Living Room","description":"The living room of Fraunhoferstr. 1","encodingType":"application/vnd.geo+json","location":{"type":"Point","coordinates":[8.4259727,49.015308]},"HistoricalLocations@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/HistoricalLocations","Things@iot.navigationLink":"http://localhost:8080/FROST-Server/v1.1/Locations(1)/Things"}
+
+    # result_time = "2020-01-01T12:00:00Z"
+    # result = 25.0
     
 
 
