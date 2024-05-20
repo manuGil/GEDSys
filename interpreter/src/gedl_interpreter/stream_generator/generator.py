@@ -95,6 +95,44 @@ class DataStream():
         if  self.expiration <= datetime.now():
             self.status = 'expired'
         return self.status
+    
+    def _collect_observations(self, datastream_url, sensor_api: requests.Session, latest:bool=True) -> List[dict]:
+        """Collects observations from the Sensor API."""
+        
+        # add parameters to the datastream url to retrieve the observations
+        observations_request = prepare_observations_request(datastream_url)
+
+        obs_collection = [] # callection of all observations
+
+        while True:
+            try:
+                # get observations from the Sensor API
+                response_sensor_api = sensor_api.get(observations_request) 
+            except requests.exceptions.ConnectionError:
+                print(f"Unable to connect to the Sensor API. Is the server running?")
+                response_sensor_api.raise_for_status()
+                break
+            else:
+                response_sensor_api.raise_for_status()
+            
+            # parse response
+            ## returns  = {latest_observation: [url], location:url}
+            parsed_response = parse_response_observations(response_sensor_api.json())
+
+            obs_collection.extend(parsed_response)
+
+            # Check if there's a next page
+            if latest:
+                # Stop looking into pages, break the loop
+                break
+            elif '@iot.nextLink' in response_sensor_api.json():
+                # Update the request URL to get the next page
+                observations_request = response_sensor_api.json()['@iot.nextLink']
+            else:
+                # No more pages, break the loop
+                break
+        
+        return obs_collection
 
     def start_streaming(self, latest:bool=True) -> None:
         """ Starts data streaming."""
@@ -111,50 +149,28 @@ class DataStream():
         # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
         while self.status == 'running':
 
-            # add parameters to the datastream url to retrieve the observations
-            observations_request = prepare_observations_request(self.datastream_url)
-
-            try:
-                # get observations from the Sensor API
-                response_sensor_api = sensor_api.get(observations_request) 
-            except requests.exceptions.ConnectionError:
-                print(f"Unable to connect to the Sensor API. Is the server running?")
-                response_sensor_api.raise_for_status()
-                break
-            else:
-                response_sensor_api.raise_for_status()
-            
-            # parse response
-            ## returns  = {latest_observation: [url], location:url}
-            parsed_response = parse_response_observations(response_sensor_api.json())
-
-            #CONTINUE HERE: todo: loop over pages of observations in the code above
+            # collect observations from the Sensor API
+            _observations = self._collect_observations(self.datastream_url, sensor_api, latest=latest)
 
             # Checks if any observations were found at the Sensor API and 
             # if the most recent observation is different from the last one sent to the EPE
-            if parsed_response and parsed_response['observations'][-1] != self.latest_observation:
+            if _observations[-1]['@iot.selfLink'] != self.latest_observation:
 
                 # assums the location of the thing is the same for all observations
-                location = sensor_api.get(parsed_response['location']) # SensorThing API object
+                location = sensor_api.get(self.locations_url) # SensorThing API object
                 location.raise_for_status()
 
-                # send each observation to the EPE, from oldest to latest if more than one
-                observations = parsed_response['observations']
-                
-                for observation_url in observations: 
-                    observation = sensor_api.get(observation_url) # SensorThing API object
-                    observation.raise_for_status()
+                # prepare payload for EPE
+                cep_payload = self.epe_payload_template.copy()
+                formatted_location = format_location(location.json())
 
-                    # prepare payload for EPE
-                    cep_payload = self.epe_payload_template.copy()
-                    formatted_location = format_location(location.json())
-
-                    # TODO: allow other types for result
-                    cep_payload['event'].update({'resultTime': observation.json()['resultTime'],
-                                             'phenomenonTime': observation.json()['phenomenonTime'],
-                                             'result': float(observation.json()['result']), # ensure result is a float 
-                                             'location': formatted_location 
-                                             }) 
+                # TODO: allow other types for result
+                for obs in _observations:
+                    cep_payload['event'].update({'resultTime': obs['resultTime'],
+                                                'phenomenonTime': obs['phenomenonTime'],
+                                                'result': float(obs['result']), # ensure result is a float 
+                                                'location': formatted_location 
+                                                }) 
                         
                     print("Sent to EPE: ", cep_payload)
 
@@ -173,11 +189,11 @@ class DataStream():
                     else:    
                         cep_response.raise_for_status()
                 
-                    self.update_latest_observation(observation_url)
+                    self.update_latest_observation(obs['@iot.selfLink'])
 
-                    # wait for the next cycle. This is for demonstration purposes only
-                    # should be removed in production
-                    # time.sleep(1)  # time in seconds
+                # wait for the next cycle. This is for demonstration purposes only
+                # should be removed in production
+                # time.sleep(1)  # time in seconds
 
             if latest: # only if latest is True
                 time.sleep(self.update_frequency)  # time in seconds
