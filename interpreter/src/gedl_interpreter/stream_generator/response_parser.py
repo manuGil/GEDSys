@@ -3,7 +3,7 @@ Parsers responses from SensorThing API
 """
 
 
-def parse_response_observations(observations_response: dict, latest:bool = True) -> list:
+def parse_response_observations(observations_response: dict) -> list:
     """
     Parse the response from the SensorThing API (URLs to observations) to extract observations.
 
@@ -11,9 +11,6 @@ def parse_response_observations(observations_response: dict, latest:bool = True)
     ----------
     observations_response : dict (requests.Response.json())
         Response from the SensorThing API containing the URLs to the observations.
-    latest : bool, optional
-        If True, return the latest observation, otherwise return all found observations ordered
-        from latest to oldest.
 
     Returns
     -------
