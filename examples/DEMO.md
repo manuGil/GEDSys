@@ -135,7 +135,14 @@ Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5
 
 ### HotDay
 
-- GeDL
+Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Temperature is above $20 \degree C$ within an area of a polygon extended by spatial buffer of 0.015 degrees (~1 Km).
+
+- Phenomenon: Temperature
+- Condition: value is grater than 20
+- Area (EPSG: 4326):  `'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'`
+- Buffer distance (EPSG: 4326): `0.015` degrees.
+
+#### GeDL
 
     ```java
     datastream Temperature : measurement ; 
@@ -145,7 +152,7 @@ Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5
         extent city = {  
         feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))' , 
         srid: 4326, 
-        buffer: 0.5f deg 
+        buffer: 0.015f deg 
         } ; 
         <spatial granularity> 
         <detection time> 
@@ -156,34 +163,48 @@ Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5
     };                        
     ```
 
-- SiddhiQL App
+#### SiddhiQL 
 
     ```java
     @App:name('HotDay')
     @App:description('A descriptionn of the app')
 
     @source(
-    type = 'http',
-    receiver.url="http://localhost:8006/hotday-temperature",
-    @map(type = 'json')
+      type = 'http',
+      receiver.url="http://localhost:8006/hotday-temperature",
+      @map(type = 'json')
     )
     define stream Temperature (
-    observedProperty string,
-    phenomenonTime string,
-    resultTime string,
-    result double,
-    location object
+      observedProperty string,
+      phenomenonTime string,
+      resultTime string,
+      result double,
+      location object
     );
 
     @sink(
-    type = 'log',
-    @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
+      type = 'log',
+      @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
     )
     define stream HotDayAlert (
-    notification string,
-    observations object,
-    detectionTime string
+      notification string,
+      observations object,
+      detectionTime string
     );
+
+    @info(name = 'HotDay')
+    from Temparature[result > 20.f]
+    select 'HotDayAlert' as notification,
+    map:create('Temperature',
+        map:create(
+          'observedProperty', Temperature.observedProperty,
+          'phenomenonTime', Temperature.phenomenonTime,
+          'resultTime', Temperature.resultTime,
+          'result', Temperature.result,
+          'location', Temperature.location
+          ) ) as observations,
+          time:currentTimestamp() as detectionTime
+    insert into HotDayAlert;
     ```
 
 ### Python: GeDL Intepreter
