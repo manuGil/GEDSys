@@ -100,7 +100,7 @@ class DataStream():
         """Collects observations from the Sensor API."""
         
         # add parameters to the datastream url to retrieve the observations
-        observations_request = prepare_observations_request(datastream_url)
+        observations_request = prepare_observations_request(datastream_url, latest=latest)
 
         obs_collection = [] # callection of all observations
 
@@ -191,9 +191,9 @@ class DataStream():
                 
                     self.update_latest_observation(obs['@iot.selfLink'])
 
-                # wait for the next cycle. This is for demonstration purposes only
-                # should be removed in production
-                # time.sleep(1)  # time in seconds
+                    # wait for the next cycle. This is for demonstration purposes only
+                    # should be removed in production
+                    time.sleep(0.2)  # time in seconds
 
             if latest: # only if latest is True
                 time.sleep(self.update_frequency)  # time in seconds
