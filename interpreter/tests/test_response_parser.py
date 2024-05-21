@@ -1,20 +1,29 @@
 import pytest
 from gedl_interpreter.stream_generator.response_parser import parse_response_observations
 
-def test_empty_response():
-    response = {'Observations@iot.count': 0}
-    assert parse_response_observations(response) is None
+def test_parse_response_observations_empty():
+    response = {'@iot.count': 0, 'value': []}
+    assert parse_response_observations(response) == None
 
-def test_single_observation():
+def test_parse_response_observations_single():
     response = {
-        'Observations@iot.count': 1,
-        'Observations': [{'id': 1, 'value': 'test'}]
+        '@iot.count': 1,
+        'value': [
+            {'@iot.id': 1, 'result': 'test'}
+        ]
     }
-    assert parse_response_observations(response) == [{'id': 1, 'value': 'test'}]
+    result = parse_response_observations(response)
+    assert len(result) == 1
+    assert result == [{'@iot.id': 1, 'result': 'test'}]
 
-def test_multiple_observations():
+def test_parse_response_observations_multiple():
     response = {
-        'Observations@iot.count': 2,
-        'Observations': [{'id': 1, 'value': 'test1'}, {'id': 2, 'value': 'test2'}]
+        '@iot.count': 2,
+        'value': [
+            {'@iot.id': 1, 'result': 'test1'},
+            {'@iot.id': 2, 'result': 'test2'}
+        ]
     }
-    assert parse_response_observations(response) == [{'id': 1, 'value': 'test1'}, {'id': 2, 'value': 'test2'}]
+    result = parse_response_observations(response)
+    assert len(result) == 2
+    assert parse_response_observations(response) == [{'@iot.id': 1, 'result': 'test1'}, {'@iot.id': 2, 'result': 'test2'}]
