@@ -194,7 +194,7 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    time.sleep(0.1)  # time in seconds
+                    time.sleep(0.2)  # time in seconds
 
             if latest: # only if latest is True
                 time.sleep(self.update_frequency)  # time in seconds
@@ -318,7 +318,7 @@ class StreamGenerator():
                     future.result()
                 except Exception as e:
                     print(f'An error occurred when stroping DataStream {e}')
-                    
+
 
 @dataclass
 class DataStreamerConfig(object):
