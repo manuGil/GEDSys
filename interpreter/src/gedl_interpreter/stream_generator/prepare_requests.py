@@ -120,13 +120,12 @@ def prepare_observations_request(datastream_url: str, latest: bool=True) -> str:
     request = prepare_observations_request(datastream_url)
 
     """
-    
+
     if latest:
         http_request = "{}/Observations?$top=1&$orderby=phenomenonTime desc".format(datastream_url)
     else:
         http_request = "{}/Observations".format(datastream_url)
 
-    print (http_request)
     return http_request
 
 
