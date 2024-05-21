@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 import requests
 from datetime import datetime
 import time, json
+import concurrent.futures
 import uuid
 from typing import List, Optional
 from abc import ABC
@@ -193,7 +194,7 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    time.sleep(0.2)  # time in seconds
+                    time.sleep(0.1)  # time in seconds
 
             if latest: # only if latest is True
                 time.sleep(self.update_frequency)  # time in seconds
@@ -293,18 +294,31 @@ class StreamGenerator():
                 self.generated_datastreams.append(stream)
     
     def run(self, latest:bool = True)-> None:
-        """ Starts the streaming for each """
+        """ Starts the streaming for each datastream in the list of generated datastreams."""
 
         self.create_datastreams()
-        for stream in self.generated_datastreams:
-            stream.start_streaming(latest=latest)
+
+        print('number datastreasms: ', len(self.generated_datastreams))
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = [executor.submit(stream.start_streaming, latest) for stream in self.generated_datastreams]
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    future.result()
+                except Exception as e:
+                    print(f'An error occurred in DataStream: {e}')
 
     def stop(self):
         """ Stops the streaming process."""
         print('Stopping generated data streams')
-        for stream in self.generated_datastreams:
-            stream.update_status('stopped')
-    
+
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = [executor.submit(stream.update_status, 'stopped') for stream in self.generated_datastreams]
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    future.result()
+                except Exception as e:
+                    print(f'An error occurred when stroping DataStream {e}')
+                    
 
 @dataclass
 class DataStreamerConfig(object):
