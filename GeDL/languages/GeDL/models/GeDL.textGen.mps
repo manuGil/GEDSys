@@ -1577,9 +1577,16 @@
             <node concept="lc7rE" id="3ID9j62IXCa" role="3cqZAp">
               <node concept="2BGw6n" id="3ID9j62IXCK" role="lcghm" />
               <node concept="la8eA" id="3ID9j62IXDA" role="lcghm">
-                <property role="lacIc" value="detectionTime string" />
+                <property role="lacIc" value="detectionTime string," />
               </node>
               <node concept="l8MVK" id="3ID9j62IXFU" role="lcghm" />
+            </node>
+            <node concept="lc7rE" id="24FCU8YCjTp" role="3cqZAp">
+              <node concept="2BGw6n" id="24FCU8YCjU3" role="lcghm" />
+              <node concept="la8eA" id="24FCU8YCjUT" role="lcghm">
+                <property role="lacIc" value="observationTime long" />
+              </node>
+              <node concept="l8MVK" id="24FCU8YCjXV" role="lcghm" />
             </node>
           </node>
         </node>
@@ -2088,7 +2095,6 @@
                   <node concept="l8MVK" id="6liHQj7oYMz" role="lcghm" />
                 </node>
                 <node concept="lc7rE" id="6$_D5OOocpQ" role="3cqZAp">
-                  <node concept="2BGw6n" id="4j1YrdISN6H" role="lcghm" />
                   <node concept="la8eA" id="6$_D5OOocqR" role="lcghm">
                     <property role="lacIc" value=")" />
                   </node>
@@ -2110,6 +2116,7 @@
                 </node>
               </node>
             </node>
+            <node concept="11pn5k" id="24FCU8YDFwD" role="3cqZAp" />
             <node concept="lc7rE" id="6$_D5OOoczx" role="3cqZAp">
               <node concept="la8eA" id="6$_D5OOocAO" role="lcghm">
                 <property role="lacIc" value=" ) as observations," />
@@ -2117,11 +2124,16 @@
               <node concept="l8MVK" id="6$_D5OOocD6" role="lcghm" />
             </node>
             <node concept="lc7rE" id="6$_D5OOocHD" role="3cqZAp">
-              <node concept="2BGw6n" id="4j1YrdITe6e" role="lcghm" />
               <node concept="la8eA" id="6$_D5OOocL0" role="lcghm">
-                <property role="lacIc" value="time:currentTimestamp() as detectionTime" />
+                <property role="lacIc" value="time:currentTimestamp() as detectionTime," />
               </node>
               <node concept="l8MVK" id="6$_D5OOocPN" role="lcghm" />
+            </node>
+            <node concept="lc7rE" id="24FCU8YCZAO" role="3cqZAp">
+              <node concept="la8eA" id="24FCU8YCZHO" role="lcghm">
+                <property role="lacIc" value="time:timestampInMilliseconds(PM25.phenomenonTime, &quot;yyyy-MM-dd'T'HH:mm:ss'Z'&quot;) as observationTime" />
+              </node>
+              <node concept="l8MVK" id="24FCU8YDFbd" role="lcghm" />
             </node>
             <node concept="3SKdUt" id="DRx07$II7h" role="3cqZAp">
               <node concept="1PaTwC" id="DRx07$II7i" role="1aUNEU">
@@ -2857,7 +2869,7 @@
       <node concept="3clFbS" id="4j1YrdJC8wN" role="2VODD2">
         <node concept="lc7rE" id="4j1YrdJC8xe" role="3cqZAp">
           <node concept="la8eA" id="4j1YrdJC8xE" role="lcghm">
-            <property role="lacIc" value="time:timestampInMilliseconds(detectionTime, 'yyyy-MM-DD HH:MM:SS') &gt;= time:timestampInMilliseconds(" />
+            <property role="lacIc" value="(observationTime &gt;= time:timestampInMilliseconds(" />
           </node>
           <node concept="l9hG8" id="4j1YrdJC8A8" role="lcghm">
             <node concept="2OqwBi" id="4j1YrdJC8Hz" role="lb14g">
@@ -2868,7 +2880,7 @@
             </node>
           </node>
           <node concept="la8eA" id="4j1YrdJC96I" role="lcghm">
-            <property role="lacIc" value=", 'yyyy-MM-DD HH:MM:SS') and time:timestampInMilliseconds(detectionTime, 'yyyy-MM-DD HH:MM:SS') &lt;= time:timestampInMilliseconds(" />
+            <property role="lacIc" value=", &quot;yyyy-MM-dd HH:mm:ss&quot;)) and (observationTime &lt;= time:timestampInMilliseconds(" />
           </node>
           <node concept="l9hG8" id="4j1YrdJC99c" role="lcghm">
             <node concept="2OqwBi" id="4j1YrdJC9aE" role="lb14g">
@@ -2879,7 +2891,7 @@
             </node>
           </node>
           <node concept="la8eA" id="4j1YrdJCn1j" role="lcghm">
-            <property role="lacIc" value=", 'yyyy-MM-DD HH:MM:SS')" />
+            <property role="lacIc" value=", &quot;yyyy-MM-dd HH:mm:ss&quot;))" />
           </node>
         </node>
       </node>

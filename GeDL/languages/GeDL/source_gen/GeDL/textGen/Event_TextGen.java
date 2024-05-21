@@ -93,14 +93,15 @@ public class Event_TextGen extends TextGenDescriptorBase {
       tgs.append(SPropertyOperations.getString(param, PROPS.parameterName$nSEP));
       tgs.append(".location");
       tgs.newLine();
-      tgs.indent();
       tgs.append(")");
       countStream = countStream + 1;
     }
+    tgs.decreaseIndent();
     tgs.append(" ) as observations,");
     tgs.newLine();
-    tgs.indent();
-    tgs.append("time:currentTimestamp() as detectionTime");
+    tgs.append("time:currentTimestamp() as detectionTime,");
+    tgs.newLine();
+    tgs.append("time:timestampInMilliseconds(PM25.phenomenonTime, \"yyyy-MM-dd'T'HH:mm:ss'Z'\") as observationTime");
     tgs.newLine();
     //  Time detection rule for time window
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.detectionRules$WVw6), LINKS.detectionTime$ahFo), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {

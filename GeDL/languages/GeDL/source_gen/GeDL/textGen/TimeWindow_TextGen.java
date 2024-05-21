@@ -13,11 +13,11 @@ public class TimeWindow_TextGen extends TextGenDescriptorBase {
   @Override
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
-    tgs.append("time:timestampInMilliseconds(detectionTime, 'yyyy-MM-DD HH:MM:SS') >= time:timestampInMilliseconds(");
+    tgs.append("(observationTime >= time:timestampInMilliseconds(");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.StartTime$REAc));
-    tgs.append(", 'yyyy-MM-DD HH:MM:SS') and time:timestampInMilliseconds(detectionTime, 'yyyy-MM-DD HH:MM:SS') <= time:timestampInMilliseconds(");
+    tgs.append(", \"yyyy-MM-dd HH:mm:ss\")) and (observationTime <= time:timestampInMilliseconds(");
     tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.EndTime$_E_2));
-    tgs.append(", 'yyyy-MM-DD HH:MM:SS')");
+    tgs.append(", \"yyyy-MM-dd HH:mm:ss\"))");
   }
 
   private static final class LINKS {
