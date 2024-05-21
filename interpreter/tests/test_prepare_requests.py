@@ -22,10 +22,16 @@ def test_prepare_datastreams_request_no_detection_extent():
     assert observed_property in request
     assert "POLYGON" not in request
 
-def test_prepare_observations_request():
+def test_prepare_observations_request_latest_true():
     datastream_url = "http://localhost:8080/FROST-Server/v1.0/Datastreams(1)"
 
-    request = prepare_observations_request(datastream_url)
-
+    request = prepare_observations_request(datastream_url, latest=True)
     assert request.startswith(datastream_url)
-    assert "?$expand=Observations" in request
+    assert request.endswith("/Observations?$top=1&$orderby=phenomenonTime desc")
+
+def test_prepare_observations_request_latest_false():
+    datastream_url = "http://localhost:8080/FROST-Server/v1.0/Datastreams(1)"
+
+    request = prepare_observations_request(datastream_url, latest=False)
+    assert request.startswith(datastream_url)
+    assert request.endswith("/Observations") 
