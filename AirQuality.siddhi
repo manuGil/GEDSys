@@ -26,7 +26,7 @@ define stream AlertPM25 (
 );
 
 @info(name = 'AirQuality')
-from PM25#window.time(1 millisecond)[result > 3.f]
+from PM25#window.time(1 millisecond)[result > 15.f]
 select 'AlertPM25' as notification,
 map:create('PM25',
     map:create(
@@ -38,5 +38,5 @@ map:create('PM25',
 ) ) as observations,
 time:currentTimestamp() as detectionTime,
 time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as observationTime
-having observationTime > 1712286946000.0 and observationTime < 1712373346000.0
+having (observationTime >= time:timestampInMilliseconds("2024-04-1 00:00:00", "yyyy-MM-dd HH:mm:ss")) and (observationTime <= time:timestampInMilliseconds("2024-04-30 23:00:00", "yyyy-MM-dd HH:mm:ss"))
 insert into AlertPM25;
