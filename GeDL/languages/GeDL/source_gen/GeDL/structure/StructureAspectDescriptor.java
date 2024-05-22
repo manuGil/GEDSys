@@ -283,8 +283,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/6208379058501919560");
     b.version(3);
     b.aggregate("datastreams", 0x420a5c8a0b7a0d77L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb22acL).optional(false).ordered(true).multiple(false).origin("4758717704238140791").done();
-    b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(false).ordered(true).multiple(false).origin("4758717704238138282").done();
-    b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(false).ordered(true).multiple(false).origin("4758717704238139195").done();
+    b.aggregate("event", 0x420a5c8a0b7a03aaL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x562897dc3cfb2345L).optional(true).ordered(true).multiple(false).origin("4758717704238138282").done();
+    b.aggregate("notification", 0x420a5c8a0b7a073bL).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fa6d1L).optional(true).ordered(true).multiple(false).origin("4758717704238139195").done();
     b.alias("event definition");
     return b.create();
   }

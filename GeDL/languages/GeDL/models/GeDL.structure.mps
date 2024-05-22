@@ -249,14 +249,12 @@
       <property role="IQ2ns" value="4758717704238138282" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="event" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5oC_XKWYMd5" resolve="Event" />
     </node>
     <node concept="1TJgyj" id="48an8CbuwsV" role="1TKVEi">
       <property role="IQ2ns" value="4758717704238139195" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="notification" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="67ABhWZBUrh" resolve="Notification" />
     </node>
     <node concept="PrWs8" id="6kf09COorFF" role="PzmwI">

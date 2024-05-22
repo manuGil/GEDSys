@@ -1,0 +1,42 @@
+@App:name('AirQuality')
+@App:description('A description of the app')
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/airquality-pm25",
+  @map(type = 'json')
+)
+define stream PM25 (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@sink(
+  type = 'log',
+  @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
+)
+define stream AlertPM25 (
+  notification string,
+  observations object,
+  detectionTime string,
+  observationTime long
+);
+
+@info(name = 'AirQuality')
+from PM25#window.time(1 millisecond)[result > 15.f]
+select 'AlertPM25' as notification,
+map:create('PM25',
+    map:create(
+      'observedProperty', PM25.observedProperty,
+      'phenomenonTime', PM25.phenomenonTime,
+      'resultTime', PM25.resultTime,
+      'result', PM25.result,
+      'location', PM25.location
+) ) as observations,
+time:currentTimestamp() as detectionTime,
+time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as observationTime
+having (observationTime >= time:timestampInMilliseconds("2024-04-1 00:00:00", "yyyy-MM-dd HH:mm:ss")) and (observationTime <= time:timestampInMilliseconds("2024-04-30 23:00:00", "yyyy-MM-dd HH:mm:ss"))
+insert into AlertPM25;

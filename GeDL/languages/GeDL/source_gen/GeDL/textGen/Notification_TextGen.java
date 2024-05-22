@@ -37,7 +37,10 @@ public class Notification_TextGen extends TextGenDescriptorBase {
     tgs.append("observations object,");
     tgs.newLine();
     tgs.indent();
-    tgs.append("detectionTime string");
+    tgs.append("detectionTime string,");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("observationTime long");
     tgs.newLine();
     ctx.getBuffer().area().decreaseIndent();
     tgs.append(");");

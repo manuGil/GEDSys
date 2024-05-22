@@ -21,7 +21,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.append(" Stream generator for ");
     tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), PROPS.name$MnvL));
-    tgs.append("event.");
+    tgs.append(" gevent.");
     tgs.newLine();
     tgs.append("\"\"\"");
     tgs.newLine();
@@ -29,11 +29,11 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     //  imports
     tgs.append("import os");
     tgs.newLine();
-    tgs.append("from datetime import datetime");
+    tgs.append("from datetime import datetime, timedelta");
     tgs.newLine();
     tgs.append("from dotenv import load_dotenv");
     tgs.newLine();
-    tgs.append("from generator import StreamGenerator, Gevent, SensingService, EventProcessor");
+    tgs.append("import gedl_interpreter.stream_generator.generator as  generator");
     tgs.newLine();
     tgs.newLine();
 
@@ -45,17 +45,20 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.append("# loads services settings");
     tgs.newLine();
     tgs.indent();
-    tgs.append("sensingapi = SensigService(root_url=os.getenv(\"OBSERVATION_API\"))");
+    tgs.append("generator.load_config('./config.env') # set path to config file");
     tgs.newLine();
     tgs.indent();
-    tgs.append("cep = EventProcessor(events_url=os.getenv(\"EPE_RECEIVER_API\"))");
+    tgs.append("sensingapi = generator.SensingService(root_url=os.getenv(\"OBSERVATION_API\"))");
+    tgs.newLine();
+    tgs.indent();
+    tgs.append("cep = generator.EventProcessor(events_url=os.getenv(\"EPE_RECEIVER_API\"))");
     tgs.newLine();
 
     // event definition
     tgs.newLine();
     // defaults, can be changed after generation
     tgs.indent();
-    tgs.append("expiration = datetime.now().replace(hour=datetime.now().hour+1)");
+    tgs.append("expiration = datetime.now() + timedelta(hours=1)");
     tgs.newLine();
     tgs.indent();
     tgs.append("update_frequency = 5 # seconds");
@@ -116,7 +119,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
 
     tgs.newLine();
     tgs.indent();
-    tgs.append("gevent = Gevent(name=event_name,");
+    tgs.append("gevent = generator.Gevent(name=event_name,");
     tgs.newLine();
     tgs.increaseIndent();
     tgs.indent();
@@ -131,9 +134,16 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.indent();
     tgs.append("detection_extent=detection_extent,");
     tgs.newLine();
-    tgs.indent();
-    tgs.append("buffer_distance=buffer[0]");
-    tgs.newLine();
+
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.event$azOc), LINKS.detectionRules$WVw6), LINKS.extent$Hx$I), LINKS.buffer$iiGd) != null)) {
+      tgs.indent();
+      tgs.append("buffer_distance=buffer[0]");
+      tgs.newLine();
+    } else {
+      tgs.indent();
+      tgs.append("buffer_distance=buffer");
+      tgs.newLine();
+    }
     tgs.indent();
     tgs.append(")");
     tgs.newLine();
@@ -141,7 +151,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.decreaseIndent();
 
     tgs.indent();
-    tgs.append("stream_generator = StreamGenerator(gevent, sensingapi, cep)");
+    tgs.append("stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)");
     tgs.newLine();
     tgs.indent();
     tgs.append("stream_generator.run()");

@@ -16,7 +16,7 @@ public class DetectionTime_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF), CONCEPTS.Duration$ti)) {
-      tgs.append("within ");
+      tgs.append(" within ");
       tgs.appendNode(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF));
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ctx.getPrimaryInput(), LINKS.timeType$HBDF), CONCEPTS.TimeWindow$4C)) {
       // applies to one or two parameters

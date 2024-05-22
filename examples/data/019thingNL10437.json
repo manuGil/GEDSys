@@ -1,0 +1,2924 @@
+{
+    "name": "NL10437",
+    "description": "Monitoring station NL10437",
+    "properties": {
+        "source": "https://data.rivm.nl/data/luchtmeetnet",
+        "type": "achtergrond",
+        "country": "The Netherlands"
+    },
+    "Locations": [
+        {
+            "name": "Westmaas-Groeneweg",
+            "description": "The location of the station in Westmaas-Groeneweg",
+            "encodingType": "application/vnd.geo+json",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    4.450529,
+                    51.786579
+                ]
+            }
+        }
+    ],
+    "Datastreams": [
+        {
+            "name": "Nitrogen Dioxide in Westmaas-Groeneweg",
+            "description": "The concentration of Nitrogen Dioxide around Westmaas-Groeneweg",
+            "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+            "unitOfMeasurement": {
+                "name": "microgram per cubic meter",
+                "symbol": "\u00b5g/m\u00b3",
+                "definition": "https://www.aqua-calc.com/what-is/density/microgram-per-cubic-meter"
+            },
+            "Sensor": {
+                "name": "NO2",
+                "description": "Teledyne API T200 chemiluminescent NOx analyser",
+                "encodingType": "text/html",
+                "metadata": "https://www.luchtmeetnet.nl/informatie/metingen/type--meetstations"
+            },
+            "ObservedProperty": {
+                "name": "NO2",
+                "definition": "https://www.luchtmeetnet.nl/informatie/componenten/stikstofdioxide-(no%E2%82%82)",
+                "description": "hourly average in microgram per cubic meter"
+            },
+            "Observations": [
+                {
+                    "phenomenonTime": "2024-04-01T01:00:00+01:00",
+                    "result": 9.21
+                },
+                {
+                    "phenomenonTime": "2024-04-01T02:00:00+01:00",
+                    "result": 7.27
+                },
+                {
+                    "phenomenonTime": "2024-04-01T03:00:00+01:00",
+                    "result": 6.2
+                },
+                {
+                    "phenomenonTime": "2024-04-01T04:00:00+01:00",
+                    "result": 6.52
+                },
+                {
+                    "phenomenonTime": "2024-04-01T05:00:00+01:00",
+                    "result": 8.05
+                },
+                {
+                    "phenomenonTime": "2024-04-01T06:00:00+01:00",
+                    "result": 9.27
+                },
+                {
+                    "phenomenonTime": "2024-04-01T07:00:00+01:00",
+                    "result": 14.73
+                },
+                {
+                    "phenomenonTime": "2024-04-01T08:00:00+01:00",
+                    "result": 14.65
+                },
+                {
+                    "phenomenonTime": "2024-04-01T09:00:00+01:00",
+                    "result": 13.37
+                },
+                {
+                    "phenomenonTime": "2024-04-01T10:00:00+01:00",
+                    "result": 12.19
+                },
+                {
+                    "phenomenonTime": "2024-04-01T11:00:00+01:00",
+                    "result": 6.63
+                },
+                {
+                    "phenomenonTime": "2024-04-01T12:00:00+01:00",
+                    "result": 7.43
+                },
+                {
+                    "phenomenonTime": "2024-04-01T13:00:00+01:00",
+                    "result": 5.49
+                },
+                {
+                    "phenomenonTime": "2024-04-01T14:00:00+01:00",
+                    "result": 4.34
+                },
+                {
+                    "phenomenonTime": "2024-04-01T15:00:00+01:00",
+                    "result": 3.02
+                },
+                {
+                    "phenomenonTime": "2024-04-01T16:00:00+01:00",
+                    "result": 3.46
+                },
+                {
+                    "phenomenonTime": "2024-04-01T17:00:00+01:00",
+                    "result": 2.66
+                },
+                {
+                    "phenomenonTime": "2024-04-01T18:00:00+01:00",
+                    "result": 3.75
+                },
+                {
+                    "phenomenonTime": "2024-04-01T19:00:00+01:00",
+                    "result": 5.92
+                },
+                {
+                    "phenomenonTime": "2024-04-01T20:00:00+01:00",
+                    "result": 4.48
+                },
+                {
+                    "phenomenonTime": "2024-04-01T21:00:00+01:00",
+                    "result": 4.53
+                },
+                {
+                    "phenomenonTime": "2024-04-01T22:00:00+01:00",
+                    "result": 9.74
+                },
+                {
+                    "phenomenonTime": "2024-04-01T23:00:00+01:00",
+                    "result": 7.75
+                },
+                {
+                    "phenomenonTime": "2024-04-02T00:00:00+01:00",
+                    "result": 7.92
+                },
+                {
+                    "phenomenonTime": "2024-04-02T01:00:00+01:00",
+                    "result": 7.4
+                },
+                {
+                    "phenomenonTime": "2024-04-02T02:00:00+01:00",
+                    "result": 8.65
+                },
+                {
+                    "phenomenonTime": "2024-04-02T03:00:00+01:00",
+                    "result": 7.45
+                },
+                {
+                    "phenomenonTime": "2024-04-02T04:00:00+01:00",
+                    "result": 7.32
+                },
+                {
+                    "phenomenonTime": "2024-04-02T05:00:00+01:00",
+                    "result": 7.09
+                },
+                {
+                    "phenomenonTime": "2024-04-02T06:00:00+01:00",
+                    "result": 7.29
+                },
+                {
+                    "phenomenonTime": "2024-04-02T07:00:00+01:00",
+                    "result": 9.26
+                },
+                {
+                    "phenomenonTime": "2024-04-02T08:00:00+01:00",
+                    "result": 10.02
+                },
+                {
+                    "phenomenonTime": "2024-04-02T09:00:00+01:00",
+                    "result": 7.85
+                },
+                {
+                    "phenomenonTime": "2024-04-02T10:00:00+01:00",
+                    "result": 6.35
+                },
+                {
+                    "phenomenonTime": "2024-04-02T11:00:00+01:00",
+                    "result": 7.84
+                },
+                {
+                    "phenomenonTime": "2024-04-02T12:00:00+01:00",
+                    "result": 6.85
+                },
+                {
+                    "phenomenonTime": "2024-04-02T13:00:00+01:00",
+                    "result": 7.01
+                },
+                {
+                    "phenomenonTime": "2024-04-02T14:00:00+01:00",
+                    "result": 6.4
+                },
+                {
+                    "phenomenonTime": "2024-04-02T15:00:00+01:00",
+                    "result": 5.89
+                },
+                {
+                    "phenomenonTime": "2024-04-02T16:00:00+01:00",
+                    "result": 5.47
+                },
+                {
+                    "phenomenonTime": "2024-04-02T17:00:00+01:00",
+                    "result": 5.8
+                },
+                {
+                    "phenomenonTime": "2024-04-02T18:00:00+01:00",
+                    "result": 6.04
+                },
+                {
+                    "phenomenonTime": "2024-04-02T19:00:00+01:00",
+                    "result": 4.93
+                },
+                {
+                    "phenomenonTime": "2024-04-02T20:00:00+01:00",
+                    "result": 7.55
+                },
+                {
+                    "phenomenonTime": "2024-04-02T21:00:00+01:00",
+                    "result": 10.9
+                },
+                {
+                    "phenomenonTime": "2024-04-02T22:00:00+01:00",
+                    "result": 10.08
+                },
+                {
+                    "phenomenonTime": "2024-04-02T23:00:00+01:00",
+                    "result": 12.77
+                },
+                {
+                    "phenomenonTime": "2024-04-03T00:00:00+01:00",
+                    "result": 10.78
+                },
+                {
+                    "phenomenonTime": "2024-04-03T01:00:00+01:00",
+                    "result": 10.32
+                },
+                {
+                    "phenomenonTime": "2024-04-03T02:00:00+01:00",
+                    "result": 9.6
+                },
+                {
+                    "phenomenonTime": "2024-04-03T03:00:00+01:00",
+                    "result": 9.33
+                },
+                {
+                    "phenomenonTime": "2024-04-03T04:00:00+01:00",
+                    "result": 6.12
+                },
+                {
+                    "phenomenonTime": "2024-04-03T05:00:00+01:00",
+                    "result": 7.08
+                },
+                {
+                    "phenomenonTime": "2024-04-03T06:00:00+01:00",
+                    "result": 7.86
+                },
+                {
+                    "phenomenonTime": "2024-04-03T07:00:00+01:00",
+                    "result": 9.06
+                },
+                {
+                    "phenomenonTime": "2024-04-03T08:00:00+01:00",
+                    "result": 12.77
+                },
+                {
+                    "phenomenonTime": "2024-04-03T09:00:00+01:00",
+                    "result": 12.34
+                },
+                {
+                    "phenomenonTime": "2024-04-03T10:00:00+01:00",
+                    "result": 9.19
+                },
+                {
+                    "phenomenonTime": "2024-04-03T11:00:00+01:00",
+                    "result": 11.01
+                },
+                {
+                    "phenomenonTime": "2024-04-03T12:00:00+01:00",
+                    "result": 9.93
+                },
+                {
+                    "phenomenonTime": "2024-04-03T13:00:00+01:00",
+                    "result": 7.89
+                },
+                {
+                    "phenomenonTime": "2024-04-03T14:00:00+01:00",
+                    "result": 6.52
+                },
+                {
+                    "phenomenonTime": "2024-04-03T15:00:00+01:00",
+                    "result": 6.95
+                },
+                {
+                    "phenomenonTime": "2024-04-03T16:00:00+01:00",
+                    "result": 5.96
+                },
+                {
+                    "phenomenonTime": "2024-04-03T17:00:00+01:00",
+                    "result": 4.07
+                },
+                {
+                    "phenomenonTime": "2024-04-03T18:00:00+01:00",
+                    "result": 5.15
+                },
+                {
+                    "phenomenonTime": "2024-04-03T19:00:00+01:00",
+                    "result": 4.69
+                },
+                {
+                    "phenomenonTime": "2024-04-03T20:00:00+01:00",
+                    "result": 4.87
+                },
+                {
+                    "phenomenonTime": "2024-04-03T21:00:00+01:00",
+                    "result": 6.48
+                },
+                {
+                    "phenomenonTime": "2024-04-03T22:00:00+01:00",
+                    "result": 6.04
+                },
+                {
+                    "phenomenonTime": "2024-04-03T23:00:00+01:00",
+                    "result": 5.26
+                },
+                {
+                    "phenomenonTime": "2024-04-04T00:00:00+01:00",
+                    "result": 3.71
+                },
+                {
+                    "phenomenonTime": "2024-04-04T01:00:00+01:00",
+                    "result": 4.47
+                },
+                {
+                    "phenomenonTime": "2024-04-04T02:00:00+01:00",
+                    "result": 6.1
+                },
+                {
+                    "phenomenonTime": "2024-04-04T03:00:00+01:00",
+                    "result": 7.65
+                },
+                {
+                    "phenomenonTime": "2024-04-04T04:00:00+01:00",
+                    "result": 10.14
+                },
+                {
+                    "phenomenonTime": "2024-04-04T05:00:00+01:00",
+                    "result": 7.06
+                },
+                {
+                    "phenomenonTime": "2024-04-04T06:00:00+01:00",
+                    "result": 5.63
+                },
+                {
+                    "phenomenonTime": "2024-04-04T07:00:00+01:00",
+                    "result": 7.61
+                },
+                {
+                    "phenomenonTime": "2024-04-04T08:00:00+01:00",
+                    "result": 9.63
+                },
+                {
+                    "phenomenonTime": "2024-04-04T09:00:00+01:00",
+                    "result": 8.57
+                },
+                {
+                    "phenomenonTime": "2024-04-04T10:00:00+01:00",
+                    "result": 6.01
+                },
+                {
+                    "phenomenonTime": "2024-04-04T11:00:00+01:00",
+                    "result": 4.22
+                },
+                {
+                    "phenomenonTime": "2024-04-04T12:00:00+01:00",
+                    "result": 3.67
+                },
+                {
+                    "phenomenonTime": "2024-04-04T13:00:00+01:00",
+                    "result": 2.91
+                },
+                {
+                    "phenomenonTime": "2024-04-04T14:00:00+01:00",
+                    "result": 1.98
+                },
+                {
+                    "phenomenonTime": "2024-04-04T15:00:00+01:00",
+                    "result": 3.62
+                },
+                {
+                    "phenomenonTime": "2024-04-04T16:00:00+01:00",
+                    "result": 4.18
+                },
+                {
+                    "phenomenonTime": "2024-04-04T17:00:00+01:00",
+                    "result": 3.37
+                },
+                {
+                    "phenomenonTime": "2024-04-04T18:00:00+01:00",
+                    "result": 2.84
+                },
+                {
+                    "phenomenonTime": "2024-04-04T19:00:00+01:00",
+                    "result": 3.43
+                },
+                {
+                    "phenomenonTime": "2024-04-04T20:00:00+01:00",
+                    "result": 4.88
+                },
+                {
+                    "phenomenonTime": "2024-04-04T21:00:00+01:00",
+                    "result": 4.71
+                },
+                {
+                    "phenomenonTime": "2024-04-04T22:00:00+01:00",
+                    "result": 3.82
+                },
+                {
+                    "phenomenonTime": "2024-04-04T23:00:00+01:00",
+                    "result": 4.91
+                },
+                {
+                    "phenomenonTime": "2024-04-05T00:00:00+01:00",
+                    "result": 7.75
+                },
+                {
+                    "phenomenonTime": "2024-04-05T01:00:00+01:00",
+                    "result": 8.56
+                },
+                {
+                    "phenomenonTime": "2024-04-05T02:00:00+01:00",
+                    "result": 9.6
+                },
+                {
+                    "phenomenonTime": "2024-04-05T03:00:00+01:00",
+                    "result": 11.63
+                },
+                {
+                    "phenomenonTime": "2024-04-05T04:00:00+01:00",
+                    "result": 12.89
+                },
+                {
+                    "phenomenonTime": "2024-04-05T05:00:00+01:00",
+                    "result": 9.18
+                },
+                {
+                    "phenomenonTime": "2024-04-05T06:00:00+01:00",
+                    "result": 9.63
+                },
+                {
+                    "phenomenonTime": "2024-04-05T07:00:00+01:00",
+                    "result": 10.9
+                },
+                {
+                    "phenomenonTime": "2024-04-05T08:00:00+01:00",
+                    "result": 8.84
+                },
+                {
+                    "phenomenonTime": "2024-04-05T09:00:00+01:00",
+                    "result": 6.86
+                },
+                {
+                    "phenomenonTime": "2024-04-05T10:00:00+01:00",
+                    "result": 10.29
+                },
+                {
+                    "phenomenonTime": "2024-04-05T11:00:00+01:00",
+                    "result": 9.29
+                },
+                {
+                    "phenomenonTime": "2024-04-05T12:00:00+01:00",
+                    "result": 8.79
+                },
+                {
+                    "phenomenonTime": "2024-04-05T13:00:00+01:00",
+                    "result": 10.1
+                },
+                {
+                    "phenomenonTime": "2024-04-05T14:00:00+01:00",
+                    "result": 4.16
+                },
+                {
+                    "phenomenonTime": "2024-04-05T15:00:00+01:00",
+                    "result": 2.61
+                },
+                {
+                    "phenomenonTime": "2024-04-05T16:00:00+01:00",
+                    "result": 3.99
+                },
+                {
+                    "phenomenonTime": "2024-04-05T17:00:00+01:00",
+                    "result": 3.36
+                },
+                {
+                    "phenomenonTime": "2024-04-05T18:00:00+01:00",
+                    "result": 4.09
+                },
+                {
+                    "phenomenonTime": "2024-04-05T19:00:00+01:00",
+                    "result": 5.16
+                },
+                {
+                    "phenomenonTime": "2024-04-05T20:00:00+01:00",
+                    "result": 7.49
+                },
+                {
+                    "phenomenonTime": "2024-04-05T21:00:00+01:00",
+                    "result": 7.52
+                },
+                {
+                    "phenomenonTime": "2024-04-05T22:00:00+01:00",
+                    "result": 10.0
+                },
+                {
+                    "phenomenonTime": "2024-04-05T23:00:00+01:00",
+                    "result": 15.58
+                },
+                {
+                    "phenomenonTime": "2024-04-06T00:00:00+01:00",
+                    "result": 33.9
+                },
+                {
+                    "phenomenonTime": "2024-04-06T01:00:00+01:00",
+                    "result": 15.07
+                },
+                {
+                    "phenomenonTime": "2024-04-06T02:00:00+01:00",
+                    "result": 8.66
+                },
+                {
+                    "phenomenonTime": "2024-04-06T03:00:00+01:00",
+                    "result": 12.83
+                },
+                {
+                    "phenomenonTime": "2024-04-06T04:00:00+01:00",
+                    "result": 14.56
+                },
+                {
+                    "phenomenonTime": "2024-04-06T05:00:00+01:00",
+                    "result": 6.63
+                },
+                {
+                    "phenomenonTime": "2024-04-06T06:00:00+01:00",
+                    "result": 15.39
+                },
+                {
+                    "phenomenonTime": "2024-04-06T07:00:00+01:00",
+                    "result": 19.25
+                },
+                {
+                    "phenomenonTime": "2024-04-06T08:00:00+01:00",
+                    "result": 7.5
+                },
+                {
+                    "phenomenonTime": "2024-04-06T09:00:00+01:00",
+                    "result": 5.15
+                },
+                {
+                    "phenomenonTime": "2024-04-06T10:00:00+01:00",
+                    "result": 5.15
+                },
+                {
+                    "phenomenonTime": "2024-04-06T11:00:00+01:00",
+                    "result": 4.7
+                },
+                {
+                    "phenomenonTime": "2024-04-06T12:00:00+01:00",
+                    "result": 4.53
+                },
+                {
+                    "phenomenonTime": "2024-04-06T13:00:00+01:00",
+                    "result": 3.97
+                },
+                {
+                    "phenomenonTime": "2024-04-06T14:00:00+01:00",
+                    "result": 6.21
+                },
+                {
+                    "phenomenonTime": "2024-04-06T15:00:00+01:00",
+                    "result": 3.48
+                },
+                {
+                    "phenomenonTime": "2024-04-06T16:00:00+01:00",
+                    "result": 3.77
+                },
+                {
+                    "phenomenonTime": "2024-04-06T17:00:00+01:00",
+                    "result": 4.31
+                },
+                {
+                    "phenomenonTime": "2024-04-06T18:00:00+01:00",
+                    "result": 6.79
+                },
+                {
+                    "phenomenonTime": "2024-04-06T19:00:00+01:00",
+                    "result": 7.12
+                },
+                {
+                    "phenomenonTime": "2024-04-06T20:00:00+01:00",
+                    "result": 11.02
+                },
+                {
+                    "phenomenonTime": "2024-04-06T21:00:00+01:00",
+                    "result": 15.4
+                },
+                {
+                    "phenomenonTime": "2024-04-06T22:00:00+01:00",
+                    "result": 14.18
+                },
+                {
+                    "phenomenonTime": "2024-04-06T23:00:00+01:00",
+                    "result": 11.27
+                },
+                {
+                    "phenomenonTime": "2024-04-07T00:00:00+01:00",
+                    "result": 9.14
+                },
+                {
+                    "phenomenonTime": "2024-04-07T01:00:00+01:00",
+                    "result": 7.87
+                },
+                {
+                    "phenomenonTime": "2024-04-07T02:00:00+01:00",
+                    "result": 2.86
+                },
+                {
+                    "phenomenonTime": "2024-04-07T03:00:00+01:00",
+                    "result": 2.31
+                },
+                {
+                    "phenomenonTime": "2024-04-07T04:00:00+01:00",
+                    "result": 3.18
+                },
+                {
+                    "phenomenonTime": "2024-04-07T05:00:00+01:00",
+                    "result": 1.57
+                },
+                {
+                    "phenomenonTime": "2024-04-07T06:00:00+01:00",
+                    "result": 3.61
+                },
+                {
+                    "phenomenonTime": "2024-04-07T07:00:00+01:00",
+                    "result": 3.26
+                },
+                {
+                    "phenomenonTime": "2024-04-07T08:00:00+01:00",
+                    "result": 3.45
+                },
+                {
+                    "phenomenonTime": "2024-04-07T09:00:00+01:00",
+                    "result": 2.98
+                },
+                {
+                    "phenomenonTime": "2024-04-07T10:00:00+01:00",
+                    "result": 2.89
+                },
+                {
+                    "phenomenonTime": "2024-04-07T11:00:00+01:00",
+                    "result": 2.03
+                },
+                {
+                    "phenomenonTime": "2024-04-07T12:00:00+01:00",
+                    "result": 2.41
+                },
+                {
+                    "phenomenonTime": "2024-04-07T13:00:00+01:00",
+                    "result": 2.38
+                },
+                {
+                    "phenomenonTime": "2024-04-07T14:00:00+01:00",
+                    "result": 2.16
+                },
+                {
+                    "phenomenonTime": "2024-04-07T15:00:00+01:00",
+                    "result": 2.53
+                },
+                {
+                    "phenomenonTime": "2024-04-07T16:00:00+01:00",
+                    "result": 2.95
+                },
+                {
+                    "phenomenonTime": "2024-04-07T17:00:00+01:00",
+                    "result": 2.66
+                },
+                {
+                    "phenomenonTime": "2024-04-07T18:00:00+01:00",
+                    "result": 5.6
+                },
+                {
+                    "phenomenonTime": "2024-04-07T19:00:00+01:00",
+                    "result": 11.42
+                },
+                {
+                    "phenomenonTime": "2024-04-07T20:00:00+01:00",
+                    "result": 12.05
+                },
+                {
+                    "phenomenonTime": "2024-04-07T21:00:00+01:00",
+                    "result": 8.89
+                },
+                {
+                    "phenomenonTime": "2024-04-07T22:00:00+01:00",
+                    "result": 8.02
+                },
+                {
+                    "phenomenonTime": "2024-04-07T23:00:00+01:00",
+                    "result": 11.34
+                },
+                {
+                    "phenomenonTime": "2024-04-08T00:00:00+01:00",
+                    "result": 12.87
+                },
+                {
+                    "phenomenonTime": "2024-04-08T01:00:00+01:00",
+                    "result": 10.53
+                },
+                {
+                    "phenomenonTime": "2024-04-08T02:00:00+01:00",
+                    "result": 9.47
+                },
+                {
+                    "phenomenonTime": "2024-04-08T03:00:00+01:00",
+                    "result": 14.09
+                },
+                {
+                    "phenomenonTime": "2024-04-08T04:00:00+01:00",
+                    "result": 11.81
+                },
+                {
+                    "phenomenonTime": "2024-04-08T05:00:00+01:00",
+                    "result": 13.75
+                },
+                {
+                    "phenomenonTime": "2024-04-08T06:00:00+01:00",
+                    "result": 10.27
+                },
+                {
+                    "phenomenonTime": "2024-04-08T07:00:00+01:00",
+                    "result": 14.36
+                },
+                {
+                    "phenomenonTime": "2024-04-08T08:00:00+01:00",
+                    "result": 15.47
+                },
+                {
+                    "phenomenonTime": "2024-04-08T09:00:00+01:00",
+                    "result": 18.45
+                },
+                {
+                    "phenomenonTime": "2024-04-08T10:00:00+01:00",
+                    "result": 14.75
+                },
+                {
+                    "phenomenonTime": "2024-04-08T11:00:00+01:00",
+                    "result": 10.47
+                },
+                {
+                    "phenomenonTime": "2024-04-08T12:00:00+01:00",
+                    "result": 12.83
+                },
+                {
+                    "phenomenonTime": "2024-04-08T13:00:00+01:00",
+                    "result": 6.96
+                },
+                {
+                    "phenomenonTime": "2024-04-08T14:00:00+01:00",
+                    "result": 5.02
+                },
+                {
+                    "phenomenonTime": "2024-04-08T15:00:00+01:00",
+                    "result": 6.6
+                },
+                {
+                    "phenomenonTime": "2024-04-08T16:00:00+01:00",
+                    "result": 7.94
+                },
+                {
+                    "phenomenonTime": "2024-04-08T17:00:00+01:00",
+                    "result": 6.59
+                },
+                {
+                    "phenomenonTime": "2024-04-08T18:00:00+01:00",
+                    "result": 6.85
+                },
+                {
+                    "phenomenonTime": "2024-04-08T19:00:00+01:00",
+                    "result": 8.79
+                },
+                {
+                    "phenomenonTime": "2024-04-08T20:00:00+01:00",
+                    "result": 12.73
+                },
+                {
+                    "phenomenonTime": "2024-04-08T21:00:00+01:00",
+                    "result": 15.25
+                },
+                {
+                    "phenomenonTime": "2024-04-08T22:00:00+01:00",
+                    "result": 13.17
+                },
+                {
+                    "phenomenonTime": "2024-04-08T23:00:00+01:00",
+                    "result": 11.13
+                },
+                {
+                    "phenomenonTime": "2024-04-09T00:00:00+01:00",
+                    "result": 3.07
+                },
+                {
+                    "phenomenonTime": "2024-04-09T01:00:00+01:00",
+                    "result": 4.07
+                },
+                {
+                    "phenomenonTime": "2024-04-09T02:00:00+01:00",
+                    "result": 6.06
+                },
+                {
+                    "phenomenonTime": "2024-04-09T03:00:00+01:00",
+                    "result": 6.3
+                },
+                {
+                    "phenomenonTime": "2024-04-09T04:00:00+01:00",
+                    "result": 5.77
+                },
+                {
+                    "phenomenonTime": "2024-04-09T05:00:00+01:00",
+                    "result": 5.29
+                },
+                {
+                    "phenomenonTime": "2024-04-09T06:00:00+01:00",
+                    "result": 3.86
+                },
+                {
+                    "phenomenonTime": "2024-04-09T07:00:00+01:00",
+                    "result": 5.01
+                },
+                {
+                    "phenomenonTime": "2024-04-09T08:00:00+01:00",
+                    "result": 5.41
+                },
+                {
+                    "phenomenonTime": "2024-04-09T09:00:00+01:00",
+                    "result": 4.16
+                },
+                {
+                    "phenomenonTime": "2024-04-09T10:00:00+01:00",
+                    "result": 3.49
+                },
+                {
+                    "phenomenonTime": "2024-04-09T11:00:00+01:00",
+                    "result": 3.8
+                },
+                {
+                    "phenomenonTime": "2024-04-09T12:00:00+01:00",
+                    "result": 4.04
+                },
+                {
+                    "phenomenonTime": "2024-04-09T13:00:00+01:00",
+                    "result": 3.2
+                },
+                {
+                    "phenomenonTime": "2024-04-09T14:00:00+01:00",
+                    "result": 3.59
+                },
+                {
+                    "phenomenonTime": "2024-04-09T15:00:00+01:00",
+                    "result": 3.24
+                },
+                {
+                    "phenomenonTime": "2024-04-09T16:00:00+01:00",
+                    "result": 3.84
+                },
+                {
+                    "phenomenonTime": "2024-04-09T17:00:00+01:00",
+                    "result": 3.97
+                },
+                {
+                    "phenomenonTime": "2024-04-09T18:00:00+01:00",
+                    "result": 4.36
+                },
+                {
+                    "phenomenonTime": "2024-04-09T19:00:00+01:00",
+                    "result": 3.68
+                },
+                {
+                    "phenomenonTime": "2024-04-09T20:00:00+01:00",
+                    "result": 4.83
+                },
+                {
+                    "phenomenonTime": "2024-04-09T21:00:00+01:00",
+                    "result": 5.39
+                },
+                {
+                    "phenomenonTime": "2024-04-09T22:00:00+01:00",
+                    "result": 5.7
+                },
+                {
+                    "phenomenonTime": "2024-04-09T23:00:00+01:00",
+                    "result": 3.79
+                },
+                {
+                    "phenomenonTime": "2024-04-10T00:00:00+01:00",
+                    "result": 2.12
+                },
+                {
+                    "phenomenonTime": "2024-04-10T01:00:00+01:00",
+                    "result": 2.86
+                },
+                {
+                    "phenomenonTime": "2024-04-10T02:00:00+01:00",
+                    "result": 3.11
+                },
+                {
+                    "phenomenonTime": "2024-04-10T03:00:00+01:00",
+                    "result": 3.16
+                },
+                {
+                    "phenomenonTime": "2024-04-10T04:00:00+01:00",
+                    "result": 4.83
+                },
+                {
+                    "phenomenonTime": "2024-04-10T05:00:00+01:00",
+                    "result": 4.6
+                },
+                {
+                    "phenomenonTime": "2024-04-10T06:00:00+01:00",
+                    "result": 10.56
+                },
+                {
+                    "phenomenonTime": "2024-04-10T07:00:00+01:00",
+                    "result": 9.94
+                },
+                {
+                    "phenomenonTime": "2024-04-10T08:00:00+01:00",
+                    "result": 6.72
+                },
+                {
+                    "phenomenonTime": "2024-04-10T09:00:00+01:00",
+                    "result": 3.19
+                },
+                {
+                    "phenomenonTime": "2024-04-10T10:00:00+01:00",
+                    "result": 3.9
+                },
+                {
+                    "phenomenonTime": "2024-04-10T11:00:00+01:00",
+                    "result": 2.52
+                },
+                {
+                    "phenomenonTime": "2024-04-10T12:00:00+01:00",
+                    "result": 2.29
+                },
+                {
+                    "phenomenonTime": "2024-04-10T13:00:00+01:00",
+                    "result": 1.7
+                },
+                {
+                    "phenomenonTime": "2024-04-10T14:00:00+01:00",
+                    "result": 3.51
+                },
+                {
+                    "phenomenonTime": "2024-04-10T15:00:00+01:00",
+                    "result": 3.91
+                },
+                {
+                    "phenomenonTime": "2024-04-10T16:00:00+01:00",
+                    "result": 3.6
+                },
+                {
+                    "phenomenonTime": "2024-04-10T17:00:00+01:00",
+                    "result": 3.49
+                },
+                {
+                    "phenomenonTime": "2024-04-10T18:00:00+01:00",
+                    "result": 4.34
+                },
+                {
+                    "phenomenonTime": "2024-04-10T19:00:00+01:00",
+                    "result": 5.83
+                },
+                {
+                    "phenomenonTime": "2024-04-10T20:00:00+01:00",
+                    "result": 10.02
+                },
+                {
+                    "phenomenonTime": "2024-04-10T21:00:00+01:00",
+                    "result": 11.48
+                },
+                {
+                    "phenomenonTime": "2024-04-10T22:00:00+01:00",
+                    "result": 9.36
+                },
+                {
+                    "phenomenonTime": "2024-04-10T23:00:00+01:00",
+                    "result": 7.16
+                },
+                {
+                    "phenomenonTime": "2024-04-11T00:00:00+01:00",
+                    "result": 4.74
+                },
+                {
+                    "phenomenonTime": "2024-04-11T01:00:00+01:00",
+                    "result": 5.17
+                },
+                {
+                    "phenomenonTime": "2024-04-11T02:00:00+01:00",
+                    "result": 5.36
+                },
+                {
+                    "phenomenonTime": "2024-04-11T03:00:00+01:00",
+                    "result": 6.15
+                },
+                {
+                    "phenomenonTime": "2024-04-11T04:00:00+01:00",
+                    "result": 6.69
+                },
+                {
+                    "phenomenonTime": "2024-04-11T05:00:00+01:00",
+                    "result": 8.7
+                },
+                {
+                    "phenomenonTime": "2024-04-11T06:00:00+01:00",
+                    "result": 8.44
+                },
+                {
+                    "phenomenonTime": "2024-04-11T07:00:00+01:00",
+                    "result": 8.93
+                },
+                {
+                    "phenomenonTime": "2024-04-11T08:00:00+01:00",
+                    "result": 13.54
+                },
+                {
+                    "phenomenonTime": "2024-04-11T09:00:00+01:00",
+                    "result": 11.64
+                },
+                {
+                    "phenomenonTime": "2024-04-11T10:00:00+01:00",
+                    "result": 8.19
+                },
+                {
+                    "phenomenonTime": "2024-04-11T11:00:00+01:00",
+                    "result": 7.76
+                },
+                {
+                    "phenomenonTime": "2024-04-11T12:00:00+01:00",
+                    "result": 5.27
+                },
+                {
+                    "phenomenonTime": "2024-04-11T13:00:00+01:00",
+                    "result": 4.95
+                },
+                {
+                    "phenomenonTime": "2024-04-11T14:00:00+01:00",
+                    "result": 5.27
+                },
+                {
+                    "phenomenonTime": "2024-04-11T15:00:00+01:00",
+                    "result": 5.91
+                },
+                {
+                    "phenomenonTime": "2024-04-11T16:00:00+01:00",
+                    "result": 6.78
+                },
+                {
+                    "phenomenonTime": "2024-04-11T17:00:00+01:00",
+                    "result": 8.21
+                },
+                {
+                    "phenomenonTime": "2024-04-11T18:00:00+01:00",
+                    "result": 9.78
+                },
+                {
+                    "phenomenonTime": "2024-04-11T19:00:00+01:00",
+                    "result": 11.44
+                },
+                {
+                    "phenomenonTime": "2024-04-11T20:00:00+01:00",
+                    "result": 11.98
+                },
+                {
+                    "phenomenonTime": "2024-04-11T21:00:00+01:00",
+                    "result": 13.16
+                },
+                {
+                    "phenomenonTime": "2024-04-11T22:00:00+01:00",
+                    "result": 12.43
+                },
+                {
+                    "phenomenonTime": "2024-04-11T23:00:00+01:00",
+                    "result": 29.0
+                },
+                {
+                    "phenomenonTime": "2024-04-12T00:00:00+01:00",
+                    "result": 25.28
+                },
+                {
+                    "phenomenonTime": "2024-04-12T01:00:00+01:00",
+                    "result": 4.27
+                },
+                {
+                    "phenomenonTime": "2024-04-12T02:00:00+01:00",
+                    "result": 3.36
+                },
+                {
+                    "phenomenonTime": "2024-04-12T03:00:00+01:00",
+                    "result": 5.06
+                },
+                {
+                    "phenomenonTime": "2024-04-12T04:00:00+01:00",
+                    "result": 5.76
+                },
+                {
+                    "phenomenonTime": "2024-04-12T05:00:00+01:00",
+                    "result": 8.35
+                },
+                {
+                    "phenomenonTime": "2024-04-12T06:00:00+01:00",
+                    "result": 14.17
+                },
+                {
+                    "phenomenonTime": "2024-04-12T07:00:00+01:00",
+                    "result": 13.44
+                },
+                {
+                    "phenomenonTime": "2024-04-12T08:00:00+01:00",
+                    "result": 13.09
+                },
+                {
+                    "phenomenonTime": "2024-04-12T09:00:00+01:00",
+                    "result": 10.86
+                },
+                {
+                    "phenomenonTime": "2024-04-12T10:00:00+01:00",
+                    "result": 7.71
+                },
+                {
+                    "phenomenonTime": "2024-04-12T11:00:00+01:00",
+                    "result": 6.89
+                },
+                {
+                    "phenomenonTime": "2024-04-12T12:00:00+01:00",
+                    "result": 3.62
+                },
+                {
+                    "phenomenonTime": "2024-04-12T13:00:00+01:00",
+                    "result": 3.16
+                },
+                {
+                    "phenomenonTime": "2024-04-12T14:00:00+01:00",
+                    "result": 3.4
+                },
+                {
+                    "phenomenonTime": "2024-04-12T15:00:00+01:00",
+                    "result": 2.57
+                },
+                {
+                    "phenomenonTime": "2024-04-12T16:00:00+01:00",
+                    "result": 4.01
+                },
+                {
+                    "phenomenonTime": "2024-04-12T17:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-12T18:00:00+01:00",
+                    "result": 6.57
+                },
+                {
+                    "phenomenonTime": "2024-04-12T19:00:00+01:00",
+                    "result": 6.25
+                },
+                {
+                    "phenomenonTime": "2024-04-12T20:00:00+01:00",
+                    "result": 11.47
+                },
+                {
+                    "phenomenonTime": "2024-04-12T21:00:00+01:00",
+                    "result": 20.13
+                },
+                {
+                    "phenomenonTime": "2024-04-12T22:00:00+01:00",
+                    "result": 9.89
+                },
+                {
+                    "phenomenonTime": "2024-04-12T23:00:00+01:00",
+                    "result": 8.25
+                },
+                {
+                    "phenomenonTime": "2024-04-13T00:00:00+01:00",
+                    "result": 7.1
+                },
+                {
+                    "phenomenonTime": "2024-04-13T01:00:00+01:00",
+                    "result": 8.05
+                },
+                {
+                    "phenomenonTime": "2024-04-13T02:00:00+01:00",
+                    "result": 6.8
+                },
+                {
+                    "phenomenonTime": "2024-04-13T03:00:00+01:00",
+                    "result": 7.95
+                },
+                {
+                    "phenomenonTime": "2024-04-13T04:00:00+01:00",
+                    "result": 9.75
+                },
+                {
+                    "phenomenonTime": "2024-04-13T05:00:00+01:00",
+                    "result": 8.96
+                },
+                {
+                    "phenomenonTime": "2024-04-13T06:00:00+01:00",
+                    "result": 9.58
+                },
+                {
+                    "phenomenonTime": "2024-04-13T07:00:00+01:00",
+                    "result": 16.86
+                },
+                {
+                    "phenomenonTime": "2024-04-13T08:00:00+01:00",
+                    "result": 18.46
+                },
+                {
+                    "phenomenonTime": "2024-04-13T09:00:00+01:00",
+                    "result": 13.82
+                },
+                {
+                    "phenomenonTime": "2024-04-13T10:00:00+01:00",
+                    "result": 10.75
+                },
+                {
+                    "phenomenonTime": "2024-04-13T11:00:00+01:00",
+                    "result": 11.13
+                },
+                {
+                    "phenomenonTime": "2024-04-13T12:00:00+01:00",
+                    "result": 9.93
+                },
+                {
+                    "phenomenonTime": "2024-04-13T13:00:00+01:00",
+                    "result": 7.6
+                },
+                {
+                    "phenomenonTime": "2024-04-13T14:00:00+01:00",
+                    "result": 4.81
+                },
+                {
+                    "phenomenonTime": "2024-04-13T15:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-13T16:00:00+01:00",
+                    "result": 3.67
+                },
+                {
+                    "phenomenonTime": "2024-04-13T17:00:00+01:00",
+                    "result": 4.52
+                },
+                {
+                    "phenomenonTime": "2024-04-13T18:00:00+01:00",
+                    "result": 4.79
+                },
+                {
+                    "phenomenonTime": "2024-04-13T19:00:00+01:00",
+                    "result": 6.76
+                },
+                {
+                    "phenomenonTime": "2024-04-13T20:00:00+01:00",
+                    "result": 7.29
+                },
+                {
+                    "phenomenonTime": "2024-04-13T21:00:00+01:00",
+                    "result": 7.73
+                },
+                {
+                    "phenomenonTime": "2024-04-13T22:00:00+01:00",
+                    "result": 7.65
+                },
+                {
+                    "phenomenonTime": "2024-04-13T23:00:00+01:00",
+                    "result": 6.08
+                },
+                {
+                    "phenomenonTime": "2024-04-14T00:00:00+01:00",
+                    "result": 7.91
+                },
+                {
+                    "phenomenonTime": "2024-04-14T01:00:00+01:00",
+                    "result": 9.3
+                },
+                {
+                    "phenomenonTime": "2024-04-14T02:00:00+01:00",
+                    "result": 10.07
+                },
+                {
+                    "phenomenonTime": "2024-04-14T03:00:00+01:00",
+                    "result": 10.1
+                },
+                {
+                    "phenomenonTime": "2024-04-14T04:00:00+01:00",
+                    "result": 7.11
+                },
+                {
+                    "phenomenonTime": "2024-04-14T05:00:00+01:00",
+                    "result": 17.85
+                },
+                {
+                    "phenomenonTime": "2024-04-14T06:00:00+01:00",
+                    "result": 20.42
+                },
+                {
+                    "phenomenonTime": "2024-04-14T08:00:00+01:00",
+                    "result": 18.43
+                },
+                {
+                    "phenomenonTime": "2024-04-14T09:00:00+01:00",
+                    "result": 13.69
+                },
+                {
+                    "phenomenonTime": "2024-04-14T10:00:00+01:00",
+                    "result": 12.08
+                },
+                {
+                    "phenomenonTime": "2024-04-14T11:00:00+01:00",
+                    "result": 4.6
+                },
+                {
+                    "phenomenonTime": "2024-04-14T12:00:00+01:00",
+                    "result": 2.83
+                },
+                {
+                    "phenomenonTime": "2024-04-14T13:00:00+01:00",
+                    "result": 2.03
+                },
+                {
+                    "phenomenonTime": "2024-04-14T14:00:00+01:00",
+                    "result": 2.15
+                },
+                {
+                    "phenomenonTime": "2024-04-14T15:00:00+01:00",
+                    "result": 2.2
+                },
+                {
+                    "phenomenonTime": "2024-04-14T16:00:00+01:00",
+                    "result": 2.19
+                },
+                {
+                    "phenomenonTime": "2024-04-14T17:00:00+01:00",
+                    "result": 2.83
+                },
+                {
+                    "phenomenonTime": "2024-04-14T18:00:00+01:00",
+                    "result": 3.95
+                },
+                {
+                    "phenomenonTime": "2024-04-14T19:00:00+01:00",
+                    "result": 3.46
+                },
+                {
+                    "phenomenonTime": "2024-04-14T20:00:00+01:00",
+                    "result": 6.35
+                },
+                {
+                    "phenomenonTime": "2024-04-14T21:00:00+01:00",
+                    "result": 7.3
+                },
+                {
+                    "phenomenonTime": "2024-04-14T22:00:00+01:00",
+                    "result": 6.51
+                },
+                {
+                    "phenomenonTime": "2024-04-14T23:00:00+01:00",
+                    "result": 4.57
+                },
+                {
+                    "phenomenonTime": "2024-04-15T00:00:00+01:00",
+                    "result": 11.21
+                },
+                {
+                    "phenomenonTime": "2024-04-15T01:00:00+01:00",
+                    "result": 9.02
+                },
+                {
+                    "phenomenonTime": "2024-04-15T02:00:00+01:00",
+                    "result": 6.5
+                },
+                {
+                    "phenomenonTime": "2024-04-15T03:00:00+01:00",
+                    "result": 7.63
+                },
+                {
+                    "phenomenonTime": "2024-04-15T04:00:00+01:00",
+                    "result": 9.17
+                },
+                {
+                    "phenomenonTime": "2024-04-15T05:00:00+01:00",
+                    "result": 10.6
+                },
+                {
+                    "phenomenonTime": "2024-04-15T06:00:00+01:00",
+                    "result": 10.83
+                },
+                {
+                    "phenomenonTime": "2024-04-15T07:00:00+01:00",
+                    "result": 10.89
+                },
+                {
+                    "phenomenonTime": "2024-04-15T08:00:00+01:00",
+                    "result": 10.31
+                },
+                {
+                    "phenomenonTime": "2024-04-15T09:00:00+01:00",
+                    "result": 8.35
+                },
+                {
+                    "phenomenonTime": "2024-04-15T10:00:00+01:00",
+                    "result": 5.68
+                },
+                {
+                    "phenomenonTime": "2024-04-15T11:00:00+01:00",
+                    "result": 5.17
+                },
+                {
+                    "phenomenonTime": "2024-04-15T12:00:00+01:00",
+                    "result": 4.97
+                },
+                {
+                    "phenomenonTime": "2024-04-15T13:00:00+01:00",
+                    "result": 4.78
+                },
+                {
+                    "phenomenonTime": "2024-04-15T14:00:00+01:00",
+                    "result": 2.24
+                },
+                {
+                    "phenomenonTime": "2024-04-15T15:00:00+01:00",
+                    "result": 2.38
+                },
+                {
+                    "phenomenonTime": "2024-04-15T16:00:00+01:00",
+                    "result": 2.42
+                },
+                {
+                    "phenomenonTime": "2024-04-15T17:00:00+01:00",
+                    "result": 2.12
+                },
+                {
+                    "phenomenonTime": "2024-04-15T18:00:00+01:00",
+                    "result": 2.07
+                },
+                {
+                    "phenomenonTime": "2024-04-15T19:00:00+01:00",
+                    "result": 2.11
+                },
+                {
+                    "phenomenonTime": "2024-04-15T20:00:00+01:00",
+                    "result": 2.13
+                },
+                {
+                    "phenomenonTime": "2024-04-15T21:00:00+01:00",
+                    "result": 2.43
+                },
+                {
+                    "phenomenonTime": "2024-04-15T22:00:00+01:00",
+                    "result": 2.33
+                },
+                {
+                    "phenomenonTime": "2024-04-15T23:00:00+01:00",
+                    "result": 1.85
+                },
+                {
+                    "phenomenonTime": "2024-04-16T00:00:00+01:00",
+                    "result": 1.93
+                },
+                {
+                    "phenomenonTime": "2024-04-16T01:00:00+01:00",
+                    "result": 2.51
+                },
+                {
+                    "phenomenonTime": "2024-04-16T02:00:00+01:00",
+                    "result": 2.05
+                },
+                {
+                    "phenomenonTime": "2024-04-16T03:00:00+01:00",
+                    "result": 2.03
+                },
+                {
+                    "phenomenonTime": "2024-04-16T04:00:00+01:00",
+                    "result": 2.3
+                },
+                {
+                    "phenomenonTime": "2024-04-16T05:00:00+01:00",
+                    "result": 2.18
+                },
+                {
+                    "phenomenonTime": "2024-04-16T06:00:00+01:00",
+                    "result": 2.95
+                },
+                {
+                    "phenomenonTime": "2024-04-16T07:00:00+01:00",
+                    "result": 12.73
+                },
+                {
+                    "phenomenonTime": "2024-04-16T08:00:00+01:00",
+                    "result": 11.3
+                },
+                {
+                    "phenomenonTime": "2024-04-16T09:00:00+01:00",
+                    "result": 9.75
+                },
+                {
+                    "phenomenonTime": "2024-04-16T10:00:00+01:00",
+                    "result": 10.62
+                },
+                {
+                    "phenomenonTime": "2024-04-16T11:00:00+01:00",
+                    "result": 10.49
+                },
+                {
+                    "phenomenonTime": "2024-04-16T12:00:00+01:00",
+                    "result": 9.57
+                },
+                {
+                    "phenomenonTime": "2024-04-16T13:00:00+01:00",
+                    "result": 11.57
+                },
+                {
+                    "phenomenonTime": "2024-04-16T14:00:00+01:00",
+                    "result": 13.13
+                },
+                {
+                    "phenomenonTime": "2024-04-16T15:00:00+01:00",
+                    "result": 8.97
+                },
+                {
+                    "phenomenonTime": "2024-04-16T16:00:00+01:00",
+                    "result": 8.93
+                },
+                {
+                    "phenomenonTime": "2024-04-16T17:00:00+01:00",
+                    "result": 11.98
+                },
+                {
+                    "phenomenonTime": "2024-04-16T18:00:00+01:00",
+                    "result": 15.87
+                },
+                {
+                    "phenomenonTime": "2024-04-16T19:00:00+01:00",
+                    "result": 6.82
+                },
+                {
+                    "phenomenonTime": "2024-04-16T20:00:00+01:00",
+                    "result": 8.41
+                },
+                {
+                    "phenomenonTime": "2024-04-16T21:00:00+01:00",
+                    "result": 11.5
+                },
+                {
+                    "phenomenonTime": "2024-04-16T22:00:00+01:00",
+                    "result": 12.05
+                },
+                {
+                    "phenomenonTime": "2024-04-16T23:00:00+01:00",
+                    "result": 16.46
+                },
+                {
+                    "phenomenonTime": "2024-04-17T00:00:00+01:00",
+                    "result": 14.35
+                },
+                {
+                    "phenomenonTime": "2024-04-17T01:00:00+01:00",
+                    "result": 12.01
+                },
+                {
+                    "phenomenonTime": "2024-04-17T02:00:00+01:00",
+                    "result": 11.61
+                },
+                {
+                    "phenomenonTime": "2024-04-17T03:00:00+01:00",
+                    "result": 7.92
+                },
+                {
+                    "phenomenonTime": "2024-04-17T04:00:00+01:00",
+                    "result": 10.28
+                },
+                {
+                    "phenomenonTime": "2024-04-17T05:00:00+01:00",
+                    "result": 13.34
+                },
+                {
+                    "phenomenonTime": "2024-04-17T06:00:00+01:00",
+                    "result": 18.32
+                },
+                {
+                    "phenomenonTime": "2024-04-17T07:00:00+01:00",
+                    "result": 16.31
+                },
+                {
+                    "phenomenonTime": "2024-04-17T08:00:00+01:00",
+                    "result": 8.78
+                },
+                {
+                    "phenomenonTime": "2024-04-17T09:00:00+01:00",
+                    "result": 6.77
+                },
+                {
+                    "phenomenonTime": "2024-04-17T10:00:00+01:00",
+                    "result": 6.52
+                },
+                {
+                    "phenomenonTime": "2024-04-17T11:00:00+01:00",
+                    "result": 2.97
+                },
+                {
+                    "phenomenonTime": "2024-04-17T12:00:00+01:00",
+                    "result": 2.37
+                },
+                {
+                    "phenomenonTime": "2024-04-17T13:00:00+01:00",
+                    "result": 9.8
+                },
+                {
+                    "phenomenonTime": "2024-04-17T14:00:00+01:00",
+                    "result": 7.91
+                },
+                {
+                    "phenomenonTime": "2024-04-17T15:00:00+01:00",
+                    "result": 5.95
+                },
+                {
+                    "phenomenonTime": "2024-04-17T16:00:00+01:00",
+                    "result": 5.49
+                },
+                {
+                    "phenomenonTime": "2024-04-17T17:00:00+01:00",
+                    "result": 12.74
+                },
+                {
+                    "phenomenonTime": "2024-04-17T18:00:00+01:00",
+                    "result": 7.37
+                },
+                {
+                    "phenomenonTime": "2024-04-17T19:00:00+01:00",
+                    "result": 7.55
+                },
+                {
+                    "phenomenonTime": "2024-04-17T20:00:00+01:00",
+                    "result": 11.54
+                },
+                {
+                    "phenomenonTime": "2024-04-17T21:00:00+01:00",
+                    "result": 12.94
+                },
+                {
+                    "phenomenonTime": "2024-04-17T22:00:00+01:00",
+                    "result": 11.83
+                },
+                {
+                    "phenomenonTime": "2024-04-17T23:00:00+01:00",
+                    "result": 20.36
+                },
+                {
+                    "phenomenonTime": "2024-04-18T00:00:00+01:00",
+                    "result": 31.54
+                },
+                {
+                    "phenomenonTime": "2024-04-18T01:00:00+01:00",
+                    "result": 32.16
+                },
+                {
+                    "phenomenonTime": "2024-04-18T02:00:00+01:00",
+                    "result": 18.79
+                },
+                {
+                    "phenomenonTime": "2024-04-18T03:00:00+01:00",
+                    "result": 17.26
+                },
+                {
+                    "phenomenonTime": "2024-04-18T04:00:00+01:00",
+                    "result": 50.7
+                },
+                {
+                    "phenomenonTime": "2024-04-18T05:00:00+01:00",
+                    "result": 43.73
+                },
+                {
+                    "phenomenonTime": "2024-04-18T06:00:00+01:00",
+                    "result": 54.28
+                },
+                {
+                    "phenomenonTime": "2024-04-18T07:00:00+01:00",
+                    "result": 48.28
+                },
+                {
+                    "phenomenonTime": "2024-04-18T08:00:00+01:00",
+                    "result": 44.33
+                },
+                {
+                    "phenomenonTime": "2024-04-18T09:00:00+01:00",
+                    "result": 17.65
+                },
+                {
+                    "phenomenonTime": "2024-04-18T10:00:00+01:00",
+                    "result": 7.21
+                },
+                {
+                    "phenomenonTime": "2024-04-18T11:00:00+01:00",
+                    "result": 10.96
+                },
+                {
+                    "phenomenonTime": "2024-04-18T12:00:00+01:00",
+                    "result": 10.81
+                },
+                {
+                    "phenomenonTime": "2024-04-18T13:00:00+01:00",
+                    "result": 7.54
+                },
+                {
+                    "phenomenonTime": "2024-04-18T14:00:00+01:00",
+                    "result": 7.94
+                },
+                {
+                    "phenomenonTime": "2024-04-18T15:00:00+01:00",
+                    "result": 6.81
+                },
+                {
+                    "phenomenonTime": "2024-04-18T16:00:00+01:00",
+                    "result": 5.17
+                },
+                {
+                    "phenomenonTime": "2024-04-18T17:00:00+01:00",
+                    "result": 2.69
+                },
+                {
+                    "phenomenonTime": "2024-04-18T18:00:00+01:00",
+                    "result": 3.23
+                },
+                {
+                    "phenomenonTime": "2024-04-18T19:00:00+01:00",
+                    "result": 3.12
+                },
+                {
+                    "phenomenonTime": "2024-04-18T20:00:00+01:00",
+                    "result": 2.96
+                },
+                {
+                    "phenomenonTime": "2024-04-18T21:00:00+01:00",
+                    "result": 3.6
+                },
+                {
+                    "phenomenonTime": "2024-04-18T22:00:00+01:00",
+                    "result": 4.72
+                },
+                {
+                    "phenomenonTime": "2024-04-18T23:00:00+01:00",
+                    "result": 9.06
+                },
+                {
+                    "phenomenonTime": "2024-04-19T00:00:00+01:00",
+                    "result": 6.96
+                },
+                {
+                    "phenomenonTime": "2024-04-19T01:00:00+01:00",
+                    "result": 3.38
+                },
+                {
+                    "phenomenonTime": "2024-04-19T02:00:00+01:00",
+                    "result": 3.04
+                },
+                {
+                    "phenomenonTime": "2024-04-19T03:00:00+01:00",
+                    "result": 3.48
+                },
+                {
+                    "phenomenonTime": "2024-04-19T04:00:00+01:00",
+                    "result": 3.17
+                },
+                {
+                    "phenomenonTime": "2024-04-19T05:00:00+01:00",
+                    "result": 4.41
+                },
+                {
+                    "phenomenonTime": "2024-04-19T06:00:00+01:00",
+                    "result": 5.81
+                },
+                {
+                    "phenomenonTime": "2024-04-19T07:00:00+01:00",
+                    "result": 4.25
+                },
+                {
+                    "phenomenonTime": "2024-04-19T08:00:00+01:00",
+                    "result": 3.44
+                },
+                {
+                    "phenomenonTime": "2024-04-19T09:00:00+01:00",
+                    "result": 3.14
+                },
+                {
+                    "phenomenonTime": "2024-04-19T10:00:00+01:00",
+                    "result": 4.49
+                },
+                {
+                    "phenomenonTime": "2024-04-19T11:00:00+01:00",
+                    "result": 12.41
+                },
+                {
+                    "phenomenonTime": "2024-04-19T12:00:00+01:00",
+                    "result": 10.59
+                },
+                {
+                    "phenomenonTime": "2024-04-19T13:00:00+01:00",
+                    "result": 6.97
+                },
+                {
+                    "phenomenonTime": "2024-04-19T14:00:00+01:00",
+                    "result": 3.63
+                },
+                {
+                    "phenomenonTime": "2024-04-19T15:00:00+01:00",
+                    "result": 3.78
+                },
+                {
+                    "phenomenonTime": "2024-04-19T16:00:00+01:00",
+                    "result": 3.97
+                },
+                {
+                    "phenomenonTime": "2024-04-19T17:00:00+01:00",
+                    "result": 3.1
+                },
+                {
+                    "phenomenonTime": "2024-04-19T18:00:00+01:00",
+                    "result": 5.28
+                },
+                {
+                    "phenomenonTime": "2024-04-19T19:00:00+01:00",
+                    "result": 5.22
+                },
+                {
+                    "phenomenonTime": "2024-04-19T20:00:00+01:00",
+                    "result": 6.26
+                },
+                {
+                    "phenomenonTime": "2024-04-19T21:00:00+01:00",
+                    "result": 5.9
+                },
+                {
+                    "phenomenonTime": "2024-04-19T22:00:00+01:00",
+                    "result": 7.01
+                },
+                {
+                    "phenomenonTime": "2024-04-19T23:00:00+01:00",
+                    "result": 6.89
+                },
+                {
+                    "phenomenonTime": "2024-04-20T00:00:00+01:00",
+                    "result": 3.57
+                },
+                {
+                    "phenomenonTime": "2024-04-20T01:00:00+01:00",
+                    "result": 4.14
+                },
+                {
+                    "phenomenonTime": "2024-04-20T02:00:00+01:00",
+                    "result": 3.47
+                },
+                {
+                    "phenomenonTime": "2024-04-20T03:00:00+01:00",
+                    "result": 4.24
+                },
+                {
+                    "phenomenonTime": "2024-04-20T04:00:00+01:00",
+                    "result": 5.88
+                },
+                {
+                    "phenomenonTime": "2024-04-20T05:00:00+01:00",
+                    "result": 9.44
+                },
+                {
+                    "phenomenonTime": "2024-04-20T06:00:00+01:00",
+                    "result": 4.87
+                },
+                {
+                    "phenomenonTime": "2024-04-20T07:00:00+01:00",
+                    "result": 5.7
+                },
+                {
+                    "phenomenonTime": "2024-04-20T08:00:00+01:00",
+                    "result": 7.52
+                },
+                {
+                    "phenomenonTime": "2024-04-20T09:00:00+01:00",
+                    "result": 6.33
+                },
+                {
+                    "phenomenonTime": "2024-04-20T10:00:00+01:00",
+                    "result": 4.44
+                },
+                {
+                    "phenomenonTime": "2024-04-20T11:00:00+01:00",
+                    "result": 3.3
+                },
+                {
+                    "phenomenonTime": "2024-04-20T12:00:00+01:00",
+                    "result": 2.84
+                },
+                {
+                    "phenomenonTime": "2024-04-20T13:00:00+01:00",
+                    "result": 4.06
+                },
+                {
+                    "phenomenonTime": "2024-04-20T14:00:00+01:00",
+                    "result": 3.3
+                },
+                {
+                    "phenomenonTime": "2024-04-20T15:00:00+01:00",
+                    "result": 3.44
+                },
+                {
+                    "phenomenonTime": "2024-04-20T16:00:00+01:00",
+                    "result": 3.86
+                },
+                {
+                    "phenomenonTime": "2024-04-20T17:00:00+01:00",
+                    "result": 4.52
+                },
+                {
+                    "phenomenonTime": "2024-04-20T18:00:00+01:00",
+                    "result": 4.16
+                },
+                {
+                    "phenomenonTime": "2024-04-20T19:00:00+01:00",
+                    "result": 4.4
+                },
+                {
+                    "phenomenonTime": "2024-04-20T20:00:00+01:00",
+                    "result": 4.51
+                },
+                {
+                    "phenomenonTime": "2024-04-20T21:00:00+01:00",
+                    "result": 5.29
+                },
+                {
+                    "phenomenonTime": "2024-04-20T22:00:00+01:00",
+                    "result": 5.76
+                },
+                {
+                    "phenomenonTime": "2024-04-20T23:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-21T00:00:00+01:00",
+                    "result": 5.11
+                },
+                {
+                    "phenomenonTime": "2024-04-21T01:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-21T02:00:00+01:00",
+                    "result": 7.91
+                },
+                {
+                    "phenomenonTime": "2024-04-21T03:00:00+01:00",
+                    "result": 6.7
+                },
+                {
+                    "phenomenonTime": "2024-04-21T04:00:00+01:00",
+                    "result": 4.32
+                },
+                {
+                    "phenomenonTime": "2024-04-21T05:00:00+01:00",
+                    "result": 7.34
+                },
+                {
+                    "phenomenonTime": "2024-04-21T06:00:00+01:00",
+                    "result": 3.6
+                },
+                {
+                    "phenomenonTime": "2024-04-21T07:00:00+01:00",
+                    "result": 9.42
+                },
+                {
+                    "phenomenonTime": "2024-04-21T08:00:00+01:00",
+                    "result": 5.17
+                },
+                {
+                    "phenomenonTime": "2024-04-21T09:00:00+01:00",
+                    "result": 1.86
+                },
+                {
+                    "phenomenonTime": "2024-04-21T10:00:00+01:00",
+                    "result": 1.84
+                },
+                {
+                    "phenomenonTime": "2024-04-21T11:00:00+01:00",
+                    "result": 1.45
+                },
+                {
+                    "phenomenonTime": "2024-04-21T12:00:00+01:00",
+                    "result": 1.38
+                },
+                {
+                    "phenomenonTime": "2024-04-21T13:00:00+01:00",
+                    "result": 1.56
+                },
+                {
+                    "phenomenonTime": "2024-04-21T14:00:00+01:00",
+                    "result": 2.17
+                },
+                {
+                    "phenomenonTime": "2024-04-21T15:00:00+01:00",
+                    "result": 2.47
+                },
+                {
+                    "phenomenonTime": "2024-04-21T16:00:00+01:00",
+                    "result": 2.69
+                },
+                {
+                    "phenomenonTime": "2024-04-21T17:00:00+01:00",
+                    "result": 2.88
+                },
+                {
+                    "phenomenonTime": "2024-04-21T18:00:00+01:00",
+                    "result": 6.43
+                },
+                {
+                    "phenomenonTime": "2024-04-21T19:00:00+01:00",
+                    "result": 6.09
+                },
+                {
+                    "phenomenonTime": "2024-04-21T20:00:00+01:00",
+                    "result": 5.25
+                },
+                {
+                    "phenomenonTime": "2024-04-21T21:00:00+01:00",
+                    "result": 10.6
+                },
+                {
+                    "phenomenonTime": "2024-04-21T22:00:00+01:00",
+                    "result": 11.8
+                },
+                {
+                    "phenomenonTime": "2024-04-21T23:00:00+01:00",
+                    "result": 12.34
+                },
+                {
+                    "phenomenonTime": "2024-04-22T00:00:00+01:00",
+                    "result": 10.79
+                },
+                {
+                    "phenomenonTime": "2024-04-22T01:00:00+01:00",
+                    "result": 10.95
+                },
+                {
+                    "phenomenonTime": "2024-04-22T02:00:00+01:00",
+                    "result": 14.76
+                },
+                {
+                    "phenomenonTime": "2024-04-22T03:00:00+01:00",
+                    "result": 22.03
+                },
+                {
+                    "phenomenonTime": "2024-04-22T04:00:00+01:00",
+                    "result": 30.72
+                },
+                {
+                    "phenomenonTime": "2024-04-22T05:00:00+01:00",
+                    "result": 35.77
+                },
+                {
+                    "phenomenonTime": "2024-04-22T06:00:00+01:00",
+                    "result": 36.62
+                },
+                {
+                    "phenomenonTime": "2024-04-22T07:00:00+01:00",
+                    "result": 36.51
+                },
+                {
+                    "phenomenonTime": "2024-04-22T08:00:00+01:00",
+                    "result": 38.53
+                },
+                {
+                    "phenomenonTime": "2024-04-22T09:00:00+01:00",
+                    "result": 28.22
+                },
+                {
+                    "phenomenonTime": "2024-04-22T10:00:00+01:00",
+                    "result": 15.73
+                },
+                {
+                    "phenomenonTime": "2024-04-22T11:00:00+01:00",
+                    "result": 5.77
+                },
+                {
+                    "phenomenonTime": "2024-04-22T12:00:00+01:00",
+                    "result": 6.06
+                },
+                {
+                    "phenomenonTime": "2024-04-22T13:00:00+01:00",
+                    "result": 5.32
+                },
+                {
+                    "phenomenonTime": "2024-04-22T14:00:00+01:00",
+                    "result": 5.77
+                },
+                {
+                    "phenomenonTime": "2024-04-22T15:00:00+01:00",
+                    "result": 5.5
+                },
+                {
+                    "phenomenonTime": "2024-04-22T16:00:00+01:00",
+                    "result": 4.92
+                },
+                {
+                    "phenomenonTime": "2024-04-22T17:00:00+01:00",
+                    "result": 4.6
+                },
+                {
+                    "phenomenonTime": "2024-04-22T18:00:00+01:00",
+                    "result": 4.04
+                },
+                {
+                    "phenomenonTime": "2024-04-22T19:00:00+01:00",
+                    "result": 2.7
+                },
+                {
+                    "phenomenonTime": "2024-04-22T20:00:00+01:00",
+                    "result": 4.07
+                },
+                {
+                    "phenomenonTime": "2024-04-22T21:00:00+01:00",
+                    "result": 5.62
+                },
+                {
+                    "phenomenonTime": "2024-04-22T22:00:00+01:00",
+                    "result": 6.51
+                },
+                {
+                    "phenomenonTime": "2024-04-22T23:00:00+01:00",
+                    "result": 8.15
+                },
+                {
+                    "phenomenonTime": "2024-04-23T00:00:00+01:00",
+                    "result": 12.39
+                },
+                {
+                    "phenomenonTime": "2024-04-23T01:00:00+01:00",
+                    "result": 17.05
+                },
+                {
+                    "phenomenonTime": "2024-04-23T02:00:00+01:00",
+                    "result": 15.91
+                },
+                {
+                    "phenomenonTime": "2024-04-23T03:00:00+01:00",
+                    "result": 22.13
+                },
+                {
+                    "phenomenonTime": "2024-04-23T04:00:00+01:00",
+                    "result": 14.59
+                },
+                {
+                    "phenomenonTime": "2024-04-23T05:00:00+01:00",
+                    "result": 28.85
+                },
+                {
+                    "phenomenonTime": "2024-04-23T06:00:00+01:00",
+                    "result": 46.56
+                },
+                {
+                    "phenomenonTime": "2024-04-23T07:00:00+01:00",
+                    "result": 50.16
+                },
+                {
+                    "phenomenonTime": "2024-04-23T08:00:00+01:00",
+                    "result": 50.34
+                },
+                {
+                    "phenomenonTime": "2024-04-23T09:00:00+01:00",
+                    "result": 15.43
+                },
+                {
+                    "phenomenonTime": "2024-04-23T10:00:00+01:00",
+                    "result": 9.91
+                },
+                {
+                    "phenomenonTime": "2024-04-23T11:00:00+01:00",
+                    "result": 10.68
+                },
+                {
+                    "phenomenonTime": "2024-04-23T12:00:00+01:00",
+                    "result": 11.14
+                },
+                {
+                    "phenomenonTime": "2024-04-23T13:00:00+01:00",
+                    "result": 11.28
+                },
+                {
+                    "phenomenonTime": "2024-04-23T14:00:00+01:00",
+                    "result": 9.86
+                },
+                {
+                    "phenomenonTime": "2024-04-23T15:00:00+01:00",
+                    "result": 10.46
+                },
+                {
+                    "phenomenonTime": "2024-04-23T16:00:00+01:00",
+                    "result": 5.07
+                },
+                {
+                    "phenomenonTime": "2024-04-23T17:00:00+01:00",
+                    "result": 5.48
+                },
+                {
+                    "phenomenonTime": "2024-04-23T18:00:00+01:00",
+                    "result": 5.69
+                },
+                {
+                    "phenomenonTime": "2024-04-23T19:00:00+01:00",
+                    "result": 5.41
+                },
+                {
+                    "phenomenonTime": "2024-04-23T20:00:00+01:00",
+                    "result": 7.36
+                },
+                {
+                    "phenomenonTime": "2024-04-23T21:00:00+01:00",
+                    "result": 9.76
+                },
+                {
+                    "phenomenonTime": "2024-04-23T22:00:00+01:00",
+                    "result": 8.53
+                },
+                {
+                    "phenomenonTime": "2024-04-23T23:00:00+01:00",
+                    "result": 6.82
+                },
+                {
+                    "phenomenonTime": "2024-04-24T00:00:00+01:00",
+                    "result": 7.44
+                },
+                {
+                    "phenomenonTime": "2024-04-24T01:00:00+01:00",
+                    "result": 6.71
+                },
+                {
+                    "phenomenonTime": "2024-04-24T02:00:00+01:00",
+                    "result": 6.67
+                },
+                {
+                    "phenomenonTime": "2024-04-24T03:00:00+01:00",
+                    "result": 10.67
+                },
+                {
+                    "phenomenonTime": "2024-04-24T04:00:00+01:00",
+                    "result": 7.35
+                },
+                {
+                    "phenomenonTime": "2024-04-24T05:00:00+01:00",
+                    "result": 7.42
+                },
+                {
+                    "phenomenonTime": "2024-04-24T06:00:00+01:00",
+                    "result": 18.38
+                },
+                {
+                    "phenomenonTime": "2024-04-24T07:00:00+01:00",
+                    "result": 13.65
+                },
+                {
+                    "phenomenonTime": "2024-04-24T08:00:00+01:00",
+                    "result": 14.87
+                },
+                {
+                    "phenomenonTime": "2024-04-24T09:00:00+01:00",
+                    "result": 8.83
+                },
+                {
+                    "phenomenonTime": "2024-04-24T10:00:00+01:00",
+                    "result": 8.71
+                },
+                {
+                    "phenomenonTime": "2024-04-24T11:00:00+01:00",
+                    "result": 5.22
+                },
+                {
+                    "phenomenonTime": "2024-04-24T12:00:00+01:00",
+                    "result": 6.97
+                },
+                {
+                    "phenomenonTime": "2024-04-24T13:00:00+01:00",
+                    "result": 7.14
+                },
+                {
+                    "phenomenonTime": "2024-04-24T14:00:00+01:00",
+                    "result": 4.23
+                },
+                {
+                    "phenomenonTime": "2024-04-24T15:00:00+01:00",
+                    "result": 5.59
+                },
+                {
+                    "phenomenonTime": "2024-04-24T16:00:00+01:00",
+                    "result": 4.17
+                },
+                {
+                    "phenomenonTime": "2024-04-24T17:00:00+01:00",
+                    "result": 4.92
+                },
+                {
+                    "phenomenonTime": "2024-04-24T18:00:00+01:00",
+                    "result": 4.39
+                },
+                {
+                    "phenomenonTime": "2024-04-24T19:00:00+01:00",
+                    "result": 4.73
+                },
+                {
+                    "phenomenonTime": "2024-04-24T20:00:00+01:00",
+                    "result": 9.79
+                },
+                {
+                    "phenomenonTime": "2024-04-24T21:00:00+01:00",
+                    "result": 13.45
+                },
+                {
+                    "phenomenonTime": "2024-04-24T22:00:00+01:00",
+                    "result": 6.4
+                },
+                {
+                    "phenomenonTime": "2024-04-24T23:00:00+01:00",
+                    "result": 6.21
+                },
+                {
+                    "phenomenonTime": "2024-04-25T00:00:00+01:00",
+                    "result": 9.65
+                },
+                {
+                    "phenomenonTime": "2024-04-25T01:00:00+01:00",
+                    "result": 15.88
+                },
+                {
+                    "phenomenonTime": "2024-04-25T02:00:00+01:00",
+                    "result": 11.1
+                },
+                {
+                    "phenomenonTime": "2024-04-25T03:00:00+01:00",
+                    "result": 9.99
+                },
+                {
+                    "phenomenonTime": "2024-04-25T04:00:00+01:00",
+                    "result": 8.32
+                },
+                {
+                    "phenomenonTime": "2024-04-25T05:00:00+01:00",
+                    "result": 13.33
+                },
+                {
+                    "phenomenonTime": "2024-04-25T06:00:00+01:00",
+                    "result": 5.07
+                },
+                {
+                    "phenomenonTime": "2024-04-25T07:00:00+01:00",
+                    "result": 9.44
+                },
+                {
+                    "phenomenonTime": "2024-04-25T08:00:00+01:00",
+                    "result": 6.11
+                },
+                {
+                    "phenomenonTime": "2024-04-25T09:00:00+01:00",
+                    "result": 5.56
+                },
+                {
+                    "phenomenonTime": "2024-04-25T10:00:00+01:00",
+                    "result": 5.11
+                },
+                {
+                    "phenomenonTime": "2024-04-25T11:00:00+01:00",
+                    "result": 7.85
+                },
+                {
+                    "phenomenonTime": "2024-04-25T12:00:00+01:00",
+                    "result": 8.62
+                },
+                {
+                    "phenomenonTime": "2024-04-25T13:00:00+01:00",
+                    "result": 6.51
+                },
+                {
+                    "phenomenonTime": "2024-04-25T14:00:00+01:00",
+                    "result": 5.13
+                },
+                {
+                    "phenomenonTime": "2024-04-25T15:00:00+01:00",
+                    "result": 7.88
+                },
+                {
+                    "phenomenonTime": "2024-04-25T16:00:00+01:00",
+                    "result": 8.68
+                },
+                {
+                    "phenomenonTime": "2024-04-25T17:00:00+01:00",
+                    "result": 8.92
+                },
+                {
+                    "phenomenonTime": "2024-04-25T18:00:00+01:00",
+                    "result": 9.97
+                },
+                {
+                    "phenomenonTime": "2024-04-25T19:00:00+01:00",
+                    "result": 10.34
+                },
+                {
+                    "phenomenonTime": "2024-04-25T20:00:00+01:00",
+                    "result": 6.39
+                },
+                {
+                    "phenomenonTime": "2024-04-25T21:00:00+01:00",
+                    "result": 5.07
+                },
+                {
+                    "phenomenonTime": "2024-04-25T22:00:00+01:00",
+                    "result": 5.36
+                },
+                {
+                    "phenomenonTime": "2024-04-25T23:00:00+01:00",
+                    "result": 5.97
+                },
+                {
+                    "phenomenonTime": "2024-04-26T00:00:00+01:00",
+                    "result": 4.07
+                },
+                {
+                    "phenomenonTime": "2024-04-26T01:00:00+01:00",
+                    "result": 2.96
+                },
+                {
+                    "phenomenonTime": "2024-04-26T02:00:00+01:00",
+                    "result": 3.3
+                },
+                {
+                    "phenomenonTime": "2024-04-26T03:00:00+01:00",
+                    "result": 3.07
+                },
+                {
+                    "phenomenonTime": "2024-04-26T04:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-26T05:00:00+01:00",
+                    "result": 12.24
+                },
+                {
+                    "phenomenonTime": "2024-04-26T06:00:00+01:00",
+                    "result": 15.71
+                },
+                {
+                    "phenomenonTime": "2024-04-26T07:00:00+01:00",
+                    "result": 9.49
+                },
+                {
+                    "phenomenonTime": "2024-04-26T08:00:00+01:00",
+                    "result": 5.11
+                },
+                {
+                    "phenomenonTime": "2024-04-26T09:00:00+01:00",
+                    "result": 2.92
+                },
+                {
+                    "phenomenonTime": "2024-04-26T10:00:00+01:00",
+                    "result": 2.34
+                },
+                {
+                    "phenomenonTime": "2024-04-26T11:00:00+01:00",
+                    "result": 2.35
+                },
+                {
+                    "phenomenonTime": "2024-04-26T12:00:00+01:00",
+                    "result": 2.58
+                },
+                {
+                    "phenomenonTime": "2024-04-26T13:00:00+01:00",
+                    "result": 1.76
+                },
+                {
+                    "phenomenonTime": "2024-04-26T14:00:00+01:00",
+                    "result": 1.86
+                },
+                {
+                    "phenomenonTime": "2024-04-26T15:00:00+01:00",
+                    "result": 2.1
+                },
+                {
+                    "phenomenonTime": "2024-04-26T16:00:00+01:00",
+                    "result": 2.52
+                },
+                {
+                    "phenomenonTime": "2024-04-26T17:00:00+01:00",
+                    "result": 2.33
+                },
+                {
+                    "phenomenonTime": "2024-04-26T18:00:00+01:00",
+                    "result": 2.87
+                },
+                {
+                    "phenomenonTime": "2024-04-26T19:00:00+01:00",
+                    "result": 3.7
+                },
+                {
+                    "phenomenonTime": "2024-04-26T20:00:00+01:00",
+                    "result": 3.26
+                },
+                {
+                    "phenomenonTime": "2024-04-26T21:00:00+01:00",
+                    "result": 4.22
+                },
+                {
+                    "phenomenonTime": "2024-04-26T22:00:00+01:00",
+                    "result": 6.98
+                },
+                {
+                    "phenomenonTime": "2024-04-26T23:00:00+01:00",
+                    "result": 9.73
+                },
+                {
+                    "phenomenonTime": "2024-04-27T00:00:00+01:00",
+                    "result": 17.93
+                },
+                {
+                    "phenomenonTime": "2024-04-27T01:00:00+01:00",
+                    "result": 11.62
+                },
+                {
+                    "phenomenonTime": "2024-04-27T02:00:00+01:00",
+                    "result": 10.93
+                },
+                {
+                    "phenomenonTime": "2024-04-27T03:00:00+01:00",
+                    "result": 10.98
+                },
+                {
+                    "phenomenonTime": "2024-04-27T04:00:00+01:00",
+                    "result": 14.47
+                },
+                {
+                    "phenomenonTime": "2024-04-27T05:00:00+01:00",
+                    "result": 16.04
+                },
+                {
+                    "phenomenonTime": "2024-04-27T06:00:00+01:00",
+                    "result": 17.03
+                },
+                {
+                    "phenomenonTime": "2024-04-27T07:00:00+01:00",
+                    "result": 15.9
+                },
+                {
+                    "phenomenonTime": "2024-04-27T08:00:00+01:00",
+                    "result": 11.79
+                },
+                {
+                    "phenomenonTime": "2024-04-27T09:00:00+01:00",
+                    "result": 8.65
+                },
+                {
+                    "phenomenonTime": "2024-04-27T10:00:00+01:00",
+                    "result": 6.54
+                },
+                {
+                    "phenomenonTime": "2024-04-27T11:00:00+01:00",
+                    "result": 4.4
+                },
+                {
+                    "phenomenonTime": "2024-04-27T12:00:00+01:00",
+                    "result": 3.57
+                },
+                {
+                    "phenomenonTime": "2024-04-27T13:00:00+01:00",
+                    "result": 4.85
+                },
+                {
+                    "phenomenonTime": "2024-04-27T14:00:00+01:00",
+                    "result": 5.08
+                },
+                {
+                    "phenomenonTime": "2024-04-27T15:00:00+01:00",
+                    "result": 4.01
+                },
+                {
+                    "phenomenonTime": "2024-04-27T16:00:00+01:00",
+                    "result": 3.52
+                },
+                {
+                    "phenomenonTime": "2024-04-27T17:00:00+01:00",
+                    "result": 2.45
+                },
+                {
+                    "phenomenonTime": "2024-04-27T18:00:00+01:00",
+                    "result": 3.26
+                },
+                {
+                    "phenomenonTime": "2024-04-27T19:00:00+01:00",
+                    "result": 5.05
+                },
+                {
+                    "phenomenonTime": "2024-04-27T20:00:00+01:00",
+                    "result": 23.07
+                },
+                {
+                    "phenomenonTime": "2024-04-27T21:00:00+01:00",
+                    "result": 15.92
+                },
+                {
+                    "phenomenonTime": "2024-04-27T22:00:00+01:00",
+                    "result": 12.12
+                },
+                {
+                    "phenomenonTime": "2024-04-27T23:00:00+01:00",
+                    "result": 7.05
+                },
+                {
+                    "phenomenonTime": "2024-04-28T00:00:00+01:00",
+                    "result": 3.86
+                },
+                {
+                    "phenomenonTime": "2024-04-28T01:00:00+01:00",
+                    "result": 9.57
+                },
+                {
+                    "phenomenonTime": "2024-04-28T02:00:00+01:00",
+                    "result": 6.12
+                },
+                {
+                    "phenomenonTime": "2024-04-28T03:00:00+01:00",
+                    "result": 5.43
+                },
+                {
+                    "phenomenonTime": "2024-04-28T04:00:00+01:00",
+                    "result": 4.75
+                },
+                {
+                    "phenomenonTime": "2024-04-28T05:00:00+01:00",
+                    "result": 6.38
+                },
+                {
+                    "phenomenonTime": "2024-04-28T06:00:00+01:00",
+                    "result": 3.16
+                },
+                {
+                    "phenomenonTime": "2024-04-28T07:00:00+01:00",
+                    "result": 3.04
+                },
+                {
+                    "phenomenonTime": "2024-04-28T08:00:00+01:00",
+                    "result": 4.4
+                },
+                {
+                    "phenomenonTime": "2024-04-28T09:00:00+01:00",
+                    "result": 3.8
+                },
+                {
+                    "phenomenonTime": "2024-04-28T10:00:00+01:00",
+                    "result": 3.06
+                },
+                {
+                    "phenomenonTime": "2024-04-28T11:00:00+01:00",
+                    "result": 4.29
+                },
+                {
+                    "phenomenonTime": "2024-04-28T12:00:00+01:00",
+                    "result": 4.35
+                },
+                {
+                    "phenomenonTime": "2024-04-28T13:00:00+01:00",
+                    "result": 3.59
+                },
+                {
+                    "phenomenonTime": "2024-04-28T14:00:00+01:00",
+                    "result": 3.9
+                },
+                {
+                    "phenomenonTime": "2024-04-28T15:00:00+01:00",
+                    "result": 3.93
+                },
+                {
+                    "phenomenonTime": "2024-04-28T16:00:00+01:00",
+                    "result": 3.38
+                },
+                {
+                    "phenomenonTime": "2024-04-28T17:00:00+01:00",
+                    "result": 3.41
+                },
+                {
+                    "phenomenonTime": "2024-04-28T18:00:00+01:00",
+                    "result": 2.95
+                },
+                {
+                    "phenomenonTime": "2024-04-28T19:00:00+01:00",
+                    "result": 3.67
+                },
+                {
+                    "phenomenonTime": "2024-04-28T20:00:00+01:00",
+                    "result": 5.65
+                },
+                {
+                    "phenomenonTime": "2024-04-28T21:00:00+01:00",
+                    "result": 8.17
+                },
+                {
+                    "phenomenonTime": "2024-04-28T22:00:00+01:00",
+                    "result": 13.3
+                },
+                {
+                    "phenomenonTime": "2024-04-28T23:00:00+01:00",
+                    "result": 8.76
+                },
+                {
+                    "phenomenonTime": "2024-04-29T00:00:00+01:00",
+                    "result": 12.13
+                },
+                {
+                    "phenomenonTime": "2024-04-29T01:00:00+01:00",
+                    "result": 19.5
+                },
+                {
+                    "phenomenonTime": "2024-04-29T02:00:00+01:00",
+                    "result": 15.66
+                },
+                {
+                    "phenomenonTime": "2024-04-29T03:00:00+01:00",
+                    "result": 18.27
+                },
+                {
+                    "phenomenonTime": "2024-04-29T04:00:00+01:00",
+                    "result": 13.16
+                },
+                {
+                    "phenomenonTime": "2024-04-29T05:00:00+01:00",
+                    "result": 15.98
+                },
+                {
+                    "phenomenonTime": "2024-04-29T06:00:00+01:00",
+                    "result": 17.86
+                },
+                {
+                    "phenomenonTime": "2024-04-29T07:00:00+01:00",
+                    "result": 20.35
+                },
+                {
+                    "phenomenonTime": "2024-04-29T08:00:00+01:00",
+                    "result": 17.65
+                },
+                {
+                    "phenomenonTime": "2024-04-29T09:00:00+01:00",
+                    "result": 15.47
+                },
+                {
+                    "phenomenonTime": "2024-04-29T10:00:00+01:00",
+                    "result": 12.53
+                },
+                {
+                    "phenomenonTime": "2024-04-29T11:00:00+01:00",
+                    "result": 12.84
+                },
+                {
+                    "phenomenonTime": "2024-04-29T12:00:00+01:00",
+                    "result": 8.07
+                },
+                {
+                    "phenomenonTime": "2024-04-29T13:00:00+01:00",
+                    "result": 6.97
+                },
+                {
+                    "phenomenonTime": "2024-04-29T14:00:00+01:00",
+                    "result": 8.65
+                },
+                {
+                    "phenomenonTime": "2024-04-29T15:00:00+01:00",
+                    "result": 9.2
+                },
+                {
+                    "phenomenonTime": "2024-04-29T16:00:00+01:00",
+                    "result": 8.04
+                },
+                {
+                    "phenomenonTime": "2024-04-29T17:00:00+01:00",
+                    "result": 7.37
+                },
+                {
+                    "phenomenonTime": "2024-04-29T18:00:00+01:00",
+                    "result": 9.06
+                },
+                {
+                    "phenomenonTime": "2024-04-29T19:00:00+01:00",
+                    "result": 16.46
+                },
+                {
+                    "phenomenonTime": "2024-04-29T20:00:00+01:00",
+                    "result": 33.65
+                },
+                {
+                    "phenomenonTime": "2024-04-29T21:00:00+01:00",
+                    "result": 27.21
+                },
+                {
+                    "phenomenonTime": "2024-04-29T22:00:00+01:00",
+                    "result": 31.64
+                },
+                {
+                    "phenomenonTime": "2024-04-29T23:00:00+01:00",
+                    "result": 35.48
+                },
+                {
+                    "phenomenonTime": "2024-04-30T00:00:00+01:00",
+                    "result": 19.05
+                },
+                {
+                    "phenomenonTime": "2024-04-30T01:00:00+01:00",
+                    "result": 32.72
+                },
+                {
+                    "phenomenonTime": "2024-04-30T02:00:00+01:00",
+                    "result": 42.98
+                },
+                {
+                    "phenomenonTime": "2024-04-30T03:00:00+01:00",
+                    "result": 39.76
+                },
+                {
+                    "phenomenonTime": "2024-04-30T04:00:00+01:00",
+                    "result": 28.07
+                },
+                {
+                    "phenomenonTime": "2024-04-30T05:00:00+01:00",
+                    "result": 14.11
+                },
+                {
+                    "phenomenonTime": "2024-04-30T06:00:00+01:00",
+                    "result": 9.34
+                },
+                {
+                    "phenomenonTime": "2024-04-30T07:00:00+01:00",
+                    "result": 14.17
+                },
+                {
+                    "phenomenonTime": "2024-04-30T08:00:00+01:00",
+                    "result": 15.1
+                },
+                {
+                    "phenomenonTime": "2024-04-30T09:00:00+01:00",
+                    "result": 8.04
+                },
+                {
+                    "phenomenonTime": "2024-04-30T10:00:00+01:00",
+                    "result": 7.61
+                },
+                {
+                    "phenomenonTime": "2024-04-30T11:00:00+01:00",
+                    "result": 9.58
+                },
+                {
+                    "phenomenonTime": "2024-04-30T12:00:00+01:00",
+                    "result": 5.57
+                },
+                {
+                    "phenomenonTime": "2024-04-30T13:00:00+01:00",
+                    "result": 5.49
+                },
+                {
+                    "phenomenonTime": "2024-04-30T14:00:00+01:00",
+                    "result": 4.09
+                },
+                {
+                    "phenomenonTime": "2024-04-30T15:00:00+01:00",
+                    "result": 4.87
+                },
+                {
+                    "phenomenonTime": "2024-04-30T16:00:00+01:00",
+                    "result": 6.85
+                },
+                {
+                    "phenomenonTime": "2024-04-30T17:00:00+01:00",
+                    "result": 6.2
+                },
+                {
+                    "phenomenonTime": "2024-04-30T18:00:00+01:00",
+                    "result": 9.47
+                },
+                {
+                    "phenomenonTime": "2024-04-30T19:00:00+01:00",
+                    "result": 10.4
+                },
+                {
+                    "phenomenonTime": "2024-04-30T20:00:00+01:00",
+                    "result": 13.2
+                },
+                {
+                    "phenomenonTime": "2024-04-30T21:00:00+01:00",
+                    "result": 26.74
+                },
+                {
+                    "phenomenonTime": "2024-04-30T22:00:00+01:00",
+                    "result": 16.14
+                },
+                {
+                    "phenomenonTime": "2024-04-30T23:00:00+01:00",
+                    "result": 22.29
+                },
+                {
+                    "phenomenonTime": "2024-05-01T00:00:00+01:00",
+                    "result": 22.18
+                }
+            ]
+        }
+    ]
+}
