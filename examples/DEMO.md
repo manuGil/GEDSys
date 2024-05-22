@@ -124,7 +124,7 @@ if __name__ == "__main__":
   main()
 ```
 
-#### Example Notification
+#### Example Notification Message
 
 ```shell
 AirQuality : AlertPM25 : 
@@ -300,7 +300,7 @@ if __name__ == "__main__":
   main()
 ```
 
-#### Example Notification
+#### Example Notification Message
 
   ```shell
   AirQualityMultiple: AirQualityAlert:         
@@ -470,7 +470,7 @@ if __name__ == "__main__":
   main()
 ```
 
-#### Example Notificaition
+#### Example Notification Message
 
 ```shell
  HotDay : HotDayAlert : 
