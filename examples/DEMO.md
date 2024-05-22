@@ -1,6 +1,6 @@
 # Demostration of GeDL Version 0.1.0
 
-## Use Case 1:  AirQuality event for PM2.5
+## Use Case 1:  AirQuality Gevent for $PM_{2.5}$ 
 
 Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5}$ is above $15 \mu g /m^{3}$ within an area around Den Haag and Rotterdam between 08:00 and 20:00 hrs. on the 4th of April 2024.
 
@@ -20,7 +20,9 @@ datastream PM25 : measurement ;
     cond PM25 > 15.f ; 
     extent DenHaagRotterdam = {  
       feature: "POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 
-                4.1949516 51.8056937, 4.1953137 52.1272725))" 
+                4.1949516 51.8056937, 4.1953137 52.1272725))",
+      srid: 4326,
+      buffer: <no buffer> 
     } ; 
     time window ( "2024-04-04 08:00:00" , "2024-04-04 20:00:00" ); 
   }; 
@@ -122,22 +124,153 @@ if __name__ == "__main__":
   main()
 ```
 
-## Use Case 2:
+## Use Case 2: AirQuality Gevent for $PM_{2.5}$ and $NO_{2}$
 
 
-Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5}$ is above $15 \mu g /m^{3}$ within an area around Amsterdam between 10:00  between 10 a.m. and 6 p.m. on a particular day.
+Purpose: Detect a geographic event (gevent) when the concentrations of $PM_{2.5}$ and $NO_2$ 
+are  $15 \mu g /m^{3}$ or more and $30 \mu g /m^{3}$ or more, respectively, if within 60 minutes of each other; around Den Haag and Rotterdam.
 
-- Phenomenon: $PM_{2.5}$
-- Condition: value is grater than 15
-- Aread around Amsterdam (EPSG: 4326):  `POLYGON ((4.6997419 52.4827406, 5.0308502 52.4865278, 5.0335553 52.2625428, 4.7024470 52.2684941, 4.6997419 52.4827406))`
-- Day: Saturday 6th April, 2024
+- Phenomena: $PM_{2.5}$ and $NO_2$
+- Condition: $PM_{2.5}$ is grater or equal to 15.00, and $NO_2$ is grater or equal to 30.00
+- Detection extent (Area around Den Haag and Rotterdam, EPSG: 4326):  `POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))`
+- Detection time: the duration between $PM_{25}$ and $NO_2$ is within 60 minutes
+
+#### GeDL
+Event definition using GeDL.
+
+```java
+datastream PM25 : measurement ;
+datastream NO2 : measurement ;  
+ 
+  event AirQualityMultiple ( PM25, NO2 ){ 
+    cond PM25 >= 15.f && NO2 >= 30.f; 
+    extent DenHaagRotterdam = {  
+      feature: "POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))" ,  
+      srid: 4326,
+      buffer: <no buffer> 
+    } ; 
+    <spatial granularity> 
+    time duration ( 60 min ); 
+  }; 
+ 
+  notification AirQualityAlert( AirQualityMultiple) { 
+    [ PM25, NO2 ] 
+  }; 
+```
 
 
+#### SiddhiQL 
+Generated source code in SiddhiQL for the Event Processing Engine.
 
+```java
+@App:name('AirQualityMultiple')
+@App:description('A description of the app')
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/airqualitymultiple-pm25",
+  @map(type = 'json')
+)
+define stream PM25 (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/airqualitymultiple-no2",
+  @map(type = 'json')
+)
+define stream NO2 (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@sink(
+  type = 'log',
+  @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
+)
+define stream AirQualityAlert (
+  notification string,
+  observations object,
+  detectionTime string,
+  observationTime long
+);
+
+@info(name = 'AirQualityMultiple')
+from every PM25[result >= 15.f], NO2[result >= 30.f] within 60 min
+select 'AirQualityAlert' as notification,
+map:create('PM25',
+    map:create(
+      'observedProperty', PM25.observedProperty,
+      'phenomenonTime', PM25.phenomenonTime,
+      'resultTime', PM25.resultTime,
+      'result', PM25.result,
+      'location', PM25.location
+), 'NO2',
+      map:create(
+        'observedProperty', NO2.observedProperty,
+        'phenomenonTime', NO2.phenomenonTime,
+        'resultTime', NO2.resultTime,
+        'result', NO2.result,
+        'location', NO2.location
+) ) as observations,
+time:currentTimestamp() as detectionTime,
+time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as observationTime
+insert into AirQualityAlert;
+```
+
+### Python
+Generated source code in Python for the GeDL-Interpreter.
+
+```python
+"""
+ Stream generator for AirQualityMultiple gevent.
+"""
+
+import os
+from datetime import datetime
+from dotenv import load_dotenv
+import gedl_interpreter.stream_generator.generator as  generator
+
+def main():
+  # loads services settings
+  generator.load_config('./config.env') # set path to config file
+  sensingapi = generator.SensingService(root_url=os.getenv("OBSERVATION_API"))
+  cep = generator.EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
+
+  expiration = datetime.now() + timedelta(hours=1)
+  update_frequency = 5 # seconds
+  detection_extent = "POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))"
+  srid = 4326
+  event_name = 'airqualitymultiple'
+  phenomena = ['PM25', 'NO2']
+  buffer = None
+
+  gevent = generator.Gevent(name=event_name,
+    expiration=expiration,
+    phenomena=phenomena,
+    update_frequency=update_frequency,
+    detection_extent=detection_extent,
+    buffer_distance=buffer
+    )
+
+  stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
+  stream_generator.run()
+
+if __name__ == "__main__":
+  main()
+```
 
 ## Other Use Cases
 
-### HotDay
+### HotDay Gevent
 
 Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Temperature is above $20 \degree C$ within a geographic area extended by spatial buffer of 0.015 degrees (~1 Km).
 
@@ -149,24 +282,28 @@ Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Te
 
 #### GeDL
 
-    ```java
-    datastream Temperature : measurement ; 
-    
-    event HotDay ( Temperature ){ 
-        cond Temperature > 20.f ; 
-        extent city = {  
-        feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))' , 
-        srid: 4326, 
-        buffer: 0.015f deg 
-        } ; 
-    }; 
-    
-    notification HotDayAlert( HotDay) { 
-        [ Temperature ] 
-    };                        
-    ```
+Event definition using GeDL.
+
+```java
+datastream Temperature : measurement ; 
+
+event HotDay ( Temperature ){ 
+    cond Temperature > 20.f ; 
+    extent city = {  
+    feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))' , 
+    srid: 4326, 
+    buffer: 0.015f deg 
+    } ; 
+}; 
+
+notification HotDayAlert( HotDay) { 
+    [ Temperature ] 
+};                        
+```
 
 #### SiddhiQL 
+
+Generated source code in SiddhiQL for the Event Processing Engine.
 
 ```java
  @App:name('HotDay')
@@ -213,6 +350,7 @@ insert into HotDayAlert;
 ```
 
 #### Python
+Generated source code in Python for the GeDL-Interpreter.
 
 ```python
 """
