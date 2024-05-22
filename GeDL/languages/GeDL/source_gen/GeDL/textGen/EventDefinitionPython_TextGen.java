@@ -29,7 +29,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     //  imports
     tgs.append("import os");
     tgs.newLine();
-    tgs.append("from datetime import datetime");
+    tgs.append("from datetime import datetime, timedelta");
     tgs.newLine();
     tgs.append("from dotenv import load_dotenv");
     tgs.newLine();

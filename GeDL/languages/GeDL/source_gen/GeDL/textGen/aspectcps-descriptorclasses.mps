@@ -2918,7 +2918,7 @@
                   <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence)" resolve="append" />
                   <uo k="s:originTrace" v="n:4954515614150256237" />
                   <node concept="Xl_RD" id="c1" role="37wK5m">
-                    <property role="Xl_RC" value="within " />
+                    <property role="Xl_RC" value=" within " />
                     <uo k="s:originTrace" v="n:4954515614150256237" />
                   </node>
                 </node>
@@ -3532,7 +3532,7 @@
               <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence)" resolve="append" />
               <uo k="s:originTrace" v="n:2602366688405968126" />
               <node concept="Xl_RD" id="g8" role="37wK5m">
-                <property role="Xl_RC" value="from datetime import datetime" />
+                <property role="Xl_RC" value="from datetime import datetime, timedelta" />
                 <uo k="s:originTrace" v="n:2602366688405968126" />
               </node>
             </node>
