@@ -571,23 +571,6 @@
       <property role="TrG5h" value="or" />
       <property role="1L1pqM" value="||" />
     </node>
-    <node concept="25R33" id="2c2WbewossL" role="25R1y">
-      <property role="3tVfz5" value="2522843395561473841" />
-      <property role="TrG5h" value="not" />
-      <property role="1L1pqM" value="!" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="48an8Cbw9AK">
-    <property role="EcuMT" value="4758717704238569904" />
-    <property role="TrG5h" value="PhenomenonList" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="48an8Cbw9Yn" role="1TKVEi">
-      <property role="IQ2ns" value="4758717704238571415" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="phenomenon" />
-      <property role="20lbJX" value="fLJekj6/_1__n" />
-      <ref role="20lvS9" node="67ABhWZBV_Q" resolve="Phenomenon" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2iNsMRp5c3T">
     <property role="EcuMT" value="2644584046949351673" />

@@ -39,7 +39,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNotification = createDescriptorForNotification();
   /*package*/ final ConceptDescriptor myConceptPayloadPhenomenon = createDescriptorForPayloadPhenomenon();
   /*package*/ final ConceptDescriptor myConceptPhenomenon = createDescriptorForPhenomenon();
-  /*package*/ final ConceptDescriptor myConceptPhenomenonList = createDescriptorForPhenomenonList();
   /*package*/ final ConceptDescriptor myConceptSpatialGranulariy = createDescriptorForSpatialGranulariy();
   /*package*/ final ConceptDescriptor myConceptTime = createDescriptorForTime();
   /*package*/ final ConceptDescriptor myConceptTimeInstance = createDescriptorForTimeInstance();
@@ -64,7 +63,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventDefinitionPython, myConceptEventDefinitionSiddhi, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptPhenomenonList, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
+    return Arrays.asList(myConceptComparison, myConceptCondition, myConceptConditionType, myConceptDataStream, myConceptDataStreamList, myConceptDateTime, myConceptDetectionExtent, myConceptDetectionRule, myConceptDetectionTime, myConceptDistance, myConceptDuration, myConceptDurationWithUnits, myConceptEvent, myConceptEventDefinition, myConceptEventDefinitionPython, myConceptEventDefinitionSiddhi, myConceptEventParameter, myConceptExpression, myConceptFeature, myConceptLogicalOperator, myConceptNotification, myConceptPayloadPhenomenon, myConceptPhenomenon, myConceptSpatialGranulariy, myConceptTime, myConceptTimeInstance, myConceptTimeType, myConceptTimeWindow, myConceptValue);
   }
 
   @Override
@@ -117,8 +116,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPayloadPhenomenon;
       case LanguageConceptSwitch.Phenomenon:
         return myConceptPhenomenon;
-      case LanguageConceptSwitch.PhenomenonList:
-        return myConceptPhenomenonList;
       case LanguageConceptSwitch.SpatialGranulariy:
         return myConceptSpatialGranulariy;
       case LanguageConceptSwitch.Time:
@@ -371,14 +368,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(3);
     b.property("observationType", 0x56a0a8571da38c58L).type(MetaIdFactory.dataTypeId(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x56a0a8571da38eb1L)).origin("6242174175648386136").done();
     b.alias("phenomenon");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForPhenomenonList() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("GeDL", "PhenomenonList", 0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x420a5c8a0b8099b0L);
-    b.class_(false, false, false);
-    b.origin("r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/4758717704238569904");
-    b.version(3);
-    b.aggregate("phenomenon", 0x420a5c8a0b809f97L).target(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x61e69d1f3f9fb976L).optional(false).ordered(true).multiple(true).origin("4758717704238571415").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpatialGranulariy() {
