@@ -30,8 +30,8 @@ The `examples/data` directory contains contains observations data for the use ca
 
 The following examples are provided:
 
-- [AirQuality Gevent for $PM_{2.5}$ ](./examples/DEMO.md#use-case-1--airquality-gevent-for)
-- [AirQuality Gevent for $PM_{2.5}$ and $NO_{2}$ ](./examples/DEMO.md#use-case-2-airquality-gevent-for--and)
+- [AirQuality Gevent for particulate matter ](./examples/DEMO.md#use-case-1--airquality-gevent-for)
+- [AirQuality Gevent for particulate matter and NOx](./examples/DEMO.md#use-case-2-airquality-gevent-for--and)
 - [Other Use Cases](./examples/DEMO.md#other-use-cases)
 
 ## Copyright and License
