@@ -16,7 +16,7 @@ Geographic event Domain Language.
 
 1. On MPS, right-click on the `sandbox` directory inside the `GeDL.sanbox` directory. Then,  **New** and click **event definiton**.
 
-    <img src="../interpreter/docs/_static/img/mps-create-event-definiton.png" width="600">
+    <img src="../interpreter/docs/_static/img/mps-create-event-definiton.png" width="700">
 
 2. Use the new create file for defining a geographic event. Below is an example of a valid defintion. Notice is not possible to pased the code into the MPS editor, the content most be typed in.  To get started press ENTER on the first line.
 
