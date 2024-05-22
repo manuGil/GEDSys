@@ -1,6 +1,6 @@
 # GeDL
 
-Geographic event Domain Language.
+Geographic event Domain Language. [Current GeDL grammar.](./grammar/index.md)
 
 ## Installation
 
