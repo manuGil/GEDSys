@@ -2,12 +2,16 @@
 
 ## Use Case 1:  AirQuality event for PM2.5
 
-Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5}$ is above $15 \mu g /m^{3}$ within an area around Amsterdam between 10:00  between 10 a.m. and 6 p.m. on a particular day.
+Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5}$ is above $15 \mu g /m^{3}$ within an area around Den Haag and Rotterdam between 10:00  between 10 a.m. and 6 p.m. on a particular day.
 
 - Phenomenon: $PM_{2.5}$
 - Condition: value is grater than 15
-- Aread around Amsterdam (EPSG: 4326):  `POLYGON ((4.6997419 52.4827406, 5.0308502 52.4865278, 5.0335553 52.2625428, 4.7024470 52.2684941, 4.6997419 52.4827406))`
+- Aread around Den Haag and Rorterdam (EPSG: 4326):  `POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))`
 - Day: Saturday 6th April, 2024
+
+
+POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))
+
 
 #### GeDL
 
@@ -16,9 +20,9 @@ datastream PM25 : measurement ;
  
   event AirQuality ( PM25 ){ 
     cond PM25 > 15.f <logical operator> <comparison expression>; 
-    extent Amsterdam = {  
-      feature: "POLYGON ((4.6997419 52.4827406, 5.0308502 52.4865278, 
-                5.0335553 52.2625428, 4.7024470 52.2684941, 4.6997419 52.4827406))" ,  
+    extent DenHaag_Rotterdam = {  
+      feature: "POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 
+                4.1949516 51.8056937, 4.1953137 52.1272725))" ,  
       buffer: <no buffer> 
     } ; 
     <spatial granularity> 
@@ -167,7 +171,7 @@ Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Te
 
     ```java
     @App:name('HotDay')
-    @App:description('A descriptionn of the app')
+    @App:description('A description of the app')
 
     @source(
       type = 'http',
@@ -193,7 +197,7 @@ Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Te
     );
 
     @info(name = 'HotDay')
-    from Temparature[result > 20.f]
+    from Temperature[result > 20.f]
     select 'HotDayAlert' as notification,
     map:create('Temperature',
         map:create(
@@ -205,24 +209,26 @@ Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Te
           ) ) as observations,
           time:currentTimestamp() as detectionTime
     insert into HotDayAlert;
+
     ```
 
-### Python: GeDL Intepreter
+#### Python
 
-    ```python
-    """
-    Stream generator for HotDay gevent.
-    """
+  ```python
+  """
+  Stream generator for HotDay gevent.
+  """
 
-    import os
-    from datetime import datetime
-    from dotenv import load_dotenv
-    from generator import StreamGenerator, Gevent, SensingService, EventProcessor
+  import os
+  from datetime import datetime
+  from dotenv import load_dotenv
+  import gedl_interpreter.stream_generator.generator as  generator
 
-    def main():
+  def main():
     # loads services settings
-    sensingapi = SensigService(root_url=os.getenv("OBSERVATION_API"))
-    cep = EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
+    generator.load_config('./playground/config.env') # set path to config file
+    sensingapi = generator.SensingService(root_url=os.getenv("OBSERVATION_API"))
+    cep = generator.EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
 
     expiration = datetime.now().replace(hour=datetime.now().hour+1)
     update_frequency = 5 # seconds
@@ -230,19 +236,19 @@ Purpose: A hot (or warm) day. Detect a geographic event (gevent) whenever the Te
     srid = 4326
     event_name = 'hotday'
     phenomena = ['Temperature']
-    buffer = (0.5, 'deg')
+    buffer = (0.015, 'deg')
 
-    gevent = Gevent(name=event_name,
-        expiration=expiration,
-        phenomena=phenomena,
-        update_frequency=update_frequency,
-        detection_extent=detection_extent,
-        buffer_distance=buffer[0]
-        )
+    gevent = generator.Gevent(name=event_name,
+      expiration=expiration,
+      phenomena=phenomena,
+      update_frequency=update_frequency,
+      detection_extent=detection_extent,
+      buffer_distance=buffer[0]
+      )
 
-    stream_generator = StreamGenerator(gevent, sensingapi, cep)
+    stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
     stream_generator.run()
 
-    if __name__ == "__main__":
+  if __name__ == "__main__":
     main()
-    ```
+  ```
