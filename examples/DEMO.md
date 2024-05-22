@@ -30,7 +30,7 @@ datastream PM25 : measurement ;
   notification AlertPM25( AirQuality) { 
     [ PM25 ] 
   };
-```                                                                                                                                                                                         
+```                                                                                                                                                                     
 #### SiddhiQL 
 
 Generated source code in SiddhiQL for the Event Processing Engine.
@@ -81,7 +81,7 @@ having (observationTime >= time:timestampInMilliseconds("2024-04-04 10:00:00", "
 insert into AlertPM25;                                                      
 ```
 
-### Python
+#### Python
 
 Generated source code in Python for the GeDL-Interpreter.
 
@@ -122,6 +122,38 @@ def main():
 
 if __name__ == "__main__":
   main()
+```
+
+#### Example Notification
+
+```shell
+AirQuality : AlertPM25 : 
+{
+  "gevent": {
+    "event": {
+      "notification": "AlertPM25",
+      "observations": {
+        "PM25": {
+          "result": 17.383,
+          "observedProperty": "PM25",
+          "phenomenonTime": "2024-04-04T17:00:00Z",
+          "location": {
+            "name": "Den Haag-Neherkade",
+            "geojson": {
+              "type": "Point",
+              "coordinates": [
+                4.318551,
+                52.062537
+              ]
+            }
+          }
+        }
+      },
+      "detectionTime": "2024-05-21 20:51:45",
+      "observationTime": 1712242800000
+    }
+  }
+}
 ```
 
 ## Use Case 2: AirQuality Gevent for $PM_{2.5}$ and $NO_{2}$
@@ -226,7 +258,7 @@ time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as
 insert into AirQualityAlert;
 ```
 
-### Python
+#### Python
 Generated source code in Python for the GeDL-Interpreter.
 
 ```python
@@ -268,7 +300,8 @@ if __name__ == "__main__":
   main()
 ```
 
-#### Example Notificatio:
+#### Example Notification
+
   ```shell
   AirQualityMultiple: AirQualityAlert:         
   {
@@ -336,7 +369,7 @@ datastream Temperature : measurement ;
 event HotDay ( Temperature ){ 
     cond Temperature > 20.f ; 
     extent city = {  
-    feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))' , 
+    feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))', 
     srid: 4326, 
     buffer: 0.015f deg 
     } ; 
@@ -437,3 +470,33 @@ if __name__ == "__main__":
   main()
 ```
 
+#### Example Notificaition
+
+```shell
+ HotDay : HotDayAlert : 
+{
+  "gevent": {
+    "event": {
+      "notification": "HotDayAlert",
+      "observations": {
+        "Temperature": {
+          "result": 21.0,
+          "observedProperty": "Temperature",
+          "phenomenonTime": "2019-03-14T10:00:00Z",
+          "location": {
+            "name": "My Living Room",
+            "geojson": {
+              "type": "Point",
+              "coordinates": [
+                8.4259727,
+                49.015308
+              ]
+            }
+          }
+        }
+      },
+      "detectionTime": "2024-05-22 12:52:09"
+    }
+  }
+}
+```
