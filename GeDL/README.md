@@ -14,9 +14,9 @@ Geographic event Domain Language.
 
 ## Using GeDL
 
-1. On MPS, right-clic on the `sandbox` directory inside the `GeDL.sanbox` directory. Then,  **New** and click **event definiton**.
+1. On MPS, right-click on the `sandbox` directory inside the `GeDL.sanbox` directory. Then,  **New** and click **event definiton**.
 
-    <img src="../gedl-interpreter/docs/_static/img/mps-create-event-definiton.png" width="600">
+    <img src="../interpreter/docs/_static/img/mps-create-event-definiton.png" width="600">
 
 2. Use the new create file for defining a geographic event. Below is an example of a valid defintion. Notice is not possible to pased the code into the MPS editor, the content most be typed in.  To get started press ENTER on the first line.
 
@@ -45,10 +45,9 @@ Geographic event Domain Language.
 Examples:
 
 ```java
-// hotDAy.siddhi
-
-@App:name('hotDay')
-@App:description('A descriptionn of the app')
+// HotDAy.siddhi
+@App:name('HotDay')
+@App:description('A description of the app')
 
 @source(
   type = 'http',
@@ -57,6 +56,7 @@ Examples:
 )
 define stream Temperature (
   observedProperty string,
+  phenomenonTime string,
   resultTime string,
   result double,
   location object
@@ -66,52 +66,55 @@ define stream Temperature (
   type = 'log',
   @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
 )
-define stream hotDayAlert (
+define stream HotDayAlert (
   notification string,
   observations object,
-  detectionTime string
+  detectionTime string,
+  observationTime long
 );
 
-@info(name = 'hotDay')
-from Temperature[result > 19.f]
-select 'hotDayAlert' as notification,
+@info(name = 'HotDay')
+from Temperature[result > 20.f]
+select 'HotDayAlert' as notification,
 map:create('Temperature',
     map:create(
       'observedProperty', Temperature.observedProperty,
+      'phenomenonTime', Temperature.phenomenonTime,
       'resultTime', Temperature.resultTime,
       'result', Temperature.result,
       'location', Temperature.location
-      ) ) as observations,
-      time:currentTimestamp() as detectionTime
-insert into hotDayAlert;
+) ) as observations,
+time:currentTimestamp() as detectionTime,
+time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as observationTime
+insert into HotDayAlert;
 ```
 
 ```python
-# hotDay.py
-
+# HotDay.py
 """
- Stream generator for hotDayevent.
+ Stream generator for HotDay gevent.
 """
 
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from generator import StreamGenerator, Gevent, SensingService, EventProcessor
+import gedl_interpreter.stream_generator.generator as  generator
 
 def main():
   # loads services settings
-  sensingapi = SensigService(root_url=os.getenv("OBSERVATION_API"))
-  cep = EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
+  generator.load_config('./config.env') # set path to config file
+  sensingapi = generator.SensingService(root_url=os.getenv("OBSERVATION_API"))
+  cep = generator.EventProcessor(events_url=os.getenv("EPE_RECEIVER_API"))
 
-  expiration = datetime.now().replace(hour=datetime.now().hour+1)
+  expiration = datetime.now() + timedelta(hours=1)
   update_frequency = 5 # seconds
   detection_extent = 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))'
   srid = 4326
   event_name = 'hotday'
   phenomena = ['Temperature']
-  buffer = (0.5, 'deg')
+  buffer = (0.015, 'deg')
 
-  gevent = Gevent(name=event_name,
+  gevent = generator.Gevent(name=event_name,
     expiration=expiration,
     phenomena=phenomena,
     update_frequency=update_frequency,
@@ -119,7 +122,7 @@ def main():
     buffer_distance=buffer[0]
     )
 
-  stream_generator = StreamGenerator(gevent, sensingapi, cep)
+  stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
   stream_generator.run()
 
 if __name__ == "__main__":
