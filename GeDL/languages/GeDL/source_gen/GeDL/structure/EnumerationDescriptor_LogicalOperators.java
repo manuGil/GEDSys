@@ -17,10 +17,9 @@ public class EnumerationDescriptor_LogicalOperators extends EnumerationDescripto
 
   private final EnumerationDescriptor.MemberDescriptor myMember_and_0 = new EnumerationDescriptor.MemberDescriptor("and", "&&", 0x2302f0b3a05e6a16L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561253398");
   private final EnumerationDescriptor.MemberDescriptor myMember_or_0 = new EnumerationDescriptor.MemberDescriptor("or", "||", 0x2302f0b3a05e6a17L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561253399");
-  private final EnumerationDescriptor.MemberDescriptor myMember_not_0 = new EnumerationDescriptor.MemberDescriptor("not", "!", 0x2302f0b3a061c731L, "r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)/2522843395561473841");
 
-  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x2302f0b3a05e6a15L, 0x2302f0b3a05e6a16L, 0x2302f0b3a05e6a17L, 0x2302f0b3a061c731L);
-  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_and_0, myMember_or_0, myMember_not_0);
+  private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, 0x2302f0b3a05e6a15L, 0x2302f0b3a05e6a16L, 0x2302f0b3a05e6a17L);
+  private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_and_0, myMember_or_0);
 
   @Nullable
   @Override
@@ -45,8 +44,6 @@ public class EnumerationDescriptor_LogicalOperators extends EnumerationDescripto
         return myMember_and_0;
       case "or":
         return myMember_or_0;
-      case "not":
-        return myMember_not_0;
     }
     return null;
   }

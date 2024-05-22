@@ -32,7 +32,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Notification;
   private ConceptPresentation props_PayloadPhenomenon;
   private ConceptPresentation props_Phenomenon;
-  private ConceptPresentation props_PhenomenonList;
   private ConceptPresentation props_SpatialGranulariy;
   private ConceptPresentation props_Time;
   private ConceptPresentation props_TimeInstance;
@@ -209,13 +208,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Phenomenon = cpb.create();
         }
         return props_Phenomenon;
-      case LanguageConceptSwitch.PhenomenonList:
-        if (props_PhenomenonList == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PhenomenonList");
-          props_PhenomenonList = cpb.create();
-        }
-        return props_PhenomenonList;
       case LanguageConceptSwitch.SpatialGranulariy:
         if (props_SpatialGranulariy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
