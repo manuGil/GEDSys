@@ -91,7 +91,7 @@ Generated source code in Python for the GeDL-Interpreter.
 """
 
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import gedl_interpreter.stream_generator.generator as  generator
 
@@ -235,7 +235,7 @@ Generated source code in Python for the GeDL-Interpreter.
 """
 
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import gedl_interpreter.stream_generator.generator as  generator
 
@@ -358,7 +358,7 @@ Generated source code in Python for the GeDL-Interpreter.
 """
 
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import gedl_interpreter.stream_generator.generator as  generator
 
