@@ -268,6 +268,52 @@ if __name__ == "__main__":
   main()
 ```
 
+#### Example Notificatio:
+  ```shell
+  AirQualityMultiple: AirQualityAlert:         
+  {
+    "gevent": {
+      "event": {
+        "notification": "AirQualityAlert",
+        "observations": {
+          "NO2": {
+            "result": 30.82,
+            "observedProperty": "NO2",
+            "phenomenonTime": "2024-04-30T23:00:00Z",
+            "location": {
+              "name": "Den Haag-Rebecquestraat",
+              "geojson": {
+                "type": "Point",
+                "coordinates": [
+                  4.289185,
+                  52.077148
+                ]
+              }
+            }
+          },
+          "PM25": {
+            "result": 83.84,
+            "observedProperty": "NO2",
+            "phenomenonTime": "2024-04-30T23:00:00Z",
+            "location": {
+              "name": "Vlaardingen-Riouwlaan",
+              "geojson": {
+                "type": "Point",
+                "coordinates": [
+                  4.32943,
+                  51.914883
+                ]
+              }
+            }
+          }
+        },
+        "detectionTime": "2024-05-22 12:33:30",
+        "observationTime": 1714510800000
+      }
+    }
+  }
+```
+
 ## Other Use Cases
 
 ### HotDay Gevent
@@ -389,5 +435,5 @@ def main():
 
 if __name__ == "__main__":
   main()
-
 ```
+
