@@ -24,6 +24,16 @@ Each of the component have different requirements, therefore we provide separate
 - [FROST Server](./frost-server/README.md)
 - [Siddhi runner](./siddhi-runner/README.md)
 
+## Examples
+
+The `examples/data` directory contains contains observations data for the use cases described in the [Demontration document](./examples/DEMO.md). The JSON files should be [registred to the FROST Server](./frost-server/README.md) *following the ordered specified by the file number*. 
+
+The following examples are provided:
+
+- [AirQuality Gevent for $PM_{2.5}$ ](./examples/DEMO.md#use-case-1--airquality-gevent-for)
+- [AirQuality Gevent for $PM_{2.5}$ and $NO_{2}$ ](./examples/DEMO.md#use-case-2-airquality-gevent-for--and)
+- [Other Use Cases](./examples/DEMO.md#other-use-cases)
+
 ## Copyright and License
 
 &copy; 2024 Manuel G. Garcia, Enschede, The Netherlands. 
