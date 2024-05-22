@@ -45,7 +45,8 @@ Geographic event Domain Language. A language for the definition of **g**eographi
 
 ## Example
 
-The following is the defintion of a gevent for a hot day. More examples, including the generated source code, see the [demo document.](../examples/DEMO.md)
+The following is a basic example for the defintion of a gevent for a hot day. 
+For more examples, including the generated source code, see the [demo document.](../examples/DEMO.md)
 
 ```java
 datastream Temperature : measurement ; 
