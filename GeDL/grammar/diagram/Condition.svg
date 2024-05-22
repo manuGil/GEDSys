@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="649" height="211">
+   <defs>
+      <style type="text/css">
+    @namespace "http://www.w3.org/2000/svg";
+    .line                 {fill: none; stroke: #332900; stroke-width: 1;}
+    .bold-line            {stroke: #141000; shape-rendering: crispEdges; stroke-width: 2;}
+    .thin-line            {stroke: #1F1800; shape-rendering: crispEdges}
+    .filled               {fill: #332900; stroke: none;}
+    text.terminal         {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #141000;
+                            font-weight: bold;
+                          }
+    text.nonterminal      {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1A1400;
+                            font-weight: normal;
+                          }
+    text.regexp           {font-family: Verdana, Sans-serif;
+                            font-size: 12px;
+                            fill: #1F1800;
+                            font-weight: normal;
+                          }
+    rect, circle, polygon {fill: #332900; stroke: #332900;}
+    rect.terminal         {fill: #FFDB4D; stroke: #332900; stroke-width: 1;}
+    rect.nonterminal      {fill: #FFEC9E; stroke: #332900; stroke-width: 1;}
+    rect.text             {fill: none; stroke: none;}
+    polygon.regexp        {fill: #FFF4C7; stroke: #332900; stroke-width: 1;}
+  </style>
+   </defs>
+   <polygon points="11 17 3 13 3 21"/>
+   <polygon points="19 17 11 13 11 21"/>
+   <rect x="33" y="3" width="52" height="32" rx="10"/>
+   <rect x="31"
+         y="1"
+         width="52"
+         height="32"
+         class="terminal"
+         rx="10"/>
+   <text class="terminal" x="41" y="21">cond</text>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#Comparison"
+      xlink:title="Comparison">
+      <rect x="45" y="69" width="96" height="32"/>
+      <rect x="43" y="67" width="96" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="53" y="87">Comparison</text>
+   </a>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#LogicalOperator"
+      xlink:title="LogicalOperator">
+      <rect x="181" y="101" width="120" height="32"/>
+      <rect x="179" y="99" width="120" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="189" y="119">LogicalOperator</text>
+   </a>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#Comparison"
+      xlink:title="Comparison">
+      <rect x="321" y="101" width="96" height="32"/>
+      <rect x="319" y="99" width="96" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="329" y="119">Comparison</text>
+   </a>
+   <rect x="457" y="69" width="24" height="32" rx="10"/>
+   <rect x="455"
+         y="67"
+         width="24"
+         height="32"
+         class="terminal"
+         rx="10"/>
+   <text class="terminal" x="465" y="87">;</text>
+   <rect x="45" y="145" width="42" height="32" rx="10"/>
+   <rect x="43"
+         y="143"
+         width="42"
+         height="32"
+         class="terminal"
+         rx="10"/>
+   <text class="terminal" x="53" y="163">not</text>
+   <rect x="107" y="145" width="26" height="32" rx="10"/>
+   <rect x="105"
+         y="143"
+         width="26"
+         height="32"
+         class="terminal"
+         rx="10"/>
+   <text class="terminal" x="115" y="163">(</text>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#Comparison"
+      xlink:title="Comparison">
+      <rect x="153" y="145" width="96" height="32"/>
+      <rect x="151" y="143" width="96" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="161" y="163">Comparison</text>
+   </a>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#LogicalOperator"
+      xlink:title="LogicalOperator">
+      <rect x="289" y="177" width="120" height="32"/>
+      <rect x="287" y="175" width="120" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="297" y="195">LogicalOperator</text>
+   </a>
+   <a xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink:href="#Comparison"
+      xlink:title="Comparison">
+      <rect x="429" y="177" width="96" height="32"/>
+      <rect x="427" y="175" width="96" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="437" y="195">Comparison</text>
+   </a>
+   <rect x="565" y="145" width="36" height="32" rx="10"/>
+   <rect x="563"
+         y="143"
+         width="36"
+         height="32"
+         class="terminal"
+         rx="10"/>
+   <text class="terminal" x="573" y="163">) ;</text>
+   <path class="line"
+         d="m19 17 h2 m0 0 h10 m52 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-104 66 l2 0 m2 0 l2 0 m2 0 l2 0 m22 0 h10 m96 0 h10 m20 0 h10 m0 0 h246 m-276 0 h20 m256 0 h20 m-296 0 q10 0 10 10 m276 0 q0 -10 10 -10 m-286 10 v12 m276 0 v-12 m-276 12 q0 10 10 10 m256 0 q10 0 10 -10 m-266 10 h10 m120 0 h10 m0 0 h10 m96 0 h10 m20 -32 h10 m24 0 h10 m0 0 h120 m-596 0 h20 m576 0 h20 m-616 0 q10 0 10 10 m596 0 q0 -10 10 -10 m-606 10 v56 m596 0 v-56 m-596 56 q0 10 10 10 m576 0 q10 0 10 -10 m-586 10 h10 m42 0 h10 m0 0 h10 m26 0 h10 m0 0 h10 m96 0 h10 m20 0 h10 m0 0 h246 m-276 0 h20 m256 0 h20 m-296 0 q10 0 10 10 m276 0 q0 -10 10 -10 m-286 10 v12 m276 0 v-12 m-276 12 q0 10 10 10 m256 0 q10 0 10 -10 m-266 10 h10 m120 0 h10 m0 0 h10 m96 0 h10 m20 -32 h10 m36 0 h10 m23 -76 h-3"/>
+   <polygon points="639 83 647 79 647 87"/>
+   <polygon points="639 83 631 79 631 87"/>
+</svg>
