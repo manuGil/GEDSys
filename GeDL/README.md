@@ -1,6 +1,6 @@
 # GeDL
 
-Geographic event Domain Language. A language for the definition of **g**eographic events (gevents) in GEDSys
+Geographic event Domain Language. A  domain specific programming language for the definition of **g**eographic events (gevents) in GEDSys.
 [Current language grammar.](./grammar/index.md)
 
 ## Installation
