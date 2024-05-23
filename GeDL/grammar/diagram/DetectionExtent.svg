@@ -93,59 +93,59 @@
          class="terminal"
          rx="10"/>
    <text class="terminal" x="559" y="21">,</text>
-   <rect x="54" y="69" width="40" height="32" rx="10"/>
-   <rect x="52"
+   <rect x="51" y="69" width="46" height="32" rx="10"/>
+   <rect x="49"
          y="67"
-         width="40"
+         width="46"
          height="32"
          class="terminal"
          rx="10"/>
-   <text class="terminal" x="62" y="87">srs</text>
-   <rect x="114" y="69" width="24" height="32" rx="10"/>
-   <rect x="112"
+   <text class="terminal" x="59" y="87">srid</text>
+   <rect x="117" y="69" width="24" height="32" rx="10"/>
+   <rect x="115"
          y="67"
          width="24"
          height="32"
          class="terminal"
          rx="10"/>
-   <text class="terminal" x="122" y="87">:</text>
+   <text class="terminal" x="125" y="87">:</text>
    <a xmlns:xlink="http://www.w3.org/1999/xlink"
       xlink:href="#EPSGCode"
       xlink:title="EPSGCode">
-      <rect x="158" y="69" width="86" height="32"/>
-      <rect x="156" y="67" width="86" height="32" class="nonterminal"/>
-      <text class="nonterminal" x="166" y="87">EPSGCode</text>
+      <rect x="161" y="69" width="86" height="32"/>
+      <rect x="159" y="67" width="86" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="169" y="87">EPSGCode</text>
    </a>
-   <rect x="284" y="101" width="24" height="32" rx="10"/>
-   <rect x="282"
+   <rect x="287" y="101" width="24" height="32" rx="10"/>
+   <rect x="285"
          y="99"
          width="24"
          height="32"
          class="terminal"
          rx="10"/>
-   <text class="terminal" x="292" y="119">,</text>
-   <rect x="328" y="101" width="60" height="32" rx="10"/>
-   <rect x="326"
+   <text class="terminal" x="295" y="119">,</text>
+   <rect x="331" y="101" width="60" height="32" rx="10"/>
+   <rect x="329"
          y="99"
          width="60"
          height="32"
          class="terminal"
          rx="10"/>
-   <text class="terminal" x="336" y="119">buffer</text>
-   <rect x="408" y="101" width="24" height="32" rx="10"/>
-   <rect x="406"
+   <text class="terminal" x="339" y="119">buffer</text>
+   <rect x="411" y="101" width="24" height="32" rx="10"/>
+   <rect x="409"
          y="99"
          width="24"
          height="32"
          class="terminal"
          rx="10"/>
-   <text class="terminal" x="416" y="119">:</text>
+   <text class="terminal" x="419" y="119">:</text>
    <a xmlns:xlink="http://www.w3.org/1999/xlink"
       xlink:href="#Distance"
       xlink:title="Distance">
-      <rect x="452" y="101" width="74" height="32"/>
-      <rect x="450" y="99" width="74" height="32" class="nonterminal"/>
-      <text class="nonterminal" x="460" y="119">Distance</text>
+      <rect x="455" y="101" width="74" height="32"/>
+      <rect x="453" y="99" width="74" height="32" class="nonterminal"/>
+      <text class="nonterminal" x="463" y="119">Distance</text>
    </a>
    <rect x="535" y="167" width="34" height="32" rx="10"/>
    <rect x="533"
@@ -156,7 +156,7 @@
          rx="10"/>
    <text class="terminal" x="543" y="185">};</text>
    <path class="line"
-         d="m17 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m78 0 h10 m0 0 h10 m30 0 h10 m0 0 h10 m28 0 h10 m0 0 h10 m68 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m90 0 h10 m0 0 h10 m24 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-565 66 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m40 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m86 0 h10 m20 0 h10 m0 0 h252 m-282 0 h20 m262 0 h20 m-302 0 q10 0 10 10 m282 0 q0 -10 10 -10 m-292 10 v12 m282 0 v-12 m-282 12 q0 10 10 10 m262 0 q10 0 10 -10 m-272 10 h10 m24 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m74 0 h10 m22 -32 l2 0 m2 0 l2 0 m2 0 l2 0 m-55 98 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m34 0 h10 m3 0 h-3"/>
+         d="m17 17 h2 m0 0 h10 m62 0 h10 m0 0 h10 m78 0 h10 m0 0 h10 m30 0 h10 m0 0 h10 m28 0 h10 m0 0 h10 m68 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m90 0 h10 m0 0 h10 m24 0 h10 m2 0 l2 0 m2 0 l2 0 m2 0 l2 0 m-568 66 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m46 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m86 0 h10 m20 0 h10 m0 0 h252 m-282 0 h20 m262 0 h20 m-302 0 q10 0 10 10 m282 0 q0 -10 10 -10 m-292 10 v12 m282 0 v-12 m-282 12 q0 10 10 10 m262 0 q10 0 10 -10 m-272 10 h10 m24 0 h10 m0 0 h10 m60 0 h10 m0 0 h10 m24 0 h10 m0 0 h10 m74 0 h10 m22 -32 l2 0 m2 0 l2 0 m2 0 l2 0 m-58 98 l2 0 m2 0 l2 0 m2 0 l2 0 m2 0 h10 m34 0 h10 m3 0 h-3"/>
    <polygon points="587 181 595 177 595 185"/>
    <polygon points="587 181 579 177 579 185"/>
 </svg>
