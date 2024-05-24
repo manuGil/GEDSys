@@ -5,12 +5,12 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="85,0,90,0" name="GeDL.generator00.templates.QueriesGenerated$LINKS" />
-      <unit at="59,0,84,0" name="GeDL.generator00.templates.QueriesGenerated$SNQ" />
-      <unit at="20,0,91,0" name="GeDL.generator00.templates.QueriesGenerated" />
+      <unit at="85,0,90,0" name="GeDL.siddhipy.templates.QueriesGenerated$LINKS" />
+      <unit at="59,0,84,0" name="GeDL.siddhipy.templates.QueriesGenerated$SNQ" />
+      <unit at="20,0,91,0" name="GeDL.siddhipy.templates.QueriesGenerated" />
     </file>
   </root>
-  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/4299008213875907466">
+  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.siddhipy.templates@generator)/4299008213875907466">
     <file name="QueriesGenerated.java">
       <node id="4299008213876398038" at="25,92,26,82" concept="1" />
       <node id="4299008213876801033" at="28,92,29,81" concept="1" />
@@ -41,7 +41,7 @@
       </scope>
     </file>
   </root>
-  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)/7282039784792662422">
+  <root nodeRef="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.siddhipy.templates@generator)/7282039784792662422">
     <file name="QueriesGenerated.java">
       <node id="7282039784794287903" at="34,92,35,81" concept="1" />
       <node id="7282039784794288283" at="37,92,38,82" concept="1" />

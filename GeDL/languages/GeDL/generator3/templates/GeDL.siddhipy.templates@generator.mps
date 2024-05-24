@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.generator00.templates@generator)">
+<model ref="r:7a2d5623-ec72-4c1e-9ed6-1e65c378bde1(GeDL.siddhipy.templates@generator)">
   <persistence version="9" />
   <languages>
     <use id="35b540ea-51fc-45c2-8fb0-1d48ca99c3db" name="GeDL" version="0" />
