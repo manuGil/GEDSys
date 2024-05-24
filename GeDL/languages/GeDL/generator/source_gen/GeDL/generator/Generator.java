@@ -11,6 +11,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import GeDL.generator.templates.QueriesGenerated;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
 
 public class Generator extends TemplateModuleInterpreted2 {
@@ -22,18 +23,19 @@ public class Generator extends TemplateModuleInterpreted2 {
   @NotNull
   @Override
   public SModuleReference getModuleReference() {
-    return PersistenceFacade.getInstance().createModuleReference("51b710a3-b369-40e2-a8ba-9fd9f59fdaf9(GeDL.generator)");
+    return PersistenceFacade.getInstance().createModuleReference("c17e4ba8-13c3-40f9-82a2-6b2ca68c1d4f(GeDL.generator)");
   }
 
   @Override
   protected void fillTemplateModels(TemplateModuleInterpreted2.TemplateModels models) {
-    models.templates("r:754c43ef-3a54-4b8e-9ad2-c6cf8ef1fd4b", QueriesGenerated.class);
+    models.templates("r:26cdec95-cfee-4572-8ebd-aaaf9752553b", QueriesGenerated.class);
   }
 
 
   @Override
   public Collection<SLanguage> getTargetLanguages() {
-    SLanguage[] rv = new SLanguage[0];
+    SLanguage[] rv = new SLanguage[1];
+    rv[0] = MetaAdapterFactory.getLanguage(0x35b540ea51fc45c2L, 0x8fb01d48ca99c3dbL, "GeDL");
     return Arrays.asList(rv);
   }
 

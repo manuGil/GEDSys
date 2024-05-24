@@ -12,15 +12,15 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="SiddhiQL" namespace="GeDL.generator00" uuid="c77b0f5f-89bd-4c87-a73a-48f25e67a549" generatorOutputPath="${module}/generator3/source_gen">
+    <generator alias="siddhipy" namespace="GeDL.generator" uuid="c17e4ba8-13c3-40f9-82a2-6b2ca68c1d4f">
       <models>
-        <modelRoot contentPath="${module}/generator3" type="default">
-          <sourceRoot path="${module}/generator3/templates" />
+        <modelRoot contentPath="${module}/generator" type="default">
+          <sourceRoot path="${module}/generator/templates" />
         </modelRoot>
       </models>
       <facets>
         <facet type="java" compile="mps" classes="mps" ext="no">
-          <classes generated="true" path="${module}/generator3/classes_gen" />
+          <classes generated="true" path="${module}/generator/classes_gen" />
         </facet>
       </facets>
       <external-templates />
@@ -46,7 +46,7 @@
       <dependencyVersions>
         <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
         <module reference="35b540ea-51fc-45c2-8fb0-1d48ca99c3db(GeDL)" version="0" />
-        <module reference="c77b0f5f-89bd-4c87-a73a-48f25e67a549(GeDL.generator00)" version="0" />
+        <module reference="c17e4ba8-13c3-40f9-82a2-6b2ca68c1d4f(GeDL.generator)" version="0" />
         <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />

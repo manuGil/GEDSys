@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="Devkit" uuid="74626bd1-f635-4027-89ce-0406d2d18b84">
+  <exported-language name="35b540ea-51fc-45c2-8fb0-1d48ca99c3db(GeDL)" />
+  <exported-solutions>
+    <exported-solution>64f6e9c6-f8f8-4bff-b960-a951fd6290ee(Demo)</exported-solution>
+  </exported-solutions>
+</dev-kit>
+
