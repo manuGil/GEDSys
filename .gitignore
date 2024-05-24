@@ -16,9 +16,7 @@ venv/*
 
 
 # MPS
-GeDL/languages/GeDL/classes_gen/
 GeDL/languages/GeDL/source_gen.caches/
-GeDL/solutions
 GeDL/languages/GeDL.sandbox/
 
 **/.mps/workspace.xml
