@@ -39,6 +39,8 @@ Geographic event Domain Language. A  domain specific programming language for th
         [ Temperature ] 
     }                                                                                                                                                                                                              
     ```
+    > Notice the line `cond Temperature > 19.f;`. The `f` is an artifact inherited from Java which indicates that the data type is a floating point number (a decimal number).
+    
 3. Rebuild the solution. The `GeDL.sandbox` contains solutions for the language. Right-click on `GeDL.sandbox`, and then click on `Rebuild Solutions`.
 
 4. Generate text. Right-click on the `event definition` item you created and click on `Preview Generated Text`. This will generate two files containing SiddhiQL and Python code that can be used by the [GeDL interpreter](../gedl-interpreter/README.md) and the [Siddhi runner](../siddhi-runner/README.md) respectively.
