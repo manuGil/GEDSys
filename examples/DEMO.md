@@ -1,10 +1,12 @@
 # Demostration of GeDL Version 0.1.0
 
+These are some examples of how to use GeDL to detect geographic events in GEDSys.
+
 ## Use Case 1:  AirQuality Gevent for $PM_{2.5}$ 
 
 Purpose: Detect geographic event (gevent) whenever the concentration of $PM_{2.5}$ is above $15 \mu g /m^{3}$ within an area around Den Haag and Rotterdam between 08:00 and 20:00 hrs. on the 4th of April 2024.
 
-- Phenomenon: $PM_{2.5}$
+- Phenomenon: $PM_{2.5}$ 
 - Condition: observed value is grater than 15.00
 - Detection extent (Area around Den Haag and Rotterdam, EPSG: 4326):  `POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))`
 - Detection time: 4th April 2024, 08:00 - 20:00
