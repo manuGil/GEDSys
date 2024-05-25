@@ -19,7 +19,7 @@ Geographic event Domain Language. A  domain specific programming language for th
 
     <img src="../interpreter/docs/_static/img/mps-create-event-definiton.png" width="700">
 
-2. Use the new create file for defining a geographic event. Below is an example of a valid defintion. Notice is not possible to pased the code into the MPS editor, the content most be typed in.  To get started press ENTER on the first line.
+2. Use the new create file for defining a geographic event. Below is an example of a valid definition. Notice is not possible to pasted code directly into the MPS editor, the content must be typed in.  To get started press ENTER on the first line.
 
     ```java
     datastream Temperature : measurement ; 
@@ -43,24 +43,5 @@ Geographic event Domain Language. A  domain specific programming language for th
 
 4. Generate text. Right-click on the `event definition` item you created and click on `Preview Generated Text`. This will generate two files containing SiddhiQL and Python code that can be used by the [GeDL interpreter](../gedl-interpreter/README.md) and the [Siddhi runner](../siddhi-runner/README.md) respectively.
 
-## Example
-
-The following is a basic example for the defintion of a gevent for a hot day. 
+## Other Example
 For more examples, including the generated source code, see the [demo document.](../examples/DEMO.md)
-
-```java
-datastream Temperature : measurement ; 
-
-event HotDay ( Temperature ){ 
-    cond Temperature > 20.f ; 
-    extent city = {  
-    feature: 'POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))', 
-    srid: 4326, 
-    buffer: 0.015f deg 
-    } ; 
-}; 
-
-notification HotDayAlert( HotDay) { 
-    [ Temperature ] 
-};   
-```
