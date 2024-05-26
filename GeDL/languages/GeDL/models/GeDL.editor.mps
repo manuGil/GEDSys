@@ -9,7 +9,6 @@
   <imports>
     <import index="lyeg" ref="r:0acff501-71d6-4896-b79d-b8d89273d027(GeDL.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" implicit="true" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
@@ -123,7 +122,7 @@
     <node concept="14StLt" id="52LigkvWFJH" role="V601i">
       <property role="TrG5h" value="geldKeyword" />
       <node concept="VSNWy" id="52LigkvWFJM" role="3F10Kt">
-        <property role="1lJzqX" value="14" />
+        <property role="1lJzqX" value="22" />
       </node>
       <node concept="Vb9p2" id="52LigkvXlb_" role="3F10Kt">
         <property role="Vbekb" value="g1_k_vY/BOLD" />
@@ -135,7 +134,7 @@
     <node concept="14StLt" id="2iNsMRpcYZa" role="V601i">
       <property role="TrG5h" value="gedlString" />
       <node concept="VSNWy" id="2iNsMRpcYZj" role="3F10Kt">
-        <property role="1lJzqX" value="14" />
+        <property role="1lJzqX" value="22" />
       </node>
       <node concept="Vb9p2" id="2iNsMRpcYZp" role="3F10Kt" />
       <node concept="VechU" id="2iNsMRpcYZx" role="3F10Kt">
@@ -145,7 +144,7 @@
     <node concept="14StLt" id="4j1YrdJlAQ2" role="V601i">
       <property role="TrG5h" value="gedlFunction" />
       <node concept="VSNWy" id="4j1YrdJlAQf" role="3F10Kt">
-        <property role="1lJzqX" value="14" />
+        <property role="1lJzqX" value="22" />
       </node>
       <node concept="Vb9p2" id="4j1YrdJlAQl" role="3F10Kt">
         <property role="Vbekb" value="g1_kEg4/ITALIC" />
@@ -157,7 +156,7 @@
     <node concept="14StLt" id="4j1YrdJm5pQ" role="V601i">
       <property role="TrG5h" value="geldOperator" />
       <node concept="VSNWy" id="4j1YrdJm5q7" role="3F10Kt">
-        <property role="1lJzqX" value="14" />
+        <property role="1lJzqX" value="22" />
       </node>
       <node concept="Vb9p2" id="4j1YrdJm5qd" role="3F10Kt">
         <property role="Vbekb" value="g1_k_vY/BOLD" />
@@ -374,10 +373,7 @@
       <node concept="l2Vlx" id="52LigkvYmAv" role="2iSdaV" />
       <node concept="3F0ifn" id="52LigkvYmF5" role="3EZMnx">
         <property role="3F0ifm" value="notification" />
-        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
-        <node concept="VechU" id="2iNsMRp4vPV" role="3F10Kt">
-          <property role="Vb096" value="fLwANPu/blue" />
-        </node>
+        <ref role="1k5W1q" node="52LigkvWFJH" resolve="geldKeyword" />
       </node>
       <node concept="3EZMnI" id="52LigkvYR4E" role="3EZMnx">
         <node concept="2iRfu4" id="52LigkvYR4F" role="2iSdaV" />
