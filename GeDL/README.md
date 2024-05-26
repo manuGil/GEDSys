@@ -47,3 +47,7 @@ Geographic event Domain Language. A  domain specific programming language for th
 
 ## Other Example
 For more examples, including the generated source code, see the [demo document.](../examples/DEMO.md)
+
+## Copyright
+
+&copy; 2024 Manuel G. Garcia, Enschede, The Netherlands. 
