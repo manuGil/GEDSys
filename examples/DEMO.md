@@ -32,7 +32,10 @@ datastream PM25 : measurement ;
   notification AlertPM25( AirQuality) { 
     [ PM25 ] 
   };
-```                                                                                                                                                                     
+```
+
+> Notice the line `cond PM25 > 15.f;`. The `f` is an artifact inherited from Java which indicates that the data type is a floating point number (a decimal number).
+                                                                                                                                                            
 #### SiddhiQL 
 
 Generated source code in SiddhiQL for the Event Processing Engine.
