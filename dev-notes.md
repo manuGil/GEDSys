@@ -82,3 +82,11 @@ Delete all data in container, Remove volume
 ```shell 
 docker volume rm frost-server_postgis_volume
 ``` 
+
+"POLYGON ((4.1953137 52.1272725, 4.6024625 52.1251159, 4.6023871 51.8061603, 4.1949516 51.8056937, 4.1953137 52.1272725))"
+
+ "2024-04-04 08:00:00" , "2024-04-04 20:00:00"
+
+curl -X DELETE "http://localhost:9090/siddhi-apps/AirQuality" -H "accept: application/json" -u admin:admin -k
+
+curl -X POST "https://localhost:9443/siddhi-apps" -H "accept: application/json" -H "Content-Type: text/plain" --data-binary @AirQuality.siddhi -u admin:admin -k

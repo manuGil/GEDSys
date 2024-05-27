@@ -265,7 +265,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
     protected String getNoTargetText() {
-      return "<no buffer>";
+      return "null";
     }
   }
   private EditorCell createConstant_6() {
