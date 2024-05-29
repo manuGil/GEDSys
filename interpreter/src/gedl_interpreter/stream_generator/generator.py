@@ -9,13 +9,14 @@ import concurrent.futures
 import uuid
 from typing import List, Optional
 from abc import ABC
-from .response_parser import parse_response_observations
-from .prepare_requests import prepare_datastreams_request, prepare_observations_request
+from gedl_interpreter.stream_generator.response_parser import parse_response_observations
+from gedl_interpreter.stream_generator.prepare_requests import prepare_datastreams_request, prepare_observations_request
 from dotenv import load_dotenv
 
 # Use to format the payloads to be sent to the CEP server
 cep_payload_template = {"event":{
                             "observedProperty":None, 
+                            "phenomenonTime": None,
                             "resultTime":None, 
                             "result": None, 
                             "location": None
@@ -147,7 +148,8 @@ class DataStream():
         sensor_api = requests.Session()
         # start session at CEP server
         cep_engine = requests.Session()
-        # TODO: this can be improved by implementing a runner that will be called by the start_streaming method
+
+        
         while self.status == 'running':
 
             # collect observations from the Sensor API
@@ -173,7 +175,7 @@ class DataStream():
                                                 'location': formatted_location 
                                                 }) 
                         
-                    print("Sent to EPE: ", cep_payload)
+                    # print("Sent to EPE: ", cep_payload)
 
                     cep_headers = {'Content-Type': 'application/json'}
                     # send data to EPE API
@@ -194,12 +196,17 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
+                    print('data at start_treaming')
+                    print(self.observed_property_url, self.reciever_url, obs, '\n')
+
                     time.sleep(0.2)  # time in seconds
 
             if latest: # only if latest is True
                 time.sleep(self.update_frequency)  # time in seconds
             # check expiration after every cycle
+            # self.status = 'stopped'
             self.check_expiration()
+        
 
 
 @dataclass
@@ -266,11 +273,14 @@ class StreamGenerator():
 
     def create_datastreams(self) -> None:
         """ Creates and appends a datastream to the list of generated datastreams."""
-        epe_template = cep_payload_template.copy()
+    
         
         for phenomenon in self.gevent.phenomena:
-
+            epe_template = cep_payload_template.copy()
             epe_template['event'].update({'observedProperty': phenomenon})
+            # TODO: reciever is not matching the phenomena name. All of them are going to the firts phenomena
+            # for some reason, datastreams of second phenomenon are being linked to receivers from the first phenomenon
+            # What might be actually happening is thea the epe-template is not being updated correctly.
             receiver_slug = self.gevent.name.lower() + '-' + phenomenon.lower()
 
             request = prepare_datastreams_request(self.sensorApi.root_url, 
@@ -280,18 +290,22 @@ class StreamGenerator():
             
             # get the datastreams for the phenomenon
             response = requests.get(request)
+            response.raise_for_status
             
             for datastream in response.json()['value']:
+                print(datastream)
                 stream = DataStream(datastream_url=datastream['@iot.selfLink'],
                                     observed_property_url=datastream['ObservedProperty']['@iot.selfLink'],
                                     thing_url=datastream['Thing']['@iot.selfLink'],
                                     locations_url=datastream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
                                     epe_payload_template=epe_template,
-                                    reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug),
+                                    reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug), #TODO: this sould create instances of api and not just updte the url
                                     expiration=self.gevent.expiration,
                                     update_frequency=self.gevent.update_frequency,
                             )
                 self.generated_datastreams.append(stream)
+            
+        [print(stream.observed_property_url, stream.reciever_url) for stream in self.generated_datastreams]
     
     def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
@@ -299,6 +313,14 @@ class StreamGenerator():
         self.create_datastreams()
 
         print('number datastreasms: ', len(self.generated_datastreams))
+   
+
+        # for stream in self.generated_datastreams:
+        #     stream.start_streaming(latest)
+
+        # CONTINUE HERE
+        # TODO: when using async lile this. the program will halt after the maximum of workers has been reached,
+        # regardles of the number of data stream generated. 
         with concurrent.futures.ThreadPoolExecutor() as executor:
             futures = [executor.submit(stream.start_streaming, latest) for stream in self.generated_datastreams]
             for future in concurrent.futures.as_completed(futures):
@@ -306,6 +328,8 @@ class StreamGenerator():
                     future.result()
                 except Exception as e:
                     print(f'An error occurred in DataStream: {e}')
+              
+
 
     def stop(self):
         """ Stops the streaming process."""
