@@ -2,7 +2,7 @@
 
 """
 from dataclasses import dataclass, field
-import requests
+import requests, asyncio
 from datetime import datetime
 import time, json
 import concurrent.futures
@@ -136,7 +136,7 @@ class DataStream():
         
         return obs_collection
 
-    def start_streaming(self, latest:bool=True) -> None:
+    async def start_streaming(self, latest:bool=True) -> None:
         """ Starts data streaming."""
 
         if self.check_expiration() != 'expired':
@@ -180,9 +180,10 @@ class DataStream():
                     cep_headers = {'Content-Type': 'application/json'}
                     # send data to EPE API
                     try:
-                        cep_response = cep_engine.post(self.reciever_url, 
+                       async with cep_engine.post(self.reciever_url, 
                                         data=json.dumps(cep_payload), 
-                                        headers=cep_headers)
+                                        headers=cep_headers) as cep_response:
+                           pass
                     except requests.exceptions.ConnectionError:
                         print(f"Unable to connect to the EPE server. Is the server running?")
                         cep_response.raise_for_status()
@@ -199,10 +200,10 @@ class DataStream():
                     print('data at start_treaming')
                     print(self.observed_property_url, self.reciever_url, obs, '\n')
 
-                    time.sleep(0.2)  # time in seconds
+                    await asyncio.sleep(0.2)  # time in seconds
 
             if latest: # only if latest is True
-                time.sleep(self.update_frequency)  # time in seconds
+                await asyncio.sleep(0.2)  # time in seconds
             # check expiration after every cycle
             # self.status = 'stopped'
             self.check_expiration()
@@ -307,7 +308,7 @@ class StreamGenerator():
             
         [print(stream.observed_property_url, stream.reciever_url) for stream in self.generated_datastreams]
     
-    def run(self, latest:bool = True)-> None:
+    async def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
 
         self.create_datastreams()
@@ -315,21 +316,23 @@ class StreamGenerator():
         print('number datastreasms: ', len(self.generated_datastreams))
    
 
+        tasks = [stream.start_streaming(latest) for stream in self.generated_datastreams]
+        await asyncio.gather(*tasks)
+
         # for stream in self.generated_datastreams:
         #     stream.start_streaming(latest)
 
         # CONTINUE HERE
         # TODO: when using async lile this. the program will halt after the maximum of workers has been reached,
         # regardles of the number of data stream generated. 
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = [executor.submit(stream.start_streaming, latest) for stream in self.generated_datastreams]
-            for future in concurrent.futures.as_completed(futures):
-                try:
-                    future.result()
-                except Exception as e:
-                    print(f'An error occurred in DataStream: {e}')
+        # with concurrent.futures.ThreadPoolExecutor() as executor:
+        #     futures = [executor.submit(stream.start_streaming, latest) for stream in self.generated_datastreams]
+        #     for future in concurrent.futures.as_completed(futures):
+        #         try:
+        #             future.result()
+        #         except Exception as e:
+        #             print(f'An error occurred in DataStream: {e}')
               
-
 
     def stop(self):
         """ Stops the streaming process."""
