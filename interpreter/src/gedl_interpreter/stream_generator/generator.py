@@ -2,7 +2,7 @@
 
 """
 from dataclasses import dataclass, field
-import requests, asyncio
+import asyncio, aiohttp
 from datetime import datetime
 import time, json
 import concurrent.futures
@@ -98,43 +98,65 @@ class DataStream():
             self.status = 'expired'
         return self.status
     
-    def _collect_observations(self, datastream_url, sensor_api: requests.Session, latest:bool=True) -> List[dict]:
-        """Collects observations from the Sensor API."""
-        
-        # add parameters to the datastream url to retrieve the observations
-        observations_request = prepare_observations_request(datastream_url, latest=latest)
+    async def _collect_observations(self, datastream_url, latest:bool=True) -> List[dict]:
+            """
+            Collects observations from the Sensor API.
 
-        obs_collection = [] # callection of all observations
+            Parameters:
+            ----------
+            datastream_url : str
+                The URL of the datastream to collect observations from.
+            latest : bool, optional
+                Flag indicating whether to collect the latest observations only (default is True).
 
-        while True:
-            try:
-                # get observations from the Sensor API
-                response_sensor_api = sensor_api.get(observations_request) 
-            except requests.exceptions.ConnectionError:
-                print(f"Unable to connect to the Sensor API. Is the server running?")
-                response_sensor_api.raise_for_status()
-                break
-            else:
-                response_sensor_api.raise_for_status()
+            Returns:
+            -------
+            List[dict]
+                A list of dictionaries representing the collected observations.
+
+            Raises:
+            ------
+            requests.exceptions.ConnectionError
+                If unable to connect to the Sensor API.
+
+            """
             
-            # parse response
-            ## returns  = {latest_observation: [url], location:url}
-            parsed_response = parse_response_observations(response_sensor_api.json())
+            # add parameters to the datastream url to retrieve the observations
+            observations_request = prepare_observations_request(datastream_url, latest=latest)
 
-            obs_collection.extend(parsed_response)
+            obs_collection = [] # callection of all observations
 
-            # Check if there's a next page
-            if latest:
-                # Stop looking into pages, break the loop
-                break
-            elif '@iot.nextLink' in response_sensor_api.json():
-                # Update the request URL to get the next page
-                observations_request = response_sensor_api.json()['@iot.nextLink']
-            else:
-                # No more pages, break the loop
-                break
-        
-        return obs_collection
+            while True:
+                try:
+                    # get observations from the Sensor API
+
+                    async with aiohttp.ClientSession() as session:
+                        async with session.get(observations_request) as response_sensor_api:
+                            # process the response  
+                            response_sensor_api.raise_for_status()
+                            json_response = await response_sensor_api.json()
+                except aiohttp.ClientError as e:
+                    print(f"Unable to connect to the Sensor API. Is the server running?")
+                    raise e
+                
+                # parse response
+                ## returns  = {latest_observation: [url], location:url}
+                
+                parsed_response = parse_response_observations(json_response)
+                obs_collection.extend(parsed_response)
+
+                # Check if there's a next page
+                if latest:
+                    # Stop looking into pages, break the loop
+                    break
+                elif '@iot.nextLink' in json_response:
+                    # Update the request URL to get the next page
+                    observations_request = json_response['@iot.nextLink']
+                else:
+                    # No more pages, break the loop
+                    break
+            
+            return obs_collection
 
     async def start_streaming(self, latest:bool=True) -> None:
         """ Starts data streaming."""
@@ -145,27 +167,30 @@ class DataStream():
             print(f'Data stream has expired on {self.expiration}')
 
         # start session at Sensor API
-        sensor_api = requests.Session()
+        sensor_api = aiohttp.ClientSession()
         # start session at CEP server
-        cep_engine = requests.Session()
+        cep_engine = aiohttp.ClientSession()
 
         
         while self.status == 'running':
 
             # collect observations from the Sensor API
-            _observations = self._collect_observations(self.datastream_url, sensor_api, latest=latest)
+            _observations = await self._collect_observations(self.datastream_url, latest=latest)
 
             # Checks if any observations were found at the Sensor API and 
             # if the most recent observation is different from the last one sent to the EPE
             if _observations[-1]['@iot.selfLink'] != self.latest_observation:
 
                 # assums the location of the thing is the same for all observations
-                location = sensor_api.get(self.locations_url) # SensorThing API object
-                location.raise_for_status()
 
+                async with aiohttp.ClientSession() as sensor_session:
+                    async with sensor_session.get(self.locations_url)  as response: # SensorThing API object
+                        response.raise_for_status()
+                        location = await response.json()
+                
                 # prepare payload for EPE
                 cep_payload = self.epe_payload_template.copy()
-                formatted_location = format_location(location.json())
+                formatted_location = format_location(location)
 
                 # TODO: allow other types for result
                 for obs in _observations:
@@ -183,16 +208,11 @@ class DataStream():
                        async with cep_engine.post(self.reciever_url, 
                                         data=json.dumps(cep_payload), 
                                         headers=cep_headers) as cep_response:
-                           pass
-                    except requests.exceptions.ConnectionError:
+                           cep_response.raise_for_status()
+                    except aiohttp.ClientError as e:
                         print(f"Unable to connect to the EPE server. Is the server running?")
-                        cep_response.raise_for_status()
-                    except requests.exceptions.HTTPError:
-                        print(f"Coudn't find data endpoint on EPE server. Is App deployed?")
-                        cep_response.raise_for_status()
-                    else:    
-                        cep_response.raise_for_status()
-                
+                        raise e
+                    
                     self.update_latest_observation(obs['@iot.selfLink'])
 
                     # wait for the next cycle. This is for demonstration purposes only
@@ -208,7 +228,6 @@ class DataStream():
             # self.status = 'stopped'
             self.check_expiration()
         
-
 
 @dataclass
 class SensingService(ABC):
@@ -226,7 +245,7 @@ class SensingService(ABC):
 
         if self.vesion != 'v1.1' and self.vesion != 'v1.0':
             raise ValueError(f"Invalid SensorThing API version: {self.vesion}")
-
+        
 @dataclass
 class EventProcessor(ABC):
     """
@@ -260,6 +279,8 @@ class Gevent():
     buffer_distance: float = 0
 
 
+#TODO: unlock the functions that create independent datastreasms for each phenomenon
+
 @dataclass
 class StreamGenerator():
     """
@@ -272,46 +293,72 @@ class StreamGenerator():
     eventProcessorApi: EventProcessor 
     generated_datastreams: List[DataStream] = field(default_factory=list)
 
-    def create_datastreams(self) -> None:
-        """ Creates and appends a datastream to the list of generated datastreams."""
-    
+    async def _find_datastreams(self, phenomenon: str) -> dict:
+        """
+        Finds datastreams for a given phenomenon.
+
+        Parameters:
+        ----------
+        phenomenon : str
+            The phenomenon to find datastreams for.
+
+        Returns:
+        -------
+        dict
+            A dictionary containing the datastreams for the given phenomenon.
+
+        Raises:
+        ------
+        requests.exceptions.ConnectionError
+            If unable to connect to the Sensor API.
+
+        """
         
-        for phenomenon in self.gevent.phenomena:
+        request = prepare_datastreams_request(self.sensorApi.root_url, 
+                                                phenomenon, 
+                                                self.gevent.detection_extent, 
+                                                self.gevent.buffer_distance)
+        
+        response = None
+        async with aiohttp.ClientSession() as api_session:
+            async with api_session.get(request) as response:
+                response.raise_for_status()
+                response = await response.json()
+        return response
+    
+    async def create_datastreams(self) -> None:
+        """ Creates and appends a datastream to the list of generated datastreams."""
+
+        def create_epe_template(phenomenon):
+            """ Creates a template for the EPE payload."""
             epe_template = cep_payload_template.copy()
             epe_template['event'].update({'observedProperty': phenomenon})
-            # TODO: reciever is not matching the phenomena name. All of them are going to the firts phenomena
-            # for some reason, datastreams of second phenomenon are being linked to receivers from the first phenomenon
-            # What might be actually happening is thea the epe-template is not being updated correctly.
-            receiver_slug = self.gevent.name.lower() + '-' + phenomenon.lower()
+            return epe_template
+    
+        tasks = [self._find_datastreams(phenomenon) for phenomenon in self.gevent.phenomena]
+        datastreams = await asyncio.gather(*tasks)
+        print(datastreams)
 
-            request = prepare_datastreams_request(self.sensorApi.root_url, 
-                                                                phenomenon, 
-                                                                self.gevent.detection_extent, 
-                                                                self.gevent.buffer_distance)
-            
-            # get the datastreams for the phenomenon
-            response = requests.get(request)
-            response.raise_for_status
-            
-            for datastream in response.json()['value']:
-                print(datastream)
-                stream = DataStream(datastream_url=datastream['@iot.selfLink'],
+        self.generated_datastreams = [
+            DataStream(datastream_url=datastream['@iot.selfLink'],
                                     observed_property_url=datastream['ObservedProperty']['@iot.selfLink'],
                                     thing_url=datastream['Thing']['@iot.selfLink'],
                                     locations_url=datastream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
-                                    epe_payload_template=epe_template,
-                                    reciever_url=self.eventProcessorApi.get_reciever_url(receiver_slug), #TODO: this sould create instances of api and not just updte the url
+                                    epe_payload_template=create_epe_template(phenomenon),
+                                    reciever_url=self.eventProcessorApi.get_reciever_url(
+                                        self.gevent.name.lower() + '-' + phenomenon.lower()
+                                        ),
                                     expiration=self.gevent.expiration,
                                     update_frequency=self.gevent.update_frequency,
-                            )
-                self.generated_datastreams.append(stream)
+                            ) for datastream in datastreams[0]['value'] for phenomenon in self.gevent.phenomena
+        ]
             
         [print(stream.observed_property_url, stream.reciever_url) for stream in self.generated_datastreams]
     
     async def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
 
-        self.create_datastreams()
+        await self.create_datastreams()
 
         print('number datastreasms: ', len(self.generated_datastreams))
    
@@ -362,25 +409,25 @@ class DataStreamerConfig(object):
 
 if __name__ == "__main__":
     # create request to find things within the extent
+    pass
+    # expiration = datetime.now().replace(second=datetime.now().second+10)
+    # update_frequency = 5
+    # detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
+    # event_name = 'hotday'
 
-    expiration = datetime.now().replace(second=datetime.now().second+10)
-    update_frequency = 5
-    detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
-    event_name = 'hotday'
-
-    gevent = Gevent(name=event_name, 
-                    expiration=expiration, 
-                    phenomena=['Temperature', 'Relative Humidity'], 
-                    update_frequency=update_frequency,
-                    detection_extent=detection_extent,
-                    buffer_distance=0.5
-                    )
+    # gevent = Gevent(name=event_name, 
+    #                 expiration=expiration, 
+    #                 phenomena=['Temperature', 'Relative Humidity'], 
+    #                 update_frequency=update_frequency,
+    #                 detection_extent=detection_extent,
+    #                 buffer_distance=0.5
+    #                 )
     
-    # global settings
-    sensorthing = SensingService(root_url="http://localhost:8080/FROST-Server/v1.0")
-    cep = EventProcessor(events_url="http://localhost:8006")
+    # # global settings
+    # sensorthing = SensingService(root_url="http://localhost:8080/FROST-Server/v1.0")
+    # cep = EventProcessor(events_url="http://localhost:8006")
 
 
-    stream_generator = StreamGenerator(gevent, sensorthing, cep)
-    stream_generator.run()
+    # stream_generator = StreamGenerator(gevent, sensorthing, cep)
+    # stream_generator.run()
 
