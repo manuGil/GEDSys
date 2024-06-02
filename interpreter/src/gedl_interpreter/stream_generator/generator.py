@@ -1,17 +1,25 @@
 """
 
 """
+
+import json, uuid, copy, logging
 from dataclasses import dataclass, field
 import asyncio, aiohttp
 from datetime import datetime
-import time, json
-import concurrent.futures
-import uuid
 from typing import List, Optional
 from abc import ABC
 from gedl_interpreter.stream_generator.response_parser import parse_response_observations
 from gedl_interpreter.stream_generator.prepare_requests import prepare_datastreams_request, prepare_observations_request
 from dotenv import load_dotenv
+
+
+# Configure logging settings
+logging.basicConfig(
+    filename='generator.log',        # Log file name
+    filemode='w',              # Append mode
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    level=logging.INFO         # Log level
+)
 
 # Use to format the payloads to be sent to the CEP server
 cep_payload_template = {"event":{
@@ -166,7 +174,6 @@ class DataStream():
         else:
             print(f'Data stream has expired on {self.expiration}')
 
-        # print(f"datastream epe_payload_template: {self.epe_payload_template}")
         while self.status == 'running':
 
             # collect observations from the Sensor API
@@ -197,6 +204,7 @@ class DataStream():
                                                 }) 
                         
                     print("Sent to EPE: ", cep_payload)
+                    logging.info(f"Sent to EPE: {cep_payload}")
 
                     cep_headers = {'Content-Type': 'application/json'}
                     # send data to EPE API
@@ -206,9 +214,7 @@ class DataStream():
                                                 data=json.dumps(cep_payload), 
                                                 headers=cep_headers) as cep_response:
                                 cep_response.raise_for_status()
-                                # print("data sent to EPE:")
-                                # print(cep_payload)
-                                # post_count += 1S
+
                     except aiohttp.ClientError as e:
                         print(f"Unable to connect to the EPE server. Is the server running?")
                         raise e
@@ -217,15 +223,11 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    # print('data at start_treaming')
-                    # print(self.observed_property_url, self.reciever_url, obs, '\n')
-
-                    await asyncio.sleep(0.5)  # time in seconds
-                # print(f"Posted {post_count} observations to the EPE")
+                    await asyncio.sleep(0.2)  # time in seconds
+    
             if latest: # only if latest is True
                 await asyncio.sleep(0.1)  # time in seconds
             # check expiration after every cycle
-            # self.status = 'stopped'
             self.check_expiration()
         
 
@@ -262,7 +264,6 @@ class EventProcessor(ABC):
         return f"{self.events_url}/{reciever_slug}"
     
 
-#################################################################
 
 @dataclass
 class Gevent():
@@ -278,8 +279,6 @@ class Gevent():
     detection_extent: str = None
     buffer_distance: float = 0
 
-
-#TODO: unlock the functions that create independent datastreasms for each phenomenon
 
 @dataclass
 class StreamGenerator():
@@ -319,16 +318,16 @@ class StreamGenerator():
                                                 self.gevent.detection_extent, 
                                                 self.gevent.buffer_distance)
         
-        result = {'phenomenon': phenomenon, 'datastreams': None}
+        datastreams = None
         async with aiohttp.ClientSession() as api_session:
             async with api_session.get(request) as response:
                 response.raise_for_status()
-                result['datastreams'] = await response.json()
-        return result
+                datastreams = await response.json()
+        return phenomenon, datastreams
     
     def _create_epe_template(self, phenomenon):
             """ Creates a template for the EPE payload."""
-            epe_template = cep_payload_template.copy()
+            epe_template = copy.deepcopy(cep_payload_template)
             print('phenomenon at copy epe template ', phenomenon)
             epe_template['event']['observedProperty']= phenomenon
             print('epe_template in create_epe_template: ', epe_template)
@@ -339,24 +338,23 @@ class StreamGenerator():
 
         tasks = [self._find_datastreams(phenomenon) for phenomenon in self.gevent.phenomena]
         datastreams = await asyncio.gather(*tasks) # a list of dictionaries containing api responses for each phenomenon
-        # print(datastreams)
 
         self.generated_datastreams = [
             DataStream(datastream_url=stream['@iot.selfLink'],
                                     observed_property_url=stream['ObservedProperty']['@iot.selfLink'],
                                     thing_url=stream['Thing']['@iot.selfLink'],
                                     locations_url=stream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
-                                    epe_payload=self._create_epe_template(item['phenomenon']),
+                                    epe_payload=self._create_epe_template(phenomenon),
                                     reciever_url=self.eventProcessorApi.get_reciever_url(
-                                        self.gevent.name.lower() + '-' + item['phenomenon'].lower()
+                                        self.gevent.name.lower() + '-' + phenomenon.lower()
                                         ),
                                     expiration=self.gevent.expiration,
                                     update_frequency=self.gevent.update_frequency,
-                            ) for item in datastreams for stream in item['datastreams']['value'] 
+                            ) for phenomenon, item in datastreams 
+                            for stream in item['value'] 
         ]
-            
-        [print(f"epe payload for stream: {stream.epe_payload}") for stream in self.generated_datastreams]
-
+        
+        return None
 
     async def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
@@ -367,33 +365,17 @@ class StreamGenerator():
    
         tasks = [stream.start_streaming(latest) for stream in self.generated_datastreams]
         await asyncio.gather(*tasks)
+ 
 
-        # for stream in self.generated_datastreams:
-        #     stream.start_streaming(latest)
-
-        # CONTINUE HERE
-        # TODO: when using async lile this. the program will halt after the maximum of workers has been reached,
-        # regardles of the number of data stream generated. 
-        # with concurrent.futures.ThreadPoolExecutor() as executor:
-        #     futures = [executor.submit(stream.start_streaming, latest) for stream in self.generated_datastreams]
-        #     for future in concurrent.futures.as_completed(futures):
-        #         try:
-        #             future.result()
-        #         except Exception as e:
-        #             print(f'An error occurred in DataStream: {e}')
-              
-
-    def stop(self):
+    async def stop(self)-> None:
         """ Stops the streaming process."""
         print('Stopping generated data streams')
 
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = [executor.submit(stream.update_status, 'stopped') for stream in self.generated_datastreams]
-            for future in concurrent.futures.as_completed(futures):
-                try:
-                    future.result()
-                except Exception as e:
-                    print(f'An error occurred when stroping DataStream {e}')
+        tasks = [stream.update_status('stopped') for stream in self.generated_datastreams]
+        await asyncio.gather(*tasks)
+
+        return None
+
 
 
 @dataclass
@@ -410,26 +392,4 @@ class DataStreamerConfig(object):
 
 
 if __name__ == "__main__":
-    # create request to find things within the extent
     pass
-    # expiration = datetime.now().replace(second=datetime.now().second+10)
-    # update_frequency = 5
-    # detection_extent = "POLYGON((3.8 48, 8.9 48.5, 9 54, 9 49.5, 3.8 48))"
-    # event_name = 'hotday'
-
-    # gevent = Gevent(name=event_name, 
-    #                 expiration=expiration, 
-    #                 phenomena=['Temperature', 'Relative Humidity'], 
-    #                 update_frequency=update_frequency,
-    #                 detection_extent=detection_extent,
-    #                 buffer_distance=0.5
-    #                 )
-    
-    # # global settings
-    # sensorthing = SensingService(root_url="http://localhost:8080/FROST-Server/v1.0")
-    # cep = EventProcessor(events_url="http://localhost:8006")
-
-
-    # stream_generator = StreamGenerator(gevent, sensorthing, cep)
-    # stream_generator.run()
-
