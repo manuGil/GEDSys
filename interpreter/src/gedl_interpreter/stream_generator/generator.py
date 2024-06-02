@@ -73,7 +73,7 @@ class DataStream():
     observed_property_url: str
     thing_url: str
     locations_url: str
-    epe_payload_template: dict
+    epe_payload: dict
     reciever_url: str
     expiration: Optional[datetime] = None
     update_frequency: Optional[int] =  5 # seconds
@@ -166,12 +166,7 @@ class DataStream():
         else:
             print(f'Data stream has expired on {self.expiration}')
 
-        # start session at Sensor API
-        sensor_api = aiohttp.ClientSession()
-        # start session at CEP server
-        cep_engine = aiohttp.ClientSession()
-
-        
+        # print(f"datastream epe_payload_template: {self.epe_payload_template}")
         while self.status == 'running':
 
             # collect observations from the Sensor API
@@ -189,9 +184,10 @@ class DataStream():
                         location = await response.json()
                 
                 # prepare payload for EPE
-                cep_payload = self.epe_payload_template.copy()
+                cep_payload = self.epe_payload.copy()
                 formatted_location = format_location(location)
 
+                # post_count = 0
                 # TODO: allow other types for result
                 for obs in _observations:
                     cep_payload['event'].update({'resultTime': obs['resultTime'],
@@ -200,15 +196,19 @@ class DataStream():
                                                 'location': formatted_location 
                                                 }) 
                         
-                    # print("Sent to EPE: ", cep_payload)
+                    print("Sent to EPE: ", cep_payload)
 
                     cep_headers = {'Content-Type': 'application/json'}
                     # send data to EPE API
                     try:
-                       async with cep_engine.post(self.reciever_url, 
-                                        data=json.dumps(cep_payload), 
-                                        headers=cep_headers) as cep_response:
-                           cep_response.raise_for_status()
+                       async with aiohttp.ClientSession() as cep_engine:
+                            async with cep_engine.post(self.reciever_url, 
+                                                data=json.dumps(cep_payload), 
+                                                headers=cep_headers) as cep_response:
+                                cep_response.raise_for_status()
+                                # print("data sent to EPE:")
+                                # print(cep_payload)
+                                # post_count += 1S
                     except aiohttp.ClientError as e:
                         print(f"Unable to connect to the EPE server. Is the server running?")
                         raise e
@@ -217,13 +217,13 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    print('data at start_treaming')
-                    print(self.observed_property_url, self.reciever_url, obs, '\n')
+                    # print('data at start_treaming')
+                    # print(self.observed_property_url, self.reciever_url, obs, '\n')
 
-                    await asyncio.sleep(0.2)  # time in seconds
-
+                    await asyncio.sleep(0.5)  # time in seconds
+                # print(f"Posted {post_count} observations to the EPE")
             if latest: # only if latest is True
-                await asyncio.sleep(0.2)  # time in seconds
+                await asyncio.sleep(0.1)  # time in seconds
             # check expiration after every cycle
             # self.status = 'stopped'
             self.check_expiration()
@@ -319,42 +319,45 @@ class StreamGenerator():
                                                 self.gevent.detection_extent, 
                                                 self.gevent.buffer_distance)
         
-        response = None
+        result = {'phenomenon': phenomenon, 'datastreams': None}
         async with aiohttp.ClientSession() as api_session:
             async with api_session.get(request) as response:
                 response.raise_for_status()
-                response = await response.json()
-        return response
+                result['datastreams'] = await response.json()
+        return result
+    
+    def _create_epe_template(self, phenomenon):
+            """ Creates a template for the EPE payload."""
+            epe_template = cep_payload_template.copy()
+            print('phenomenon at copy epe template ', phenomenon)
+            epe_template['event']['observedProperty']= phenomenon
+            print('epe_template in create_epe_template: ', epe_template)
+            return epe_template
     
     async def create_datastreams(self) -> None:
         """ Creates and appends a datastream to the list of generated datastreams."""
 
-        def create_epe_template(phenomenon):
-            """ Creates a template for the EPE payload."""
-            epe_template = cep_payload_template.copy()
-            epe_template['event'].update({'observedProperty': phenomenon})
-            return epe_template
-    
         tasks = [self._find_datastreams(phenomenon) for phenomenon in self.gevent.phenomena]
-        datastreams = await asyncio.gather(*tasks)
-        print(datastreams)
+        datastreams = await asyncio.gather(*tasks) # a list of dictionaries containing api responses for each phenomenon
+        # print(datastreams)
 
         self.generated_datastreams = [
-            DataStream(datastream_url=datastream['@iot.selfLink'],
-                                    observed_property_url=datastream['ObservedProperty']['@iot.selfLink'],
-                                    thing_url=datastream['Thing']['@iot.selfLink'],
-                                    locations_url=datastream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
-                                    epe_payload_template=create_epe_template(phenomenon),
+            DataStream(datastream_url=stream['@iot.selfLink'],
+                                    observed_property_url=stream['ObservedProperty']['@iot.selfLink'],
+                                    thing_url=stream['Thing']['@iot.selfLink'],
+                                    locations_url=stream['Thing']['Locations'][-1]['@iot.selfLink'], # gets the latest location
+                                    epe_payload=self._create_epe_template(item['phenomenon']),
                                     reciever_url=self.eventProcessorApi.get_reciever_url(
-                                        self.gevent.name.lower() + '-' + phenomenon.lower()
+                                        self.gevent.name.lower() + '-' + item['phenomenon'].lower()
                                         ),
                                     expiration=self.gevent.expiration,
                                     update_frequency=self.gevent.update_frequency,
-                            ) for datastream in datastreams[0]['value'] for phenomenon in self.gevent.phenomena
+                            ) for item in datastreams for stream in item['datastreams']['value'] 
         ]
             
-        [print(stream.observed_property_url, stream.reciever_url) for stream in self.generated_datastreams]
-    
+        [print(f"epe payload for stream: {stream.epe_payload}") for stream in self.generated_datastreams]
+
+
     async def run(self, latest:bool = True)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
 
@@ -362,7 +365,6 @@ class StreamGenerator():
 
         print('number datastreasms: ', len(self.generated_datastreams))
    
-
         tasks = [stream.start_streaming(latest) for stream in self.generated_datastreams]
         await asyncio.gather(*tasks)
 
