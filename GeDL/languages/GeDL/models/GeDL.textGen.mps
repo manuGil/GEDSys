@@ -449,7 +449,7 @@
         </node>
         <node concept="lc7rE" id="2gttFslJNE4" role="3cqZAp">
           <node concept="la8eA" id="2gttFslJNSQ" role="lcghm">
-            <property role="lacIc" value="import os" />
+            <property role="lacIc" value="import os, asyncio" />
           </node>
           <node concept="l8MVK" id="2gttFslJOju" role="lcghm" />
         </node>
@@ -1087,7 +1087,7 @@
         <node concept="lc7rE" id="2gttFslKlT0" role="3cqZAp">
           <node concept="2BGw6n" id="2gttFslLzBS" role="lcghm" />
           <node concept="la8eA" id="2gttFslKm8x" role="lcghm">
-            <property role="lacIc" value="stream_generator.run()" />
+            <property role="lacIc" value="asyncio.run(stream_generator.run())" />
           </node>
           <node concept="l8MVK" id="2gttFslKmyS" role="lcghm" />
           <node concept="l8MVK" id="2gttFslKmBy" role="lcghm" />

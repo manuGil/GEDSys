@@ -27,7 +27,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.newLine();
     tgs.newLine();
     //  imports
-    tgs.append("import os");
+    tgs.append("import os, asyncio");
     tgs.newLine();
     tgs.append("from datetime import datetime, timedelta");
     tgs.newLine();
@@ -154,7 +154,7 @@ public class EventDefinitionPython_TextGen extends TextGenDescriptorBase {
     tgs.append("stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)");
     tgs.newLine();
     tgs.indent();
-    tgs.append("stream_generator.run()");
+    tgs.append("asyncio.run(stream_generator.run())");
     tgs.newLine();
     tgs.newLine();
     // Not implemented yet
