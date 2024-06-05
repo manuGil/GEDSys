@@ -3,21 +3,20 @@
 
 # GEDSys
 
-Component for the Geographic Event Detection System. This system implements the [RASCA architecture](https://doi.org/10.3390/s19061372) for the implementation of event-driven application. EEvent-driven applications detect the occurrence of relevant geographic events on data streams produced by sensor networks.
-
+Components for the Geographic Event Detection System. This system implements the [RASCA architecture](https://doi.org/10.3390/s19061372) for event-driven application. Event-driven applications detect the occurrence of relevant geographic events on data streams produced by sensor networks.
 
 ## Components
 
-This repository contains source code for the following components:
+This repository contains source code and references for the following components:
 
-1. GeDL-MPS: a domain specific language for defining geographic events implemented in JetBrains MPS.
-2. GeDL interpreter: a python package for interpreting event definitios and converting them into Python and SiddhiQL code.
-3. FROST Server: an implmentaton of the SensorThings API.
+1. GeDL-MPS: a domain specific language for defining geographic events (gevents) implemented in JetBrains MPS.
+2. GeDL interpreter: a python package for interpreting gevent definitios written in Python.
+3. FROST Server: an implementaton of the SensorThings API.
 4. Siddhi runner: a complex event processing engine for the detection of events.
 
 ## Installation
 
-Each of the component have different requirements, therefore we provide separated instruction for each of them. Refere to the following resources to install and deploy each component:
+Each component have different requirements, therefore we provide separated instructions for them. Refer to the following resources to install and deploy each component:
 
 - [GeDL MPS](./GeDL/README.md)
 - [GeDL interpreter](./gedl-interpreter/README.md)
@@ -26,7 +25,7 @@ Each of the component have different requirements, therefore we provide separate
 
 ## Examples
 
-The `examples/data` directory contains contains observations data for the use cases described in the [Demontration document](./examples/DEMO.md). The JSON files should be [registred to the FROST Server](./frost-server/README.md) *following the ordered specified by the file number*. 
+The `examples/data` directory contains contains observations data for the use cases described in the [Demonstration document](./examples/DEMO.md). The JSON files should be [registred to the FROST Server](./frost-server/README.md) *following the ordered specified by the file number*. 
 
 The following examples are provided:
 
