@@ -3500,7 +3500,7 @@
               <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence)" resolve="append" />
               <uo k="s:originTrace" v="n:2602366688405962294" />
               <node concept="Xl_RD" id="g1" role="37wK5m">
-                <property role="Xl_RC" value="import os" />
+                <property role="Xl_RC" value="import os, asyncio" />
                 <uo k="s:originTrace" v="n:2602366688405962294" />
               </node>
             </node>
@@ -5684,7 +5684,7 @@
               <ref role="37wK5l" to="kpbf:~TextGenSupport.append(java.lang.CharSequence)" resolve="append" />
               <uo k="s:originTrace" v="n:2602366688406102561" />
               <node concept="Xl_RD" id="ow" role="37wK5m">
-                <property role="Xl_RC" value="stream_generator.run()" />
+                <property role="Xl_RC" value="asyncio.run(stream_generator.run())" />
                 <uo k="s:originTrace" v="n:2602366688406102561" />
               </node>
             </node>
