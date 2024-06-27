@@ -95,7 +95,7 @@ Generated source code in Python for the GeDL-Interpreter.
  Stream generator for AirQuality gevent.
 """
 
-import os
+import os, asyncio
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import gedl_interpreter.stream_generator.generator as  generator
@@ -123,7 +123,7 @@ def main():
     )
 
   stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
-  stream_generator.run()
+  asyncio.run(stream_generator.run())
 
 if __name__ == "__main__":
   main()
@@ -271,7 +271,7 @@ Generated source code in Python for the GeDL-Interpreter.
  Stream generator for AirQualityMultiple gevent.
 """
 
-import os
+import os, asyncio
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import gedl_interpreter.stream_generator.generator as  generator
@@ -469,7 +469,7 @@ def main():
     )
 
   stream_generator = generator.StreamGenerator(gevent, sensingapi, cep)
-  stream_generator.run()
+  asyncio.run(stream_generator.run())
 
 if __name__ == "__main__":
   main()
