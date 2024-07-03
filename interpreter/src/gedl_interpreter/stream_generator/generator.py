@@ -11,6 +11,7 @@ from abc import ABC
 from gedl_interpreter.stream_generator.response_parser import parse_response_observations
 from gedl_interpreter.stream_generator.prepare_requests import prepare_datastreams_request, prepare_observations_request
 from dotenv import load_dotenv
+import re
 
 
 # Configure logging settings
@@ -23,6 +24,7 @@ logging.basicConfig(
 
 # Use to format the payloads to be sent to the CEP server
 cep_payload_template = {"event":{
+                            "thingId": None,
                             "observedProperty":None, 
                             "phenomenonTime": None,
                             "resultTime":None, 
@@ -166,7 +168,7 @@ class DataStream():
             
             return obs_collection
 
-    async def start_streaming(self, latest:bool=True) -> None:
+    async def start_streaming(self, latest:bool=True, frequency=0.2) -> None:
         """ Starts data streaming."""
 
         if self.check_expiration() != 'expired':
@@ -196,11 +198,13 @@ class DataStream():
 
                 # post_count = 0
                 # TODO: allow other types for result
+                # print('thing url', self.thing_url)
                 for obs in _observations:
                     cep_payload['event'].update({'resultTime': obs['resultTime'],
                                                 'phenomenonTime': obs['phenomenonTime'],
                                                 'result': float(obs['result']), # ensure result is a float 
-                                                'location': formatted_location 
+                                                'location': formatted_location ,
+                                                'thingId': int(re.search(r'Things\((\d+)\)', self.thing_url).group(1))
                                                 }) 
                         
                     print("Sent to EPE: ", cep_payload)
@@ -223,10 +227,10 @@ class DataStream():
 
                     # wait for the next cycle. This is for demonstration purposes only
                     # should be removed in production
-                    await asyncio.sleep(0.2)  # time in seconds
+                    await asyncio.sleep(frequency)  # time in seconds
     
             if latest: # only if latest is True
-                await asyncio.sleep(0.1)  # time in seconds
+                await asyncio.sleep(frequency)  # time in seconds
             # check expiration after every cycle
             self.check_expiration()
         
@@ -356,14 +360,14 @@ class StreamGenerator():
         
         return None
 
-    async def run(self, latest:bool = True)-> None:
+    async def run(self, latest:bool = True, frequency = 0.2)-> None:
         """ Starts the streaming for each datastream in the list of generated datastreams."""
 
         await self.create_datastreams()
 
         print('number datastreasms: ', len(self.generated_datastreams))
    
-        tasks = [stream.start_streaming(latest) for stream in self.generated_datastreams]
+        tasks = [stream.start_streaming(latest, frequency) for stream in self.generated_datastreams]
         await asyncio.gather(*tasks)
  
 

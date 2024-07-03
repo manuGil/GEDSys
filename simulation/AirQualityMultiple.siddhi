@@ -1,0 +1,61 @@
+@App:name('AirQualityMultiple')
+@App:description('A description of the app')
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/airqualitymultiple-pm25",
+  @map(type = 'json')
+)
+define stream PM25 (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@source(
+  type = 'http',
+  receiver.url="http://localhost:8006/airqualitymultiple-no2",
+  @map(type = 'json')
+)
+define stream NO2 (
+  observedProperty string,
+  phenomenonTime string,
+  resultTime string,
+  result double,
+  location object
+);
+
+@sink(
+  type = 'log',
+  @map(type = 'json', validate.json = 'true', enclosing.element = '$.gevent')
+)
+define stream AirQualityAlert (
+  notification string,
+  observations object,
+  detectionTime string,
+  observationTime long
+);
+
+@info(name = 'AirQualityMultiple')
+from every PM25[result >= 15.f], NO2[result >= 30.f] within 60 min
+select 'AirQualityAlert' as notification,
+map:create('PM25',
+    map:create(
+      'observedProperty', PM25.observedProperty,
+      'phenomenonTime', PM25.phenomenonTime,
+      'resultTime', PM25.resultTime,
+      'result', PM25.result,
+      'location', PM25.location
+), 'NO2',
+      map:create(
+        'observedProperty', NO2.observedProperty,
+        'phenomenonTime', NO2.phenomenonTime,
+        'resultTime', NO2.resultTime,
+        'result', NO2.result,
+        'location', NO2.location
+) ) as observations,
+time:currentTimestamp() as detectionTime,
+time:timestampInMilliseconds(PM25.phenomenonTime, "yyyy-MM-dd'T'HH:mm:ss'Z'") as observationTime
+insert into AirQualityAlert;
