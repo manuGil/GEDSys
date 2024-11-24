@@ -35,7 +35,9 @@ The following examples are provided:
 
 ### Demonstration
 
-Refere to the [Quick Introduction video.](https://drive.google.com/file/d/1Mi7-O6fOaGV6V2EoYI1E2amsvKsUA-zG/view?usp=drive_link)
+Refere to the Quick Introduction video bellow:
+
+[![GEDL DEMO VIDEO](https://img.youtube.com/vi/GbzLG-fBTn8/0.jpg)](https://www.youtube.com/watch?v=GbzLG-fBTn8)
 
 ## Copyright and License
 
